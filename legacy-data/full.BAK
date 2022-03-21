@@ -1,0 +1,4140 @@
+Loading from directory: C:\JBuilder9\projects\tinytsc\legacy\
+Loader got: cr .( Booting in the biology stuff...)
+Loader got: 
+Loader got: 
+Loader got: xload Bio.Primitive.T
+Parsing kb: Bio.Primitive.T
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: biosphere
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: multicellular.organism
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: ecosystem
+ParseOtherSlot: partOf		biosphere
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: population
+ParseOtherSlot: partOf		ecosystem
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: biological.process
+ParseOtherSlot: subOf		phys.process
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: bio.process
+ParseOtherSlot: subOf		phys.process
+ParseOtherSlot: synonym		biological.process
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: organ
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: circulatory.system
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: nervous.system
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: tissue
+ParseOtherSlot: partOf		organ
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: cell.aggregation
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: gland
+ParseOtherSlot: subOf		Cell.aggregation
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: cell
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: partOf		tissue organ cell.aggregation
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: cell.compartment
+ParseOtherSlot: partOf		cell
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: compound
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: atom
+ParseOtherSlot: partOf		compound
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: peptide
+ParseOtherSlot: subOf		compound
+ParseOtherSlot: 
+Got Concept: polypeptide
+ParseOtherSlot: synonym		peptide
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: protein
+ParseOtherSlot: subOf		peptide
+ParseOtherSlot: 
+Got Concept: molecule
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: lipid
+ParseOtherSlot: subOf		compound
+ParseOtherSlot: 
+Got Concept: carbohydrate
+ParseOtherSlot: subOf		compound
+ParseOtherSlot: 
+Got Concept: sugar
+ParseOtherSlot: subOf		carbohydrate
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: animal
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: plant
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: kingdom
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: phylum
+ParseOtherSlot: subOf		kingdom
+ParseOtherSlot: 
+Got Concept: class
+ParseOtherSlot: subOf		phylum
+ParseOtherSlot: 
+Got Concept: order
+ParseOtherSlot: subOf		class
+ParseOtherSlot: 
+Got Concept: family
+ParseOtherSlot: subOf		order
+ParseOtherSlot: 
+Got Concept: genus
+ParseOtherSlot: subOf		family
+ParseOtherSlot: 
+Got Concept: species
+ParseOtherSlot: subOf		genus
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: viroid
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: virus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: bacterium
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: fungus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: vertebrate
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		multicellular.organism
+ParseOtherSlot: 
+Got Concept: mammal
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		vertebrate
+ParseOtherSlot: 
+Got Concept: rodent
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		MAMMAL
+ParseOtherSlot: 
+Got Concept: primate
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		mammal
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: bacteriophage
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		phage
+ParseOtherSlot: 
+Got Concept: herpesvirus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		herpes.virus
+ParseOtherSlot: 
+Got Concept: human.immunodeficiency.virus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		HIV
+ParseOtherSlot: 
+Got Concept: hiv
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		HUMAN.IMMUNODEFICIENCY.VIRUS
+ParseOtherSlot: 
+Got Concept: human.t-lymphotropic.virus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		HTLV
+ParseOtherSlot: 
+Got Concept: htlv
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		HUMAN.T-LYMPHOTROPIC.VIRUS
+ParseOtherSlot: 
+Got Concept: influenza.virus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		influenza
+ParseOtherSlot: 
+Got Concept: influenza
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		influenza.virus
+ParseOtherSlot: 
+Got Concept: rhinovirus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		cold.virus
+ParseOtherSlot: 
+Got Concept: coccus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		bacterium
+ParseOtherSlot: 
+Got Concept: bacillus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		bacterium
+ParseOtherSlot: synonym		rod
+ParseOtherSlot: 
+Got Concept: pneumococcus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		coccus
+ParseOtherSlot: 
+Got Concept: rat
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		rodent
+ParseOtherSlot: 
+Got Concept: homo.sapien
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: subOf		primate
+ParseOtherSlot: 
+Got Concept: human
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: subOf		primate
+ParseOtherSlot: 
+Got Concept: human.being
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		primate
+ParseOtherSlot: synonym		human homo.sapien
+ParseOtherSlot: 
+ParseOtherSlot: 
+Loader got: \ cdxload" Mol Bio KB"
+Loader got: xload Cell.T
+Parsing kb: Cell.T
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: biological.cell
+ParseOtherSlot: level			basic
+ParseOtherSlot: subOf			cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: bio.cell
+ParseOtherSlot: level			basic
+ParseOtherSlot: subOf			cell
+ParseOtherSlot: synonym		biological.cell
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: eukaryotic.cell
+ParseOtherSlot: subOf			bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: 
+Got Concept: prokaryotic.cell
+ParseOtherSlot: subOf	bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: organelle
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: cell.membrane
+ParseOtherSlot: partOf		bio.cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: myRef		4
+ParseOtherSlot: 
+Got Concept: cell.fragment
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: endomembrane
+ParseOtherSlot: subOf		cell.membrane
+ParseOtherSlot: partOf		bio.cell
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: microbody
+ParseOtherSlot: partOf		endomembrane
+ParseOtherSlot: subOf		organelle
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: plasma.membrane
+ParseOtherSlot: subOf	cell.membrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: nucleolus
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: ribosome
+ParseOtherSlot: partOf		bio.cell
+ParseOtherSlot: madeBy	nucleolus
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: subOf	organelle
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: adhesion.molecule
+ParseOtherSlot: subOf		molecule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: bound.ribosome
+ParseOtherSlot: attachedTo	endoplasmic.reticulum
+ParseOtherSlot: subOf			ribosome
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: cytoskeleton
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: cytosol
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	stuff
+ParseOtherSlot: 
+Got Concept: endoplasmic.reticulum
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	organelle
+ParseOtherSlot: 
+Got Concept: free.ribosome
+ParseOtherSlot: suspendedIn	cytosol
+ParseOtherSlot: subOf	ribosome
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: glyoxysome
+ParseOtherSlot: subOf	microbody
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: golgi.complex
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	organelle
+ParseOtherSlot: 
+Got Concept: hydrophobic.end
+ParseOtherSlot: partOf	phospholipid
+ParseOtherSlot: myRef	4
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	idea
+ParseOtherSlot: 
+Got Concept: hydrophylic.end
+ParseOtherSlot: partOf	phospholipid
+ParseOtherSlot: myRef	4
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	idea
+ParseOtherSlot: 
+Got Concept: lumen
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: enclosedBy	endoplasmic.reticulum
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: lysosome
+ParseOtherSlot: partOf	endo
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: microfilament
+ParseOtherSlot: subOf	cytoskeleton
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: microtubules
+ParseOtherSlot: subOf	cytoskeleton
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: mitochondrion
+ParseOtherSlot: subOf	microbody
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: synonym	mitrocondria
+ParseOtherSlot: 
+Got Concept: nuclear.envelope
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: peroxisome
+ParseOtherSlot: subOf	microbody
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: phospholipid
+ParseOtherSlot: partOf	cell.membrane
+ParseOtherSlot: myRef	4
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: polyribosome
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: attachedTo	mrna
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: synonym		polysome
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: rough.er
+ParseOtherSlot: subOf	endoplasmic.reticulum
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: smooth.er
+ParseOtherSlot: subOf	endoplasmic.reticulum
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: vacuole
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: vesicle
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: digests
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: digestedby
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: inverseSlot	digests
+ParseOtherSlot: 
+Got Concept: metabolizes
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+Got Concept: metabolizedby
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: inverseSlot	metabolizes
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: presents
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+Got Concept: presentedby
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: inverseSlot	presents
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: synthesizes
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: excretes
+ParseOtherSlot: subOf		relation
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: ingests
+ParseOtherSlot: level			basic
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: secretes
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+ParseOtherSlot: 
+Loader got: xload Immune.T
+Parsing kb: Immune.T
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: adrenal.cortex
+ParseOtherSlot: partOf			adrenal.gland
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: subOf			organ
+ParseOtherSlot: 
+Got Concept: adrenal.gland
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: subOf			organ
+ParseOtherSlot: 
+Got Concept: adrenal.medulla
+ParseOtherSlot: partOf		adrenal.gland
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+Got Concept: bone.marrow
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		4
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+Got Concept: gut
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+Got Concept: hypothalamus
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+Got Concept: lymph.node
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+Got Concept: pituitary.gland
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+Got Concept: spleen
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+Got Concept: thymus
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		organ
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: leukocyte
+ParseOtherSlot: subOf			bio.cell
+ParseOtherSlot: synonym		white.blood.cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: mononuclear.cell
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: molymorphonuclear.leukocyte
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: polymorph
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: synonym		Polymorphonuclear.leukocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: poly
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: synonym		Polymorphonuclear.leukocyte Polymorph
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: granulocyte
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: synonym		Polymorphonuclear.leukocyte Polymorph
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: lymphocyte
+ParseOtherSlot: subOf			mononuclear.cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			4
+ParseOtherSlot: 
+Got Concept: b.lymphocyte
+ParseOtherSlot: subOf		lymphocyte
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: 
+Got Concept: t.lymphocyte
+ParseOtherSlot: subOf		lymphocyte
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: 
+Got Concept: b-cell
+ParseOtherSlot: subOf		lymphocyte
+ParseOtherSlot: synonym		b.lymphocyte
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: t-cell
+ParseOtherSlot: subOf			lymphocyte
+ParseOtherSlot: synonym		t.lymphocyte
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: cytolytic.t-cell
+ParseOtherSlot: subOf			t-cell
+ParseOtherSlot: synonym		CTL c.t-cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: helper.t-cell
+ParseOtherSlot: subOf			t-cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: subOf			t-cell
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: activated.helper.t-cell
+ParseOtherSlot: subOf			Helper.t-cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: activated.b-cell
+ParseOtherSlot: subOf			b-cell
+ParseOtherSlot: synonym		b.lymphocyte
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: 
+Got Concept: band.cell
+ParseOtherSlot: subOf			bio.cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: basophil
+ParseOtherSlot: subOf			Polymorphonuclear.leukocyte
+ParseOtherSlot: synonym		basophilic.leukocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: basophilic.leukocyte
+ParseOtherSlot: subOf			Polymorphonuclear.leukocyte
+ParseOtherSlot: synonym		basophil
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: blast.cell
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: eosinophil
+ParseOtherSlot: subOf			Polymorphonuclear.leukocyte
+ParseOtherSlot: synonym		eosinophilic.leukocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: eosinophilic.leukocyte
+ParseOtherSlot: subOf			Polymorphonuclear.leukocyte
+ParseOtherSlot: synonym		eosinophil
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: erythrocyte
+ParseOtherSlot: subOf			bio.cell
+ParseOtherSlot: synonym		red.blood.cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: lymphoblast
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: macrophage
+ParseOtherSlot: subOf			mononuclear.cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			4
+ParseOtherSlot: 
+Got Concept: megakaryocyte
+ParseOtherSlot: subOf			mononuclear.cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: memory.cell
+ParseOtherSlot: subOf			b-cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: monocyte
+ParseOtherSlot: subOf			mononuclear.cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			4
+ParseOtherSlot: 
+Got Concept: natural.killer.cell
+ParseOtherSlot: subOf			lymphocyte
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: platelet
+ParseOtherSlot: subOf			cell.fragment
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: neutrophil
+ParseOtherSlot: subOf			Polymorphonuclear.leukocyte
+ParseOtherSlot: synonym		neutrophilic.leukocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: neutrophilic.leukocyte
+ParseOtherSlot: subOf			Polymorphonuclear.leukocyte
+ParseOtherSlot: synonym		neutrophil
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: plasma.cell
+ParseOtherSlot: subOf			B-Cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: rbc
+ParseOtherSlot: subOf			bio.cell
+ParseOtherSlot: synonym		red.blood.cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: red.blood.cell
+ParseOtherSlot: subOf			bio.cell
+ParseOtherSlot: synonym		Erythrocyte
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: stem.cell
+ParseOtherSlot: subOf			leukocyte
+ParseOtherSlot: contained.in	bone.marrow
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef			2 4
+ParseOtherSlot: 
+Got Concept: suppressor.t-cell
+ParseOtherSlot: subOf			t-cell
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: antibody
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef			4
+ParseOtherSlot: subOf			protein
+ParseOtherSlot: madeBy		b-cell
+ParseOtherSlot: 
+Got Concept: antibacterial.antibody
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: myRef			4
+ParseOtherSlot: subOf			antibody
+ParseOtherSlot: madeBy		b-cell
+ParseOtherSlot: 
+Got Concept: antiviral.antibody
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: myRef			4
+ParseOtherSlot: subOf			antibody
+ParseOtherSlot: madeBy		b-cell
+ParseOtherSlot: 
+Got Concept: antigen
+ParseOtherSlot: subOf			thing
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: myRef			2
+ParseOtherSlot: 
+Got Concept: bacterial.antigen
+ParseOtherSlot: subOf			antigen
+ParseOtherSlot: myCreator	rb
+ParseOtherSlot: 
+Got Concept: self-antigen
+ParseOtherSlot: subOf			antigen
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: viral.antigen
+ParseOtherSlot: subOf			antigen
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: hormone
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		4
+ParseOtherSlot: 
+Got Concept: peptide.hormone
+ParseOtherSlot: subOf		protein
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		4
+ParseOtherSlot: 
+Got Concept: regulatory.molecule
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		9
+ParseOtherSlot: 
+Got Concept: steroid.hormone
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		4
+ParseOtherSlot: madeBy		enzyme.mediated.chemical.reaction
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: adrenalin
+ParseOtherSlot: subOf		compound
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2 4
+ParseOtherSlot: madeBy		adrenal.medulla
+ParseOtherSlot: 
+Got Concept: aldosterone
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: androgen
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: calcitonin
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: colony.stim.factor
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		?
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: catecholamine
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: corticosteroid
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: cortisol
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: cytokine
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: cytokine.receptor
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: endorphin
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: g-csf
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		?
+ParseOtherSlot: subOf		colony.stim.factor
+ParseOtherSlot: 
+Got Concept: gm-csf
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		?
+ParseOtherSlot: subOf		colony.stim.factor
+ParseOtherSlot: 
+Got Concept: interferon
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		4 7
+ParseOtherSlot: 
+Got Concept: interferon-alpha
+ParseOtherSlot: subOf		interferon
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		11
+ParseOtherSlot: 
+Got Concept: interferon-beta
+ParseOtherSlot: subOf		interferon
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: interferon-gamma
+ParseOtherSlot: subOf		interferon
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		4
+ParseOtherSlot: 
+Got Concept: interleukin
+ParseOtherSlot: subOf		cytokine
+ParseOtherSlot: myCreator	rt jp2
+ParseOtherSlot: myRef		9
+ParseOtherSlot: 
+Got Concept: il-1
+ParseOtherSlot: subOf		interleukin
+ParseOtherSlot: synonym	interleukin-1  interleukin.1
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		9
+ParseOtherSlot: 
+Got Concept: il-2
+ParseOtherSlot: subOf		interleukin
+ParseOtherSlot: synonym	interleukin-2  interleukin.2
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		9
+ParseOtherSlot: 
+Got Concept: lymphokine
+ParseOtherSlot: view.of		interleukin
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2 9
+ParseOtherSlot: madeBy		lymphocyte
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: m-csf
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		?
+ParseOtherSlot: subOf		colony.stim.factor
+ParseOtherSlot: 
+Got Concept: monokine
+ParseOtherSlot: view.of		interleukin
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2 9
+ParseOtherSlot: madeBy		macrophage
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: parathyroid.hormone
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: renin
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: thyroxine
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		2
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: thymosin
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		4
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: prolif.1?
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf		predicate
+ParseOtherSlot: iTake		symbol
+ParseOtherSlot: iGive		flag
+ParseOtherSlot: arguments	*con
+ParseOtherSlot: algorithm	( greaterThan? ( valueOf *con curVal ) ( valueOf *con prev.val ) )
+ParseOtherSlot: 
+Got Concept: proliferating?
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf		predicate
+ParseOtherSlot: iTake		symbol
+ParseOtherSlot: iGive		flag
+ParseOtherSlot: arguments	*con
+ParseOtherSlot: algorithm	( or?	( prolif.1? *con ) F )
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: proliferates
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: myRef		?
+ParseOtherSlot: subOf		relation
+ParseOtherSlot: definition	proliferating?
+ParseOtherSlot: 
+Got Concept: infects
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		relation
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: stimulates
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: myRef		?
+ParseOtherSlot: subOf		relation
+ParseOtherSlot: 
+Got Concept: stimulatedby
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf		relation
+ParseOtherSlot: inverseSlot	stimulates
+ParseOtherSlot: 
+Got Concept: binds
+ParseOtherSlot: myCreator		rbt jp2
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: synonym		attachedTo
+ParseOtherSlot: inverseValue		notAttachedTo disconnected
+ParseOtherSlot: inverseSlot		binds
+ParseOtherSlot: 
+Got Concept: antigenbinds
+ParseOtherSlot: myCreator		jp2 rbt
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: inverseSlot		antigenBinds
+ParseOtherSlot: 
+Got Concept: lyses
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		relation
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: cytotoxic
+ParseOtherSlot: 
+Got Concept: anaphylactic
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: night.sweat
+ParseOtherSlot: 
+Got Concept: fever
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Loader got: xload Immune.RBT
+Parsing kb: Immune.RBT
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: thensay
+ParseOtherSlot: subOf		informationSlot
+Parse instanceOf: 	rhs.func
+ParseOtherSlot: iTake		sx
+ParseOtherSlot: iGive		none
+ParseOtherSlot: arguments	*something
+ParseOtherSlot: algorithm	( display> *something say )
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: antigen.binding
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( antigen ( *antigen ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( b-cell ( *b-cell ) true )
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( helper.t-cell ( *helper.t-cell ) true )
+    Token: (
+    Token: helper.t-cell
+    Token: (
+    Token: *helper.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( macrophage ( *macrophage ) true ) )
+    Token: (
+    Token: macrophage
+    Token: (
+    Token: *macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( binds ( *helper.t-cell *antigen ) true )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *helper.t-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( binds ( *b-cell *antigen ) true )
+    Token: (
+    Token: binds
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( binds ( *macrophage *antigen ) true ) )
+    Token: (
+    Token: binds
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates	( ( binds ( *macrophage *antigen ) true )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( binds ( *helper.t-cell *antigen ) true )
+    Token: (
+    Token: binds
+    Token: (
+    Token: *helper.t-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( binds ( *b-cell *antigen ) true ) )
+    Token: (
+    Token: binds
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Antigen bound to macrophage, b-cell, and helper t-cell. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: activated.helper.t-cell.b-cell.abut.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( b-cell ( *b-cell ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( act.h.t-cell ( *act.h.t-cell ) true ) )
+    Token: (
+    Token: act.h.t-cell
+    Token: (
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates ( ( abuts ( *b-cell *act.h.t-cell ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: abuts
+    Token: (
+    Token: *b-cell
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates 	( ( abuts ( *b-cell *act.h.t-cell ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: abuts
+    Token: (
+    Token: *b-cell
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" b-cell abuts activated helper t-cell. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: activated.helper.t-cell.antigen.b-cell.binding.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( b-cell ( *b-cell ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( antigen ( *antigen ) TRUE )
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: TRUE
+    Token: )
+ParseSentence: 0 ( act.h.t-cell ( *act.h.t-cell ) true ) )
+    Token: (
+    Token: act.h.t-cell
+    Token: (
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		(  ( presents ( *b-cell *antigen ) true )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( abuts ( *b-cell *act.h.t-cell ) true ) )
+    Token: (
+    Token: abuts
+    Token: (
+    Token: *b-cell
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates  ( ( antigenBinds ( *act.h.t-cell *b-cell ) false ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: antigenBinds
+    Token: (
+    Token: *act.h.t-cell
+    Token: *b-cell
+    Token: )
+    Token: false
+    Token: )
+ParseSentence: 0 thenRelates 	( ( antigenBinds ( *act.h.t-cell *b-cell ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: antigenBinds
+    Token: (
+    Token: *act.h.t-cell
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Activated helper t-cell binds b-cell bound antigen."
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: antigen.internalization.b
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( antigen ( *antigen ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( b-cell ( *b-cell ) true ) )
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( binds ( *b-cell *antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( contains ( *b-cell *antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: contains
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates	( ( contains ( *b-cell *antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: contains
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" b-cell ingests bound antigen. "
+ParseOtherSlot: 
+Got Concept: antigen.internalization.m
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( antigen ( *antigen ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( macrophage ( *macrophage ) true ) )
+    Token: (
+    Token: macrophage
+    Token: (
+    Token: *macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( binds ( *macrophage *antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( contains ( *macrophage *antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: contains
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates 	( ( contains ( *macrophage *antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: contains
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Macrophage ingests bound antigen. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: antigen.presentation.b
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( b-cell ( *b-cell ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( antigen ( *antigen ) true ) )
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( digests ( *b-cell *antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: digests
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( presents ( *b-cell *antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates 	( ( presents ( *b-cell *antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" b-cell presents processed antigen. "
+ParseOtherSlot: 
+Got Concept: antigen.presentation.m
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( Macrophage ( *macrophage ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: Macrophage
+    Token: (
+    Token: *macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( antigen ( *antigen ) true ) )
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( digests ( *macrophage *antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: digests
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( presents ( *macrophage *antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates 	( ( presents ( *macrophage *antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Macrophage presents processed antigen. "
+ParseOtherSlot: 
+Got Concept: v.antigen.presentation.m
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( i.macrophage ( *i.macrophage ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: i.macrophage
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( v.antigen ( *v.antigen ) true )
+    Token: (
+    Token: v.antigen
+    Token: (
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( mmhc1 ( *mhc1 ) true )
+    Token: (
+    Token: mmhc1
+    Token: (
+    Token: *mhc1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( virus ( *virus ) true ) )
+    Token: (
+    Token: virus
+    Token: (
+    Token: *virus
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( infects ( *virus *i.macrophage ) true )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: infects
+    Token: (
+    Token: *virus
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( binds ( *mhc1 *v.antigen ) true )  )
+    Token: (
+    Token: binds
+    Token: (
+    Token: *mhc1
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( presents ( *i.macrophage *v.antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *i.macrophage
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates 	( ( presents ( *i.macrophage *v.antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *i.macrophage
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Infected macrophage presents viral antigen/peptide. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: macrophage.mhc1.binding
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( i.macrophage ( *i.macrophage ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: i.macrophage
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( v.antigen ( *v.antigen ) true )
+    Token: (
+    Token: v.antigen
+    Token: (
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( virus ( *virus ) true ) )
+    Token: (
+    Token: virus
+    Token: (
+    Token: *virus
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( infects ( *virus *i.macrophage ) true )  )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: infects
+    Token: (
+    Token: *virus
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( binds ( *mhc1 *v.antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *mhc1
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseCreate: 	( *mmhc1 )
+ParseSentence: 0 thenActors	( ( mmhc1 (*mhc1 ) true ) )
+SentenceSlotType: thenActors
+    Token: (
+    Token: mmhc1
+    Token: (*mhc1
+    Token: )
+ParseSentence: 0 thenRelates	( ( binds ( *mhc1 *v.antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *mhc1
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Macrophage mhc1 binds viral antigen/peptide. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: antigen.processing.m
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( antigen ( *antigen ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( Macrophage ( *macrophage ) true ) )
+    Token: (
+    Token: Macrophage
+    Token: (
+    Token: *macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( contains ( *macrophage *antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: contains
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( digests ( *macrophage *antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: digests
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseCreate: 	( *il-1 *csf )
+ParseSentence: 0 thenActors	( ( il-1 ( *il-1 ) true )
+SentenceSlotType: thenActors
+    Token: (
+    Token: il-1
+    Token: (
+    Token: *il-1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( gm-csf ( *csf ) true ) )
+    Token: (
+    Token: gm-csf
+    Token: (
+    Token: *csf
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates 	(  ( digests ( *macrophage *antigen ) true )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: digests
+    Token: (
+    Token: *macrophage
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( secretes ( *macrophage *il-1 ) true )
+    Token: (
+    Token: secretes
+    Token: (
+    Token: *macrophage
+    Token: *il-1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( secretes ( *macrophage *csf ) true ) )
+    Token: (
+    Token: secretes
+    Token: (
+    Token: *macrophage
+    Token: *csf
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Macrophage secretes il-1 and CSF. "
+ParseOtherSlot: 
+Got Concept: antigen.processing.b
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( b-cell ( *b-cell ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( antigen ( *antigen ) true ) )
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( contains ( *b-cell *antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: contains
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( digests ( *b-cell *antigen ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: digests
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates 	( ( digests ( *b-cell *antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: digests
+    Token: (
+    Token: *b-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" b-cell digests antigen. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: helper.t-cell.activation.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( antigen ( *antigen ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( helper.t-cell ( *helper.t-cell ) true )
+    Token: (
+    Token: helper.t-cell
+    Token: (
+    Token: *helper.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( il-1 ( *il-1 ) true ) )
+    Token: (
+    Token: il-1
+    Token: (
+    Token: *il-1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( binds ( *helper.t-cell *antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *helper.t-cell
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotActors	( ( act.h.t-cell ( *act.h.t-cell ) true ) )
+SentenceSlotType: ifNotActors
+    Token: (
+    Token: act.h.t-cell
+    Token: (
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseCreate: 	( *act.h.t-cell )
+ParseSentence: 0 thenRelates 	( ( proliferates ( *helper.t-cell ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: proliferates
+    Token: (
+    Token: *helper.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenActors	( ( act.h.t-cell ( *act.h.t-cell ) true ) )
+SentenceSlotType: thenActors
+    Token: (
+    Token: act.h.t-cell
+    Token: (
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" *Helper t-cell activated. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: c.t-cell.activation.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( v.antigen ( *v.antigen ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: v.antigen
+    Token: (
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( c.t-cell ( *c.t-cell ) true )
+    Token: (
+    Token: c.t-cell
+    Token: (
+    Token: *c.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( virus ( *virus ) true )
+    Token: (
+    Token: virus
+    Token: (
+    Token: *virus
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( i.macrophage ( *i.macrophage ) true )
+    Token: (
+    Token: i.macrophage
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( mmhc1 (*mhc1 ) true ) )
+    Token: (
+    Token: mmhc1
+    Token: (*mhc1
+    Token: )
+ParseSentence: 0 ifNotActors	( ( act.c.t-cell ( *act.c.t-cell ) true ) )
+SentenceSlotType: ifNotActors
+    Token: (
+    Token: act.c.t-cell
+    Token: (
+    Token: *act.c.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( presents ( *i.macrophage *v.antigen ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: presents
+    Token: (
+    Token: *i.macrophage
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseCreate: 	( *act.c.t-cell )
+ParseSentence: 0 thenActors	( ( act.c.t-cell ( *act.c.t-cell ) true ) )
+SentenceSlotType: thenActors
+    Token: (
+    Token: act.c.t-cell
+    Token: (
+    Token: *act.c.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" *Cytotoxic t-cell activated. "
+ParseOtherSlot: 
+Got Concept: b-cell.activation.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( b-cell ( *b-cell ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( act.h.t-cell ( *act.h.t-cell ) true ) )
+    Token: (
+    Token: act.h.t-cell
+    Token: (
+    Token: *act.h.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates		( ( antigenBinds ( *act.h.t-cell *b-cell ) true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: antigenBinds
+    Token: (
+    Token: *act.h.t-cell
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotActors	( ( activated.b-cell ( *b-cell ) true ) )
+SentenceSlotType: ifNotActors
+    Token: (
+    Token: activated.b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenActors	( ( activated.b-cell ( *b-cell ) true ) )
+SentenceSlotType: thenActors
+    Token: (
+    Token: activated.b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" b-cell activated. "
+ParseOtherSlot: 
+Got Concept: b-cell.cytokine.receptor.production.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( activated.b-cell ( *b-cell ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: activated.b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( il-1 ( *il-1 ) true ) )
+    Token: (
+    Token: il-1
+    Token: (
+    Token: *il-1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotActors	( ( cytokine.receptor  ( *cytokine.receptor ) true ) )
+SentenceSlotType: ifNotActors
+    Token: (
+    Token: cytokine.receptor
+    Token: (
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+ParseCreate: 	( *cytokine.receptor )
+ParseSentence: 0 thenActors	( ( cytokine.receptor  ( *cytokine.receptor ) true ) )
+SentenceSlotType: thenActors
+    Token: (
+    Token: cytokine.receptor
+    Token: (
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates	( ( synthesizes ( *b-cell *cytokine.receptor ) true )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: synthesizes
+    Token: (
+    Token: *b-cell
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( attaches.to (  *il-1 *cytokine.receptor ) true ) )
+    Token: (
+    Token: attaches.to
+    Token: (
+    Token: *il-1
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" b-cell synthesizes cytokine receptor, and il-1 attaches to receptor. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: blast.cell.production.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( activated.b-cell ( *b-cell ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: activated.b-cell
+    Token: (
+    Token: *b-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( il-1 ( *il-1) true )
+    Token: (
+    Token: il-1
+    Token: (
+    Token: *il-1)
+    Token: true
+    Token: )
+ParseSentence: 1 ( cytokine.receptor ( *cytokine.receptor ) true )
+    Token: (
+    Token: cytokine.receptor
+    Token: (
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 )
+    Token: )
+ParseSentence: 0 ifRelates		( ( synthesizes ( *b-cell *cytokine.receptor ) true )
+    Token: ifRelates
+    Token: (
+    Token: (
+    Token: synthesizes
+    Token: (
+    Token: *b-cell
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( attaches.to ( *il-1 *cytokine.receptor ) true ) )
+    Token: (
+    Token: attaches.to
+    Token: (
+    Token: *il-1
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 ifNotActors	( ( blast.cell ( *blast.cell ) true ) )
+    Token: ifNotActors
+    Token: (
+    Token: (
+    Token: blast.cell
+    Token: (
+    Token: *blast.cell
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 thenCreate	( *blast.cell )
+    Token: thenCreate
+    Token: (
+    Token: *blast.cell
+    Token: )
+ParseSentence: 0 thenActors	( ( blast.cell ( *blast.cell ) true ) )
+    Token: thenActors
+    Token: (
+    Token: (
+    Token: blast.cell
+    Token: (
+    Token: *blast.cell
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 thenSay		" Blast cell produced. "
+    Token: thenSay
+    Token: "
+    Token: Blast
+    Token: cell
+    Token: produced.
+    Token: "
+ParseSentence: 0 
+ParseSentence: 0 
+ParseSentence: 0 c:	PLASMA.MEMORY.CELL.PRODUCTION.1
+    Token: c:
+    Token: PLASMA.MEMORY.CELL.PRODUCTION.1
+ParseSentence: 0 level		basic
+    Token: level
+    Token: basic
+ParseSentence: 0 subOf		phys.process
+    Token: subOf
+    Token: phys.process
+ParseSentence: 0 instanceOf	process.rule
+    Token: instanceOf
+    Token: process.rule
+ParseSentence: 0 myCreator	jp2 rbt
+    Token: myCreator
+    Token: jp2
+    Token: rbt
+ParseSentence: 0 context		human.immunology
+    Token: context
+    Token: human.immunology
+ParseSentence: 0 ifActors		( (  blast.cell ( *blast.cell ) true )
+    Token: ifActors
+    Token: (
+    Token: (
+    Token: blast.cell
+    Token: (
+    Token: *blast.cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( il-1 ( *il-1 ) true )
+    Token: (
+    Token: il-1
+    Token: (
+    Token: *il-1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 )
+    Token: )
+ParseSentence: 0 ifNotActors	( ( plasma.cell ( *plasma.cell ) true )
+    Token: ifNotActors
+    Token: (
+    Token: (
+    Token: plasma.cell
+    Token: (
+    Token: *plasma.cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( memory.cell ( *memory.cell ) true ) )
+    Token: (
+    Token: memory.cell
+    Token: (
+    Token: *memory.cell
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 thenCreate	( *plasma.cell *memory.cell )
+    Token: thenCreate
+    Token: (
+    Token: *plasma.cell
+    Token: *memory.cell
+    Token: )
+ParseSentence: 0 thenActors	( ( plasma.cell ( *plasma.cell ) true )
+    Token: thenActors
+    Token: (
+    Token: (
+    Token: plasma.cell
+    Token: (
+    Token: *plasma.cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( memory.cell ( *memory.cell ) true ) )
+    Token: (
+    Token: memory.cell
+    Token: (
+    Token: *memory.cell
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 thenSay		" Plasma cell produced.  Memory cell produced. "
+    Token: thenSay
+    Token: "
+    Token: Plasma
+    Token: cell
+    Token: produced.
+    Token: Memory
+    Token: cell
+    Token: produced.
+    Token: "
+ParseSentence: 0 
+ParseSentence: 0 
+ParseSentence: 0 
+ParseSentence: 0 c:	ANTIBODY.PRODUCTION.1
+    Token: c:
+    Token: ANTIBODY.PRODUCTION.1
+ParseSentence: 0 level		basic
+    Token: level
+    Token: basic
+ParseSentence: 0 subOf		phys.process
+    Token: subOf
+    Token: phys.process
+ParseSentence: 0 instanceOf	process.rule
+    Token: instanceOf
+    Token: process.rule
+ParseSentence: 0 myCreator	rbt
+    Token: myCreator
+    Token: rbt
+ParseSentence: 0 context		human.immunology
+    Token: context
+    Token: human.immunology
+ParseSentence: 0 ifActors		( ( il-1 ( *il-1 ) true )
+    Token: ifActors
+    Token: (
+    Token: (
+    Token: il-1
+    Token: (
+    Token: *il-1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( cytokine.receptor ( *cytokine.receptor ) true )
+    Token: (
+    Token: cytokine.receptor
+    Token: (
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( plasma.cell ( *plasma.cell ) true ) )
+    Token: (
+    Token: plasma.cell
+    Token: (
+    Token: *plasma.cell
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 ifRelates		( ( attaches.to ( *il-1 *cytokine.receptor ) true ) )
+    Token: ifRelates
+    Token: (
+    Token: (
+    Token: attaches.to
+    Token: (
+    Token: *il-1
+    Token: *cytokine.receptor
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 ifNotActors	( ( antibody ( *antibody ) true ) )
+    Token: ifNotActors
+    Token: (
+    Token: (
+    Token: antibody
+    Token: (
+    Token: *antibody
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 thenCreate	( *antibody )
+    Token: thenCreate
+    Token: (
+    Token: *antibody
+    Token: )
+ParseSentence: 0 thenActors	( ( antibody ( *antibody ) true ) )
+    Token: thenActors
+    Token: (
+    Token: (
+    Token: antibody
+    Token: (
+    Token: *antibody
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 thenSay		" Plasma cell produces antibody. "
+    Token: thenSay
+    Token: "
+    Token: Plasma
+    Token: cell
+    Token: produces
+    Token: antibody.
+    Token: "
+ParseSentence: 0 
+ParseSentence: 0 
+ParseSentence: 0 comment:
+    Token: comment:
+ParseSentence: 0 this rule has a problem with the "no false actors" syntax rule:
+    Token: this
+    Token: rule
+    Token: has
+    Token: a
+    Token: problem
+    Token: with
+    Token: the
+    Token: "no
+    Token: false
+    Token: actors"
+    Token: syntax
+    Token: rule:
+ParseSentence: 0 without antigen as actor, you cannot use the "excretes" relation here to limit firing
+    Token: without
+    Token: antigen
+    Token: as
+    Token: actor,
+    Token: you
+    Token: cannot
+    Token: use
+    Token: the
+    Token: "excretes"
+    Token: relation
+    Token: here
+    Token: to
+    Token: limit
+    Token: firing
+ParseSentence: 0 that is: we need some sort of unary relation for virus which will get changed on firing
+    Token: that
+    Token: is:
+    Token: we
+    Token: need
+    Token: some
+    Token: sort
+    Token: of
+    Token: unary
+    Token: relation
+    Token: for
+    Token: virus
+    Token: which
+    Token: will
+    Token: get
+    Token: changed
+    Token: on
+    Token: firing
+ParseSentence: 0 I choose--for purposes of trials--"excited"
+    Token: I
+    Token: choose--for
+    Token: purposes
+    Token: of
+    Token: trials--"excited"
+ParseSentence: 0 note that this has been added to initial conditions as well
+    Token: note
+    Token: that
+    Token: this
+    Token: has
+    Token: been
+    Token: added
+    Token: to
+    Token: initial
+    Token: conditions
+    Token: as
+    Token: well
+ParseSentence: 0 second cut: i choose ifNotActors, and deleted "excited" from IC
+    Token: second
+    Token: cut:
+    Token: i
+    Token: choose
+    Token: ifNotActors,
+    Token: and
+    Token: deleted
+    Token: "excited"
+    Token: from
+    Token: IC
+ParseSentence: 0 comment;
+    Token: comment;
+ParseSentence: 0 
+ParseSentence: 0 c:	VIRAL.INFECTION.M
+    Token: c:
+    Token: VIRAL.INFECTION.M
+ParseSentence: 0 level			basic
+    Token: level
+    Token: basic
+ParseSentence: 0 subOf			phys.process
+    Token: subOf
+    Token: phys.process
+ParseSentence: 0 instanceOf		process.rule
+    Token: instanceOf
+    Token: process.rule
+ParseSentence: 0 myCreator		rbt
+    Token: myCreator
+    Token: rbt
+ParseSentence: 0 context			human.immunology
+    Token: context
+    Token: human.immunology
+ParseSentence: 0 ifActors			( ( virus ( *virus ) true )
+    Token: ifActors
+    Token: (
+    Token: (
+    Token: virus
+    Token: (
+    Token: *virus
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( macrophage ( *macrophage ) true ) )
+    Token: (
+    Token: macrophage
+    Token: (
+    Token: *macrophage
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 ifNotActors		( ( v.antigen ( *v.antigen ) true )
+    Token: ifNotActors
+    Token: (
+    Token: (
+    Token: v.antigen
+    Token: (
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 1 ( i.macrophage ( *i.macrophage ) true ) )
+    Token: (
+    Token: i.macrophage
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 ifNotRelates		( ( infects ( *virus *i.macrophage ) true ) )
+    Token: ifNotRelates
+    Token: (
+    Token: (
+    Token: infects
+    Token: (
+    Token: *virus
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+    Token: )
+ParseSentence: 0 thenCreate		 ( *v.antigen ) ( *i.macrophage )
+    Token: thenCreate
+    Token: (
+    Token: *v.antigen
+    Token: )
+ParseSentence: 0 thenActors		( ( v.antigen ( *v.antigen ) true )
+SentenceSlotType: thenActors
+    Token: (
+    Token: v.antigen
+    Token: (
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( i.macrophage ( *i.macrophage ) true )
+    Token: (
+    Token: i.macrophage
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( macrophage ( *macrophage ) false ) )
+    Token: (
+    Token: macrophage
+    Token: (
+    Token: *macrophage
+    Token: )
+    Token: false
+    Token: )
+ParseSentence: 0 thenRelates		( ( infects ( *virus *i.macrophage ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: infects
+    Token: (
+    Token: *virus
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 			" Virus infects macrophage. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: bacterial.antigen.production.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( bacterium ( *bacterium ) true ) )
+SentenceSlotType: ifActors
+    Token: (
+    Token: bacterium
+    Token: (
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotActors	( ( antigen ( *antigen ) true ) )
+SentenceSlotType: ifNotActors
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseCreate: 	( *antigen )
+ParseSentence: 0 thenActors	( ( antigen ( *antigen ) true ) )
+SentenceSlotType: thenActors
+    Token: (
+    Token: antigen
+    Token: (
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates	( ( excretes ( *bacterium *antigen ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: excretes
+    Token: (
+    Token: *bacterium
+    Token: *antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Bacterium excretes antigen. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: antibody.bacterium.antigen.binding.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	process.rule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		( ( antibody ( *antibody ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: antibody
+    Token: (
+    Token: *antibody
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( bacterium ( *bacterium ) true ) )
+    Token: (
+    Token: bacterium
+    Token: (
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates	( ( binds ( *antibody *bacterium ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *antibody
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates	( ( binds ( *antibody *bacterium ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *antibody
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseSay: 		" Antibody binds to bacterium. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: i.macrophage.lysis.1
+ParseOtherSlot: level			basic
+ParseOtherSlot: subOf			phys.process
+Parse instanceOf: 		process.rule
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: context			human.immunology
+ParseSentence: 0 ifActors			( ( v.antigen ( *v.antigen ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: v.antigen
+    Token: (
+    Token: *v.antigen
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( virus ( *virus ) true )
+    Token: (
+    Token: virus
+    Token: (
+    Token: *virus
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( i.macrophage ( *i.macrophage ) true )
+    Token: (
+    Token: i.macrophage
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( act.c.t-cell ( *act.c.t-cell ) true ) )
+    Token: (
+    Token: act.c.t-cell
+    Token: (
+    Token: *act.c.t-cell
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates		( ( lyses ( *act.c.t-cell ) ( *i.macrophage ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: lyses
+    Token: (
+    Token: *act.c.t-cell
+    Token: )
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenActors	( ( v.antigen ( *v.antigen ) false )
+SentenceSlotType: thenActors
+    Token: (
+    Token: v.antigen
+    Token: (
+    Token: *v.antigen
+    Token: )
+    Token: false
+    Token: )
+ParseSentence: 0 ( virus ( *virus ) false ) )
+    Token: (
+    Token: virus
+    Token: (
+    Token: *virus
+    Token: )
+    Token: false
+    Token: )
+ParseSentence: 0 thenRelates		( ( lyses ( *act.c.t-cell ) ( *i.macrophage ) true ) )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: lyses
+    Token: (
+    Token: *act.c.t-cell
+    Token: )
+    Token: (
+    Token: *i.macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseTerminate: 	expansion
+ParseSay: 		" ***Cytotoxic t-cell lyses infected macrophage. "
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: bacterium.ingestion.1
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		phys.process
+Parse instanceOf: 	SENSE.RULE
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors			( ( antibody ( *antibody ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: antibody
+    Token: (
+    Token: *antibody
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( bacterium ( *bacterium ) true )
+    Token: (
+    Token: bacterium
+    Token: (
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( macrophage ( *macrophage ) true ) )
+    Token: (
+    Token: macrophage
+    Token: (
+    Token: *macrophage
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifRelates			( ( binds ( *antibody *bacterium )  true ) )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: binds
+    Token: (
+    Token: *antibody
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ifNotRelates		( ( ingests ( *macrophage *bacterium ) true ) )
+SentenceSlotType: ifNotRelates
+    Token: (
+    Token: ingests
+    Token: (
+    Token: *macrophage
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 thenRelates		( ( ingests ( *macrophage *bacterium ) true )  )
+SentenceSlotType: thenRelates
+    Token: (
+    Token: ingests
+    Token: (
+    Token: *macrophage
+    Token: *bacterium
+    Token: )
+    Token: true
+    Token: )
+ParseTerminate: 	expansion
+ParseSay: 		" ***Macrophage ingests antibody-bound bacterium. "
+ParseOtherSlot: 
+Loader got: xload Immune.EXP
+Parsing kb: Immune.EXP
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: immune.e1
+Parse instanceOf: 	experiment episode
+ParseOtherSlot: context		human.immunology
+ParseSentence: 0 ifActors		 ( ( stem.cell ( stem.cell1 ) true )
+SentenceSlotType: ifActors
+    Token: (
+    Token: stem.cell
+    Token: (
+    Token: stem.cell1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( helper.t-cell ( helper.t-cell1 ) true )
+    Token: (
+    Token: helper.t-cell
+    Token: (
+    Token: helper.t-cell1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( Macrophage ( Macrophage1 ) true )
+    Token: (
+    Token: Macrophage
+    Token: (
+    Token: Macrophage1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( b-cell ( b-cell1 ) true )
+    Token: (
+    Token: b-cell
+    Token: (
+    Token: b-cell1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( t.cell.membrane ( membrane.1 ) true )
+    Token: (
+    Token: t.cell.membrane
+    Token: (
+    Token: membrane.1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( b.cell.membrane ( membrane.2 ) true )
+    Token: (
+    Token: b.cell.membrane
+    Token: (
+    Token: membrane.2
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( m.cell.membrane ( membrane.3 ) true )
+    Token: (
+    Token: m.cell.membrane
+    Token: (
+    Token: membrane.3
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( t-cell ( t-cell1 ) true )
+    Token: (
+    Token: t-cell
+    Token: (
+    Token: t-cell1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( bacterium ( bacterium1 ) true )
+    Token: (
+    Token: bacterium
+    Token: (
+    Token: bacterium1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 )
+    Token: )
+ParseSentence: 0 ifRelates		( ( partOf (  membrane.1 t-cell1 ) true )
+SentenceSlotType: ifRelates
+    Token: (
+    Token: partOf
+    Token: (
+    Token: membrane.1
+    Token: t-cell1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( partOf (  membrane.2 b-cell1 ) true )
+    Token: (
+    Token: partOf
+    Token: (
+    Token: membrane.2
+    Token: b-cell1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( partOf (  membrane.3  Macrophage1 ) true )
+    Token: (
+    Token: partOf
+    Token: (
+    Token: membrane.3
+    Token: Macrophage1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 ( abuts ( b-cell1 helper.t-cell1 ) true )
+    Token: (
+    Token: abuts
+    Token: (
+    Token: b-cell1
+    Token: helper.t-cell1
+    Token: )
+    Token: true
+    Token: )
+ParseSentence: 0 )
+    Token: )
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: task.i1
+Parse instanceOf: 		agendatask
+ParseOtherSlot: topic			discovery
+ParseOtherSlot: doTask		fillin
+ParseOtherSlot: onConcept		immune.e1
+ParseOtherSlot: onSlot		next.episode
+ParseOtherSlot: params		nil
+ParseOtherSlot: priority		900
+ParseOtherSlot: mySources		jp2
+ParseOtherSlot: reasons		focus.of.attention
+ParseOtherSlot: 
+ParseOtherSlot: CURRENT>AGENDA
+ParseOtherSlot: 
+Loader got: 
+Loader got: 
+Loader got: cr ." It's soup..."  num.frames .
+Total number of Con objects: 234
+################################
+c: antigen.processing.b
+  instanceOf rule
+  thenRelates (digests(*b-cell *antigen)
+  level basic 
+  ifRelates (contains(*b-cell *antigen)
+  myCreator rbt 
+  ifActors (b-cell(*b-cell)(antigen(*antigen)
+  ifNotRelates (digests(*b-cell *antigen)
+  context human.immunology 
+  subOf phys.process 
+
+c: endoplasmic.reticulum
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: adhesion.molecule
+  myCreator rbt 
+  subOf molecule 
+
+c: blast.cell
+  myCreator rbt jp2 
+  myRef 2 
+  subOf leukocyte 
+
+c: phospholipid
+  myCreator jp2 
+  myRef 4 
+  partOf cell.membrane 
+  subOf thing 
+
+c: stem.cell
+  myCreator rbt jp2 
+  contained.in bone.marrow 
+  myRef 2 4 
+  subOf leukocyte 
+
+c: gm-csf
+  myCreator jp2 
+  myRef ? 
+  subOf colony.stim.factor 
+
+c: gland
+  myCreator rbt 
+  subOf Cell.aggregation 
+
+c: synthesizes
+  subOf relation 
+
+c: smooth.er
+  myCreator jp2 
+  myRef 6 
+  subOf endoplasmic.reticulum 
+
+c: b-cell.cytokine.receptor.production.1
+  instanceOf rule
+  thenRelates (synthesizes(*b-cell *cytokine.receptor)(attaches.to(*il-1 *cytokine.receptor)
+  level basic 
+  myCreator jp2 rbt 
+  ifActors (activated.b-cell(*b-cell)(il-1(*il-1)
+  thenActors (cytokine.receptor(*cytokine.receptor)
+  context human.immunology 
+  ifNotActors (cytokine.receptor(*cytokine.receptor)
+  subOf phys.process 
+
+c: t.lymphocyte
+  synonym t-cell 
+  myCreator rbt jp2 
+  myRef 2 
+  subOf lymphocyte 
+
+c: interleukin-2
+  synonym il-2 
+
+c: spleen
+  myCreator jp2 
+  myRef 2 
+  subOf organ 
+
+c: lymph.node
+  myCreator jp2 
+  myRef 2 
+  subOf organ 
+
+c: influenza.virus
+  synonym influenza 
+  myCreator rbt 
+  subOf virus 
+
+c: parathyroid.hormone
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: species
+  subOf genus 
+
+c: basophilic.leukocyte
+  synonym basophil 
+  myCreator rbt 
+  subOf Polymorphonuclear.leukocyte 
+
+c: presentedby
+  inverseSlot presents 
+  subOf relation 
+
+c: c.t-cell.activation.1
+  instanceOf rule
+  level basic 
+  ifRelates (presents(*i.macrophage *v.antigen)
+  myCreator rbt 
+  ifActors (v.antigen(*v.antigen)(c.t-cell(*c.t-cell)(virus(*virus)(i.macrophage(*i.macrophage)((*mhc1()
+  thenActors (act.c.t-cell(*act.c.t-cell)
+  context human.immunology 
+  ifNotActors (act.c.t-cell(*act.c.t-cell)
+  subOf phys.process 
+
+c: hypothalamus
+  myCreator jp2 
+  myRef 2 
+  subOf organ 
+
+c: mononuclear.cell
+  myCreator rbt 
+  subOf leukocyte 
+
+c: biosphere
+  subOf thing 
+
+c: immune.e1
+  instanceOf experiment
+  ifRelates (partOf(membrane.1 t-cell1)(partOf(membrane.2 b-cell1)(partOf(membrane.3 Macrophage1)(abuts(b-cell1 helper.t-cell1)
+  ifActors (stem.cell(stem.cell1)(helper.t-cell(helper.t-cell1)(Macrophage(Macrophage1)(b-cell(b-cell1)(t.cell.membrane(membrane.1)(b.cell.membrane(membrane.2)(m.cell.membrane(membrane.3)(t-cell(t-cell1)(bacterium(bacterium1)
+  context human.immunology 
+
+c: tissue
+  partOf organ 
+  subOf stuff 
+
+c: genus
+  subOf family 
+
+c: cytoskeleton
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: thyroxine
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: blast.cell.production.1
+  instanceOf rule
+  thenRelates (infects(*virus *i.macrophage)
+  level basic 
+  myCreator jp2 rbt 
+  ifActors (activated.b-cell(*b-cell)(il-1(*il-1) true)((cytokine.receptor true)((ifRelates true)((attaches.to true)((ifNotActors true)(*blast.cell(thenCreate)((thenActors true)((thenSay ")((c: PLASMA.MEMORY.CELL.PRODUCTION.1)((level basic)((subOf phys.process)((instanceOf process.rule)((myCreator rbt)((context human.immunology)((ifActors true)((il-1 true)((ifNotActors true)((memory.cell true)(*memory.cell(thenCreate)((thenActors true)((memory.cell true)((thenSay ")((c: ANTIBODY.PRODUCTION.1)((level basic)((subOf phys.process)((instanceOf process.rule)((myCreator rbt)((context human.immunology)((ifActors true)((cytokine.receptor true)((plasma.cell true)((ifRelates true)((ifNotActors true)(*antibody(thenCreate)((thenActors true)((thenSay ")((comment:)((this rule:)((without firing)((that firing)((I trials--"excited")((note well)((second IC)((comment;)((c: VIRAL.INFECTION.M)((level basic)((subOf phys.process)((instanceOf process.rule)((myCreator rbt)((context human.immunology)((ifActors true)((macrophage true)((ifNotActors true)((i.macrophage true)((ifNotRelates true)(*v.antigen(thenCreate)
+  thenActors (v.antigen(*v.antigen)(i.macrophage(*i.macrophage)(macrophage(*macrophage)
+  context human.immunology 
+  subOf phys.process 
+
+c: population
+  partOf ecosystem 
+  subOf thing 
+
+c: regulatory.molecule
+  myCreator jp2 
+  myRef 9 
+
+c: organ
+  partOf multicellular.organism 
+  subOf thing 
+
+c: rhinovirus
+  synonym cold.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: adrenal.gland
+  myCreator jp2 
+  myRef 2 
+  subOf organ 
+
+c: rough.er
+  myCreator jp2 
+  myRef 6 
+  subOf endoplasmic.reticulum 
+
+c: il-2
+  synonym interleukin-2 
+  myCreator jp2 
+  myRef 9 
+  subOf interleukin 
+
+c: leukocyte
+  synonym white.blood.cell 
+  myCreator rbt 
+  subOf bio.cell 
+
+c: nervous.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: proliferates
+  myCreator jp2 
+  definition proliferating? 
+  myRef ? 
+  subOf relation 
+
+c: mitochondrion
+  synonym mitrocondria 
+  myCreator jp2 
+  myRef 6 
+  subOf microbody 
+
+c: bio.process
+  synonym biological.process 
+  myCreator rbt 
+  subOf phys.process 
+
+c: b-cell
+  synonym b.lymphocyte 
+  myCreator rbt jp2 
+  myRef 2 
+  subOf lymphocyte 
+
+c: neutrophil
+  synonym neutrophilic.leukocyte 
+  myCreator rbt 
+  subOf Polymorphonuclear.leukocyte 
+
+c: polysome
+  synonym polyribosome 
+
+c: plasma.cell
+  myCreator rbt jp2 
+  myRef 2 
+  subOf B-Cell 
+
+c: organism
+  subOf thing 
+
+c: vertebrate
+  myCreator rbt 
+  subOf multicellular.organism 
+
+c: g-csf
+  myCreator jp2 
+  myRef ? 
+  subOf colony.stim.factor 
+
+c: animal
+  myCreator rbt 
+  subOf organism 
+
+c: colony.stim.factor
+  myCreator jp2 
+  myRef ? 
+  subOf stuff 
+
+c: anaphylactic
+
+c: glyoxysome
+  myCreator jp2 
+  myRef 6 
+  subOf thing 
+
+c: b.lymphocyte
+  synonym activated.b-cell 
+  myCreator rbt jp2 
+  myRef 2 
+  subOf lymphocyte 
+
+c: il-1
+  synonym interleukin-1 
+  myCreator jp2 
+  myRef 9 
+  subOf interleukin 
+
+c: circulatory.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: v.antigen.presentation.m
+  instanceOf rule
+  thenRelates (presents(*i.macrophage *v.antigen)
+  level basic 
+  ifRelates (infects(*virus *i.macrophage)(binds(*mhc1 *v.antigen)
+  myCreator rbt 
+  ifActors (i.macrophage(*i.macrophage)(v.antigen(*v.antigen)(mmhc1(*mhc1)(virus(*virus)
+  ifNotRelates (presents(*i.macrophage *v.antigen)
+  context human.immunology 
+  subOf phys.process 
+
+c: lymphoblast
+  myCreator rbt 
+  subOf leukocyte 
+
+c: night.sweat
+
+c: molymorphonuclear.leukocyte
+  myCreator rbt 
+  subOf leukocyte 
+
+c: eosinophilic.leukocyte
+  synonym eosinophil 
+  myCreator rbt 
+  subOf Polymorphonuclear.leukocyte 
+
+c: interleukin
+  myCreator rt jp2 
+  myRef 9 
+  subOf cytokine 
+
+c: bacterial.antigen.production.1
+  instanceOf rule
+  thenRelates (excretes(*bacterium *antigen)
+  level basic 
+  myCreator rbt 
+  ifActors (bacterium(*bacterium)
+  thenActors (antigen(*antigen)
+  context human.immunology 
+  ifNotActors (antigen(*antigen)
+  subOf phys.process 
+
+c: white.blood.cell
+  synonym leukocyte 
+
+c: antigen.internalization.b
+  instanceOf rule
+  thenRelates (contains(*b-cell *antigen)
+  level basic 
+  ifRelates (binds(*b-cell *antigen)
+  myCreator rbt 
+  ifActors (antigen(*antigen)(b-cell(*b-cell)
+  ifNotRelates (contains(*b-cell *antigen)
+  context human.immunology 
+  subOf phys.process 
+
+c: fever
+
+c: atom
+  partOf compound 
+  subOf thing 
+
+c: metabolizedby
+  inverseSlot metabolizes 
+  subOf relation 
+
+c: antigenBinds
+  inverseSlot inverseSlot 
+
+c: helper.t-cell
+  myCreator rbt jp2 
+  myRef 2 
+  subOf t-cell 
+
+c: primate
+  myCreator rbt 
+  subOf mammal 
+
+c: bacterium
+  myCreator rbt 
+  subOf organism 
+
+c: digestedby
+  inverseSlot digests 
+  subOf relation 
+
+c: rat
+  myCreator rbt 
+  subOf rodent 
+
+c: bacillus
+  synonym rod 
+  myCreator rbt 
+  subOf bacterium 
+
+c: macrophage
+  myCreator rbt jp2 
+  myRef 4 
+  subOf mononuclear.cell 
+
+c: antigen.presentation.b
+  instanceOf rule
+  thenRelates (presents(*b-cell *antigen)
+  level basic 
+  ifRelates (digests(*b-cell *antigen)
+  myCreator rbt 
+  ifActors (b-cell(*b-cell)(antigen(*antigen)
+  ifNotRelates (presents(*b-cell *antigen)
+  context human.immunology 
+  subOf phys.process 
+
+c: antibacterial.antibody
+  myCreator rbt 
+  myRef 4 
+  madeBy b-cell 
+  subOf antibody 
+
+c: androgen
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: poly
+  synonym polymorphonuclear.leukocyte 
+  myCreator rbt 
+  subOf leukocyte 
+
+c: polyribosome
+  synonym polysome 
+  myCreator jp2 
+  attachedTo mrna 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: class
+  subOf phylum 
+
+c: natural.killer.cell
+  myCreator rbt jp2 
+  myRef 2 
+  subOf lymphocyte 
+
+c: antibody.bacterium.antigen.binding.1
+  instanceOf rule
+  thenRelates (binds(*antibody *bacterium)
+  level basic 
+  myCreator rbt 
+  ifActors (antibody(*antibody)(bacterium(*bacterium)
+  ifNotRelates (binds(*antibody *bacterium)
+  context human.immunology 
+  subOf phys.process 
+
+c: human.being
+  level basic 
+  synonym human 
+  myCreator rbt 
+  subOf primate 
+
+c: polymorphonuclear.leukocyte
+  synonym granulocyte 
+
+c: ecosystem
+  partOf biosphere 
+  subOf thing 
+
+c: i.macrophage.lysis.1
+  instanceOf rule
+  thenRelates (lyses(*act.c.t-cell *i.macrophage)
+  level basic 
+  myCreator rbt 
+  ifActors (v.antigen(*v.antigen)(virus(*virus)(i.macrophage(*i.macrophage)(act.c.t-cell(*act.c.t-cell)
+  ifNotRelates (lyses(*act.c.t-cell *i.macrophage)
+  thenActors (v.antigen(*v.antigen)(virus(*virus)
+  context human.immunology 
+  subOf phys.process 
+
+c: herpesvirus
+  synonym herpes.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: memory.cell
+  myCreator rbt jp2 
+  myRef 2 
+  subOf b-cell 
+
+c: antiviral.antibody
+  myCreator rbt 
+  myRef 4 
+  madeBy b-cell 
+  subOf antibody 
+
+c: antigen.binding
+  instanceOf rule
+  thenRelates (binds(*macrophage *antigen)(binds(*helper.t-cell *antigen)(binds(*b-cell *antigen)
+  level basic 
+  myCreator jp2 
+  ifActors (antigen(*antigen)(b-cell(*b-cell)(helper.t-cell(*helper.t-cell)(macrophage(*macrophage)
+  ifNotRelates (binds(*helper.t-cell *antigen)(binds(*b-cell *antigen)(binds(*macrophage *antigen)
+  context human.immunology 
+  subOf phys.process 
+
+c: adrenal.cortex
+  myCreator jp2 
+  myRef 2 
+  partOf adrenal.gland 
+  subOf organ 
+
+c: lysosome
+  myCreator jp2 
+  myRef 6 
+  partOf endo 
+  subOf thing 
+
+c: htlv
+  synonym human.t-lymphotropic.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: lipid
+  subOf compound 
+
+c: activated.helper.t-cell
+  myCreator rbt jp2 
+  myRef 2 
+  subOf Helper.t-cell 
+
+c: bacterium.ingestion.1
+  instanceOf rule
+  thenRelates (ingests(*macrophage *bacterium)
+  level basic 
+  ifRelates (binds(*antibody *bacterium)
+  myCreator rbt 
+  ifActors (antibody(*antibody)(bacterium(*bacterium)(macrophage(*macrophage)
+  ifNotRelates (ingests(*macrophage *bacterium)
+  context human.immunology 
+  subOf phys.process 
+
+c: biological.process
+  synonym bio.process 
+  myCreator rbt 
+  subOf phys.process 
+
+c: platelet
+  myCreator rbt 
+  subOf cell.fragment 
+
+c: antibody
+  myCreator jp2 
+  myRef 4 
+  madeBy b-cell 
+  subOf protein 
+
+c: eosinophil
+  synonym eosinophilic.leukocyte 
+  myCreator rbt 
+  subOf Polymorphonuclear.leukocyte 
+
+c: basophil
+  synonym basophilic.leukocyte 
+  myCreator rbt 
+  subOf Polymorphonuclear.leukocyte 
+
+c: homo.sapien
+  level basic 
+  myCreator jp2 rbt 
+  subOf primate 
+
+c: fungus
+  myCreator rbt 
+  subOf organism 
+
+c: nucleolus
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: molecule
+  subOf thing 
+
+c: granulocyte
+  synonym polymorphonuclear.leukocyte 
+  myCreator rbt 
+  subOf leukocyte 
+
+c: carbohydrate
+  subOf compound 
+
+c: proliferating?
+  arguments *con 
+  myCreator jp2 
+  iGive flag 
+  iTake symbol 
+  algorithm ( or? ( prolif.1? *con ) F ) 
+  subOf predicate 
+
+c: microbody
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: antigen.internalization.m
+  instanceOf rule
+  thenRelates (contains(*macrophage *antigen)
+  level basic 
+  ifRelates (binds(*macrophage *antigen)
+  myCreator rbt 
+  ifActors (antigen(*antigen)(macrophage(*macrophage)
+  ifNotRelates (contains(*macrophage *antigen)
+  context human.immunology 
+  subOf phys.process 
+
+c: mitrocondria
+  synonym mitochondrion 
+
+c: human
+  level basic 
+  synonym human.being 
+  myCreator jp2 rbt 
+  subOf primate 
+
+c: lymphokine
+  myCreator jp2 
+  myRef 2 9 
+  madeBy lymphocyte 
+  subOf stuff 
+  view.of interleukin 
+
+c: vacuole
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: bio.cell
+  level basic 
+  synonym biological.cell 
+  myCreator jp2 
+  subOf cell 
+
+c: herpes.virus
+  synonym herpesvirus 
+
+c: polypeptide
+  synonym peptide 
+  myCreator rbt 
+
+c: bacteriophage
+  synonym phage 
+  myCreator rbt 
+  subOf virus 
+
+c: adrenal.medulla
+  myCreator jp2 
+  myRef 2 
+  partOf adrenal.gland 
+  subOf organ 
+
+c: thensay
+  instanceOf rhs.func
+  arguments *something 
+  iGive none 
+  iTake sx 
+  algorithm ( display> *something say ) 
+  subOf informationSlot 
+
+c: monokine
+  myCreator jp2 
+  myRef 2 9 
+  madeBy macrophage 
+  subOf stuff 
+  view.of interleukin 
+
+c: band.cell
+  myCreator rbt 
+  subOf bio.cell 
+
+c: binds
+  synonym attachedto 
+  myCreator rbt jp2 
+  inverseSlot binds 
+  inverseValue notAttachedTo disconnected 
+  subOf relation 
+
+c: human.t-lymphotropic.virus
+  synonym htlv 
+  myCreator rbt 
+  subOf virus 
+
+c: antigen.processing.m
+  instanceOf rule
+  thenRelates (digests(*macrophage *antigen)(secretes(*macrophage *il-1)(secretes(*macrophage *csf)
+  level basic 
+  ifRelates (contains(*macrophage *antigen)
+  myCreator rbt 
+  ifActors (antigen(*antigen)(Macrophage(*macrophage)
+  ifNotRelates (digests(*macrophage *antigen)
+  thenActors (il-1(*il-1)(gm-csf(*csf)
+  context human.immunology 
+  subOf phys.process 
+
+c: activated.b-cell
+  synonym b.lymphocyte 
+  myCreator rbt jp2 
+  myRef 2 
+  subOf b-cell 
+
+c: kingdom
+  subOf thing 
+
+c: cold.virus
+  synonym rhinovirus 
+
+c: endorphin
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: b-cell.activation.1
+  instanceOf rule
+  level basic 
+  ifRelates (antigenBinds(*act.h.t-cell *b-cell)
+  myCreator jp2 rbt 
+  ifActors (b-cell(*b-cell)(act.h.t-cell(*act.h.t-cell)
+  thenActors (activated.b-cell(*b-cell)
+  context human.immunology 
+  ifNotActors (activated.b-cell(*b-cell)
+  subOf phys.process 
+
+c: peroxisome
+  myCreator jp2 
+  myRef 6 
+  subOf microbody 
+
+c: rod
+  synonym bacillus 
+
+c: calcitonin
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: pneumococcus
+  myCreator rbt 
+  subOf coccus 
+
+c: digests
+  inverseSlot inverseSlot 
+  subOf relation 
+
+c: adrenalin
+  myCreator jp2 
+  myRef 2 4 
+  madeBy adrenal.medulla 
+  subOf compound 
+
+c: antigen
+  myCreator jp2 rbt 
+  myRef 2 
+  subOf thing 
+
+c: bacterial.antigen
+  myCreator rb 
+  subOf antigen 
+
+c: interferon
+  myCreator jp2 
+  myRef 4 7 
+  subOf stuff 
+
+c: coccus
+  myCreator rbt 
+  subOf bacterium 
+
+c: gut
+  myCreator jp2 
+  myRef 2 
+  subOf organ 
+
+c: antigen.presentation.m
+  instanceOf rule
+  thenRelates (presents(*macrophage *antigen)
+  level basic 
+  ifRelates (digests(*macrophage *antigen)
+  myCreator rbt 
+  ifActors (Macrophage(*macrophage)(antigen(*antigen)
+  ifNotRelates (presents(*macrophage *antigen)
+  context human.immunology 
+  subOf phys.process 
+
+c: microtubules
+  myCreator jp2 
+  myRef 6 
+  subOf cytoskeleton 
+
+c: hydrophylic.end
+  myCreator jp2 
+  myRef 4 
+  partOf phospholipid 
+  subOf idea 
+
+c: order
+  subOf class 
+
+c: hormone
+  myCreator jp2 
+  myRef 4 
+
+c: megakaryocyte
+  myCreator rbt 
+  subOf mononuclear.cell 
+
+c: rbc
+  synonym red.blood.cell 
+  myCreator rbt 
+  subOf bio.cell 
+
+c: nuclear.envelope
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: bound.ribosome
+  myCreator jp2 
+  attachedTo endoplasmic.reticulum 
+  myRef 6 
+  subOf ribosome 
+
+c: multicellular.organism
+  subOf organism 
+
+c: activated.helper.t-cell.b-cell.abut.1
+  instanceOf rule
+  thenRelates (abuts(*b-cell *act.h.t-cell)
+  level basic 
+  myCreator jp2 rbt 
+  ifActors (b-cell(*b-cell)(act.h.t-cell(*act.h.t-cell)
+  ifNotRelates (abuts(*b-cell *act.h.t-cell)
+  context human.immunology 
+  subOf phys.process 
+
+c: renin
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: stimulates
+  myCreator rbt jp2 
+  inverseSlot inverseSlot 
+  myRef ? 
+  subOf relation 
+
+c: lyses
+  myCreator rbt 
+  subOf relation 
+
+c: stimulatedby
+  myCreator jp2 
+  inverseSlot stimulates 
+  subOf relation 
+
+c: prolif.1?
+  arguments *con 
+  myCreator jp2 
+  iGive flag 
+  iTake symbol 
+  algorithm ( greaterThan? ( valueOf *con curVal ) ( valueOf *con prev.val ) ) 
+  subOf predicate 
+
+c: cell.compartment
+  partOf cell 
+  subOf thing 
+
+c: interferon-alpha
+  myCreator jp2 
+  myRef 11 
+  subOf interferon 
+
+c: cytosol
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf stuff 
+
+c: bone.marrow
+  myCreator jp2 
+  myRef 4 
+  subOf organ 
+
+c: virus
+  myCreator rbt 
+  subOf organism 
+
+c: viroid
+  myCreator rbt 
+  subOf organism 
+
+c: cell.fragment
+  myCreator rbt 
+  subOf thing 
+
+c: human.immunodeficiency.virus
+  synonym hiv 
+  myCreator rbt 
+  subOf virus 
+
+c: vesicle
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: macrophage.mhc1.binding
+  instanceOf rule
+  thenRelates (binds(*mhc1 *v.antigen)
+  level basic 
+  ifRelates (infects(*virus *i.macrophage)
+  myCreator rbt 
+  ifActors (i.macrophage(*i.macrophage)(v.antigen(*v.antigen)(virus(*virus)
+  ifNotRelates (binds(*mhc1 *v.antigen)
+  thenActors ((*mhc1()
+  context human.immunology 
+  subOf phys.process 
+
+c: steroid.hormone
+  myCreator jp2 
+  myRef 4 
+  madeBy enzyme.mediated.chemical.reaction 
+
+c: thymosin
+  myCreator jp2 
+  myRef 4 
+  subOf stuff 
+
+c: thymus
+  myCreator jp2 
+  myRef 2 
+  subOf organ 
+
+c: antigenbinds
+  myCreator jp2 rbt 
+  inverseSlot antigenBinds 
+  subOf relation 
+
+c: cell
+  level basic 
+  myCreator rbt jp2 
+  partOf tissue organ cell.aggregation 
+  subOf thing 
+
+c: microfilament
+  myCreator jp2 
+  myRef 6 
+  subOf cytoskeleton 
+
+c: rodent
+  myCreator rbt 
+  subOf MAMMAL 
+
+c: self-antigen
+  myCreator rbt 
+  subOf antigen 
+
+c: lymphocyte
+  myCreator rbt jp2 
+  myRef 4 
+  subOf mononuclear.cell 
+
+c: interferon-beta
+  myCreator jp2 
+  subOf interferon 
+
+c: infects
+  myCreator rbt 
+  subOf relation 
+
+c: family
+  subOf order 
+
+c: polymorph
+  synonym polymorphonuclear.leukocyte 
+  myCreator rbt 
+  subOf leukocyte 
+
+c: excretes
+  myCreator jp2 rbt 
+  subOf relation 
+
+c: metabolizes
+  inverseSlot inverseSlot 
+  subOf relation 
+
+c: neutrophilic.leukocyte
+  synonym neutrophil 
+  myCreator rbt 
+  subOf Polymorphonuclear.leukocyte 
+
+c: ctl
+  synonym cytolytic.t-cell 
+
+c: interleukin-1
+  synonym il-1 
+
+c: golgi.complex
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: corticosteroid
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: peptide.hormone
+  myCreator jp2 
+  myRef 4 
+  subOf protein 
+
+c: presents
+  inverseSlot inverseSlot 
+  subOf relation 
+
+c: suppressor.t-cell
+  myCreator jp2 
+  myRef 2 
+  subOf t-cell 
+
+c: compound
+  subOf stuff 
+
+c: t-cell
+  synonym t.lymphocyte 
+  myCreator rbt jp2 
+  myRef 2 
+  subOf lymphocyte 
+
+c: viral.antigen
+  myCreator rbt 
+  subOf antigen 
+
+c: free.ribosome
+  myCreator jp2 
+  myRef 6 
+  subOf ribosome 
+  suspendedIn cytosol 
+
+c: helper.t-cell.activation.1
+  instanceOf rule
+  thenRelates (proliferates(*helper.t-cell)
+  level basic 
+  ifRelates (binds(*helper.t-cell *antigen)
+  myCreator jp2 rbt 
+  ifActors (antigen(*antigen)(helper.t-cell(*helper.t-cell)(il-1(*il-1)
+  thenActors (act.h.t-cell(*act.h.t-cell)
+  context human.immunology 
+  ifNotActors (act.h.t-cell(*act.h.t-cell)
+  subOf phys.process 
+
+c: aldosterone
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: peptide
+  synonym polypeptide 
+  subOf compound 
+
+c: lumen
+  myCreator jp2 
+  myRef 6 
+  enclosedBy endoplasmic.reticulum 
+  partOf bio.cell 
+  subOf thing 
+
+c: organelle
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: interferon-gamma
+  myCreator jp2 
+  myRef 4 
+  subOf interferon 
+
+c: protein
+  subOf peptide 
+
+c: cortisol
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: cytokine
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: cell.membrane
+  myCreator rbt jp2 
+  myRef 4 
+  partOf bio.cell 
+  subOf thing 
+
+c: monocyte
+  myCreator rbt jp2 
+  myRef 4 
+  subOf mononuclear.cell 
+
+c: eukaryotic.cell
+  myCreator jp2 rbt 
+  myRef 6 
+  subOf bio.cell 
+
+c: plant
+  myCreator rbt 
+  subOf organism 
+
+c: cell.aggregation
+  myCreator rbt 
+  subOf thing 
+
+c: red.blood.cell
+  synonym erythrocyte 
+  myCreator rbt 
+  subOf bio.cell 
+
+c: plasma.membrane
+  myCreator jp2 
+  myRef 6 
+  subOf cell.membrane 
+
+c: prokaryotic.cell
+  myCreator rbt 
+  myRef 6 
+  subOf bio.cell 
+
+c: cytotoxic
+
+c: catecholamine
+  myCreator jp2 
+  myRef 2 
+  subOf stuff 
+
+c: attachedto
+  synonym binds 
+
+c: phylum
+  subOf kingdom 
+
+c: ribosome
+  myCreator jp2 rbt 
+  myRef 6 
+  partOf bio.cell 
+  madeBy nucleolus 
+  subOf organelle 
+
+c: cytolytic.t-cell
+  synonym ctl 
+  myCreator rbt 
+  myRef 2 
+  subOf t-cell 
+
+c: phage
+  synonym bacteriophage 
+
+c: endomembrane
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf cell.membrane 
+
+c: cytokine.receptor
+  myCreator rbt jp2 
+  myRef 2 
+  subOf thing 
+
+c: mammal
+  myCreator rbt 
+  subOf vertebrate 
+
+c: hiv
+  synonym human.immunodeficiency.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: m-csf
+  myCreator jp2 
+  myRef ? 
+  subOf colony.stim.factor 
+
+c: activated.helper.t-cell.antigen.b-cell.binding.1
+  instanceOf rule
+  thenRelates (antigenBinds(*act.h.t-cell *b-cell)
+  level basic 
+  ifRelates (presents(*b-cell *antigen)(abuts(*b-cell *act.h.t-cell)
+  myCreator jp2 rbt 
+  ifActors (b-cell(*b-cell)(TRUE(*antigen)(act.h.t-cell(*act.h.t-cell)
+  ifNotRelates (antigenBinds(*act.h.t-cell *b-cell)
+  context human.immunology 
+  subOf phys.process 
+
+c: ingests
+  level basic 
+  myCreator rbt 
+  subOf relation 
+
+c: secretes
+  subOf relation 
+
+c: hydrophobic.end
+  myCreator jp2 
+  myRef 4 
+  partOf phospholipid 
+  subOf idea 
+
+c: influenza
+  synonym influenza.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: sugar
+  subOf carbohydrate 
+
+c: pituitary.gland
+  myCreator jp2 
+  myRef 2 
+  subOf organ 
+
+c: erythrocyte
+  synonym red.blood.cell 
+  myCreator rbt 
+  subOf bio.cell 
+
+c: biological.cell
+  level basic 
+  synonym bio.cell 
+  myCreator rbt 
+  subOf cell 
+

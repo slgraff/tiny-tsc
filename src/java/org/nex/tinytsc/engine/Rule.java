@@ -1,0 +1,402 @@
+/*
+ *  Copyright (C) 2005  Jack Park,
+ * 	mail : jackpark@gmail.com
+ *
+ *  Apache 2 License
+ */
+package org.nex.tinytsc.engine;
+import java.util.*;
+
+import org.nex.tinytsc.api.IActorCarrier;
+import org.nex.tinytsc.api.IConstants;
+import org.nex.tinytsc.api.Identifiable;
+
+import java.io.*;
+/**
+ * <p>Title: TinyTSC</p>
+ * <p>Description: Small "The Scholar's Companion(r)"</p>
+ * <p>Copyright: Copyright (c) 2005, Jack Park</p>
+ * <p>Company: NexistGroup</p>
+ * @author Jack Park
+ * @version 1.0
+ *
+ * TODO add ifRun ifNotRun thenRun
+ */
+
+public class Rule implements Serializable, IActorCarrier, Identifiable {
+  private final int type = IConstants.RULE;
+  private String id="";
+  private String instanceOf = "";
+  private List subOf = null;
+  private String name = "";
+  private String comment = "";
+  private List ifActors = null;
+  private List ifNotActors = null;
+  private List ifRelations = null;
+  private List ifNotRelations = null;
+  private List ifStates = null;
+  private List ifNotStates = null;
+  private List ifRuns = null; 		//TODO
+  private List ifNotRuns = null;	//TODO
+  private List thenRuns = null;  	//TODO
+  private List thenActors = null;
+  private List thenRelations = null;
+  private List thenStates = null;
+  private List thenCreates = null;
+  private List thenConjectures = null; //takes <sentence>
+  private List thenSay = null; //takes String
+  boolean isTerminate = false;
+
+  public Rule() {}
+
+  public Rule(String _id) {
+    this.id = _id;
+  }
+
+  public int getNodeType() {
+    return type;
+  }
+
+  public void setId(String _id) {
+    this.id = _id;
+  }
+  public String getId() {
+    return this.id;
+  }
+
+  public void setInstanceOf(String io) {
+    instanceOf = io;
+  }
+  public String getInstanceOf() {
+    return instanceOf;
+  }
+  public void addSubOf(String so) {
+    if (subOf == null) subOf = new ArrayList();
+    subOf.add(so);
+  }
+  public List getSubOf() {
+    return subOf;
+  }
+  public void setName(String _name) {
+    this.name = _name;
+  }
+  public String getName() {
+    return this.name;
+  }
+  public void setComment(String _comment) {
+    this.comment = _comment;
+  }
+  public String getComment() {
+    return this.comment;
+  }
+
+  public void setIsTerminate(boolean f) {
+    this.isTerminate = f;
+  }
+
+  public boolean getIsTerminate() {
+    return this.isTerminate;
+  }
+
+  public void addIfActor(Sentence t) {
+    if (ifActors==null) ifActors = new ArrayList();
+    ifActors.add(t);
+  }
+  public void setIfActors(List l) {
+  	ifActors = l;
+  }
+  public void removeIfActor(Sentence t) {
+  	ifActors.remove(t);
+  }
+  public List getIfActors() {
+    return ifActors;
+  }
+  public void addIfNotActor(Sentence t) {
+    if (ifNotActors==null) ifNotActors = new ArrayList();
+    ifNotActors.add(t);
+  }
+  public void setIfNotActors(List l) {
+  	ifNotActors = l;
+  }
+  public void removeIfNotActor(Sentence t) {
+  	ifNotActors.remove(t);
+  }
+  public List getIfNotActors() {
+    return ifNotActors;
+  }
+
+  /**
+   * Return all the actors in this <code>Rule</code>
+   * @return
+   */
+  public List getActors() {
+    if (ifNotActors == null)
+      return ifActors;
+    List result = ifActors;
+    result.addAll(ifNotActors);
+    return result;
+  }
+
+  public void addThenActor(Sentence t) {
+    if (thenActors==null) thenActors = new ArrayList();
+    thenActors.add(t);
+  }
+  public void setThenActors(List l) {
+  	thenActors = l;
+  }
+  public void removeThenActor(Sentence t) {
+  	thenActors.remove(t);
+  }
+  public List getThenActors() {
+    return thenActors;
+  }
+
+  public void addIfRelation(Sentence t) {
+    if (ifRelations==null) ifRelations = new ArrayList();
+    ifRelations.add(t);
+  }
+  public void setIfRelation(List l) {
+  	ifRelations = l;
+  }
+  public void removeIfRelation(Sentence t) {
+  	ifRelations.remove(t);
+  }
+  public List getIfRelations() {
+    return ifRelations;
+  }
+  public void addIfNotRelation(Sentence t) {
+    if (ifNotRelations==null) ifNotRelations = new ArrayList();
+    ifNotRelations.add(t);
+  }
+  public void setIfNotRelation(List l) {
+  	ifNotRelations = l;
+  }
+  public void removeIfNotRelation(Sentence t) {
+  	ifNotRelations.remove(t);
+  }
+  public List getIfNotRelations() {
+    return ifNotRelations;
+  }
+  public void addThenRelation(Sentence t) {
+    if (thenRelations==null) thenRelations = new ArrayList();
+    thenRelations.add(t);
+  }
+  public void setThenRelation(List l) {
+  	thenRelations = l;
+  }
+  public void removeThenRelation(Sentence t) {
+  	thenRelations.remove(t);
+  }
+  public List getThenRelations() {
+    return thenRelations;
+  }
+
+  public void addIfState(Sentence t) {
+    if (ifStates==null) ifStates = new ArrayList();
+    ifStates.add(t);
+  }
+  public void setIfState(List l) {
+  	ifStates = l;
+  }
+  public void removeIfState(Sentence t) {
+  	ifStates.remove(t);
+  }
+  public List getIfStates() {
+    return ifStates;
+  }
+  public void addIfNotState(Sentence t) {
+    if (ifNotStates==null) ifNotStates = new ArrayList();
+    ifNotStates.add(t);
+  }
+  public void setIfNotState(List l) {
+  	ifNotStates = l;
+  }
+  public void removeIfNotState(Sentence t) {
+  	ifNotStates.remove(t);
+  }
+  public List getIfNotStates() {
+    return ifNotStates;
+  }
+  public void addThenState(Sentence t) {
+    if (thenStates==null) thenStates = new ArrayList();
+    thenStates.add(t);
+  }
+  public void setThenState(List l) {
+  	thenStates = l;
+  }
+  public void removeThenState(Sentence t) {
+  	thenStates.remove(t);
+  }
+  public List getThenStates() {
+    return thenStates;
+  }
+  public void addThenConjecture(Sentence t) {
+    if (thenConjectures==null) thenConjectures = new ArrayList();
+    thenConjectures.add(t);
+  }
+  public void setThenConjecture(List l) {
+  	thenConjectures = l;
+  }
+  public void removeThenConjecture(Sentence t) {
+  	thenConjectures.remove(t);
+  }
+  public List getThenConjectures() {
+    return thenConjectures;
+  }
+
+  /**
+   * Sentence.object is the message
+   * @param t
+   */
+  public void addThenSay(String t) {
+    if (thenSay==null) thenSay = new ArrayList();
+    thenSay.add(t);
+  }
+  public void setThenSay(List l) {
+  	thenSay = l;
+  }
+
+  public void removeThenSay(String t) {
+  	thenSay.remove(t);
+  }
+  /**
+   * List of <code>String</code>s
+   * @return
+   */
+  public List getThenSays() {
+    return thenSay;
+  }
+  /**
+   * A <code>thenCreate</code>
+   * takes only the <code>String</code> value
+   * which will be the name of a new binding.
+   * e.g. (legacy tsc notation)
+   *    thenCreate	( *act.c.t-cell )
+   * is followed by
+   *    thenActors	( ( act.c.t-cell ( *act.c.t-cell ) true ) )
+   * @param t
+   */
+  public void addThenCreates(Sentence t) {
+    if (thenCreates==null) thenCreates = new ArrayList();
+    thenCreates.add(t);
+  }
+  public void setThenCreates(List l) {
+  	thenCreates = l;
+  }
+  public void removeThenCreate(Sentence t) {
+  	thenCreates.remove(t);
+  }
+  /**
+   * List of <code>Sentence</code>s
+   * where Sentence.object is the value
+   * @return
+   */
+  public List getThenCreates() {
+    return thenCreates;
+  }
+  public String toXML() {
+    StringBuffer buf = new StringBuffer("<rule id=\""+id+"\">\n");
+    if (!name.equals(""))
+      buf.append("  <name>"+name+"</name>\n");
+    if (!comment.equals(""))
+      buf.append("  <comment>"+comment+"</comment>\n");
+    if (!instanceOf.equals(""))
+      buf.append("  <slot name=\"instanceOf\"><value>"+instanceOf+"</value></slot>\n");
+    int len;
+    if (subOf != null) {
+      len = subOf.size();
+      buf.append("  <slot name=\"subOf\"><value>\n  ");
+      for (int i=0;i<len;i++)
+        buf.append((String)subOf.get(i)+" ");
+      buf.append("\n  </value></slot>\n");
+    }
+    if (ifActors != null) {
+      len = ifActors.size();
+      buf.append("  <slot name=\"ifActors\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)ifActors.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (ifNotActors != null) {
+      len = ifNotActors.size();
+      buf.append("  <slot name=\"ifNotActors\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)ifNotActors.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (ifRelations != null) {
+      len = ifRelations.size();
+      buf.append("  <slot name=\"ifRelations\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)ifRelations.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (ifNotRelations != null) {
+      len = ifNotRelations.size();
+      buf.append("  <slot name=\"ifNotRelations\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)ifNotRelations.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (ifStates != null) {
+      len = ifStates.size();
+      buf.append("  <slot name=\"ifStates\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)ifStates.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (ifNotStates != null) {
+      len = ifNotStates.size();
+      buf.append("  <slot name=\"ifNotStates\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)ifNotStates.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (thenCreates != null) {
+      len = thenCreates.size();
+      buf.append("  <slot name=\"thenCreate\">\n");
+      for (int i=0;i<len;i++)
+        buf.append("    "+((Sentence)thenCreates.get(i)).object+" ");
+      buf.append("\n  </slot>\n");
+    }
+    if (thenActors != null) {
+      len = thenActors.size();
+      buf.append("  <slot name=\"thenActors\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)thenActors.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (thenRelations != null) {
+      len = thenRelations.size();
+      buf.append("  <slot name=\"thenRelations\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)thenRelations.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (thenStates != null) {
+      len = thenStates.size();
+      buf.append("  <slot name=\"thenStates\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)thenStates.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (thenSay != null) {
+      buf.append("  <slot name=\"thenSay\"><value>\n");
+      buf.append("    "+((String)thenSay.get(0))+"\n");
+      buf.append("  </value></slot>\n");
+    }
+    if (thenConjectures != null) {
+      len = thenConjectures.size();
+      buf.append("  <slot name=\"thenConjectures\">\n");
+      for (int i=0;i<len;i++)
+        buf.append(((Sentence)thenConjectures.get(i)).toXML());
+      buf.append("  </slot>\n");
+    }
+    if (isTerminate)
+      buf.append("  <isTerminate/>\n");
+    buf.append("</rule>\n");
+    return buf.toString();
+  }
+
+
+}

@@ -1,0 +1,1 @@
+{	more.crystal.stuff	950301	jp2:	first cut	950414	jp2:	changed crystal.system to crystal.sys	source:	Physical Properties of Crystals -- J.F. Nye}c:	ISOTROPIC.CRYSTAL	synonym	anaxial.crystal	sub.of	crystal.sysc:	UNIAXIAL.CRYSTAL	sub.of	crystal.sysc:	BIAXIAL.CRYSTAL	sub.of	crystal.sys

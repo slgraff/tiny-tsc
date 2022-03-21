@@ -1,0 +1,1 @@
+cr .( Booting in the biology stuff...)xload Bio.Primitive.Txload Cell.Txload Histo.Txload Immune.Txload ImmuneCAMS.rbtxload ImmuneCAMS1.expcr ." Experiment Loaded..."  num.frames .

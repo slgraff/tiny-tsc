@@ -1,0 +1,1 @@
+java -classpath .\classes;.\lib\jdbm-0.12.jar;.\lib\log4j-1.2.8.jar;.\lib\xpp3-1.1.3.4-RC3.jar org.nex.tinytsc.Main

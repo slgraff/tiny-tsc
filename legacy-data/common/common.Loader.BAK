@@ -1,0 +1,10 @@
+\ Common loader
+
+xload BIO.PRIMITIVE.T 
+xload cell.T
+xload Other.cell.Types.T
+xload T-cells.T
+xload Immune.T
+xload Histo.T
+xload Sex.Hormone.bonds.T
+

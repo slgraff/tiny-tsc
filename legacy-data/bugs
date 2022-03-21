@@ -1,0 +1,17 @@
+c: digests
+  inverseSlot inverseSlot 
+  subOf relation 
+
+
+need to deal with slotnames which get all lowercased in c:
+
+c: c.t-cell.activation.1
+  instanceOf rule
+  level basic 
+  ifRelates (presents(*i.macrophage *v.antigen)
+  myCreator rbt 
+  ifActors (v.antigen(*v.antigen)(c.t-cell(*c.t-cell)(virus(*virus)(i.macrophage(*i.macrophage)((*mhc1()
+  thenActors (act.c.t-cell(*act.c.t-cell)
+  context human.immunology 
+  ifNotActors (act.c.t-cell(*act.c.t-cell)
+  subOf phys.process 

@@ -1,0 +1,1194 @@
+c: endoplasmic.reticulum
+  hasSubs smooth.er rough.er 
+  myCreator jp2 
+  attachedTo bound.ribosome 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: functionOf
+  instanceOf slot
+  inverseSlot hasFunction 
+  instanceOf slot 
+
+c: 12-O-tetradecanoylphorbol.13-acetate
+  synonym tpa 
+  myCreator rbt 
+  subOf regulatory.substance 
+
+c: slot
+  hasSubs taxonomicSlot partonomicSlot 
+  hasInstances functionOf inverseSlot myCreator myRef attachedTo hasFunction synonym 
+  subOf relation 
+
+c: phospholipid
+  myCreator jp2 
+  myRef 4 
+  partOf cell.membrane 
+  subOf thing 
+  hasParts hydrophylic.end hydrophobic.end 
+
+c: gene
+  hasSubs proviral.gene protooncogene 
+  myCreator rbt 
+  partOf chromosome 
+  subOf thing 
+  hasParts promoter.site c-fos.promoter.site dna deoxyribonucleic.acid enhancer.site 
+
+c: p100
+  myCreator rbt 
+  subOf group.i.rel.precursor 
+
+c: adressin
+  hasSubs vascular.adressin 
+  myCreator rbt 
+  subOf adhesion.protein 
+
+c: gland
+  myCreator rbt 
+  subOf cell.aggregation 
+
+c: synthesizes
+  subOf relation 
+
+c: stuff
+  hasSubs ion tissue regulatory.molecule ros receptor atom reactive.oxygen.species substance h2o2.concentration nucleic.acid gene.regulator pollen ribonucleic.acid element antioxidant dna cytosol dfo.concentration rna deoxyribonucleic.acid compound protein iron.chelation.agent 
+  subOf root 
+
+c: smooth.er
+  myCreator jp2 
+  myRef 6 
+  subOf endoplasmic.reticulum 
+
+c: moderate
+  myCreator eai 
+  subOf idea 
+
+c: phosphorylated
+  subOf idea 
+
+c: h2o2
+  synonym hydrogen.peroxide 
+  myCreator eai 
+  subOf reactive.oxygen.species 
+
+c: influenza.virus
+  synonym influenza 
+  myCreator rbt 
+  subOf virus 
+
+c: species
+  subOf genus 
+
+c: promoter.site
+  hasSubs c-fos.promoter.site tre tpa.response.element 
+  myCreator rbt 
+  partOf gene 
+  subOf thing 
+  hasParts promoter.kB-binding.site 
+
+c: cjun
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: digestedBy
+  inverseSlot digests 
+  subOf relation 
+
+c: protein-tyrosine.kinase
+  myCreator rbt 
+  subOf enzyme 
+
+c: ion
+  hasSubs na+ k+ potassium.ion sodium.ion calcium.ion ca2+ 
+  myCreator rbt 
+  subOf stuff 
+
+c: biosphere
+  subOf thing 
+  hasParts ecosystem 
+
+c: activator.protein-1
+  synonym ap-1 
+  hasSubs fos-jun jun-jun 
+  myCreator rbt 
+  subOf transcription.factor 
+
+c: tpa
+  synonym 12-O-tetradecanoylphorbol.13-acetate 
+  myCreator rbt 
+  subOf regulatory.substance 
+
+c: tissue
+  partOf organ 
+  subOf stuff 
+  hasParts cell 
+
+c: cytoskeleton
+  hasSubs microtubules microfilament 
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: degraded
+  subOf idea 
+
+c: inverseSlot
+  instanceOf slot
+
+c: proteoglycan
+  subOf glycoconjugate 
+
+c: presentedBy
+  inverseSlot presents 
+  subOf relation 
+
+c: fosb
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: regulatory.molecule
+  myCreator rbt 
+  myRef 9 
+  subOf stuff 
+
+c: population
+  partOf ecosystem 
+  subOf thing 
+
+c: na+
+  myCreator rbt 
+  subOf ion 
+
+c: relation
+  hasSubs slot synthesizes digestedBy presentedBy bindsTo reduces expresses digests eliminates translocatedTo excretes metabolizes phosphorylates presents metabolizedBy oxidizes ingests 
+  subOf thing 
+
+c: instanceOf
+  instanceOf taxonomicSlot
+  inverseSlot hasInstances 
+  instanceOf taxonomicSlot 
+
+c: organ
+  partOf multicellular.organism 
+  subOf thing 
+  hasParts tissue cell 
+
+c: ros
+  synonym reactive.oxygen.species 
+  myCreator rbt 
+  subOf stuff 
+
+c: hasParts
+  instanceOf partonomicSlot
+  inverseSlot partOf 
+  instanceOf partonomicSlot 
+
+c: rhinovirus
+  synonym cold.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: p65-p105
+  myCreator rbt 
+  subOf rel.heterodimer 
+
+c: rough.er
+  myCreator jp2 
+  myRef 6 
+  subOf endoplasmic.reticulum 
+
+c: ikb-p50-p65
+  myCreator rbt 
+  subOf rel.protein.complex 
+
+c: regulatory.substance
+  hasSubs 12-O-tetradecanoylphorbol.13-acetate tpa tcf regulatory.peptide srf terniary.complex.factor srf.dimer serum.response.factor 
+  myCreator rbt 
+  myRef 9 
+  subOf substance 
+
+c: myCreator
+  instanceOf slot
+
+c: nervous.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: tcf
+  synonym terniary.complex.factor 
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: taxonomicSlot
+  hasInstances hasInstances instanceOf hasSubs subOf 
+  subOf slot 
+
+c: mitochondrion
+  synonym mitrocondria 
+  myCreator jp2 
+  myRef 6 
+  subOf microbody 
+
+c: sodium
+  myCreator rbt 
+  subOf element 
+
+c: bio.process
+  synonym biological.process 
+  myCreator rbt 
+  subOf phys.process 
+
+c: receptor
+  hasSubs membrane.receptor 
+  myCreator rbt 
+  subOf stuff peptide 
+
+c: tcf.binding.site
+  myCreator rbt 
+  subOf c-fos.promoter.site 
+
+c: nitrogen
+  myCreator rbt 
+  subOf element 
+
+c: activated
+  subOf idea 
+
+c: bindsTo
+  subOf relation 
+
+c: group.i.rel.precursor
+  hasSubs p100 p105 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: polysome
+  synonym polyribosome 
+
+c: vertebrate
+  hasSubs mammal 
+  myCreator rbt 
+  subOf multicellular.organism 
+
+c: organism
+  hasSubs animal bacterium fungus multicellular.organism virus viroid plant 
+  subOf thing 
+
+c: potassium
+  myCreator rbt 
+  subOf element 
+
+c: deferoxamine
+  synonym dfo 
+  myCreator eai 
+  subOf iron.chelation.agent 
+
+c: animal
+  myCreator rbt 
+  subOf organism 
+
+c: nitric.oxide
+  myCreator eai 
+  subOf reactive.oxygen.species 
+
+c: regulatory.peptide
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: produced
+  subOf idea 
+
+c: circulatory.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: fos-jun
+  myCreator rbt 
+  subOf activator.protein-1 
+
+c: group.i.rel.protein
+  hasSubs p52 p50 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: atom
+  partOf compound 
+  subOf stuff 
+
+c: formed
+  subOf idea 
+
+c: group.ii.rel.protein
+  hasSubs rel p65 relb 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: primate
+  hasSubs human.being human homo.sapiens 
+  myCreator rbt 
+  subOf mammal 
+
+c: chromosome
+  myCreator rbt 
+  partOf nucleus 
+  subOf organelle 
+  hasParts gene 
+
+c: reactive.oxygen.species
+  synonym ros 
+  hasSubs h2o2 nitric.oxide hydrogen.peroxide 
+  myCreator rbt 
+  subOf stuff 
+
+c: bacterium
+  hasSubs bacillus coccus 
+  myCreator rbt 
+  subOf organism 
+
+c: thing
+  hasSubs phospholipid gene promoter.site biosphere cytoskeleton population relation organ nervous.system organism circulatory.system polyribosome ecosystem lysosome nucleolus vacuole kingdom glyxoxysome nuclear.envelope cell.compartment nuclear.compartment cell.fragment vesicle cell cytoplasmic.compartment lumen organelle cell.membrane respiratory.system cell.aggregation promoter.kB-binding.site enhancer.site digestive.system 
+  subOf root 
+
+c: rat
+  myCreator rbt 
+  subOf rodent 
+
+c: rel.homodimer
+  myCreator rbt 
+  subOf rel.protein.complex 
+
+c: bacillus
+  synonym rod 
+  myCreator rbt 
+  subOf bacterium 
+
+c: k+
+  myCreator rbt 
+  subOf ion 
+
+c: c-fos.promoter.site
+  hasSubs tcf.binding.site serum.response.element sre 
+  myCreator rbt 
+  partOf gene 
+  subOf promoter.site 
+
+c: polyribosome
+  synonym polysome 
+  myCreator jp2 
+  attachedTo mrna 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: class
+  hasSubs order 
+  subOf phylum 
+
+c: human.being
+  level basic 
+  synonym human 
+  hasSubs human.subject 
+  myCreator rbt 
+  subOf primate 
+
+c: ecosystem
+  partOf biosphere 
+  subOf thing 
+  hasParts population 
+
+c: low
+  myCreator eai 
+  subOf idea 
+
+c: reduces
+  subOf relation 
+
+c: herpesvirus
+  synonym herpes.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: vjun
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: genus	subOf		family
+
+c: adhesion.protein
+  hasSubs adressin integrin selectin 
+  myCreator rbt 
+  subOf protein membrane.receptor 
+
+c: lysosome
+  myCreator jp2 
+  myRef 6 
+  partOf endo 
+  subOf thing 
+
+c: htlv
+  synonym human 
+  myCreator rbt 
+  subOf virus 
+
+c: lipid
+  subOf compound 
+
+c: biological.process
+  synonym bio.process 
+  myCreator rbt 
+  subOf phys.process 
+
+c: substance
+  hasSubs regulatory.substance 
+  myCreator rbt 
+  subOf stuff 
+
+c: fungus
+  myCreator rbt 
+  subOf organism 
+
+c: nucleolus
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: map.kinase
+  synonym mapk 
+  myCreator eai 
+  subOf protein.kinase 
+
+c: expresses
+  subOf relation 
+
+c: carbohydrate
+  hasSubs sugar 
+  subOf compound 
+
+c: microbody
+  hasSubs mitochondrion peroxisome glyxoxysome 
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: mitrocondria
+  synonym mitochondrion 
+
+c: human
+  level basic 
+  synonym htlv human.being 
+  myCreator rbt jp2 
+  subOf virus primate 
+
+c: tre
+  synonym tpa.response.element 
+  myCreator rbt 
+  subOf promoter.site 
+
+c: rel.protein
+  hasSubs group.i.rel.precursor group.i.rel.protein group.ii.rel.protein nf-kb rel.protein.complex group.ii.rel.precursor nuclear.factor-kB 
+  myCreator rbt 
+  subOf transcription.factor protein 
+
+c: vacuole
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: herpes.virus
+  synonym herpesvirus 
+
+c: bio.cell
+  level basic 
+  synonym biological.cell 
+  hasSubs eukaryotic.cell prokaryotic.cell 
+  myCreator jp2 
+  subOf cell 
+  hasParts cytoskeleton polyribosome nucleolus cytosol lumen organelle cell.membrane ribosome endomembrane 
+
+c: tpa.response.element
+  synonym tre 
+  myCreator rbt 
+  subOf promoter.site 
+
+c: bacteriophage
+  synonym phage 
+  myCreator rbt 
+  subOf virus 
+
+c: polypeptide
+  synonym peptide 
+  myCreator rbt 
+
+c: chloride
+  myCreator rbt 
+  subOf element 
+
+c: potassium.ion
+  myCreator rbt 
+  subOf ion 
+
+c: partOf
+  instanceOf partonomicSlot
+  inverseSlot hasParts 
+  instanceOf partonomicSlot 
+
+c: c-jun
+  myCreator rbt 
+  subOf protooncogene 
+
+c: kingdom
+  hasSubs phylum 
+  subOf thing 
+
+c: hasSubs
+  instanceOf taxonomicSlot
+  inverseSlot subOf 
+
+c: cold.virus
+  synonym rhinovirus 
+
+c: carbon
+  myCreator rbt 
+  subOf element 
+
+c: ap-1
+  synonym activator.protein-1 
+  myCreator rbt 
+  subOf transcription.factor 
+
+c: idea
+  hasSubs moderate phosphorylated degraded activated produced formed low hydrophylic.end unbound high binding hydrophobic.end 
+  subOf root 
+
+c: myRef
+  instanceOf slot
+
+c: root
+  hasSubs stuff thing idea 
+
+c: peroxisome
+  myCreator jp2 
+  myRef 6 
+  subOf microbody 
+
+c: rod
+  synonym bacillus 
+
+c: pneumococcus
+  myCreator rbt 
+  subOf coccus 
+
+c: integrin
+  myCreator rbt 
+  subOf adhesion.protein 
+
+c: srf
+  synonym serum.response.factor 
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: sodium.ion
+  myCreator rbt 
+  subOf ion 
+
+c: glyxoxysome
+  myCreator jp2 
+  myRef 6 
+  subOf microbody thing 
+
+c: digests
+  inverseSlot digestedBy 
+  subOf relation 
+
+c: h2o2.concentration
+  myCreator eai 
+  subOf stuff 
+
+c: nucleic.acid
+  myCreator rbt 
+  partOf ribonucleic.acid deoxyribonucleic.acid rna dna 
+  subOf stuff 
+
+c: gene.regulator
+  hasSubs transcription.factor protooncogene.product 
+  myCreator rbt 
+  subOf stuff 
+
+c: attachedTo
+  instanceOf slot
+  inverseSlot attachedTo 
+
+c: coccus
+  hasSubs pneumococcus 
+  myCreator rbt 
+  subOf bacterium 
+
+c: pollen
+  partOf flowering plant 
+  subOf stuff 
+
+c: n.acetyl-l-cysteine
+  myCreator eai 
+  subOf antioxidant 
+
+c: eliminates
+  subOf relation 
+
+c: microtubules
+  myCreator jp2 
+  myRef 6 
+  subOf cytoskeleton 
+
+c: hydrophylic.end
+  myCreator jp2 
+  myRef 4 
+  partOf phospholipid 
+  subOf idea 
+
+c: order
+  hasSubs family 
+  subOf class 
+
+c: proviral.gene
+  myCreator eai 
+  subOf gene 
+
+c: ribonucleic.acid
+  synonym rna 
+  myCreator rbt 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: element
+  hasSubs sodium nitrogen potassium chloride carbon oxygen hydrogen sulfur 
+  partOf compound 
+  subOf stuff 
+
+c: translocatedTo
+  subOf relation 
+
+c: jun-jun
+  myCreator rbt 
+  subOf activator.protein-1 
+
+c: nuclear.envelope
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: multicellular.organism
+  hasSubs vertebrate 
+  subOf organism 
+  hasParts organ nervous.system circulatory.system respiratory.system digestive.system 
+
+c: bound.ribosome
+  myCreator jp2 
+  attachedTo endoplasmic.reticulum 
+  myRef 6 
+  subOf ribosome 
+
+c: serum.response.element
+  synonym sre 
+  myCreator rbt 
+  subOf c-fos.promoter.site 
+
+c: antioxidant
+  hasSubs n.acetyl-l-cysteine 
+  myCreator eai 
+  subOf stuff 
+
+c: rel
+  myCreator rbt 
+  subOf group.ii.rel.protein 
+
+c: transcription.factor
+  hasSubs activator.protein-1 rel.protein ap-1 
+  myCreator rbt 
+  subOf gene.regulator 
+
+c: dna
+  synonym deoxyribonucleic.acid 
+  myCreator rbt 
+  partOf gene 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: nf-kb
+  synonym nuclear.factor-kB 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: calcium.ion
+  myCreator rbt 
+  subOf ion 
+
+c: cell.compartment
+  partOf cell 
+  subOf thing 
+
+c: oxygen
+  myCreator rbt 
+  subOf element 
+
+c: inhibitor.protein
+  hasSubs inhibitor.protein.complex ikb 
+  myCreator rbt 
+  subOf protein 
+
+c: protooncogene
+  hasSubs c-jun c-fos 
+  myCreator rbt 
+  subOf gene 
+
+c: enzyme
+  hasSubs protein-tyrosine.kinase protein.kinase protein.kinase.C 
+  myCreator rbt 
+  subOf peptide 
+
+c: cytosol
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf stuff 
+
+c: unbound
+  subOf idea 
+
+c: nuclear.compartment
+  myCreator rbt 
+  subOf thing 
+
+c: virus
+  hasSubs influenza.virus rhinovirus herpesvirus htlv human bacteriophage human.immunodeficiency.virus hiv influenza 
+  myCreator rbt 
+  subOf organism 
+
+c: hasFunction
+  instanceOf slot
+  inverseSlot functionOf 
+
+c: dfo.concentration
+  myCreator eai 
+  subOf stuff 
+
+c: rna
+  synonym ribonucleic.acid 
+  myCreator rbt 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: viroid
+  myCreator rbt 
+  subOf organism 
+
+c: cell.fragment
+  myCreator rbt 
+  subOf thing 
+
+c: hydrogen
+  myCreator rbt 
+  subOf element 
+
+c: human.immunodeficiency.virus
+  synonym hiv 
+  myCreator rbt 
+  subOf virus 
+
+c: vesicle
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: glycoprotein
+  myCreator rbt 
+  subOf glycoconjugate 
+
+c: vascular.adressin
+  myCreator rbt 
+  subOf adressin 
+
+c: high
+  myCreator eai 
+  subOf idea 
+
+c: p65
+  myCreator rbt 
+  subOf group.ii.rel.protein 
+
+c: relb
+  myCreator rbt 
+  subOf group.ii.rel.protein 
+
+c: rel.heterodimer
+  hasSubs p65-p105 p50-p65 
+  myCreator rbt 
+  subOf rel.protein.complex 
+
+c: flowering.plant
+  myCreator rbt 
+  subOf plant 
+
+c: cell
+  level basic 
+  hasSubs bio.cell biological.cell 
+  myCreator rbt jp2 
+  partOf tissue organ cell.aggregation 
+  subOf thing 
+  hasParts cell.compartment 
+
+c: protooncogene.product
+  hasSubs cjun fosb vjun cfos vfos junb 
+  myCreator rbt 
+  subOf protein gene.regulator 
+
+c: microfilament
+  myCreator jp2 
+  myRef 6 
+  subOf cytoskeleton 
+
+c: cytoplasmic.compartment
+  myCreator rbt 
+  subOf thing 
+
+c: inhibitor.protein.complex
+  myCreator rbt 
+  subOf inhibitor.protein 
+
+c: rel.protein.complex
+  hasSubs ikb-p50-p65 rel.homodimer rel.heterodimer 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: rodent
+  hasSubs rat 
+  myCreator rbt 
+  subOf mammal 
+
+c: sre
+  synonym serum.response.element 
+  myCreator rbt 
+  subOf c-fos.promoter.site 
+
+c: deoxyribonucleic.acid
+  synonym dna 
+  myCreator rbt 
+  partOf gene 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: family
+  subOf order 
+
+c: excretes
+  myCreator jp2 rbt 
+  subOf relation 
+
+c: metabolizes
+  inverseSlot metabolizedBy 
+  subOf relation 
+
+c: ca2+
+  myCreator rbt 
+  subOf ion 
+
+c: terniary.complex.factor
+  synonym tcf 
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: selectin
+  myCreator rbt 
+  subOf adhesion.protein 
+
+c: p50-p65
+  myCreator rbt 
+  subOf rel.heterodimer 
+
+c: golgi.complex
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: ikb
+  myCreator rbt 
+  subOf inhibitor.protein 
+
+c: phosphorylates
+  subOf relation 
+
+c: p52
+  myCreator rbt 
+  partOf p110 
+  subOf group.i.rel.protein 
+
+c: presents
+  inverseSlot presentedBy 
+  subOf relation 
+
+c: glycoconjugate
+  hasSubs proteoglycan glycoprotein 
+  myCreator rbt 
+  subOf protein 
+
+c: compound
+  hasSubs lipid carbohydrate peptide 
+  subOf stuff 
+  hasParts atom element 
+
+c: p50
+  myCreator rbt 
+  partOf p105 
+  subOf group.i.rel.protein 
+
+c: hasInstances
+  instanceOf taxonomicSlot
+  inverseSlot instanceOf 
+  instanceOf taxonomicSlot 
+
+c: free.ribosome
+  myCreator jp2 
+  myRef 6 
+  subOf ribosome 
+  suspended.in cytosol 
+
+c: protein.kinase
+  hasSubs map.kinase mapk 
+  myCreator rbt 
+  subOf enzyme 
+
+c: dfo
+  synonym deferoxamine 
+  myCreator eai 
+  subOf iron.chelation.agent 
+
+c: peptide
+  synonym polypeptide 
+  hasSubs tcf receptor regulatory.peptide srf enzyme terniary.complex.factor protein srf.dimer serum.response.factor 
+  subOf compound 
+
+c: lumen
+  myCreator jp2 
+  enclosed.by endoplasmic.reticulum 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: synonym
+  instanceOf slot
+  inverseSlot synonym 
+
+c: protein.kinase.C
+  myCreator rbt 
+  subOf enzyme 
+
+c: organelle
+  hasSubs endoplasmic.reticulum chromosome microbody golgi.complex ribosome 
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: protein
+  hasSubs adhesion.protein rel.protein inhibitor.protein protooncogene.product glycoconjugate 
+  subOf peptide stuff 
+
+c: mapk
+  synonym map.kinase 
+  myCreator eai 
+  subOf protein.kinase 
+
+c: cell.membrane
+  hasSubs plasma.membrane endomembrane 
+  myCreator rbt jp2 
+  myRef 4 
+  partOf bio.cell 
+  subOf thing 
+  hasParts phospholipid 
+
+c: partonomicSlot
+  hasInstances hasParts partOf 
+  subOf slot 
+
+c: binding
+  subOf idea 
+
+c: eukaryotic.cell
+  myCreator jp2 rbt 
+  myRef 6 
+  subOf bio.cell 
+
+c: plant
+  hasSubs flowering.plant 
+  myCreator rbt 
+  subOf organism 
+  hasParts pollen 
+
+c: respiratory.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: subOf
+  instanceOf taxonomicSlot
+  inverseSlot hasSubs 
+
+c: cell.aggregation
+  hasSubs gland 
+  myCreator rbt 
+  subOf thing 
+  hasParts cell 
+
+c: srf.dimer
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: plasma.membrane
+  myCreator jp2 
+  myRef 6 
+  subOf cell.membrane 
+
+c: cfos
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: prokaryotic.cell
+  myCreator rbt 
+  myRef 6 
+  subOf bio.cell 
+
+c: phylum
+  hasSubs class 
+  subOf kingdom 
+
+c: homo.sapiens
+  level basic 
+  myCreator jp2 rbt 
+  subOf primate 
+
+c: ribosome
+  hasSubs bound.ribosome free.ribosome 
+  myCreator jp2 rbt 
+  myRef 6 
+  partOf bio.cell 
+  made.by nucleolus 
+  subOf organelle 
+
+c: serum.response.factor
+  synonym srf 
+  myCreator rb 
+  subOf peptide regulatory.substance 
+
+c: membrane.receptor
+  hasSubs adhesion.protein 
+  myCreator rbt 
+  subOf receptor 
+
+c: vfos
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: phage
+  synonym bacteriophage 
+
+c: promoter.kB-binding.site
+  myCreator rbt 
+  partOf promoter.site 
+  subOf thing 
+
+c: metabolizedBy
+  inverseSlot metabolizes 
+  subOf relation 
+
+c: c-fos
+  myCreator rbt 
+  subOf protooncogene 
+
+c: endomembrane
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  comment "rbt: i think this is a pretty useless concept, at least semantically superfluous" 
+  subOf cell.membrane 
+  hasParts endoplasmic.reticulum microbody vacuole nuclear.envelope vesicle golgi.complex 
+
+c: oxidizes
+  subOf relation 
+
+c: enhancer.site
+  myCreator rbt 
+  partOf gene 
+  subOf thing 
+
+c: mammal
+  hasSubs primate rodent 
+  myCreator rbt 
+  subOf vertebrate 
+
+c: hiv
+  synonym human.immunodeficiency.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: iron.chelation.agent
+  hasSubs deferoxamine dfo 
+  myCreator eai 
+  subOf stuff 
+
+c: ingests
+  level basic 
+  myCreator rbt 
+  subOf relation 
+
+c: p105
+  myCreator rbt 
+  subOf group.i.rel.precursor 
+  hasParts p50 
+
+c: hydrogen.peroxide
+  synonym h2o2 
+  myCreator rbt 
+  subOf reactive.oxygen.species 
+
+c: junb
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: group.ii.rel.precursor
+  myCreator rbt 
+  subOf rel.protein 
+
+c: nuclear.factor-kB
+  synonym nf-kb 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: digestive.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: sulfur
+  myCreator rbt 
+  subOf element 
+
+c: hydrophobic.end
+  myCreator jp2 
+  myRef 4 
+  partOf phospholipid 
+  subOf idea 
+
+c: influenza
+  synonym influenza.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: human.subject
+  level basic 
+  myCreator rbt 
+  subOf human.being 

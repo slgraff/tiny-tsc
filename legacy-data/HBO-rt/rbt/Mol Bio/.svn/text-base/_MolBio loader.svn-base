@@ -1,0 +1,1 @@
+{	*MolBio loader		950419	jp2:	first cut		Must load on top of Materials.T	}xload	BioRelations.Txload	MolBio1.Txload	MolBio2.T

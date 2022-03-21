@@ -1,0 +1,4062 @@
+C:\j2sdk1.4.2_04\bin\javaw -classpath "C:\JBuilder9\projects\tinytsc\classes;C:\JBuilder9\projects\tinytsc\lib\jdbm-0.12.jar;C:\JBuilder9\projects\tinytsc\lib\xpp3-1.1.3.4-RC3.jar;C:\JBuilder9\projects\tinytsc\lib\log4j-1.2.8.jar;C:\JBuilder9\lib\jbcl.jar;C:\JBuilder9\lib\dx.jar;C:\JBuilder9\lib\beandt.jar;C:\j2sdk1.4.2_04\demo\jfc\Java2D\Java2Demo.jar;C:\j2sdk1.4.2_04\demo\plugin\jfc\Java2D\Java2Demo.jar;C:\j2sdk1.4.2_04\docs\guide\imf\spi-sample\CityIM.jar;C:\j2sdk1.4.2_04\jre\javaws\javaws.jar;C:\j2sdk1.4.2_04\jre\lib\charsets.jar;C:\j2sdk1.4.2_04\jre\lib\ext\dnsns.jar;C:\j2sdk1.4.2_04\jre\lib\ext\ldapsec.jar;C:\j2sdk1.4.2_04\jre\lib\ext\localedata.jar;C:\j2sdk1.4.2_04\jre\lib\ext\sunjce_provider.jar;C:\j2sdk1.4.2_04\jre\lib\im\indicim.jar;C:\j2sdk1.4.2_04\jre\lib\im\thaiim.jar;C:\j2sdk1.4.2_04\jre\lib\jce.jar;C:\j2sdk1.4.2_04\jre\lib\jsse.jar;C:\j2sdk1.4.2_04\jre\lib\plugin.jar;C:\j2sdk1.4.2_04\jre\lib\rt.jar;C:\j2sdk1.4.2_04\jre\lib\sunrsasign.jar;C:\j2sdk1.4.2_04\lib\dt.jar;C:\j2sdk1.4.2_04\lib\htmlconverter.jar;C:\j2sdk1.4.2_04\lib\tools.jar"  org.nex.tinytsc.Main C:\JBuilder9\projects\tinytsc\tsc-props.xml
+Start document
+Start tag properties
+Start tag parameter
+End tag parameter // 
+Start tag parameter
+End tag parameter // 
+Start tag parameter
+End tag parameter // 
+Start tag parameter
+End tag parameter // 
+Start tag list
+Start tag parameter
+End tag parameter // 
+Start tag parameter
+End tag parameter // 
+End tag list // 
+End tag properties // 
+log4j:ERROR Could not find value for key log4j.appender.A1
+log4j:ERROR Could not instantiate appender named "A1".
+log4j:ERROR Could not find value for key log4j.appender.A3
+log4j:ERROR Could not instantiate appender named "A3".
+Concept exists
+Rule exists
+Episode exists
+Task exists
+Model exists
+Loading from directory: C:\JBuilder9\projects\tinytsc\legacy\test\
+Loader got: \ test.Loader
+Loader got: 
+Loader got: xload Upper.T
+Parsing kb: Upper.T
+ParseOtherSlot: 
+Got Concept: root
+ParseOtherSlot: 
+Got Concept: thing
+ParseOtherSlot: subOf root
+ParseOtherSlot: 
+Got Concept: stuff
+ParseOtherSlot: subOf root
+ParseOtherSlot: 
+Got Concept: idea
+ParseOtherSlot: subOf root
+ParseOtherSlot: 
+Got Concept: relation
+ParseOtherSlot: subOf thing
+ParseOtherSlot: 
+Got Concept: slot
+ParseOtherSlot: subOf relation
+ParseOtherSlot: 
+Got Concept: taxonomicSlot
+ParseOtherSlot: subOf slot
+ParseOtherSlot: 
+Got Concept: subOf
+Parse instanceOf:  taxonomicSlot
+ParseOtherSlot: 
+Got Concept: hasSubs
+Parse instanceOf:  taxonomicSlot
+ParseOtherSlot: inverseSlot	subOf
+ParseOtherSlot: 
+Got Concept: instanceOf
+Parse instanceOf: 	taxonomicSlot
+ParseOtherSlot: 
+Got Concept: hasInstances
+Parse instanceOf:  taxonomicSlot
+ParseOtherSlot: inverseSlot	instanceOf
+ParseOtherSlot: 
+Got Concept: inverseSlot
+Parse instanceOf: 	slot
+ParseOtherSlot: 
+Got Concept: synonym
+Parse instanceOf: 	slot
+ParseOtherSlot: inverseSlot	synonym
+ParseOtherSlot: 
+Got Concept: myRef
+Parse instanceOf: 	slot
+ParseOtherSlot: 
+Got Concept: myCreator
+Parse instanceOf: 	slot
+ParseOtherSlot: 
+Got Concept: partonomicSlot
+ParseOtherSlot: subOf		slot
+ParseOtherSlot: 
+Got Concept: partOf
+Parse instanceOf: 	partonomicSlot
+ParseOtherSlot: 
+Got Concept: hasParts
+Parse instanceOf: 	partonomicSlot
+ParseOtherSlot: inverseSlot	partOf
+ParseOtherSlot: 
+Got Concept: attachedTo
+ParseOtherSlot: inverseSlot	attachedTo
+Parse instanceOf: 	slot
+ParseOtherSlot: 
+Got Concept: functionOf
+Parse instanceOf: 	slot
+ParseOtherSlot: 
+Got Concept: hasFunction
+Parse instanceOf: 	slot
+ParseOtherSlot: inverseSlot	functionOf
+Loader got: xload BIO.PRIMITIVE.T
+Parsing kb: BIO.PRIMITIVE.T
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: biosphere
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: multicellular.organism
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: ecosystem
+ParseOtherSlot: partOf		biosphere
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: population
+ParseOtherSlot: partOf		ecosystem
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: biological.process
+ParseOtherSlot: subOf		phys.process
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: bio.process
+ParseOtherSlot: subOf		phys.process
+ParseOtherSlot: synonym		biological.process
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: organ
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: circulatory.system
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: digestive.system
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: respiratory.system
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: nervous.system
+ParseOtherSlot: partOf		multicellular.organism
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: tissue
+ParseOtherSlot: partOf		organ
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: cell.aggregation
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: gland
+ParseOtherSlot: subOf		cell.aggregation
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: cell
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: partOf		tissue organ cell.aggregation
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: biological.cell
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		cell
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: bio.cell
+ParseOtherSlot: level		basic
+ParseOtherSlot: subOf		cell
+ParseOtherSlot: synonym		biological.cell
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: eukaryotic.cell
+ParseOtherSlot: subOf		bio.cell
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: 
+Got Concept: prokaryotic.cell
+ParseOtherSlot: subOf		bio.cell
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: cell.compartment
+ParseOtherSlot: partOf		cell
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: compound
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: atom
+ParseOtherSlot: partOf		compound
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: element
+ParseOtherSlot: partOf		compound
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: ion
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: substance
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: carbon
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: chloride
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: hydrogen
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: nitrogen
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: oxygen
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: potassium
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: sodium
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: sulfur
+ParseOtherSlot: subOf		element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: calcium.ion
+ParseOtherSlot: subOf		ion
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: sodium.ion
+ParseOtherSlot: subOf		ion
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: potassium.ion
+ParseOtherSlot: subOf		ion
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: ca2+
+ParseOtherSlot: subOf		ion
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: na+
+ParseOtherSlot: subOf		ion
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: k+
+ParseOtherSlot: subOf		ion
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: peptide
+ParseOtherSlot: subOf		compound
+ParseOtherSlot: 
+Got Concept: polypeptide
+ParseOtherSlot: synonym		peptide
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: protein
+ParseOtherSlot: subOf		peptide
+ParseOtherSlot: 
+Got Concept: protein
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: lipid
+ParseOtherSlot: subOf		compound
+ParseOtherSlot: 
+Got Concept: carbohydrate
+ParseOtherSlot: subOf		compound
+ParseOtherSlot: 
+Got Concept: sugar
+ParseOtherSlot: subOf		carbohydrate
+ParseOtherSlot: 
+Got Concept: glycoconjugate
+ParseOtherSlot: subOf		protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: glycoprotein
+ParseOtherSlot: subOf		glycoconjugate
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: proteoglycan
+ParseOtherSlot: subOf		glycoconjugate
+ParseOtherSlot: 
+Got Concept: regulatory.molecule
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: myRef		9
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: 
+Got Concept: regulatory.substance
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		substance
+ParseOtherSlot: myRef		9
+ParseOtherSlot: 
+Got Concept: regulatory.peptide
+ParseOtherSlot: subOf		peptide regulatory.substance
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: enzyme
+ParseOtherSlot: subOf		peptide
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: animal
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: plant
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: kingdom
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: phylum
+ParseOtherSlot: subOf		kingdom
+ParseOtherSlot: 
+Got Concept: class
+ParseOtherSlot: subOf		phylum
+ParseOtherSlot: 
+Got Concept: order
+ParseOtherSlot: subOf		class
+ParseOtherSlot: 
+Got Concept: family
+ParseOtherSlot: subOf		order
+ParseOtherSlot: 
+Got Concept: genus	subOf		family
+ParseOtherSlot: 
+Got Concept: species
+ParseOtherSlot: subOf		genus
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: viroid
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: virus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: bacterium
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: fungus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		organism
+ParseOtherSlot: 
+Got Concept: vertebrate
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		multicellular.organism
+ParseOtherSlot: 
+Got Concept: mammal
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		vertebrate
+ParseOtherSlot: 
+Got Concept: rodent
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		mammal
+ParseOtherSlot: 
+Got Concept: primate
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		mammal
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: flowering.plant
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		plant
+ParseOtherSlot: 
+Got Concept: pollen
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: partOf		flowering plant
+ParseOtherSlot: 
+Got Concept: bacteriophage
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		phage
+ParseOtherSlot: 
+Got Concept: herpesvirus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		herpes.virus
+ParseOtherSlot: 
+Got Concept: human.immunodeficiency.virus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		hiv
+ParseOtherSlot: 
+Got Concept: hiv
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		human.immunodeficiency.virus
+ParseOtherSlot: 
+Got Concept: human
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		htlv
+ParseOtherSlot: 
+Got Concept: htlv
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		human
+ParseOtherSlot: 
+Got Concept: influenza.virus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		influenza
+ParseOtherSlot: 
+Got Concept: influenza
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		influenza.virus
+ParseOtherSlot: 
+Got Concept: rhinovirus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		virus
+ParseOtherSlot: synonym		cold.virus
+ParseOtherSlot: 
+Got Concept: coccus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		bacterium
+ParseOtherSlot: 
+Got Concept: bacillus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		bacterium
+ParseOtherSlot: synonym		rod
+ParseOtherSlot: 
+Got Concept: pneumococcus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		coccus
+ParseOtherSlot: 
+Got Concept: rat
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		rodent
+ParseOtherSlot: 
+Got Concept: homo.sapiens
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: subOf		primate
+ParseOtherSlot: 
+Got Concept: human
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: subOf		primate
+ParseOtherSlot: 
+Got Concept: human.being
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		primate
+ParseOtherSlot: synonym		human homo.sapiens
+ParseOtherSlot: 
+Got Concept: human.subject
+ParseOtherSlot: level		basic
+ParseOtherSlot: level		basic
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: subOf		human.being
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Loader got: xload Cell.T
+Parsing kb: Cell.T
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: organelle
+ParseOtherSlot: partOf		bio.cell
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: cell.membrane
+ParseOtherSlot: partOf		bio.cell
+ParseOtherSlot: myCreator	rbt jp2
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: myRef		4
+ParseOtherSlot: 
+Got Concept: cell.fragment
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: endomembrane
+ParseOtherSlot: subOf		cell.membrane
+ParseOtherSlot: partOf		bio.cell
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: comment		"rbt:  i think this is a pretty useless concept, at least semantically superfluous"
+ParseOtherSlot: 
+Got Concept: microbody
+ParseOtherSlot: partOf		endomembrane
+ParseOtherSlot: subOf		organelle
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: plasma.membrane
+ParseOtherSlot: subOf		cell.membrane
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: nucleolus
+ParseOtherSlot: partOf		bio.cell
+ParseOtherSlot: myRef		6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: 
+Got Concept: ribosome
+ParseOtherSlot: partOf			bio.cell
+ParseOtherSlot: made.by			nucleolus
+ParseOtherSlot: myRef			6
+ParseOtherSlot: myCreator		jp2 rbt
+ParseOtherSlot: subOf			organelle
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: receptor
+ParseOtherSlot: subOf			stuff peptide
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+Got Concept: membrane.receptor
+ParseOtherSlot: subOf			receptor
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+Got Concept: adhesion.protein
+ParseOtherSlot: subOf			protein membrane.receptor
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+Got Concept: integrin
+ParseOtherSlot: subOf			adhesion.protein
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+Got Concept: selectin
+ParseOtherSlot: subOf			adhesion.protein
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+Got Concept: adressin
+ParseOtherSlot: subOf			adhesion.protein
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+Got Concept: vascular.adressin
+ParseOtherSlot: subOf			adressin
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+Got Concept: endoplasmic.reticulum
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	organelle
+ParseOtherSlot: 
+Got Concept: bound.ribosome
+ParseOtherSlot: attachedTo		endoplasmic.reticulum
+ParseOtherSlot: subOf			ribosome
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: cytoskeleton
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: cytosol
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	stuff
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: free.ribosome
+ParseOtherSlot: suspended.in	cytosol
+ParseOtherSlot: subOf	ribosome
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: glyxoxysome
+ParseOtherSlot: subOf	microbody
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: golgi.complex
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	organelle
+ParseOtherSlot: 
+Got Concept: hydrophobic.end
+ParseOtherSlot: partOf	phospholipid
+ParseOtherSlot: myRef	4
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	idea
+ParseOtherSlot: 
+Got Concept: hydrophylic.end
+ParseOtherSlot: partOf	phospholipid
+ParseOtherSlot: myRef	4
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	idea
+ParseOtherSlot: 
+Got Concept: lumen
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: enclosed.by	endoplasmic.reticulum
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: lysosome
+ParseOtherSlot: partOf	endo
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: microfilament
+ParseOtherSlot: subOf	cytoskeleton
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: microtubules
+ParseOtherSlot: subOf	cytoskeleton
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: mitochondrion
+ParseOtherSlot: subOf	microbody
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: synonym	mitrocondria
+ParseOtherSlot: 
+Got Concept: nuclear.envelope
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: peroxisome
+ParseOtherSlot: subOf	microbody
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: phospholipid
+ParseOtherSlot: partOf	cell.membrane
+ParseOtherSlot: myRef	4
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: polyribosome
+ParseOtherSlot: partOf	bio.cell
+ParseOtherSlot: attachedTo	mrna
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: synonym		polysome
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: rough.er
+ParseOtherSlot: subOf	endoplasmic.reticulum
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: smooth.er
+ParseOtherSlot: subOf	endoplasmic.reticulum
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: 
+Got Concept: vacuole
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: vesicle
+ParseOtherSlot: partOf	endomembrane
+ParseOtherSlot: myRef	6
+ParseOtherSlot: myCreator	jp2
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: 
+Got Concept: cytoplasmic.compartment
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: nuclear.compartment
+ParseOtherSlot: subOf	thing
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: chromosome
+ParseOtherSlot: subOf		organelle
+ParseOtherSlot: partOf		nucleus
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: gene
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: partOf		chromosome
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: gene.regulator
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: transcription.factor
+ParseOtherSlot: subOf		gene.regulator
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: promoter.site
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: partOf		gene
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: promoter.kB-binding.site
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: partOf		promoter.site
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: 12-O-tetradecanoylphorbol.13-acetate
+ParseOtherSlot: subOf		regulatory.substance
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: tpa
+ParseOtherSlot: subOf		regulatory.substance
+ParseOtherSlot: synonym		12-O-tetradecanoylphorbol.13-acetate
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: tpa.response.element
+ParseOtherSlot: subOf		promoter.site
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: tre
+ParseOtherSlot: subOf	promoter.site
+ParseOtherSlot: synonym		tpa.response.element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: serum.response.factor
+ParseOtherSlot: subOf		peptide regulatory.substance
+ParseOtherSlot: myCreator	rb
+ParseOtherSlot: 
+Got Concept: srf
+ParseOtherSlot: subOf		peptide regulatory.substance
+ParseOtherSlot: synonym		serum.response.factor
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: srf.dimer
+ParseOtherSlot: subOf		peptide regulatory.substance
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: terniary.complex.factor
+ParseOtherSlot: subOf		peptide regulatory.substance
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: tcf
+ParseOtherSlot: subOf		peptide regulatory.substance
+ParseOtherSlot: synonym		terniary.complex.factor
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: c-fos.promoter.site
+ParseOtherSlot: subOf		promoter.site
+ParseOtherSlot: partOf		gene
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: serum.response.element
+ParseOtherSlot: subOf		c-fos.promoter.site
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: sre
+ParseOtherSlot: subOf		c-fos.promoter.site
+ParseOtherSlot: synonym		serum.response.element
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: tcf.binding.site
+ParseOtherSlot: subOf		c-fos.promoter.site
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: enhancer.site
+ParseOtherSlot: subOf		thing
+ParseOtherSlot: partOf		gene
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: deoxyribonucleic.acid
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: partOf		gene
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: dna
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: partOf		gene
+ParseOtherSlot: synonym		deoxyribonucleic.acid
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: ribonucleic.acid
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: rna
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: synonym		ribonucleic.acid
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: nucleic.acid
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: partOf		ribonucleic.acid deoxyribonucleic.acid rna dna
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: rel.protein
+ParseOtherSlot: subOf		transcription.factor protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: nuclear.factor-kB
+ParseOtherSlot: subOf		rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: nf-kb
+ParseOtherSlot: subOf		rel.protein
+ParseOtherSlot: synonym		nuclear.factor-kB
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: group.i.rel.protein
+ParseOtherSlot: subOf		rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: group.ii.rel.protein
+ParseOtherSlot: subOf		rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: group.i.rel.precursor
+ParseOtherSlot: subOf		rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: group.ii.rel.precursor
+ParseOtherSlot: subOf		rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: p100
+ParseOtherSlot: subOf		group.i.rel.precursor
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: p105
+ParseOtherSlot: subOf		group.i.rel.precursor
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: p50
+ParseOtherSlot: subOf		group.i.rel.protein
+ParseOtherSlot: partOf		p105
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: p52
+ParseOtherSlot: subOf		group.i.rel.protein
+ParseOtherSlot: partOf		p110
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: p65
+ParseOtherSlot: subOf		group.ii.rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: rel
+ParseOtherSlot: subOf		group.ii.rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: relb
+ParseOtherSlot: subOf		group.ii.rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: rel.protein.complex
+ParseOtherSlot: subOf		rel.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: rel.heterodimer
+ParseOtherSlot: subOf		rel.protein.complex
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: p50-p65
+ParseOtherSlot: subOf		rel.heterodimer
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: p65-p105
+ParseOtherSlot: subOf		rel.heterodimer
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: rel.homodimer
+ParseOtherSlot: subOf		rel.protein.complex
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: inhibitor.protein
+ParseOtherSlot: subOf		protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: inhibitor.protein.complex
+ParseOtherSlot: subOf		inhibitor.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: ikb
+ParseOtherSlot: subOf		inhibitor.protein
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: ikb-p50-p65
+ParseOtherSlot: subOf		rel.protein.complex
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: reactive.oxygen.species
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: ros
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: synonym		reactive.oxygen.species
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: hydrogen.peroxide
+ParseOtherSlot: subOf		reactive.oxygen.species
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: h2o2
+ParseOtherSlot: subOf 		reactive.oxygen.species
+ParseOtherSlot: synonym		hydrogen.peroxide
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: h2o2.concentration
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: antioxidant
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: n.acetyl-l-cysteine
+ParseOtherSlot: subOf		antioxidant
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: iron.chelation.agent
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: deferoxamine
+ParseOtherSlot: subOf		iron.chelation.agent
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: dfo
+ParseOtherSlot: subOf		iron.chelation.agent
+ParseOtherSlot: synonym		deferoxamine
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: dfo.concentration
+ParseOtherSlot: subOf		stuff
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: high
+ParseOtherSlot: subOf		idea
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: moderate
+ParseOtherSlot: subOf		idea
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: low
+ParseOtherSlot: subOf		idea
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: nitric.oxide
+ParseOtherSlot: subOf      reactive.oxygen.species
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+Got Concept: protein.kinase
+ParseOtherSlot: subOf		enzyme
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: protein.kinase.C
+ParseOtherSlot: subOf		enzyme
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: protein-tyrosine.kinase
+ParseOtherSlot: subOf		enzyme
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: map.kinase
+ParseOtherSlot: subOf      protein.kinase
+ParseOtherSlot: myCreator  eai
+ParseOtherSlot: 
+Got Concept: mapk
+ParseOtherSlot: subOf      protein.kinase
+ParseOtherSlot: synonym		map.kinase
+ParseOtherSlot: myCreator  eai
+ParseOtherSlot: 
+Got Concept: protooncogene
+ParseOtherSlot: subOf		gene
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: c-jun
+ParseOtherSlot: subOf		protooncogene
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: c-fos
+ParseOtherSlot: subOf		protooncogene
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: protooncogene.product
+ParseOtherSlot: subOf		protein gene.regulator
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: cjun
+ParseOtherSlot: subOf		protooncogene.product
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: vjun
+ParseOtherSlot: subOf		protooncogene.product
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: junb
+ParseOtherSlot: subOf		protooncogene.product
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: cfos
+ParseOtherSlot: subOf		protooncogene.product
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: vfos
+ParseOtherSlot: subOf		protooncogene.product
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: fosb
+ParseOtherSlot: subOf		protooncogene.product
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: activator.protein-1
+ParseOtherSlot: subOf		transcription.factor
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: ap-1
+ParseOtherSlot: subOf		transcription.factor
+ParseOtherSlot: synonym		activator.protein-1
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: fos-jun
+ParseOtherSlot: subOf		activator.protein-1
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: jun-jun
+ParseOtherSlot: subOf		activator.protein-1
+ParseOtherSlot: myCreator	rbt
+ParseOtherSlot: 
+Got Concept: proviral.gene
+ParseOtherSlot: subOf		gene
+ParseOtherSlot: myCreator	eai
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: digests
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: digestedBy
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: inverseSlot	digests
+ParseOtherSlot: 
+Got Concept: metabolizes
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+Got Concept: metabolizedBy
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: inverseSlot	metabolizes
+ParseOtherSlot: 
+Got Concept: phosphorylates
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: phosphorylated
+ParseOtherSlot: subOf			idea
+ParseOtherSlot: 
+Got Concept: unbound
+ParseOtherSlot: subOf			idea
+ParseOtherSlot: 
+Got Concept: binding
+ParseOtherSlot: subOf			idea
+ParseOtherSlot: 
+Got Concept: bindsTo
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: produced
+ParseOtherSlot: subOf			idea
+ParseOtherSlot: 
+Got Concept: formed
+ParseOtherSlot: subOf			idea
+ParseOtherSlot: 
+Got Concept: activated
+ParseOtherSlot: subOf			idea
+ParseOtherSlot: 
+Got Concept: degraded
+ParseOtherSlot: subOf			idea
+ParseOtherSlot: 
+Got Concept: translocatedTo
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: expresses
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: eliminates
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: reduces
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+Got Concept: oxidizes
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: presents
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+Got Concept: presentedBy
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: inverseSlot	presents
+ParseOtherSlot: 
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: synthesizes
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: excretes
+ParseOtherSlot: subOf		relation
+ParseOtherSlot: myCreator	jp2 rbt
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: ingests
+ParseOtherSlot: level			basic
+ParseOtherSlot: subOf			relation
+ParseOtherSlot: myCreator		rbt
+ParseOtherSlot: 
+ParseOtherSlot: 
+Got Concept: secretes
+ParseOtherSlot: subOf	relation
+ParseOtherSlot: 
+ParseOtherSlot: 
+Total number of Con objects: 260
+^^^^Getting inverseSlot on hasInstances
+c: instanceOf
+  instanceOf taxonomicSlot
+  inverseSlot hasInstances 
+
+^^^^Getting myCreator on endoplasmic.reticulum
+^^^^Getting myRef on endoplasmic.reticulum
+^^^^Getting partOf on endoplasmic.reticulum
+  Got: 1
+     Got: hasParts
+       Got: endomembrane
+^^^^Getting subOf on endoplasmic.reticulum
+  Got: 1
+     Got: hasSubs
+       Got: organelle
+^^^^Getting inverseSlot on functionOf
+^^^^Getting synonym on 12-O-tetradecanoylphorbol.13-acetate
+  Got: 1
+     Got: synonym
+       Got: tpa
+^^^^Getting myCreator on 12-O-tetradecanoylphorbol.13-acetate
+^^^^Getting subOf on 12-O-tetradecanoylphorbol.13-acetate
+  Got: 1
+     Got: hasSubs
+       Got: regulatory.substance
+^^^^Getting hasInstances on slot
+  Got: 1
+     Got: instanceOf
+       Got: functionOf
+^^^^Getting subOf on slot
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on phospholipid
+^^^^Getting myRef on phospholipid
+^^^^Getting partOf on phospholipid
+  Got: 1
+     Got: hasParts
+       Got: cell.membrane
+^^^^Getting subOf on phospholipid
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on gene
+^^^^Getting partOf on gene
+  Got: 1
+     Got: hasParts
+       Got: chromosome
+^^^^Getting subOf on gene
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on p100
+^^^^Getting subOf on p100
+  Got: 1
+     Got: hasSubs
+       Got: group.i.rel.precursor
+^^^^Getting myCreator on adressin
+^^^^Getting subOf on adressin
+  Got: 1
+     Got: hasSubs
+       Got: adhesion.protein
+^^^^Getting myCreator on gland
+^^^^Getting subOf on gland
+  Got: 1
+     Got: hasSubs
+       Got: cell.aggregation
+^^^^Getting subOf on synthesizes
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting subOf on stuff
+  Got: 1
+     Got: hasSubs
+       Got: root
+^^^^Getting myCreator on smooth.er
+^^^^Getting myRef on smooth.er
+^^^^Getting subOf on smooth.er
+  Got: 1
+     Got: hasSubs
+       Got: endoplasmic.reticulum
+^^^^Getting myCreator on moderate
+^^^^Getting subOf on moderate
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting subOf on phosphorylated
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting synonym on h2o2
+  Got: 1
+     Got: synonym
+       Got: hydrogen.peroxide
+^^^^Getting myCreator on h2o2
+^^^^Getting subOf on h2o2
+  Got: 1
+     Got: hasSubs
+       Got: reactive.oxygen.species
+^^^^Getting synonym on influenza.virus
+  Got: 1
+     Got: synonym
+       Got: influenza
+^^^^Getting myCreator on influenza.virus
+^^^^Getting subOf on influenza.virus
+  Got: 1
+     Got: hasSubs
+       Got: virus
+^^^^Getting subOf on species
+  Got: 1
+     Got: hasSubs
+^^^^Getting myCreator on promoter.site
+^^^^Getting partOf on promoter.site
+  Got: 1
+     Got: hasParts
+       Got: gene
+^^^^Getting subOf on promoter.site
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on cjun
+^^^^Getting subOf on cjun
+  Got: 1
+     Got: hasSubs
+       Got: protooncogene.product
+^^^^Getting inverseSlot on digestedBy
+^^^^Getting subOf on digestedBy
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on protein-tyrosine.kinase
+^^^^Getting subOf on protein-tyrosine.kinase
+  Got: 1
+     Got: hasSubs
+       Got: enzyme
+^^^^Getting myCreator on ion
+^^^^Getting subOf on ion
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting subOf on biosphere
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting synonym on activator.protein-1
+  Got: 1
+     Got: synonym
+       Got: ap-1
+^^^^Getting myCreator on activator.protein-1
+^^^^Getting subOf on activator.protein-1
+  Got: 1
+     Got: hasSubs
+       Got: transcription.factor
+^^^^Getting synonym on tpa
+  Got: 1
+     Got: synonym
+       Got: 12-O-tetradecanoylphorbol.13-acetate
+^^^^Getting myCreator on tpa
+^^^^Getting subOf on tpa
+  Got: 1
+     Got: hasSubs
+       Got: regulatory.substance
+^^^^Getting partOf on tissue
+  Got: 1
+     Got: hasParts
+       Got: organ
+^^^^Getting subOf on tissue
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting myCreator on cytoskeleton
+^^^^Getting myRef on cytoskeleton
+^^^^Getting partOf on cytoskeleton
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting subOf on cytoskeleton
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting subOf on degraded
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting subOf on proteoglycan
+  Got: 1
+     Got: hasSubs
+       Got: glycoconjugate
+^^^^Getting inverseSlot on presentedBy
+^^^^Getting subOf on presentedBy
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on fosb
+^^^^Getting subOf on fosb
+  Got: 1
+     Got: hasSubs
+       Got: protooncogene.product
+^^^^Getting myCreator on regulatory.molecule
+^^^^Getting myRef on regulatory.molecule
+^^^^Getting subOf on regulatory.molecule
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting partOf on population
+  Got: 1
+     Got: hasParts
+       Got: ecosystem
+^^^^Getting subOf on population
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on na+
+^^^^Getting subOf on na+
+  Got: 1
+     Got: hasSubs
+       Got: ion
+^^^^Getting hasSubs on relation
+  Got: 1
+     Got: subOf
+       Got: slot
+       Got: synthesizes
+       Got: digestedBy
+       Got: presentedBy
+^^^^Getting subOf on relation
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting inverseSlot on instanceOf
+^^^^Getting partOf on organ
+  Got: 1
+     Got: hasParts
+       Got: multicellular.organism
+^^^^Getting subOf on organ
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasParts on organ
+  Got: 1
+     Got: partOf
+       Got: tissue
+^^^^Getting synonym on ros
+  Got: 1
+     Got: synonym
+       Got: reactive.oxygen.species
+^^^^Getting myCreator on ros
+^^^^Getting subOf on ros
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting inverseSlot on hasParts
+^^^^Getting synonym on rhinovirus
+  Got: 1
+     Got: synonym
+       Got: cold.virus
+^^^^Getting myCreator on rhinovirus
+^^^^Getting subOf on rhinovirus
+  Got: 1
+     Got: hasSubs
+       Got: virus
+^^^^Getting myCreator on p65-p105
+^^^^Getting subOf on p65-p105
+  Got: 1
+     Got: hasSubs
+       Got: rel.heterodimer
+^^^^Getting myCreator on rough.er
+^^^^Getting myRef on rough.er
+^^^^Getting subOf on rough.er
+  Got: 1
+     Got: hasSubs
+       Got: endoplasmic.reticulum
+^^^^Getting myCreator on ikb-p50-p65
+^^^^Getting subOf on ikb-p50-p65
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein.complex
+^^^^Getting hasSubs on regulatory.substance
+  Got: 1
+     Got: subOf
+       Got: 12-O-tetradecanoylphorbol.13-acetate
+       Got: tpa
+^^^^Getting myCreator on regulatory.substance
+^^^^Getting myRef on regulatory.substance
+^^^^Getting subOf on regulatory.substance
+  Got: 1
+     Got: hasSubs
+       Got: substance
+^^^^Getting partOf on nervous.system
+  Got: 1
+     Got: hasParts
+       Got: multicellular.organism
+^^^^Getting subOf on nervous.system
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting synonym on tcf
+  Got: 1
+     Got: synonym
+       Got: terniary.complex.factor
+^^^^Getting myCreator on tcf
+^^^^Getting subOf on tcf
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+       Got: regulatory.substance
+^^^^Getting hasInstances on taxonomicSlot
+  Got: 1
+     Got: instanceOf
+       Got: hasInstances
+       Got: instanceOf
+^^^^Getting subOf on taxonomicSlot
+  Got: 1
+     Got: hasSubs
+       Got: slot
+^^^^Getting synonym on mitochondrion
+  Got: 1
+     Got: synonym
+       Got: mitrocondria
+^^^^Getting myCreator on mitochondrion
+^^^^Getting myRef on mitochondrion
+^^^^Getting subOf on mitochondrion
+  Got: 1
+     Got: hasSubs
+       Got: microbody
+^^^^Getting myCreator on sodium
+^^^^Getting subOf on sodium
+  Got: 1
+     Got: hasSubs
+       Got: element
+^^^^Getting synonym on bio.process
+  Got: 1
+     Got: synonym
+       Got: biological.process
+^^^^Getting myCreator on bio.process
+^^^^Getting subOf on bio.process
+  Got: 1
+     Got: hasSubs
+^^^^Getting myCreator on receptor
+^^^^Getting subOf on receptor
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+       Got: peptide
+^^^^Getting myCreator on tcf.binding.site
+^^^^Getting subOf on tcf.binding.site
+  Got: 1
+     Got: hasSubs
+       Got: c-fos.promoter.site
+^^^^Getting myCreator on nitrogen
+^^^^Getting subOf on nitrogen
+  Got: 1
+     Got: hasSubs
+       Got: element
+^^^^Getting subOf on activated
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting subOf on bindsTo
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting hasSubs on group.i.rel.precursor
+  Got: 1
+     Got: subOf
+       Got: p100
+^^^^Getting myCreator on group.i.rel.precursor
+^^^^Getting subOf on group.i.rel.precursor
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein
+^^^^Getting synonym on polysome
+  Got: 1
+     Got: synonym
+       Got: polyribosome
+^^^^Getting myCreator on vertebrate
+^^^^Getting subOf on vertebrate
+  Got: 1
+     Got: hasSubs
+       Got: multicellular.organism
+^^^^Getting subOf on organism
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on potassium
+^^^^Getting subOf on potassium
+  Got: 1
+     Got: hasSubs
+       Got: element
+^^^^Getting synonym on deferoxamine
+  Got: 1
+     Got: synonym
+       Got: dfo
+^^^^Getting myCreator on deferoxamine
+^^^^Getting subOf on deferoxamine
+  Got: 1
+     Got: hasSubs
+       Got: iron.chelation.agent
+^^^^Getting myCreator on animal
+^^^^Getting subOf on animal
+  Got: 1
+     Got: hasSubs
+       Got: organism
+^^^^Getting myCreator on nitric.oxide
+^^^^Getting subOf on nitric.oxide
+  Got: 1
+     Got: hasSubs
+       Got: reactive.oxygen.species
+^^^^Getting myCreator on regulatory.peptide
+^^^^Getting subOf on regulatory.peptide
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+       Got: regulatory.substance
+^^^^Getting subOf on produced
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting partOf on circulatory.system
+  Got: 1
+     Got: hasParts
+       Got: multicellular.organism
+^^^^Getting subOf on circulatory.system
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on fos-jun
+^^^^Getting subOf on fos-jun
+  Got: 1
+     Got: hasSubs
+       Got: activator.protein-1
+^^^^Getting myCreator on group.i.rel.protein
+^^^^Getting subOf on group.i.rel.protein
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein
+^^^^Getting partOf on atom
+  Got: 1
+     Got: hasParts
+       Got: compound
+^^^^Getting subOf on atom
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting subOf on formed
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting myCreator on group.ii.rel.protein
+^^^^Getting subOf on group.ii.rel.protein
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein
+^^^^Getting myCreator on primate
+^^^^Getting subOf on primate
+  Got: 1
+     Got: hasSubs
+       Got: mammal
+^^^^Getting myCreator on chromosome
+^^^^Getting partOf on chromosome
+  Got: 1
+     Got: hasParts
+^^^^Getting subOf on chromosome
+  Got: 1
+     Got: hasSubs
+       Got: organelle
+^^^^Getting hasParts on chromosome
+  Got: 1
+     Got: partOf
+       Got: gene
+^^^^Getting synonym on reactive.oxygen.species
+  Got: 1
+     Got: synonym
+       Got: ros
+^^^^Getting hasSubs on reactive.oxygen.species
+  Got: 1
+     Got: subOf
+       Got: h2o2
+       Got: nitric.oxide
+^^^^Getting myCreator on reactive.oxygen.species
+^^^^Getting subOf on reactive.oxygen.species
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting myCreator on bacterium
+^^^^Getting subOf on bacterium
+  Got: 1
+     Got: hasSubs
+       Got: organism
+^^^^Getting hasSubs on thing
+  Got: 1
+     Got: subOf
+       Got: phospholipid
+       Got: gene
+       Got: promoter.site
+       Got: biosphere
+       Got: cytoskeleton
+       Got: population
+       Got: relation
+       Got: organ
+       Got: nervous.system
+       Got: organism
+       Got: circulatory.system
+^^^^Getting subOf on thing
+  Got: 1
+     Got: hasSubs
+       Got: root
+^^^^Getting myCreator on rat
+^^^^Getting subOf on rat
+  Got: 1
+     Got: hasSubs
+       Got: rodent
+^^^^Getting myCreator on rel.homodimer
+^^^^Getting subOf on rel.homodimer
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein.complex
+^^^^Getting synonym on bacillus
+  Got: 1
+     Got: synonym
+       Got: rod
+^^^^Getting myCreator on bacillus
+^^^^Getting subOf on bacillus
+  Got: 1
+     Got: hasSubs
+       Got: bacterium
+^^^^Getting myCreator on k+
+^^^^Getting subOf on k+
+  Got: 1
+     Got: hasSubs
+       Got: ion
+^^^^Getting hasSubs on c-fos.promoter.site
+  Got: 1
+     Got: subOf
+       Got: tcf.binding.site
+^^^^Getting myCreator on c-fos.promoter.site
+^^^^Getting partOf on c-fos.promoter.site
+  Got: 1
+     Got: hasParts
+       Got: gene
+^^^^Getting subOf on c-fos.promoter.site
+  Got: 1
+     Got: hasSubs
+       Got: promoter.site
+^^^^Getting synonym on polyribosome
+  Got: 1
+     Got: synonym
+       Got: polysome
+^^^^Getting myCreator on polyribosome
+^^^^Getting attachedTo on polyribosome
+  Got: 1
+     Got: attachedTo
+^^^^Getting myRef on polyribosome
+^^^^Getting partOf on polyribosome
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting subOf on polyribosome
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting subOf on class
+  Got: 1
+     Got: hasSubs
+       Got: phylum
+^^^^Getting level on human.being
+^^^^Getting synonym on human.being
+  Got: 1
+     Got: synonym
+       Got: human
+^^^^Getting myCreator on human.being
+^^^^Getting subOf on human.being
+  Got: 1
+     Got: hasSubs
+       Got: primate
+^^^^Getting partOf on ecosystem
+  Got: 1
+     Got: hasParts
+       Got: biosphere
+^^^^Getting subOf on ecosystem
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasParts on ecosystem
+  Got: 1
+     Got: partOf
+       Got: population
+^^^^Getting myCreator on low
+^^^^Getting subOf on low
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting subOf on reduces
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting synonym on herpesvirus
+  Got: 1
+     Got: synonym
+       Got: herpes.virus
+^^^^Getting myCreator on herpesvirus
+^^^^Getting subOf on herpesvirus
+  Got: 1
+     Got: hasSubs
+       Got: virus
+^^^^Getting myCreator on vjun
+^^^^Getting subOf on vjun
+  Got: 1
+     Got: hasSubs
+       Got: protooncogene.product
+^^^^Getting hasSubs on adhesion.protein
+  Got: 1
+     Got: subOf
+       Got: adressin
+^^^^Getting myCreator on adhesion.protein
+^^^^Getting subOf on adhesion.protein
+  Got: 1
+     Got: hasSubs
+       Got: protein
+       Got: membrane.receptor
+^^^^Getting myCreator on lysosome
+^^^^Getting myRef on lysosome
+^^^^Getting partOf on lysosome
+  Got: 1
+     Got: hasParts
+^^^^Getting subOf on lysosome
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting synonym on htlv
+  Got: 1
+     Got: synonym
+       Got: human
+^^^^Getting myCreator on htlv
+^^^^Getting subOf on htlv
+  Got: 1
+     Got: hasSubs
+       Got: virus
+^^^^Getting subOf on lipid
+  Got: 1
+     Got: hasSubs
+       Got: compound
+^^^^Getting synonym on biological.process
+  Got: 1
+     Got: synonym
+       Got: bio.process
+^^^^Getting myCreator on biological.process
+^^^^Getting subOf on biological.process
+  Got: 1
+     Got: hasSubs
+^^^^Getting hasSubs on substance
+  Got: 1
+     Got: subOf
+       Got: regulatory.substance
+^^^^Getting myCreator on substance
+^^^^Getting subOf on substance
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting myCreator on fungus
+^^^^Getting subOf on fungus
+  Got: 1
+     Got: hasSubs
+       Got: organism
+^^^^Getting myCreator on nucleolus
+^^^^Getting myRef on nucleolus
+^^^^Getting partOf on nucleolus
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting subOf on nucleolus
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting synonym on map.kinase
+  Got: 1
+     Got: synonym
+       Got: mapk
+^^^^Getting myCreator on map.kinase
+^^^^Getting subOf on map.kinase
+  Got: 1
+     Got: hasSubs
+       Got: protein.kinase
+^^^^Getting subOf on expresses
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting subOf on carbohydrate
+  Got: 1
+     Got: hasSubs
+       Got: compound
+^^^^Getting hasSubs on microbody
+  Got: 1
+     Got: subOf
+       Got: mitochondrion
+^^^^Getting myCreator on microbody
+^^^^Getting myRef on microbody
+^^^^Getting partOf on microbody
+  Got: 1
+     Got: hasParts
+       Got: endomembrane
+^^^^Getting subOf on microbody
+  Got: 1
+     Got: hasSubs
+       Got: organelle
+^^^^Getting synonym on mitrocondria
+  Got: 1
+     Got: synonym
+       Got: mitochondrion
+^^^^Getting level on human
+^^^^Getting synonym on human
+  Got: 1
+     Got: synonym
+       Got: htlv
+       Got: human.being
+^^^^Getting myCreator on human
+^^^^Getting subOf on human
+  Got: 1
+     Got: hasSubs
+       Got: virus
+       Got: primate
+^^^^Getting synonym on tre
+  Got: 1
+     Got: synonym
+       Got: tpa.response.element
+^^^^Getting myCreator on tre
+^^^^Getting subOf on tre
+  Got: 1
+     Got: hasSubs
+       Got: promoter.site
+^^^^Getting hasSubs on rel.protein
+  Got: 1
+     Got: subOf
+       Got: group.i.rel.precursor
+       Got: group.i.rel.protein
+       Got: group.ii.rel.protein
+^^^^Getting myCreator on rel.protein
+^^^^Getting subOf on rel.protein
+  Got: 1
+     Got: hasSubs
+       Got: transcription.factor
+       Got: protein
+^^^^Getting myCreator on vacuole
+^^^^Getting myRef on vacuole
+^^^^Getting partOf on vacuole
+  Got: 1
+     Got: hasParts
+       Got: endomembrane
+^^^^Getting subOf on vacuole
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting synonym on herpes.virus
+  Got: 1
+     Got: synonym
+       Got: herpesvirus
+^^^^Getting level on bio.cell
+^^^^Getting synonym on bio.cell
+  Got: 1
+     Got: synonym
+       Got: biological.cell
+^^^^Getting myCreator on bio.cell
+^^^^Getting subOf on bio.cell
+  Got: 1
+     Got: hasSubs
+       Got: cell
+^^^^Getting hasParts on bio.cell
+  Got: 1
+     Got: partOf
+       Got: cytoskeleton
+       Got: polyribosome
+       Got: nucleolus
+^^^^Getting synonym on tpa.response.element
+  Got: 1
+     Got: synonym
+       Got: tre
+^^^^Getting myCreator on tpa.response.element
+^^^^Getting subOf on tpa.response.element
+  Got: 1
+     Got: hasSubs
+       Got: promoter.site
+^^^^Getting synonym on bacteriophage
+  Got: 1
+     Got: synonym
+       Got: phage
+^^^^Getting myCreator on bacteriophage
+^^^^Getting subOf on bacteriophage
+  Got: 1
+     Got: hasSubs
+       Got: virus
+^^^^Getting synonym on polypeptide
+  Got: 1
+     Got: synonym
+       Got: peptide
+^^^^Getting myCreator on polypeptide
+^^^^Getting myCreator on chloride
+^^^^Getting subOf on chloride
+  Got: 1
+     Got: hasSubs
+       Got: element
+^^^^Getting myCreator on potassium.ion
+^^^^Getting subOf on potassium.ion
+  Got: 1
+     Got: hasSubs
+       Got: ion
+^^^^Getting inverseSlot on partOf
+^^^^Getting myCreator on c-jun
+^^^^Getting subOf on c-jun
+  Got: 1
+     Got: hasSubs
+       Got: protooncogene
+^^^^Getting subOf on kingdom
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting inverseSlot on hasSubs
+^^^^Getting synonym on cold.virus
+  Got: 1
+     Got: synonym
+       Got: rhinovirus
+^^^^Getting myCreator on carbon
+^^^^Getting subOf on carbon
+  Got: 1
+     Got: hasSubs
+       Got: element
+^^^^Getting synonym on ap-1
+  Got: 1
+     Got: synonym
+       Got: activator.protein-1
+^^^^Getting myCreator on ap-1
+^^^^Getting subOf on ap-1
+  Got: 1
+     Got: hasSubs
+       Got: transcription.factor
+^^^^Getting hasSubs on idea
+  Got: 1
+     Got: subOf
+       Got: moderate
+       Got: phosphorylated
+       Got: degraded
+       Got: activated
+       Got: produced
+       Got: formed
+       Got: low
+^^^^Getting subOf on idea
+  Got: 1
+     Got: hasSubs
+       Got: root
+^^^^Getting hasSubs on root
+  Got: 1
+     Got: subOf
+       Got: stuff
+       Got: thing
+       Got: idea
+^^^^Getting myCreator on peroxisome
+^^^^Getting myRef on peroxisome
+^^^^Getting subOf on peroxisome
+  Got: 1
+     Got: hasSubs
+       Got: microbody
+^^^^Getting synonym on rod
+  Got: 1
+     Got: synonym
+       Got: bacillus
+^^^^Getting myCreator on pneumococcus
+^^^^Getting subOf on pneumococcus
+  Got: 1
+     Got: hasSubs
+       Got: coccus
+^^^^Getting myCreator on integrin
+^^^^Getting subOf on integrin
+  Got: 1
+     Got: hasSubs
+       Got: adhesion.protein
+^^^^Getting synonym on srf
+  Got: 1
+     Got: synonym
+       Got: serum.response.factor
+^^^^Getting myCreator on srf
+^^^^Getting subOf on srf
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+       Got: regulatory.substance
+^^^^Getting myCreator on sodium.ion
+^^^^Getting subOf on sodium.ion
+  Got: 1
+     Got: hasSubs
+       Got: ion
+^^^^Getting myCreator on glyxoxysome
+^^^^Getting myRef on glyxoxysome
+^^^^Getting subOf on glyxoxysome
+  Got: 1
+     Got: hasSubs
+       Got: microbody
+       Got: thing
+^^^^Getting inverseSlot on digests
+^^^^Getting subOf on digests
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on h2o2.concentration
+^^^^Getting subOf on h2o2.concentration
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting myCreator on nucleic.acid
+^^^^Getting partOf on nucleic.acid
+  Got: 1
+     Got: hasParts
+       Got: ribonucleic.acid
+       Got: deoxyribonucleic.acid
+       Got: rna
+       Got: dna
+^^^^Getting subOf on nucleic.acid
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting myCreator on gene.regulator
+^^^^Getting subOf on gene.regulator
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting inverseSlot on attachedTo
+^^^^Getting hasSubs on coccus
+  Got: 1
+     Got: subOf
+       Got: pneumococcus
+^^^^Getting myCreator on coccus
+^^^^Getting subOf on coccus
+  Got: 1
+     Got: hasSubs
+       Got: bacterium
+^^^^Getting partOf on pollen
+  Got: 1
+     Got: hasParts
+       Got: plant
+^^^^Getting subOf on pollen
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting myCreator on n.acetyl-l-cysteine
+^^^^Getting subOf on n.acetyl-l-cysteine
+  Got: 1
+     Got: hasSubs
+       Got: antioxidant
+^^^^Getting subOf on eliminates
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on microtubules
+^^^^Getting myRef on microtubules
+^^^^Getting subOf on microtubules
+  Got: 1
+     Got: hasSubs
+       Got: cytoskeleton
+^^^^Getting myCreator on hydrophylic.end
+^^^^Getting myRef on hydrophylic.end
+^^^^Getting partOf on hydrophylic.end
+  Got: 1
+     Got: hasParts
+       Got: phospholipid
+^^^^Getting subOf on hydrophylic.end
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting subOf on order
+  Got: 1
+     Got: hasSubs
+       Got: class
+^^^^Getting myCreator on proviral.gene
+^^^^Getting subOf on proviral.gene
+  Got: 1
+     Got: hasSubs
+       Got: gene
+^^^^Getting synonym on ribonucleic.acid
+  Got: 1
+     Got: synonym
+       Got: rna
+^^^^Getting myCreator on ribonucleic.acid
+^^^^Getting subOf on ribonucleic.acid
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting hasParts on ribonucleic.acid
+  Got: 1
+     Got: partOf
+       Got: nucleic.acid
+^^^^Getting hasSubs on element
+  Got: 1
+     Got: subOf
+       Got: sodium
+       Got: nitrogen
+       Got: potassium
+       Got: chloride
+       Got: carbon
+^^^^Getting partOf on element
+  Got: 1
+     Got: hasParts
+       Got: compound
+^^^^Getting subOf on element
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting subOf on translocatedTo
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on jun-jun
+^^^^Getting subOf on jun-jun
+  Got: 1
+     Got: hasSubs
+       Got: activator.protein-1
+^^^^Getting myCreator on nuclear.envelope
+^^^^Getting myRef on nuclear.envelope
+^^^^Getting partOf on nuclear.envelope
+  Got: 1
+     Got: hasParts
+       Got: endomembrane
+^^^^Getting subOf on nuclear.envelope
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasSubs on multicellular.organism
+  Got: 1
+     Got: subOf
+       Got: vertebrate
+^^^^Getting subOf on multicellular.organism
+  Got: 1
+     Got: hasSubs
+       Got: organism
+^^^^Getting hasParts on multicellular.organism
+  Got: 1
+     Got: partOf
+       Got: organ
+       Got: nervous.system
+       Got: circulatory.system
+^^^^Getting myCreator on bound.ribosome
+^^^^Getting attachedTo on bound.ribosome
+  Got: 1
+     Got: attachedTo
+       Got: endoplasmic.reticulum
+^^^^Getting myRef on bound.ribosome
+^^^^Getting subOf on bound.ribosome
+  Got: 1
+     Got: hasSubs
+       Got: ribosome
+^^^^Getting synonym on serum.response.element
+  Got: 1
+     Got: synonym
+       Got: sre
+^^^^Getting myCreator on serum.response.element
+^^^^Getting subOf on serum.response.element
+  Got: 1
+     Got: hasSubs
+       Got: c-fos.promoter.site
+^^^^Getting hasSubs on antioxidant
+  Got: 1
+     Got: subOf
+       Got: n.acetyl-l-cysteine
+^^^^Getting myCreator on antioxidant
+^^^^Getting subOf on antioxidant
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting myCreator on rel
+^^^^Getting subOf on rel
+  Got: 1
+     Got: hasSubs
+       Got: group.ii.rel.protein
+^^^^Getting hasSubs on transcription.factor
+  Got: 1
+     Got: subOf
+       Got: activator.protein-1
+       Got: rel.protein
+       Got: ap-1
+^^^^Getting myCreator on transcription.factor
+^^^^Getting subOf on transcription.factor
+  Got: 1
+     Got: hasSubs
+       Got: gene.regulator
+^^^^Getting synonym on dna
+  Got: 1
+     Got: synonym
+       Got: deoxyribonucleic.acid
+^^^^Getting myCreator on dna
+^^^^Getting partOf on dna
+  Got: 1
+     Got: hasParts
+       Got: gene
+^^^^Getting subOf on dna
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting hasParts on dna
+  Got: 1
+     Got: partOf
+       Got: nucleic.acid
+^^^^Getting synonym on nf-kb
+  Got: 1
+     Got: synonym
+       Got: nuclear.factor-kB
+^^^^Getting myCreator on nf-kb
+^^^^Getting subOf on nf-kb
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein
+^^^^Getting myCreator on calcium.ion
+^^^^Getting subOf on calcium.ion
+  Got: 1
+     Got: hasSubs
+       Got: ion
+^^^^Getting partOf on cell.compartment
+  Got: 1
+     Got: hasParts
+       Got: cell
+^^^^Getting subOf on cell.compartment
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on oxygen
+^^^^Getting subOf on oxygen
+  Got: 1
+     Got: hasSubs
+       Got: element
+^^^^Getting myCreator on inhibitor.protein
+^^^^Getting subOf on inhibitor.protein
+  Got: 1
+     Got: hasSubs
+       Got: protein
+^^^^Getting hasSubs on protooncogene
+  Got: 1
+     Got: subOf
+       Got: c-jun
+^^^^Getting myCreator on protooncogene
+^^^^Getting subOf on protooncogene
+  Got: 1
+     Got: hasSubs
+       Got: gene
+^^^^Getting hasSubs on enzyme
+  Got: 1
+     Got: subOf
+       Got: protein-tyrosine.kinase
+^^^^Getting myCreator on enzyme
+^^^^Getting subOf on enzyme
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+^^^^Getting myCreator on cytosol
+^^^^Getting myRef on cytosol
+^^^^Getting partOf on cytosol
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting subOf on cytosol
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting subOf on unbound
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting myCreator on nuclear.compartment
+^^^^Getting subOf on nuclear.compartment
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasSubs on virus
+  Got: 1
+     Got: subOf
+       Got: influenza.virus
+       Got: rhinovirus
+       Got: herpesvirus
+       Got: htlv
+       Got: human
+       Got: bacteriophage
+^^^^Getting myCreator on virus
+^^^^Getting subOf on virus
+  Got: 1
+     Got: hasSubs
+       Got: organism
+^^^^Getting inverseSlot on hasFunction
+^^^^Getting myCreator on dfo.concentration
+^^^^Getting subOf on dfo.concentration
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting synonym on rna
+  Got: 1
+     Got: synonym
+       Got: ribonucleic.acid
+^^^^Getting myCreator on rna
+^^^^Getting subOf on rna
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting hasParts on rna
+  Got: 1
+     Got: partOf
+       Got: nucleic.acid
+^^^^Getting myCreator on viroid
+^^^^Getting subOf on viroid
+  Got: 1
+     Got: hasSubs
+       Got: organism
+^^^^Getting myCreator on cell.fragment
+^^^^Getting subOf on cell.fragment
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on hydrogen
+^^^^Getting subOf on hydrogen
+  Got: 1
+     Got: hasSubs
+       Got: element
+^^^^Getting synonym on human.immunodeficiency.virus
+  Got: 1
+     Got: synonym
+       Got: hiv
+^^^^Getting myCreator on human.immunodeficiency.virus
+^^^^Getting subOf on human.immunodeficiency.virus
+  Got: 1
+     Got: hasSubs
+       Got: virus
+^^^^Getting myCreator on vesicle
+^^^^Getting myRef on vesicle
+^^^^Getting partOf on vesicle
+  Got: 1
+     Got: hasParts
+       Got: endomembrane
+^^^^Getting subOf on vesicle
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on glycoprotein
+^^^^Getting subOf on glycoprotein
+  Got: 1
+     Got: hasSubs
+       Got: glycoconjugate
+^^^^Getting myCreator on vascular.adressin
+^^^^Getting subOf on vascular.adressin
+  Got: 1
+     Got: hasSubs
+       Got: adressin
+^^^^Getting myCreator on high
+^^^^Getting subOf on high
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting myCreator on p65
+^^^^Getting subOf on p65
+  Got: 1
+     Got: hasSubs
+       Got: group.ii.rel.protein
+^^^^Getting myCreator on relb
+^^^^Getting subOf on relb
+  Got: 1
+     Got: hasSubs
+       Got: group.ii.rel.protein
+^^^^Getting hasSubs on rel.heterodimer
+  Got: 1
+     Got: subOf
+       Got: p65-p105
+^^^^Getting myCreator on rel.heterodimer
+^^^^Getting subOf on rel.heterodimer
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein.complex
+^^^^Getting myCreator on flowering.plant
+^^^^Getting subOf on flowering.plant
+  Got: 1
+     Got: hasSubs
+       Got: plant
+^^^^Getting level on cell
+^^^^Getting hasSubs on cell
+  Got: 1
+     Got: subOf
+       Got: bio.cell
+^^^^Getting myCreator on cell
+^^^^Getting partOf on cell
+  Got: 1
+     Got: hasParts
+       Got: tissue
+       Got: organ
+       Got: cell.aggregation
+^^^^Getting subOf on cell
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasParts on cell
+  Got: 1
+     Got: partOf
+       Got: cell.compartment
+^^^^Getting hasSubs on protooncogene.product
+  Got: 1
+     Got: subOf
+       Got: cjun
+       Got: fosb
+       Got: vjun
+^^^^Getting myCreator on protooncogene.product
+^^^^Getting subOf on protooncogene.product
+  Got: 1
+     Got: hasSubs
+       Got: protein
+       Got: gene.regulator
+^^^^Getting myCreator on microfilament
+^^^^Getting myRef on microfilament
+^^^^Getting subOf on microfilament
+  Got: 1
+     Got: hasSubs
+       Got: cytoskeleton
+^^^^Getting myCreator on cytoplasmic.compartment
+^^^^Getting subOf on cytoplasmic.compartment
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting myCreator on inhibitor.protein.complex
+^^^^Getting subOf on inhibitor.protein.complex
+  Got: 1
+     Got: hasSubs
+       Got: inhibitor.protein
+^^^^Getting hasSubs on rel.protein.complex
+  Got: 1
+     Got: subOf
+       Got: ikb-p50-p65
+       Got: rel.homodimer
+       Got: rel.heterodimer
+^^^^Getting myCreator on rel.protein.complex
+^^^^Getting subOf on rel.protein.complex
+  Got: 1
+     Got: hasSubs
+       Got: rel.protein
+^^^^Getting hasSubs on rodent
+  Got: 1
+     Got: subOf
+       Got: rat
+^^^^Getting myCreator on rodent
+^^^^Getting subOf on rodent
+  Got: 1
+     Got: hasSubs
+       Got: mammal
+^^^^Getting synonym on sre
+  Got: 1
+     Got: synonym
+       Got: serum.response.element
+^^^^Getting myCreator on sre
+^^^^Getting subOf on sre
+  Got: 1
+     Got: hasSubs
+       Got: c-fos.promoter.site
+^^^^Getting synonym on deoxyribonucleic.acid
+  Got: 1
+     Got: synonym
+       Got: dna
+^^^^Getting myCreator on deoxyribonucleic.acid
+^^^^Getting partOf on deoxyribonucleic.acid
+  Got: 1
+     Got: hasParts
+       Got: gene
+^^^^Getting subOf on deoxyribonucleic.acid
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting hasParts on deoxyribonucleic.acid
+  Got: 1
+     Got: partOf
+       Got: nucleic.acid
+^^^^Getting subOf on family
+  Got: 1
+     Got: hasSubs
+       Got: order
+^^^^Getting myCreator on excretes
+^^^^Getting subOf on excretes
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting inverseSlot on metabolizes
+^^^^Getting subOf on metabolizes
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on ca2+
+^^^^Getting subOf on ca2+
+  Got: 1
+     Got: hasSubs
+       Got: ion
+^^^^Getting synonym on terniary.complex.factor
+  Got: 1
+     Got: synonym
+       Got: tcf
+^^^^Getting myCreator on terniary.complex.factor
+^^^^Getting subOf on terniary.complex.factor
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+       Got: regulatory.substance
+^^^^Getting myCreator on selectin
+^^^^Getting subOf on selectin
+  Got: 1
+     Got: hasSubs
+       Got: adhesion.protein
+^^^^Getting myCreator on p50-p65
+^^^^Getting subOf on p50-p65
+  Got: 1
+     Got: hasSubs
+       Got: rel.heterodimer
+^^^^Getting myCreator on golgi.complex
+^^^^Getting myRef on golgi.complex
+^^^^Getting partOf on golgi.complex
+  Got: 1
+     Got: hasParts
+       Got: endomembrane
+^^^^Getting subOf on golgi.complex
+  Got: 1
+     Got: hasSubs
+       Got: organelle
+^^^^Getting myCreator on ikb
+^^^^Getting subOf on ikb
+  Got: 1
+     Got: hasSubs
+       Got: inhibitor.protein
+^^^^Getting subOf on phosphorylates
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting myCreator on p52
+^^^^Getting partOf on p52
+  Got: 1
+     Got: hasParts
+^^^^Getting subOf on p52
+  Got: 1
+     Got: hasSubs
+       Got: group.i.rel.protein
+^^^^Getting inverseSlot on presents
+^^^^Getting subOf on presents
+  Got: 1
+     Got: hasSubs
+       Got: relation
+^^^^Getting hasSubs on glycoconjugate
+  Got: 1
+     Got: subOf
+       Got: proteoglycan
+       Got: glycoprotein
+^^^^Getting myCreator on glycoconjugate
+^^^^Getting subOf on glycoconjugate
+  Got: 1
+     Got: hasSubs
+       Got: protein
+^^^^Getting hasSubs on compound
+  Got: 1
+     Got: subOf
+       Got: lipid
+       Got: carbohydrate
+^^^^Getting subOf on compound
+  Got: 1
+     Got: hasSubs
+       Got: stuff
+^^^^Getting hasParts on compound
+  Got: 1
+     Got: partOf
+       Got: atom
+       Got: element
+^^^^Getting myCreator on p50
+^^^^Getting partOf on p50
+  Got: 1
+     Got: hasParts
+       Got: p105
+^^^^Getting subOf on p50
+  Got: 1
+     Got: hasSubs
+       Got: group.i.rel.protein
+^^^^Getting inverseSlot on hasInstances
+^^^^Getting instanceOf on hasInstances
+  Got: 1
+     Got: hasInstances
+       Got: taxonomicSlot
+^^^^Getting myCreator on free.ribosome
+^^^^Getting myRef on free.ribosome
+^^^^Getting subOf on free.ribosome
+  Got: 1
+     Got: hasSubs
+       Got: ribosome
+^^^^Getting suspended.in on free.ribosome
+^^^^Getting hasSubs on protein.kinase
+  Got: 1
+     Got: subOf
+       Got: map.kinase
+^^^^Getting myCreator on protein.kinase
+^^^^Getting subOf on protein.kinase
+  Got: 1
+     Got: hasSubs
+       Got: enzyme
+^^^^Getting synonym on dfo
+  Got: 1
+     Got: synonym
+       Got: deferoxamine
+^^^^Getting myCreator on dfo
+^^^^Getting subOf on dfo
+  Got: 1
+     Got: hasSubs
+       Got: iron.chelation.agent
+^^^^Getting synonym on peptide
+  Got: 1
+     Got: synonym
+       Got: polypeptide
+^^^^Getting hasSubs on peptide
+  Got: 1
+     Got: subOf
+       Got: tcf
+       Got: receptor
+       Got: regulatory.peptide
+       Got: srf
+       Got: enzyme
+       Got: terniary.complex.factor
+^^^^Getting subOf on peptide
+  Got: 1
+     Got: hasSubs
+       Got: compound
+^^^^Getting myCreator on lumen
+^^^^Getting enclosed.by on lumen
+^^^^Getting myRef on lumen
+^^^^Getting partOf on lumen
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting subOf on lumen
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting inverseSlot on synonym
+^^^^Getting myCreator on protein.kinase.C
+^^^^Getting subOf on protein.kinase.C
+  Got: 1
+     Got: hasSubs
+       Got: enzyme
+^^^^Getting hasSubs on organelle
+  Got: 1
+     Got: subOf
+       Got: endoplasmic.reticulum
+       Got: chromosome
+       Got: microbody
+       Got: golgi.complex
+^^^^Getting myCreator on organelle
+^^^^Getting myRef on organelle
+^^^^Getting partOf on organelle
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting subOf on organelle
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasSubs on protein
+  Got: 1
+     Got: subOf
+       Got: adhesion.protein
+       Got: rel.protein
+       Got: inhibitor.protein
+       Got: protooncogene.product
+       Got: glycoconjugate
+^^^^Getting subOf on protein
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+       Got: stuff
+^^^^Getting synonym on mapk
+  Got: 1
+     Got: synonym
+       Got: map.kinase
+^^^^Getting myCreator on mapk
+^^^^Getting subOf on mapk
+  Got: 1
+     Got: hasSubs
+       Got: protein.kinase
+^^^^Getting myCreator on cell.membrane
+^^^^Getting myRef on cell.membrane
+^^^^Getting partOf on cell.membrane
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting subOf on cell.membrane
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasParts on cell.membrane
+  Got: 1
+     Got: partOf
+       Got: phospholipid
+^^^^Getting hasInstances on partonomicSlot
+  Got: 1
+     Got: instanceOf
+       Got: hasParts
+       Got: partOf
+^^^^Getting subOf on partonomicSlot
+  Got: 1
+     Got: hasSubs
+       Got: slot
+^^^^Getting subOf on binding
+  Got: 1
+     Got: hasSubs
+       Got: idea
+^^^^Getting myCreator on eukaryotic.cell
+^^^^Getting myRef on eukaryotic.cell
+^^^^Getting subOf on eukaryotic.cell
+  Got: 1
+     Got: hasSubs
+       Got: bio.cell
+^^^^Getting hasSubs on plant
+  Got: 1
+     Got: subOf
+       Got: flowering.plant
+^^^^Getting myCreator on plant
+^^^^Getting subOf on plant
+  Got: 1
+     Got: hasSubs
+       Got: organism
+^^^^Getting hasParts on plant
+  Got: 1
+     Got: partOf
+       Got: pollen
+^^^^Getting partOf on respiratory.system
+  Got: 1
+     Got: hasParts
+       Got: multicellular.organism
+^^^^Getting subOf on respiratory.system
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting inverseSlot on subOf
+^^^^Getting hasSubs on cell.aggregation
+  Got: 1
+     Got: subOf
+       Got: gland
+^^^^Getting myCreator on cell.aggregation
+^^^^Getting subOf on cell.aggregation
+  Got: 1
+     Got: hasSubs
+       Got: thing
+^^^^Getting hasParts on cell.aggregation
+  Got: 1
+     Got: partOf
+       Got: cell
+^^^^Getting myCreator on srf.dimer
+^^^^Getting subOf on srf.dimer
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+       Got: regulatory.substance
+^^^^Getting myCreator on plasma.membrane
+^^^^Getting myRef on plasma.membrane
+^^^^Getting subOf on plasma.membrane
+  Got: 1
+     Got: hasSubs
+       Got: cell.membrane
+^^^^Getting myCreator on cfos
+^^^^Getting subOf on cfos
+  Got: 1
+     Got: hasSubs
+       Got: protooncogene.product
+^^^^Getting myCreator on prokaryotic.cell
+^^^^Getting myRef on prokaryotic.cell
+^^^^Getting subOf on prokaryotic.cell
+  Got: 1
+     Got: hasSubs
+       Got: bio.cell
+^^^^Getting hasSubs on phylum
+  Got: 1
+     Got: subOf
+       Got: class
+^^^^Getting subOf on phylum
+  Got: 1
+     Got: hasSubs
+       Got: kingdom
+^^^^Getting level on homo.sapiens
+^^^^Getting myCreator on homo.sapiens
+^^^^Getting subOf on homo.sapiens
+  Got: 1
+     Got: hasSubs
+       Got: primate
+^^^^Getting hasSubs on ribosome
+  Got: 1
+     Got: subOf
+       Got: bound.ribosome
+       Got: free.ribosome
+^^^^Getting myCreator on ribosome
+^^^^Getting myRef on ribosome
+^^^^Getting partOf on ribosome
+  Got: 1
+     Got: hasParts
+       Got: bio.cell
+^^^^Getting made.by on ribosome
+^^^^Getting subOf on ribosome
+  Got: 1
+     Got: hasSubs
+       Got: organelle
+^^^^Getting synonym on serum.response.factor
+  Got: 1
+     Got: synonym
+       Got: srf
+^^^^Getting myCreator on serum.response.factor
+^^^^Getting subOf on serum.response.factor
+  Got: 1
+     Got: hasSubs
+       Got: peptide
+       Got: regulatory.substanc
+c: endoplasmic.reticulum
+  hasSubs smooth.er rough.er 
+  myCreator jp2 
+  attachedTo bound.ribosome 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: functionOf
+  instanceOf slot
+  inverseSlot hasFunction 
+  instanceOf slot 
+
+c: 12-O-tetradecanoylphorbol.13-acetate
+  synonym tpa 
+  myCreator rbt 
+  subOf regulatory.substance 
+
+c: slot
+  hasSubs taxonomicSlot partonomicSlot 
+  hasInstances functionOf inverseSlot myCreator myRef attachedTo hasFunction synonym 
+  subOf relation 
+
+c: phospholipid
+  myCreator jp2 
+  myRef 4 
+  partOf cell.membrane 
+  subOf thing 
+  hasParts hydrophylic.end hydrophobic.end 
+
+c: gene
+  hasSubs proviral.gene protooncogene 
+  myCreator rbt 
+  partOf chromosome 
+  subOf thing 
+  hasParts promoter.site c-fos.promoter.site dna deoxyribonucleic.acid enhancer.site 
+
+c: p100
+  myCreator rbt 
+  subOf group.i.rel.precursor 
+
+c: adressin
+  hasSubs vascular.adressin 
+  myCreator rbt 
+  subOf adhesion.protein 
+
+c: gland
+  myCreator rbt 
+  subOf cell.aggregation 
+
+c: synthesizes
+  subOf relation 
+
+c: stuff
+  hasSubs ion tissue regulatory.molecule ros receptor atom reactive.oxygen.species substance h2o2.concentration nucleic.acid gene.regulator pollen ribonucleic.acid element antioxidant dna cytosol dfo.concentration rna deoxyribonucleic.acid compound protein iron.chelation.agent 
+  subOf root 
+
+c: smooth.er
+  myCreator jp2 
+  myRef 6 
+  subOf endoplasmic.reticulum 
+
+c: moderate
+  myCreator eai 
+  subOf idea 
+
+c: phosphorylated
+  subOf idea 
+
+c: h2o2
+  synonym hydrogen.peroxide 
+  myCreator eai 
+  subOf reactive.oxygen.species 
+
+c: influenza.virus
+  synonym influenza 
+  myCreator rbt 
+  subOf virus 
+
+c: species
+  subOf genus 
+
+c: promoter.site
+  hasSubs c-fos.promoter.site tre tpa.response.element 
+  myCreator rbt 
+  partOf gene 
+  subOf thing 
+  hasParts promoter.kB-binding.site 
+
+c: cjun
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: digestedBy
+  inverseSlot digests 
+  subOf relation 
+
+c: protein-tyrosine.kinase
+  myCreator rbt 
+  subOf enzyme 
+
+c: ion
+  hasSubs na+ k+ potassium.ion sodium.ion calcium.ion ca2+ 
+  myCreator rbt 
+  subOf stuff 
+
+c: biosphere
+  subOf thing 
+  hasParts ecosystem 
+
+c: activator.protein-1
+  synonym ap-1 
+  hasSubs fos-jun jun-jun 
+  myCreator rbt 
+  subOf transcription.factor 
+
+c: tpa
+  synonym 12-O-tetradecanoylphorbol.13-acetate 
+  myCreator rbt 
+  subOf regulatory.substance 
+
+c: tissue
+  partOf organ 
+  subOf stuff 
+  hasParts cell 
+
+c: cytoskeleton
+  hasSubs microtubules microfilament 
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: degraded
+  subOf idea 
+
+c: inverseSlot
+  instanceOf slot
+
+c: proteoglycan
+  subOf glycoconjugate 
+
+c: presentedBy
+  inverseSlot presents 
+  subOf relation 
+
+c: fosb
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: regulatory.molecule
+  myCreator rbt 
+  myRef 9 
+  subOf stuff 
+
+c: population
+  partOf ecosystem 
+  subOf thing 
+
+c: na+
+  myCreator rbt 
+  subOf ion 
+
+c: relation
+  hasSubs slot synthesizes digestedBy presentedBy bindsTo reduces expresses digests eliminates translocatedTo excretes metabolizes phosphorylates presents metabolizedBy oxidizes ingests 
+  subOf thing 
+
+c: instanceOf
+  instanceOf taxonomicSlot
+  inverseSlot hasInstances 
+  instanceOf taxonomicSlot 
+
+c: organ
+  partOf multicellular.organism 
+  subOf thing 
+  hasParts tissue cell 
+
+c: ros
+  synonym reactive.oxygen.species 
+  myCreator rbt 
+  subOf stuff 
+
+c: hasParts
+  instanceOf partonomicSlot
+  inverseSlot partOf 
+  instanceOf partonomicSlot 
+
+c: rhinovirus
+  synonym cold.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: p65-p105
+  myCreator rbt 
+  subOf rel.heterodimer 
+
+c: rough.er
+  myCreator jp2 
+  myRef 6 
+  subOf endoplasmic.reticulum 
+
+c: ikb-p50-p65
+  myCreator rbt 
+  subOf rel.protein.complex 
+
+c: regulatory.substance
+  hasSubs 12-O-tetradecanoylphorbol.13-acetate tpa tcf regulatory.peptide srf terniary.complex.factor srf.dimer serum.response.factor 
+  myCreator rbt 
+  myRef 9 
+  subOf substance 
+
+c: myCreator
+  instanceOf slot
+
+c: nervous.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: tcf
+  synonym terniary.complex.factor 
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: taxonomicSlot
+  hasInstances hasInstances instanceOf hasSubs subOf 
+  subOf slot 
+
+c: mitochondrion
+  synonym mitrocondria 
+  myCreator jp2 
+  myRef 6 
+  subOf microbody 
+
+c: sodium
+  myCreator rbt 
+  subOf element 
+
+c: bio.process
+  synonym biological.process 
+  myCreator rbt 
+  subOf phys.process 
+
+c: receptor
+  hasSubs membrane.receptor 
+  myCreator rbt 
+  subOf stuff peptide 
+
+c: tcf.binding.site
+  myCreator rbt 
+  subOf c-fos.promoter.site 
+
+c: nitrogen
+  myCreator rbt 
+  subOf element 
+
+c: activated
+  subOf idea 
+
+c: bindsTo
+  subOf relation 
+
+c: group.i.rel.precursor
+  hasSubs p100 p105 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: polysome
+  synonym polyribosome 
+
+c: vertebrate
+  hasSubs mammal 
+  myCreator rbt 
+  subOf multicellular.organism 
+
+c: organism
+  hasSubs animal bacterium fungus multicellular.organism virus viroid plant 
+  subOf thing 
+
+c: potassium
+  myCreator rbt 
+  subOf element 
+
+c: deferoxamine
+  synonym dfo 
+  myCreator eai 
+  subOf iron.chelation.agent 
+
+c: animal
+  myCreator rbt 
+  subOf organism 
+
+c: nitric.oxide
+  myCreator eai 
+  subOf reactive.oxygen.species 
+
+c: regulatory.peptide
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: produced
+  subOf idea 
+
+c: circulatory.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: fos-jun
+  myCreator rbt 
+  subOf activator.protein-1 
+
+c: group.i.rel.protein
+  hasSubs p52 p50 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: atom
+  partOf compound 
+  subOf stuff 
+
+c: formed
+  subOf idea 
+
+c: group.ii.rel.protein
+  hasSubs rel p65 relb 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: primate
+  hasSubs human.being human homo.sapiens 
+  myCreator rbt 
+  subOf mammal 
+
+c: chromosome
+  myCreator rbt 
+  partOf nucleus 
+  subOf organelle 
+  hasParts gene 
+
+c: reactive.oxygen.species
+  synonym ros 
+  hasSubs h2o2 nitric.oxide hydrogen.peroxide 
+  myCreator rbt 
+  subOf stuff 
+
+c: bacterium
+  hasSubs bacillus coccus 
+  myCreator rbt 
+  subOf organism 
+
+c: thing
+  hasSubs phospholipid gene promoter.site biosphere cytoskeleton population relation organ nervous.system organism circulatory.system polyribosome ecosystem lysosome nucleolus vacuole kingdom glyxoxysome nuclear.envelope cell.compartment nuclear.compartment cell.fragment vesicle cell cytoplasmic.compartment lumen organelle cell.membrane respiratory.system cell.aggregation promoter.kB-binding.site enhancer.site digestive.system 
+  subOf root 
+
+c: rat
+  myCreator rbt 
+  subOf rodent 
+
+c: rel.homodimer
+  myCreator rbt 
+  subOf rel.protein.complex 
+
+c: bacillus
+  synonym rod 
+  myCreator rbt 
+  subOf bacterium 
+
+c: k+
+  myCreator rbt 
+  subOf ion 
+
+c: c-fos.promoter.site
+  hasSubs tcf.binding.site serum.response.element sre 
+  myCreator rbt 
+  partOf gene 
+  subOf promoter.site 
+
+c: polyribosome
+  synonym polysome 
+  myCreator jp2 
+  attachedTo mrna 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: class
+  hasSubs order 
+  subOf phylum 
+
+c: human.being
+  level basic 
+  synonym human 
+  hasSubs human.subject 
+  myCreator rbt 
+  subOf primate 
+
+c: ecosystem
+  partOf biosphere 
+  subOf thing 
+  hasParts population 
+
+c: low
+  myCreator eai 
+  subOf idea 
+
+c: reduces
+  subOf relation 
+
+c: herpesvirus
+  synonym herpes.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: vjun
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: genus	subOf		family
+
+c: adhesion.protein
+  hasSubs adressin integrin selectin 
+  myCreator rbt 
+  subOf protein membrane.receptor 
+
+c: lysosome
+  myCreator jp2 
+  myRef 6 
+  partOf endo 
+  subOf thing 
+
+c: htlv
+  synonym human 
+  myCreator rbt 
+  subOf virus 
+
+c: lipid
+  subOf compound 
+
+c: biological.process
+  synonym bio.process 
+  myCreator rbt 
+  subOf phys.process 
+
+c: substance
+  hasSubs regulatory.substance 
+  myCreator rbt 
+  subOf stuff 
+
+c: fungus
+  myCreator rbt 
+  subOf organism 
+
+c: nucleolus
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: map.kinase
+  synonym mapk 
+  myCreator eai 
+  subOf protein.kinase 
+
+c: expresses
+  subOf relation 
+
+c: carbohydrate
+  hasSubs sugar 
+  subOf compound 
+
+c: microbody
+  hasSubs mitochondrion peroxisome glyxoxysome 
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: mitrocondria
+  synonym mitochondrion 
+
+c: human
+  level basic 
+  synonym htlv human.being 
+  myCreator rbt jp2 
+  subOf virus primate 
+
+c: tre
+  synonym tpa.response.element 
+  myCreator rbt 
+  subOf promoter.site 
+
+c: rel.protein
+  hasSubs group.i.rel.precursor group.i.rel.protein group.ii.rel.protein nf-kb rel.protein.complex group.ii.rel.precursor nuclear.factor-kB 
+  myCreator rbt 
+  subOf transcription.factor protein 
+
+c: vacuole
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: herpes.virus
+  synonym herpesvirus 
+
+c: bio.cell
+  level basic 
+  synonym biological.cell 
+  hasSubs eukaryotic.cell prokaryotic.cell 
+  myCreator jp2 
+  subOf cell 
+  hasParts cytoskeleton polyribosome nucleolus cytosol lumen organelle cell.membrane ribosome endomembrane 
+
+c: tpa.response.element
+  synonym tre 
+  myCreator rbt 
+  subOf promoter.site 
+
+c: bacteriophage
+  synonym phage 
+  myCreator rbt 
+  subOf virus 
+
+c: polypeptide
+  synonym peptide 
+  myCreator rbt 
+
+c: chloride
+  myCreator rbt 
+  subOf element 
+
+c: potassium.ion
+  myCreator rbt 
+  subOf ion 
+
+c: partOf
+  instanceOf partonomicSlot
+  inverseSlot hasParts 
+  instanceOf partonomicSlot 
+
+c: c-jun
+  myCreator rbt 
+  subOf protooncogene 
+
+c: kingdom
+  hasSubs phylum 
+  subOf thing 
+
+c: hasSubs
+  instanceOf taxonomicSlot
+  inverseSlot subOf 
+
+c: cold.virus
+  synonym rhinovirus 
+
+c: carbon
+  myCreator rbt 
+  subOf element 
+
+c: ap-1
+  synonym activator.protein-1 
+  myCreator rbt 
+  subOf transcription.factor 
+
+c: idea
+  hasSubs moderate phosphorylated degraded activated produced formed low hydrophylic.end unbound high binding hydrophobic.end 
+  subOf root 
+
+c: myRef
+  instanceOf slot
+
+c: root
+  hasSubs stuff thing idea 
+
+c: peroxisome
+  myCreator jp2 
+  myRef 6 
+  subOf microbody 
+
+c: rod
+  synonym bacillus 
+
+c: pneumococcus
+  myCreator rbt 
+  subOf coccus 
+
+c: integrin
+  myCreator rbt 
+  subOf adhesion.protein 
+
+c: srf
+  synonym serum.response.factor 
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: sodium.ion
+  myCreator rbt 
+  subOf ion 
+
+c: glyxoxysome
+  myCreator jp2 
+  myRef 6 
+  subOf microbody thing 
+
+c: digests
+  inverseSlot digestedBy 
+  subOf relation 
+
+c: h2o2.concentration
+  myCreator eai 
+  subOf stuff 
+
+c: nucleic.acid
+  myCreator rbt 
+  partOf ribonucleic.acid deoxyribonucleic.acid rna dna 
+  subOf stuff 
+
+c: gene.regulator
+  hasSubs transcription.factor protooncogene.product 
+  myCreator rbt 
+  subOf stuff 
+
+c: attachedTo
+  instanceOf slot
+  inverseSlot attachedTo 
+
+c: coccus
+  hasSubs pneumococcus 
+  myCreator rbt 
+  subOf bacterium 
+
+c: pollen
+  partOf flowering plant 
+  subOf stuff 
+
+c: n.acetyl-l-cysteine
+  myCreator eai 
+  subOf antioxidant 
+
+c: eliminates
+  subOf relation 
+
+c: microtubules
+  myCreator jp2 
+  myRef 6 
+  subOf cytoskeleton 
+
+c: hydrophylic.end
+  myCreator jp2 
+  myRef 4 
+  partOf phospholipid 
+  subOf idea 
+
+c: order
+  hasSubs family 
+  subOf class 
+
+c: proviral.gene
+  myCreator eai 
+  subOf gene 
+
+c: ribonucleic.acid
+  synonym rna 
+  myCreator rbt 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: element
+  hasSubs sodium nitrogen potassium chloride carbon oxygen hydrogen sulfur 
+  partOf compound 
+  subOf stuff 
+
+c: translocatedTo
+  subOf relation 
+
+c: jun-jun
+  myCreator rbt 
+  subOf activator.protein-1 
+
+c: nuclear.envelope
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: multicellular.organism
+  hasSubs vertebrate 
+  subOf organism 
+  hasParts organ nervous.system circulatory.system respiratory.system digestive.system 
+
+c: bound.ribosome
+  myCreator jp2 
+  attachedTo endoplasmic.reticulum 
+  myRef 6 
+  subOf ribosome 
+
+c: serum.response.element
+  synonym sre 
+  myCreator rbt 
+  subOf c-fos.promoter.site 
+
+c: antioxidant
+  hasSubs n.acetyl-l-cysteine 
+  myCreator eai 
+  subOf stuff 
+
+c: rel
+  myCreator rbt 
+  subOf group.ii.rel.protein 
+
+c: transcription.factor
+  hasSubs activator.protein-1 rel.protein ap-1 
+  myCreator rbt 
+  subOf gene.regulator 
+
+c: dna
+  synonym deoxyribonucleic.acid 
+  myCreator rbt 
+  partOf gene 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: nf-kb
+  synonym nuclear.factor-kB 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: calcium.ion
+  myCreator rbt 
+  subOf ion 
+
+c: cell.compartment
+  partOf cell 
+  subOf thing 
+
+c: oxygen
+  myCreator rbt 
+  subOf element 
+
+c: inhibitor.protein
+  hasSubs inhibitor.protein.complex ikb 
+  myCreator rbt 
+  subOf protein 
+
+c: protooncogene
+  hasSubs c-jun c-fos 
+  myCreator rbt 
+  subOf gene 
+
+c: enzyme
+  hasSubs protein-tyrosine.kinase protein.kinase protein.kinase.C 
+  myCreator rbt 
+  subOf peptide 
+
+c: cytosol
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf stuff 
+
+c: unbound
+  subOf idea 
+
+c: nuclear.compartment
+  myCreator rbt 
+  subOf thing 
+
+c: virus
+  hasSubs influenza.virus rhinovirus herpesvirus htlv human bacteriophage human.immunodeficiency.virus hiv influenza 
+  myCreator rbt 
+  subOf organism 
+
+c: hasFunction
+  instanceOf slot
+  inverseSlot functionOf 
+
+c: dfo.concentration
+  myCreator eai 
+  subOf stuff 
+
+c: rna
+  synonym ribonucleic.acid 
+  myCreator rbt 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: viroid
+  myCreator rbt 
+  subOf organism 
+
+c: cell.fragment
+  myCreator rbt 
+  subOf thing 
+
+c: hydrogen
+  myCreator rbt 
+  subOf element 
+
+c: human.immunodeficiency.virus
+  synonym hiv 
+  myCreator rbt 
+  subOf virus 
+
+c: vesicle
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf thing 
+
+c: glycoprotein
+  myCreator rbt 
+  subOf glycoconjugate 
+
+c: vascular.adressin
+  myCreator rbt 
+  subOf adressin 
+
+c: high
+  myCreator eai 
+  subOf idea 
+
+c: p65
+  myCreator rbt 
+  subOf group.ii.rel.protein 
+
+c: relb
+  myCreator rbt 
+  subOf group.ii.rel.protein 
+
+c: rel.heterodimer
+  hasSubs p65-p105 p50-p65 
+  myCreator rbt 
+  subOf rel.protein.complex 
+
+c: flowering.plant
+  myCreator rbt 
+  subOf plant 
+
+c: cell
+  level basic 
+  hasSubs bio.cell biological.cell 
+  myCreator rbt jp2 
+  partOf tissue organ cell.aggregation 
+  subOf thing 
+  hasParts cell.compartment 
+
+c: protooncogene.product
+  hasSubs cjun fosb vjun cfos vfos junb 
+  myCreator rbt 
+  subOf protein gene.regulator 
+
+c: microfilament
+  myCreator jp2 
+  myRef 6 
+  subOf cytoskeleton 
+
+c: cytoplasmic.compartment
+  myCreator rbt 
+  subOf thing 
+
+c: inhibitor.protein.complex
+  myCreator rbt 
+  subOf inhibitor.protein 
+
+c: rel.protein.complex
+  hasSubs ikb-p50-p65 rel.homodimer rel.heterodimer 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: rodent
+  hasSubs rat 
+  myCreator rbt 
+  subOf mammal 
+
+c: sre
+  synonym serum.response.element 
+  myCreator rbt 
+  subOf c-fos.promoter.site 
+
+c: deoxyribonucleic.acid
+  synonym dna 
+  myCreator rbt 
+  partOf gene 
+  subOf stuff 
+  hasParts nucleic.acid 
+
+c: family
+  subOf order 
+
+c: excretes
+  myCreator jp2 rbt 
+  subOf relation 
+
+c: metabolizes
+  inverseSlot metabolizedBy 
+  subOf relation 
+
+c: ca2+
+  myCreator rbt 
+  subOf ion 
+
+c: terniary.complex.factor
+  synonym tcf 
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: selectin
+  myCreator rbt 
+  subOf adhesion.protein 
+
+c: p50-p65
+  myCreator rbt 
+  subOf rel.heterodimer 
+
+c: golgi.complex
+  myCreator jp2 
+  myRef 6 
+  partOf endomembrane 
+  subOf organelle 
+
+c: ikb
+  myCreator rbt 
+  subOf inhibitor.protein 
+
+c: phosphorylates
+  subOf relation 
+
+c: p52
+  myCreator rbt 
+  partOf p110 
+  subOf group.i.rel.protein 
+
+c: presents
+  inverseSlot presentedBy 
+  subOf relation 
+
+c: glycoconjugate
+  hasSubs proteoglycan glycoprotein 
+  myCreator rbt 
+  subOf protein 
+
+c: compound
+  hasSubs lipid carbohydrate peptide 
+  subOf stuff 
+  hasParts atom element 
+
+c: p50
+  myCreator rbt 
+  partOf p105 
+  subOf group.i.rel.protein 
+
+c: hasInstances
+  instanceOf taxonomicSlot
+  inverseSlot instanceOf 
+  instanceOf taxonomicSlot 
+
+c: free.ribosome
+  myCreator jp2 
+  myRef 6 
+  subOf ribosome 
+  suspended.in cytosol 
+
+c: protein.kinase
+  hasSubs map.kinase mapk 
+  myCreator rbt 
+  subOf enzyme 
+
+c: dfo
+  synonym deferoxamine 
+  myCreator eai 
+  subOf iron.chelation.agent 
+
+c: peptide
+  synonym polypeptide 
+  hasSubs tcf receptor regulatory.peptide srf enzyme terniary.complex.factor protein srf.dimer serum.response.factor 
+  subOf compound 
+
+c: lumen
+  myCreator jp2 
+  enclosed.by endoplasmic.reticulum 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: synonym
+  instanceOf slot
+  inverseSlot synonym 
+
+c: protein.kinase.C
+  myCreator rbt 
+  subOf enzyme 
+
+c: organelle
+  hasSubs endoplasmic.reticulum chromosome microbody golgi.complex ribosome 
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  subOf thing 
+
+c: protein
+  hasSubs adhesion.protein rel.protein inhibitor.protein protooncogene.product glycoconjugate 
+  subOf peptide stuff 
+
+c: mapk
+  synonym map.kinase 
+  myCreator eai 
+  subOf protein.kinase 
+
+c: cell.membrane
+  hasSubs plasma.membrane endomembrane 
+  myCreator rbt jp2 
+  myRef 4 
+  partOf bio.cell 
+  subOf thing 
+  hasParts phospholipid 
+
+c: partonomicSlot
+  hasInstances hasParts partOf 
+  subOf slot 
+
+c: binding
+  subOf idea 
+
+c: eukaryotic.cell
+  myCreator jp2 rbt 
+  myRef 6 
+  subOf bio.cell 
+
+c: plant
+  hasSubs flowering.plant 
+  myCreator rbt 
+  subOf organism 
+  hasParts pollen 
+
+c: respiratory.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: subOf
+  instanceOf taxonomicSlot
+  inverseSlot hasSubs 
+
+c: cell.aggregation
+  hasSubs gland 
+  myCreator rbt 
+  subOf thing 
+  hasParts cell 
+
+c: srf.dimer
+  myCreator rbt 
+  subOf peptide regulatory.substance 
+
+c: plasma.membrane
+  myCreator jp2 
+  myRef 6 
+  subOf cell.membrane 
+
+c: cfos
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: prokaryotic.cell
+  myCreator rbt 
+  myRef 6 
+  subOf bio.cell 
+
+c: phylum
+  hasSubs class 
+  subOf kingdom 
+
+c: homo.sapiens
+  level basic 
+  myCreator jp2 rbt 
+  subOf primate 
+
+c: ribosome
+  hasSubs bound.ribosome free.ribosome 
+  myCreator jp2 rbt 
+  myRef 6 
+  partOf bio.cell 
+  made.by nucleolus 
+  subOf organelle 
+
+c: serum.response.factor
+  synonym srf 
+  myCreator rb 
+  subOf peptide regulatory.substance 
+
+c: membrane.receptor
+  hasSubs adhesion.protein 
+  myCreator rbt 
+  subOf receptor 
+
+c: vfos
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: phage
+  synonym bacteriophage 
+
+c: promoter.kB-binding.site
+  myCreator rbt 
+  partOf promoter.site 
+  subOf thing 
+
+c: metabolizedBy
+  inverseSlot metabolizes 
+  subOf relation 
+
+c: c-fos
+  myCreator rbt 
+  subOf protooncogene 
+
+c: endomembrane
+  myCreator jp2 
+  myRef 6 
+  partOf bio.cell 
+  comment "rbt: i think this is a pretty useless concept, at least semantically superfluous" 
+  subOf cell.membrane 
+  hasParts endoplasmic.reticulum microbody vacuole nuclear.envelope vesicle golgi.complex 
+
+c: oxidizes
+  subOf relation 
+
+c: enhancer.site
+  myCreator rbt 
+  partOf gene 
+  subOf thing 
+
+c: mammal
+  hasSubs primate rodent 
+  myCreator rbt 
+  subOf vertebrate 
+
+c: hiv
+  synonym human.immunodeficiency.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: iron.chelation.agent
+  hasSubs deferoxamine dfo 
+  myCreator eai 
+  subOf stuff 
+
+c: ingests
+  level basic 
+  myCreator rbt 
+  subOf relation 
+
+c: p105
+  myCreator rbt 
+  subOf group.i.rel.precursor 
+  hasParts p50 
+
+c: hydrogen.peroxide
+  synonym h2o2 
+  myCreator rbt 
+  subOf reactive.oxygen.species 
+
+c: junb
+  myCreator rbt 
+  subOf protooncogene.product 
+
+c: group.ii.rel.precursor
+  myCreator rbt 
+  subOf rel.protein 
+
+c: nuclear.factor-kB
+  synonym nf-kb 
+  myCreator rbt 
+  subOf rel.protein 
+
+c: digestive.system
+  partOf multicellular.organism 
+  subOf thing 
+
+c: sulfur
+  myCreator rbt 
+  subOf element 
+
+c: hydrophobic.end
+  myCreator jp2 
+  myRef 4 
+  partOf phospholipid 
+  subOf idea 
+
+c: influenza
+  synonym influenza.virus 
+  myCreator rbt 
+  subOf virus 
+
+c: human.subject
+  level basic 
+  myCreator rbt 
+  subOf human.being 
+
+c: sugar
+  subOf carbohydrate 
+
+c: biological.cell
+  level basic 
+  synonym bio.cell 
+  myCreator rbt 
+  subOf cell 
+

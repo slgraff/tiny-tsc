@@ -1,0 +1,1 @@
+/* PatRec.main.h */#pragma oncevoid		 main		(void);

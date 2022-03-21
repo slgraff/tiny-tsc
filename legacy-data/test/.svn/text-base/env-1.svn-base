@@ -1,0 +1,48 @@
+c: myExperiment
+	instanceOf episode
+	actors		( ( foo ( foo1 ) true ) 
+			  ( foo ( foo2 ) true ) 
+			  ( bar ( bar1 ) true ) )
+	relations	( ( abuts ( foo1 foo2 ) true ) 
+			  ( abuts ( foo2 bar1 ) true ) )
+	states		( ( happy ( foo2 ) true ) )
+	nextEpisodes	( rule-1 E1108343430687 ) ( rule-2 E1108343430875 )
+	
+c: E1108343430687
+	instanceOf episode
+	myMechanism	rule-1
+	actors		( ( foo ( foo1 ) true ) 
+			  ( foo ( foo2 ) true ) 
+			  ( bar ( bar1 ) true ) )
+	relations	( ( abuts ( foo1 foo2 ) true ) 
+			  ( abuts ( foo2 bar1 ) true ) )
+	states		( ( happy ( foo2 ) true ) 
+			  ( sad	  ( foo1 ) true ) )
+	nextEpisodes	( rule-2 E1108343430953 )
+	prevEpisodes	( rule-1 myExperiment )
+	
+c: E1108343430953
+	instanceOf episode
+	myMechanism	rule-2
+	actors		( ( foo ( foo1 ) true ) 
+			  ( foo ( foo2 ) true ) 
+			  ( bar ( bar1 ) true ) )
+	relations	( ( abuts ( foo1 foo2 ) true ) 
+			  ( abuts ( foo2 bar1 ) true ) )
+	states		( ( happy ( foo2 ) true ) 
+			  ( sad	  ( foo1 ) true )
+			  ( sad	  ( bar1 ) true ) )
+	prevEpisodes	( rule-1 E1108343430875 ) ( rule-2 E1108343430687 )
+	
+c: E1108343430875
+	instanceOf episode
+	myMechanism	rule-2
+	actors		( ( foo ( foo1 ) true ) 
+			  ( foo ( foo2 ) true ) 
+			  ( bar ( bar1 ) true ) )
+	relations	( ( abuts ( foo1 foo2 ) true ) 
+			  ( abuts ( foo2 bar1 ) true ) )
+	states		( ( happy ( foo2 ) true ) 
+			  ( sad	  ( bar1 ) true ) )
+	nextEpisodes	( rule-1 E1108343430953 )
+	prevEpisodes	( rule-2 myExperiment )

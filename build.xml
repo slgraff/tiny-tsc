@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+
+<!-- ======================================================================= -->
+<!-- TinyTSC                                                                 -->
+<!-- (c) Jack Park, 2005                                                     -->
+<!-- License: LGPL                                                           -->
+<!-- ======================================================================= -->
+<project name="TinyTSC" default="compile" basedir=".">
+
+    <property name="name" value="tinyTSC"/>
+    <property name="version" value="1.0"/>
+
+    <property name="compile.dir" value="${basedir}/classes"/>
+    <property name="lib.dir" value="${basedir}/lib"/>
+    <property name="src.dir" value="${basedir}/src/java"/>
+    <property name="javadoc.dir" value="${basedir}/docs/javadoc"/>
+    <property name="javadoc.zip" value="${distro.dir}/${name}-javadocs.zip"/>
+    <!-- config.dir could be moved to, e.g. /config -->
+    <property name="config.dir" value="${basedir}"/>
+    <property name="data.dir" value="${basedir}/data"/>
+    <property name="core.jar" value="${basedir}/${name}-${version}.jar"/>
+
+    <property name="debug" value="on"/>
+    <property name="deprecation" value="on"/>
+    <property name="optimize" value="on"/>
+
+
+    <!-- =================================================================== -->
+    <!-- Classpath                                                           -->
+    <!-- =================================================================== -->
+    <path id="build.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+    <path id="run.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${basedir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <!-- =================================================================== -->
+    <!-- Sourcepath (for javadoc)                                            -->
+    <!-- =================================================================== -->
+    <path id="source.path">
+        <pathelement path="${src.dir}"/>
+    </path>
+
+    <!-- =================================================================== -->
+    <!-- Prepares the build process                                          -->
+    <!-- =================================================================== -->
+    <target name="prepare">
+        <tstamp/>
+        <mkdir dir="${compile.dir}"/>
+    </target>
+
+    <!-- =================================================================== -->
+    <!-- Cleans up generated stuff                                           -->
+    <!-- =================================================================== -->
+    <target name="clean" description="Removes generated files">
+        <delete dir="${compile.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+    </target>
+
+    <!-- =================================================================== -->
+    <!-- Compiles the source code                                            -->
+    <!-- =================================================================== -->
+    <target name="compile" depends="prepare" description="Compiles the class files">
+        <!-- Core -->
+        <javac srcdir="${src.dir}"
+            destdir="${compile.dir}"
+            debug="${debug}"
+            deprecation="${deprecation}"
+            optimize="${optimize}">
+            <classpath refid="build.classpath"/>
+        </javac>
+    <copy todir="${compile.dir}/org/nex/tinytsc">
+      <fileset dir="${src.dir}/org/nex/tinytsc">
+        <include name="*.PNG">
+        </include>
+      </fileset>
+    </copy>
+        <jar file="${core.jar}" basedir="${compile.dir}"/>
+    </target>
+
+
+    <!-- =================================================================== -->
+    <!-- Creates the API documentation                                       -->
+    <!-- =================================================================== -->
+    <target name="javadoc" description="Creates the API documentation">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc packagenames="org.*"
+            destdir="${javadoc.dir}"
+            author="true"
+            version="true"
+            use="true"
+            windowtitle="${name} ${version} API"
+            doctitle="${name} ${version} API">
+            <classpath refid="build.classpath"/>
+            <sourcepath refid="source.path"/>
+        </javadoc>
+    </target>
+
+    <!-- =================================================================== -->
+    <!-- run: executes TinyTSC                                -->
+    <!-- =================================================================== -->
+
+	<target name="run" 
+		  description="Executes TinyTSC">
+		<java 
+			classpathref="run.classpath" 
+			classname="org.nex.tinytsc.Main" 
+			fork="true">
+		</java>
+	</target>
+
+
+</project>
+

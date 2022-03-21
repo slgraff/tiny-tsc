@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!-- TSC Properties
+	20061030	jp2: latest added comments
+	-->
+
+<properties>
+	<parameter name="Version" value="1" />
+	
+	<!--
+		a relative path:
+		relative to install directory of TSC
+		TODO: change by adding a flag whether DatabasePath is
+			relative or absolute.
+			If absolute, TSC uses path as given.
+			Otherwise, TSC generates prepends path to 
+			install directory -->
+	<parameter name="DatabasePath" value="/database" />
+	
+	<!-- capacity of a cache that holds frames around -->
+	<parameter name="CacheCapacity" value="100" />
+	
+	
+	<!-- for future expansion
+		these values were for an earlier version ot TSC that used
+		FrameStore, a frame database. The present TSC uses
+		JDBM.sf.net as a local database -->
+	<list name="agents">
+		<parameter name="frames" value="org.nex.framestore.cassette.frame.FrameCassette" />
+		<parameter name="nw2fs" value="org.nex.nw2fs.Nw2FsCassette" />
+	</list>
+	
+	
+</properties>
+

@@ -1,0 +1,5556 @@
+<concept id="blast.cell">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="inflammatory.t-cell">
+  <slot name="synonym">
+  helper.t1-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="subOf">
+  cd4-t-cell  
+  </slot>
+</concept>
+
+<concept id="gene">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  proviral.gene  protooncogene  
+  </slot>
+  <slot name="partOf">
+  chromosome  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  promoter.site  c-fos.promoter.site  dna  deoxyribonucleic.acid  enhancer.site  
+  </slot>
+</concept>
+
+<concept id="slot">
+  <slot name="hasSubs">
+  passesThrough  enters  liesIn  antigenBinds  locatedIn  infects  informationSlot  taxonomicSlot  proliferates  transportedAcross  inhales  binds  stimulates  lyses  stimulatedBy  partonomicSlot  
+  </slot>
+  <slot name="hasInstances">
+  functionOf  inverseSlot  myRef  attachedTo  synonym  myCreator  viewOf  hasViews  hasFunction  disjointFrom  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="p100">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  group.i.rel.precursor  
+  </slot>
+</concept>
+
+<concept id="gland">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  cell.aggregation  
+  </slot>
+</concept>
+
+<concept id="stuff">
+  <slot name="hasSubs">
+  tissue  atom  substance  nucleic.acid  gene.regulator  pollen  ribonucleic.acid  antioxidant  dna  cytosol  rna  deoxyribonucleic.acid  compound  protein  ion  regulatory.molecule  ros  receptor  reactive.oxygen.species  h2o2.concentration  element  dfo.concentration  iron.chelation.agent  
+  </slot>
+  <slot name="subOf">
+  root  
+  </slot>
+</concept>
+
+<concept id="synthesizes">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="splenic.vascular.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="phosphorylated">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="passesThrough">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="h2o2">
+  <slot name="synonym">
+  hydrogen.peroxide  
+  </slot>
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  reactive.oxygen.species  
+  </slot>
+</concept>
+
+<concept id="spleen">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="promoter.site">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  c-fos.promoter.site  tpa.response.element  tre  
+  </slot>
+  <slot name="partOf">
+  gene  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  promoter.kB-binding.site  
+  </slot>
+</concept>
+
+<concept id="basophilic.leukocyte">
+  <slot name="synonym">
+  basophil  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  polymorphonuclear.leukocyte  
+  </slot>
+</concept>
+
+<concept id="digestedBy">
+  <slot name="inverseSlot">
+  digests  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="protein-tyrosine.kinase">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  enzyme  
+  </slot>
+</concept>
+
+<concept id="mononuclear.cell">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  macrophage  megakaryocyte  lymphocyte  monocyte  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="biosphere">
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  ecosystem  
+  </slot>
+</concept>
+
+<concept id="activator.protein-1">
+  <slot name="synonym">
+  ap-1  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  fos-jun  jun-jun  
+  </slot>
+  <slot name="subOf">
+  transcription.factor  
+  </slot>
+</concept>
+
+<concept id="tpa">
+  <slot name="synonym">
+  12-O-tetradecanoylphorbol.13-acetate  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  regulatory.substance  
+  </slot>
+</concept>
+
+<model id="immune.e1">
+  <instanceOf>model</instanceOf>
+  <slot name="actors">
+    <tuple>
+      <predicate>stem.cell</predicate>
+      <subject>stem.cell1</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>helper.t-cell</predicate>
+      <subject>helper.t-cell1</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>macrophage</predicate>
+      <subject>Macrophage1</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>B-cell1</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>activated.b-cell</predicate>
+      <subject>activated.b-cell1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>act.h.t-cell</predicate>
+      <subject>act.h.t-cell1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>gm-csf</predicate>
+      <subject>csf1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>il</predicate>
+      <subject>il1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>il-2</predicate>
+      <subject>il2</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>virus</predicate>
+      <subject>virus1</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>antigen1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>cytokine.receptor</predicate>
+      <subject>cytokine.receptor1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>plasma.cell</predicate>
+      <subject>plasma.cell1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>memory.cell</predicate>
+      <subject>memory.cell1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>blast.cell</predicate>
+      <subject>blast.cell1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>antibody</predicate>
+      <subject>antibody1</subject>
+      <truth>false</trutn>
+    </tuple>
+  </slot>
+  <slot name="relations">
+    <tuple>
+      <predicate>presents</predicate>
+      <subject>macrophage1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>b-cell1</subject>
+      <object>helper.t-cell1</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>excretes</predicate>
+      <subject>virus1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>macrophage1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>b-cell1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>helper.t-cell1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>b-cell1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>macrophage1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>presents</predicate>
+      <subject>b-cell1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>b-cell1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>macrophage1</subject>
+      <object>antigen1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>secretes</predicate>
+      <subject>macrophage1</subject>
+      <object>il1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>secretes</predicate>
+      <subject>macrophage1</subject>
+      <object>csf1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>proliferates</predicate>
+      <subject>helper.t-cell1</subject>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>antigenBinds</predicate>
+      <subject>act.h.t-cell1</subject>
+      <object>b-cell1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>antibody1</subject>
+      <object>virus1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>ingests</predicate>
+      <subject>macrophage1</subject>
+      <object>virus1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>attachesTo</predicate>
+      <subject>il1</subject>
+      <object>cytokine.receptor1</object>
+      <truth>false</trutn>
+    </tuple>
+    <tuple>
+      <predicate>synthesizes</predicate>
+      <subject>activated.b-cell1</subject>
+      <object>cytokine.receptor1</object>
+      <truth>false</trutn>
+    </tuple>
+  </slot>
+</model>
+
+<concept id="tissue">
+  <slot name="partOf">
+  organ  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+  <slot name="hasParts">
+  cell  
+  </slot>
+</concept>
+
+<concept id="cytoskeleton">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="hasSubs">
+  microtubules  microfilament  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="proteoglycan">
+  <slot name="subOf">
+  glycoconjugate  
+  </slot>
+</concept>
+
+<concept id="presentedBy">
+  <slot name="inverseSlot">
+  presents  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="na+">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  ion  
+  </slot>
+</concept>
+
+<concept id="adrenal.gland">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+  <slot name="hasParts">
+  adrenal.cortex  adrenal.medulla  
+  </slot>
+</concept>
+
+<concept id="rough.er">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  endoplasmic.reticulum  
+  </slot>
+</concept>
+
+<concept id="p65-p105">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rel.heterodimer  
+  </slot>
+</concept>
+
+<concept id="regulatory.substance">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  tpa  terniary.complex.factor  serum.response.factor  12-O-tetradecanoylphorbol.13-acetate  tcf  regulatory.peptide  srf  srf.dimer  
+  </slot>
+  <slot name="myRef">
+  9  
+  </slot>
+  <slot name="subOf">
+  substance  
+  </slot>
+</concept>
+
+<concept id="leukocyte">
+  <slot name="synonym">
+  white.blood.cell  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  blast.cell  mononuclear.cell  polymorphonuclear.leukocyte  stem.cell  lymphoblast  poly  granulocyte  polymorph  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="enters">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="arterial.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  splenic.vascular.system  pancreatic.arterial.system  coronary.artery.system  cerebral.arterial.system  lymph.node.arterioles  pancreatic.vascular.system  lymph.node.vascular.system  splenic.arterial.system  coronary.vascular.system  cerebral.vascular.system  
+  </slot>
+  <slot name="subOf">
+  circulatory.system  
+  </slot>
+</concept>
+
+<concept id="liesIn">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="bindsTo">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="helper.t1-cell">
+  <slot name="synonym">
+  cd4-t-cell  inflammatory.t-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="subOf">
+  helper.t-cell  cd4-t-cell  
+  </slot>
+</concept>
+
+<concept id="plasma.cell">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  b-cell  
+  </slot>
+</concept>
+
+<concept id="organism">
+  <slot name="hasSubs">
+  animal  bacterium  viroid  fungus  multicellular.organism  virus  plant  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="vertebrate">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  mammal  
+  </slot>
+  <slot name="subOf">
+  multicellular.organism  
+  </slot>
+</concept>
+
+<concept id="deferoxamine">
+  <slot name="synonym">
+  dfo  
+  </slot>
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  iron.chelation.agent  
+  </slot>
+</concept>
+
+<concept id="animal">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  organism  
+  </slot>
+</concept>
+
+<concept id="nitric.oxide">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  reactive.oxygen.species  
+  </slot>
+</concept>
+
+<concept id="immunoglobulin">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="synonym">
+  antibody  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  IgG  immunoglobulin.m.group  immunoglobulin.G  ige  igm  immunoglobulin.E  
+  </slot>
+  <slot name="subOf">
+  protein  antibody  
+  </slot>
+</concept>
+
+<concept id="eosinophilic.leukocyte">
+  <slot name="synonym">
+  eosinophil  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  polymorphonuclear.leukocyte  
+  </slot>
+</concept>
+
+<concept id="fos-jun">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  activator.protein-1  
+  </slot>
+</concept>
+
+<concept id="white.blood.cell">
+  <slot name="synonym">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="fever">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="atom">
+  <slot name="partOf">
+  compound  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="formed">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="antigenBinds">
+  <slot name="myCreator">
+  jp2  rbt  
+  </slot>
+  <slot name="inverseSlot">
+  antigenBinds  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="group.ii.rel.protein">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  p65  rel  relb  
+  </slot>
+  <slot name="subOf">
+  rel.protein  
+  </slot>
+</concept>
+
+<concept id="chromosome">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  nucleus  
+  </slot>
+  <slot name="subOf">
+  organelle  
+  </slot>
+  <slot name="hasParts">
+  gene  
+  </slot>
+</concept>
+
+<concept id="primate">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  homo.sapiens  human.being  human  
+  </slot>
+  <slot name="subOf">
+  mammal  
+  </slot>
+</concept>
+
+<concept id="bacterium">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  bacillus  coccus  
+  </slot>
+  <slot name="subOf">
+  organism  
+  </slot>
+</concept>
+
+<concept id="macrophage">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  mononuclear.cell  
+  </slot>
+</concept>
+
+<concept id="antibacterial.antibody">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="made.by">
+  b-cell  
+  </slot>
+  <slot name="subOf">
+  antibody  
+  </slot>
+</concept>
+
+<concept id="c-fos.promoter.site">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  sre  tcf.binding.site  serum.response.element  
+  </slot>
+  <slot name="partOf">
+  gene  
+  </slot>
+  <slot name="subOf">
+  promoter.site  
+  </slot>
+</concept>
+
+<concept id="polyribosome">
+  <slot name="synonym">
+  polysome  
+  </slot>
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="attachedTo">
+  mrna  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="polymorphonuclear.leukocyte">
+  <slot name="synonym">
+  polymorph  poly  granulocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  basophilic.leukocyte  eosinophilic.leukocyte  eosinophil  basophil  neutrophil  neutrophilic.leukocyte  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="low">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="reduces">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="adhesion.protein">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  selectin  adressin  integrin  
+  </slot>
+  <slot name="subOf">
+  protein  membrane.receptor  
+  </slot>
+</concept>
+
+<concept id="adrenal.cortex">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  adrenal.gland  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="lysosome">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  endo  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="htlv">
+  <slot name="synonym">
+  human  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="biological.process">
+  <slot name="synonym">
+  bio.process  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  phys.process  
+  </slot>
+</concept>
+
+<concept id="platelet">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  cell.fragment  
+  </slot>
+</concept>
+
+<concept id="substance">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  regulatory.substance  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="antibody">
+  <slot name="synonym">
+  immunoglobulin  
+  </slot>
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="hasSubs">
+  immunoglobulin  antibacterial.antibody  antiviral.antibody  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="made.by">
+  b-cell  
+  </slot>
+  <slot name="subOf">
+  protein  
+  </slot>
+</concept>
+
+<concept id="eosinophil">
+  <slot name="synonym">
+  eosinophilic.leukocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  polymorphonuclear.leukocyte  
+  </slot>
+</concept>
+
+<concept id="basophil">
+  <slot name="synonym">
+  basophilic.leukocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  polymorphonuclear.leukocyte  
+  </slot>
+</concept>
+
+<rule id="antibody.VIRUS.antigen.BINDING.1">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>antibody</predicate>
+      <subject>*antibody</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>virus</predicate>
+      <subject>*virus</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*antibody</subject>
+      <object>*virus</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*antibody</subject>
+      <object>*virus</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    antibody binds to virus.
+  </slot>
+</rule>
+
+<concept id="expresses">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="locatedIn">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="microbody">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="hasSubs">
+  peroxisome  mitochondrion  glyxoxysome  
+  </slot>
+  <slot name="partOf">
+  endomembrane  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  organelle  
+  </slot>
+</concept>
+
+<concept id="mitrocondria">
+  <slot name="synonym">
+  mitochondrion  
+  </slot>
+</concept>
+
+<concept id="pancreatic.arterial.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="naive">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="vacuole">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  endomembrane  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="tpa.response.element">
+  <slot name="synonym">
+  tre  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  promoter.site  
+  </slot>
+</concept>
+
+<concept id="polypeptide">
+  <slot name="synonym">
+  peptide  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+</concept>
+
+<concept id="secretes.igm">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+</concept>
+
+<concept id="adrenal.medulla">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  adrenal.gland  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="band.cell">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="potassium.ion">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  ion  
+  </slot>
+</concept>
+
+<rule id="antigen.PROCESSING.B">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    b-cell digests antigen.
+  </slot>
+</rule>
+
+<concept id="cold.virus">
+  <slot name="synonym">
+  rhinovirus  
+  </slot>
+</concept>
+
+<concept id="carbon">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id="ap-1">
+  <slot name="synonym">
+  activator.protein-1  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  transcription.factor  
+  </slot>
+</concept>
+
+<concept id="root">
+  <slot name="hasSubs">
+  stuff  thing  idea  
+  </slot>
+</concept>
+
+<concept id="peroxisome">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  microbody  
+  </slot>
+</concept>
+
+<concept id="rod">
+  <slot name="synonym">
+  bacillus  
+  </slot>
+</concept>
+
+<concept id="pneumococcus">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  coccus  
+  </slot>
+</concept>
+
+<concept id="pancreas">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="activated.helper.t1-cell">
+  <slot name="synonym">
+  activated.cd4-t-cell  activated.inflammatory.t-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="subOf">
+  helper.t-cell  cd4-t-cell  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="digests">
+  <slot name="inverseSlot">
+  digestedBy  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="nucleic.acid">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  ribonucleic.acid  deoxyribonucleic.acid  rna  dna  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="gene.regulator">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  transcription.factor  protooncogene.product  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="bacterial.antigen">
+  <slot name="myCreator">
+  rb  
+  </slot>
+  <slot name="subOf">
+  antigen  
+  </slot>
+</concept>
+
+<concept id="secretes.antibody">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+</concept>
+
+<concept id="pollen">
+  <slot name="partOf">
+  flowering  plant  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="cd4-t-cell">
+  <slot name="synonym">
+  helper.t1-cell  helper.t2-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  
+  </slot>
+  <slot name="hasSubs">
+  inflammatory.t-cell  helper.t1-cell  activated.helper.t1-cell  activated.helper.t2-cell  helper.t-cell  activated.inflammatory.t-cell  helper.t2-cell  
+  </slot>
+  <slot name="hasInstances">
+  activated.inflammatory.t-cell  
+  </slot>
+  <slot name="subOf">
+  t-cell  
+  </slot>
+</concept>
+
+<concept id="gut">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="n.acetyl-l-cysteine">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  antioxidant  
+  </slot>
+</concept>
+
+<concept id="microtubules">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  cytoskeleton  
+  </slot>
+</concept>
+
+<concept id="hydrophylic.end">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  phospholipid  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="differentiatesTo.igg2a.plasma-cell">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+</concept>
+
+<concept id="megakaryocyte">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  mononuclear.cell  
+  </slot>
+</concept>
+
+<concept id="proviral.gene">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  gene  
+  </slot>
+</concept>
+
+<concept id="ribonucleic.acid">
+  <slot name="synonym">
+  rna  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+  <slot name="hasParts">
+  nucleic.acid  
+  </slot>
+</concept>
+
+<concept id="nuclear.envelope">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  endomembrane  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="translocatedTo">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="antioxidant">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="hasSubs">
+  n.acetyl-l-cysteine  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="dna">
+  <slot name="synonym">
+  deoxyribonucleic.acid  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  gene  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+  <slot name="hasParts">
+  nucleic.acid  
+  </slot>
+</concept>
+
+<concept id="transcription.factor">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  activator.protein-1  ap-1  rel.protein  
+  </slot>
+  <slot name="subOf">
+  gene.regulator  
+  </slot>
+</concept>
+
+<concept id="nf-kb">
+  <slot name="synonym">
+  nuclear.factor-kB  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rel.protein  
+  </slot>
+</concept>
+
+<concept id="differentiatesTo.ige.plasma-cell">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+</concept>
+
+<concept id=": antibody">
+  <slot name="sub.of">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="inhibitor.protein">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  inhibitor.protein.complex  ikb  
+  </slot>
+  <slot name="subOf">
+  protein  
+  </slot>
+</concept>
+
+<concept id="b-cell-APC">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+</concept>
+
+<concept id="cytosol">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="protooncogene">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  c-jun  c-fos  
+  </slot>
+  <slot name="subOf">
+  gene  
+  </slot>
+</concept>
+
+<concept id="nuclear.compartment">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="rna">
+  <slot name="synonym">
+  ribonucleic.acid  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+  <slot name="hasParts">
+  nucleic.acid  
+  </slot>
+</concept>
+
+<concept id="viroid">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  organism  
+  </slot>
+</concept>
+
+<concept id="differentiatesTo.igg3.plasma-cell">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Janeway&Travers  
+  </slot>
+</concept>
+
+<concept id="iga">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+  <slot name="differentiatesTo">
+  iga.plasma-cell  
+  </slot>
+</concept>
+
+<concept id="cell.fragment">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  platelet  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="vesicle">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  endomembrane  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<rule id="b-cell.CYTOKINE.RECEPTOR.PRODUCTION.1">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>activated.b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>il</predicate>
+      <subject>*il</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotActors">
+    <tuple>
+      <predicate>cytokine.receptor</predicate>
+      <subject>*cytokine.receptor</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenCreate">
+    *cytokine.receptor 
+  </slot>
+  <slot name="thenActors">
+    <tuple>
+      <predicate>cytokine.receptor</predicate>
+      <subject>*cytokine.receptor</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>synthesizes</predicate>
+      <subject>*b-cell</subject>
+      <object>*cytokine.receptor</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>attachesTo</predicate>
+      <subject>*il</subject>
+      <object>*cytokine.receptor</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    b-cell synthesizes cytokine receptor, and il attaches to receptor.
+  </slot>
+</rule>
+
+<concept id="glycoprotein">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  glycoconjugate  
+  </slot>
+</concept>
+
+<concept id="p65">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  group.ii.rel.protein  
+  </slot>
+</concept>
+
+<concept id="high">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="cell">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="hasSubs">
+  bio.cell  biological.cell  
+  </slot>
+  <slot name="partOf">
+  tissue  organ  cell.aggregation  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  cell.compartment  
+  </slot>
+</concept>
+
+<concept id="cytoplasmic.compartment">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="inhibitor.protein.complex">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  inhibitor.protein  
+  </slot>
+</concept>
+
+<concept id="self-antigen">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  antigen  
+  </slot>
+</concept>
+
+<concept id="rodent">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  rat  
+  </slot>
+  <slot name="subOf">
+  mammal  
+  </slot>
+</concept>
+
+<rule id="antigen.PRESENTATION.m.group">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>macrophage</predicate>
+      <subject>*macrophage</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>presents</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>presents</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    macrophage presents processed antigen.
+  </slot>
+</rule>
+
+<concept id="sre">
+  <slot name="synonym">
+  serum.response.element  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  c-fos.promoter.site  
+  </slot>
+</concept>
+
+<concept id="deoxyribonucleic.acid">
+  <slot name="synonym">
+  dna  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  gene  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+  <slot name="hasParts">
+  nucleic.acid  
+  </slot>
+</concept>
+
+<concept id="infects">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="ca2+">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  ion  
+  </slot>
+</concept>
+
+<concept id="terniary.complex.factor">
+  <slot name="synonym">
+  tcf  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  peptide  regulatory.substance  
+  </slot>
+</concept>
+
+<concept id="selectin">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  adhesion.protein  
+  </slot>
+</concept>
+
+<concept id="p50-p65">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rel.heterodimer  
+  </slot>
+</concept>
+
+<concept id="ikb">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  inhibitor.protein  
+  </slot>
+</concept>
+
+<concept id="antigen.specific.b-cell">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+</concept>
+
+<concept id="coronary.artery.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="p52">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  p110  
+  </slot>
+  <slot name="subOf">
+  group.i.rel.protein  
+  </slot>
+</concept>
+
+<concept id="presents">
+  <slot name="inverseSlot">
+  presentedBy  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="mast.cell">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="compound">
+  <slot name="hasSubs">
+  lipid  carbohydrate  peptide  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+  <slot name="hasParts">
+  atom  element  
+  </slot>
+</concept>
+
+<concept id="p50">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  p105  
+  </slot>
+  <slot name="subOf">
+  group.i.rel.protein  
+  </slot>
+</concept>
+
+<concept id="heart">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  circulatory.system  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="t-cell">
+  <slot name="synonym">
+  t.lymphocyte  T.lymphocyte  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  jp2  
+  </slot>
+  <slot name="hasSubs">
+  activated.helper.t-cell  cd4-t-cell  helper.t-cell  activated.cd8-t-cell  cd8-t-cell  suppressor.t-cell  
+  </slot>
+  <slot name="hasInstances">
+  activated.helper.t-cell  activated.cd8-t-cell  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  immune-cell  splenocyte  lymphocyte  
+  </slot>
+</concept>
+
+<concept id="free.ribosome">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  ribosome  
+  </slot>
+  <slot name="suspended.in">
+  cytosol  
+  </slot>
+</concept>
+
+<concept id="differentiates">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+</concept>
+
+<concept id="processRule">
+  <slot name="hasInstances">
+  antibody.VIRUS.antigen.BINDING.1  antigen.PROCESSING.B  b-cell.CYTOKINE.RECEPTOR.PRODUCTION.1  antigen.PRESENTATION.m.group  activated.helper.t-cell.b-cell.ABUT.1  antigen.PRESENTATION.B  helper.t-cell.ACTIVATION.1  antigen.PROCESSING.m.group  b-cell.ACTIVATION.1  activated.helper.t-cell.antigen.b-cell.BINDING.1  activated.helper.t-cell.b-cell.ABUT.1a  antigen.INTErnaLIZATION.B  antigen.BINDING  antigen.INTErnaLIZATION.m.group  
+  </slot>
+  <slot name="subOf">
+  rule  
+  </slot>
+</concept>
+
+<concept id="lumen">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="enclosed.by">
+  endoplasmic.reticulum  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="organelle">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="hasSubs">
+  chromosome  microbody  ribosome  endoplasmic.reticulum  golgi.complex  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="protein">
+  <slot name="hasSubs">
+  immunoglobulin  adhesion.protein  antibody  inhibitor.protein  rel.protein  protooncogene.product  glycoconjugate  
+  </slot>
+  <slot name="subOf">
+  peptide  stuff  
+  </slot>
+</concept>
+
+<concept id="mapk">
+  <slot name="synonym">
+  map.kinase  
+  </slot>
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  protein.kinase  
+  </slot>
+</concept>
+
+<concept id="cerebral.arterial.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="homo.sapiens">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="myCreator">
+  jp2  rbt  
+  </slot>
+  <slot name="subOf">
+  primate  
+  </slot>
+</concept>
+
+<concept id="serum.response.factor">
+  <slot name="synonym">
+  srf  
+  </slot>
+  <slot name="myCreator">
+  rb  
+  </slot>
+  <slot name="subOf">
+  peptide  regulatory.substance  
+  </slot>
+</concept>
+
+<concept id="ribosome">
+  <slot name="myCreator">
+  jp2  rbt  
+  </slot>
+  <slot name="hasSubs">
+  free.ribosome  bound.ribosome  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="made.by">
+  nucleolus  
+  </slot>
+  <slot name="subOf">
+  organelle  
+  </slot>
+</concept>
+
+<concept id="membrane.receptor">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  adhesion.protein  
+  </slot>
+  <slot name="subOf">
+  receptor  
+  </slot>
+</concept>
+
+<concept id="vfos">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene.product  
+  </slot>
+</concept>
+
+<concept id="IgG">
+  <slot name="synonym">
+  immunoglobulin.G  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  immunoglobulin  
+  </slot>
+</concept>
+
+<concept id="promoter.kB-binding.site">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  promoter.site  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="immunoglobulin.m.group">
+  <slot name="synonym">
+  igm  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  immunoglobulin  
+  </slot>
+</concept>
+
+<concept id="enhancer.site">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="partOf">
+  gene  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="hiv">
+  <slot name="synonym">
+  human.immunodeficiency.virus  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="mammal">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  primate  rodent  
+  </slot>
+  <slot name="subOf">
+  vertebrate  
+  </slot>
+</concept>
+
+<concept id="ingests">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="hydrogen.peroxide">
+  <slot name="synonym">
+  h2o2  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  reactive.oxygen.species  
+  </slot>
+</concept>
+
+<concept id="group.ii.rel.precursor">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rel.protein  
+  </slot>
+</concept>
+
+<concept id="junb">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene.product  
+  </slot>
+</concept>
+
+<concept id="nuclear.factor-kB">
+  <slot name="synonym">
+  nf-kb  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rel.protein  
+  </slot>
+</concept>
+
+<concept id="digestive.system">
+  <slot name="partOf">
+  multicellular.organism  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="hydrophobic.end">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  phospholipid  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="influenza">
+  <slot name="synonym">
+  influenza.virus  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="human.subject">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  human.being  
+  </slot>
+</concept>
+
+<concept id="informationSlot">
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="pituitary.gland">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="erythrocyte">
+  <slot name="synonym">
+  red.blood.cell  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="endoplasmic.reticulum">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="hasSubs">
+  rough.er  smooth.er  
+  </slot>
+  <slot name="attachedTo">
+  bound.ribosome  
+  </slot>
+  <slot name="partOf">
+  endomembrane  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  organelle  
+  </slot>
+</concept>
+
+<concept id="12-O-tetradecanoylphorbol.13-acetate">
+  <slot name="synonym">
+  tpa  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  regulatory.substance  
+  </slot>
+</concept>
+
+<concept id="phospholipid">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  cell.membrane  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  hydrophylic.end  hydrophobic.end  
+  </slot>
+</concept>
+
+<concept id="stem.cell">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="contained.in">
+  bone.bond.marrow  
+  </slot>
+  <slot name="myRef">
+  2  4  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="adressin">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  vascular.adressin  
+  </slot>
+  <slot name="subOf">
+  adhesion.protein  
+  </slot>
+</concept>
+
+<concept id="activated.cd4-t-cell">
+  <slot name="synonym">
+  activated.helper.t1-cell  activated.helper.t2-cell  
+  </slot>
+  <slot name="myCreator">
+  JWP  
+  </slot>
+  <slot name="subOf">
+  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="smooth.er">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  endoplasmic.reticulum  
+  </slot>
+</concept>
+
+<rule id="activated.helper.t-cell.b-cell.ABUT.1">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>helper.t1-cell</predicate>
+      <subject>*helper.t1-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>act.h.t-cell</predicate>
+      <subject>*act.h.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>*b-cell</subject>
+      <object>*helper.t1-cell</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>*b-cell</subject>
+      <object>*act.h.t-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifStates">
+    <tuple>
+      <predicate>activated</predicate>
+      <subject>*helper.t1-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>*b-cell</subject>
+      <object>*helper.t1-cell</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>*b-cell</subject>
+      <object>*act.h.t-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    b-cell abuts activated helper T1-cell.
+  </slot>
+</rule>
+
+<concept id="moderate">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="t.lymphocyte">
+  <slot name="synonym">
+  t-cell  
+  </slot>
+</concept>
+
+<concept id="lymph.node">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="influenza.virus">
+  <slot name="synonym">
+  influenza  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="lymph.node.arterioles">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="species">
+  <slot name="subOf">
+  genus  
+  </slot>
+</concept>
+
+<concept id="cjun">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene.product  
+  </slot>
+</concept>
+
+<concept id="ion">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  na+  potassium.ion  ca2+  k+  sodium.ion  calcium.ion  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="hypothalamus">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="proliferating.b-cell">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+</concept>
+
+<concept id="degraded">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="population">
+  <slot name="partOf">
+  ecosystem  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="regulatory.molecule">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="myRef">
+  9  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="fosb">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene.product  
+  </slot>
+</concept>
+
+<concept id="organ">
+  <slot name="hasSubs">
+  spleen  adrenal.gland  adrenal.cortex  adrenal.medulla  pancreas  gut  heart  pituitary.gland  lymph.node  hypothalamus  thymus  bone.bond.marrow  
+  </slot>
+  <slot name="partOf">
+  multicellular.organism  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  tissue  cell  
+  </slot>
+</concept>
+
+<concept id="relation">
+  <slot name="hasSubs">
+  slot  synthesizes  digestedBy  presentedBy  bindsTo  reduces  expresses  digests  translocatedTo  presents  ingests  eliminates  excretes  metabolizes  phosphorylates  metabolizedBy  oxidizes  secretes  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="ros">
+  <slot name="synonym">
+  reactive.oxygen.species  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<rule id="antigen.PRESENTATION.B">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>presents</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>presents</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    b-cell presents processed antigen.
+  </slot>
+</rule>
+
+<concept id="rhinovirus">
+  <slot name="synonym">
+  cold.virus  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="ikb-p50-p65">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rel.protein.complex  
+  </slot>
+</concept>
+
+<concept id="pancreatic.vascular.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="tcf">
+  <slot name="synonym">
+  terniary.complex.factor  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  peptide  regulatory.substance  
+  </slot>
+</concept>
+
+<concept id="nervous.system">
+  <slot name="partOf">
+  multicellular.organism  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="taxonomicSlot">
+  <slot name="hasInstances">
+  hasInstances  hasSubs  subOf  instanceOf  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="proliferates">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="definition">
+  proliferating?  
+  </slot>
+  <slot name="myRef">
+  ?  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="mitochondrion">
+  <slot name="synonym">
+  mitrocondria  
+  </slot>
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  microbody  
+  </slot>
+</concept>
+
+<concept id="RBC">
+  <slot name="synonym">
+  red.blood.cell  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="sodium">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id="rule">
+  <slot name="hasSubs">
+  processRule  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="T.lymphocyte">
+  <slot name="synonym">
+  t-cell  
+  </slot>
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  lymphocyte  
+  </slot>
+</concept>
+
+<concept id="receptor">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  membrane.receptor  
+  </slot>
+  <slot name="subOf">
+  stuff  peptide  
+  </slot>
+</concept>
+
+<concept id="bio.process">
+  <slot name="synonym">
+  biological.process  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  phys.process  
+  </slot>
+</concept>
+
+<concept id="b-cell">
+  <slot name="synonym">
+  B.lymphocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="hasSubs">
+  plasma.cell  memory.cell  activated.b-cell  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  lymphocyte  
+  </slot>
+</concept>
+
+<concept id="neutrophil">
+  <slot name="synonym">
+  neutrophilic.leukocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  polymorphonuclear.leukocyte  
+  </slot>
+</concept>
+
+<concept id="tcf.binding.site">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  c-fos.promoter.site  
+  </slot>
+</concept>
+
+<concept id="nitrogen">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id="activated">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="transportedAcross">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="group.i.rel.precursor">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  p100  p105  
+  </slot>
+  <slot name="subOf">
+  rel.protein  
+  </slot>
+</concept>
+
+<concept id="polysome">
+  <slot name="synonym">
+  polyribosome  
+  </slot>
+</concept>
+
+<concept id="mast.cell.ige">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  ige  immunoglobulin.E  
+  </slot>
+</concept>
+
+<concept id="potassium">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id="anaphylactic">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="immunoglobulin.G">
+  <slot name="synonym">
+  IgG  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  immunoglobulin  
+  </slot>
+</concept>
+
+<concept id="regulatory.peptide">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  peptide  regulatory.substance  
+  </slot>
+</concept>
+
+<concept id="produced">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="circulatory.system">
+  <slot name="hasSubs">
+  arterial.system  
+  </slot>
+  <slot name="partOf">
+  multicellular.organism  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  heart  
+  </slot>
+</concept>
+
+<concept id="lymphoblast">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="night.sweat">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="group.i.rel.protein">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  p52  p50  
+  </slot>
+  <slot name="subOf">
+  rel.protein  
+  </slot>
+</concept>
+
+<task id="TASK.I1">
+  <instanceOf>agendaTask</instanceOf>
+  <type>fillinNextEp</type>
+  <object>immune.e1</object>
+  <model>immune.e1</model>
+</task>
+
+<rule id="helper.t-cell.ACTIVATION.1">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>helper.t-cell</predicate>
+      <subject>*helper.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>il</predicate>
+      <subject>*il</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotActors">
+    <tuple>
+      <predicate>act.h.t-cell</predicate>
+      <subject>*act.h.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*helper.t-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenCreate">
+    *act.h.t-cell 
+  </slot>
+  <slot name="thenActors">
+    <tuple>
+      <predicate>act.h.t-cell</predicate>
+      <subject>*act.h.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>proliferates</predicate>
+      <subject>*helper.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    *Helper t-cell activated.
+  </slot>
+</rule>
+
+<concept id="helper.t-cell">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="ca.color">
+  235  
+  </slot>
+  <slot name="hasSubs">
+  helper.t1-cell  activated.helper.t-cell  activated.helper.t1-cell  activated.helper.t2-cell  helper.t2-cell  
+  </slot>
+  <slot name="ca.lifespan">
+  255  
+  </slot>
+  <slot name="hasInstances">
+  activated.helper.t2-cell  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="ca.symbol">
+  H  
+  </slot>
+  <slot name="subOf">
+  t-cell  cd4-t-cell  
+  </slot>
+</concept>
+
+<concept id="reactive.oxygen.species">
+  <slot name="synonym">
+  ros  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  h2o2  nitric.oxide  hydrogen.peroxide  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="ig">
+  <slot name="sub.of">
+  antibody  
+  </slot>
+</concept>
+
+<concept id="thing">
+  <slot name="hasSubs">
+  gene  promoter.site  biosphere  cytoskeleton  organism  polyribosome  lysosome  vacuole  nuclear.envelope  nuclear.compartment  cell.fragment  vesicle  cell  cytoplasmic.compartment  lumen  organelle  promoter.kB-binding.site  enhancer.site  digestive.system  phospholipid  population  organ  relation  nervous.system  rule  circulatory.system  ecosystem  nucleolus  kingdom  glyxoxysome  antigen  cell.compartment  model  cell.membrane  respiratory.system  cell.aggregation  agendaTask  
+  </slot>
+  <slot name="subOf">
+  root  
+  </slot>
+</concept>
+
+<concept id="rat">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rodent  
+  </slot>
+</concept>
+
+<concept id="bacillus">
+  <slot name="synonym">
+  rod  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  bacterium  
+  </slot>
+</concept>
+
+<concept id="rel.homodimer">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  rel.protein.complex  
+  </slot>
+</concept>
+
+<concept id="igg1">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+  <slot name="differentiatesTo">
+  igg1.plasma-cell  
+  </slot>
+</concept>
+
+<concept id="circulates">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="poly">
+  <slot name="synonym">
+  polymorphonuclear.leukocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="k+">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  ion  
+  </slot>
+</concept>
+
+<concept id="igg3">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+  <slot name="differentiatesTo">
+  igg3.plasma-cell  
+  </slot>
+</concept>
+
+<concept id="class">
+  <slot name="hasSubs">
+  order  
+  </slot>
+  <slot name="subOf">
+  phylum  
+  </slot>
+</concept>
+
+<concept id="natural.killer.cell">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  lymphocyte  
+  </slot>
+</concept>
+
+<concept id="human.being">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="synonym">
+  human  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  human.subject  
+  </slot>
+  <slot name="subOf">
+  primate  
+  </slot>
+</concept>
+
+<concept id="differentiatesTo.igg1.plasma-cell">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+</concept>
+
+<rule id="antigen.PROCESSING.m.group">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>macrophage</predicate>
+      <subject>*macrophage</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenCreate">
+    *il     *csf 
+  </slot>
+  <slot name="thenActors">
+    <tuple>
+      <predicate>il</predicate>
+      <subject>*il</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>gm-csf</predicate>
+      <subject>*csf</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>digests</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>secretes</predicate>
+      <subject>*macrophage</subject>
+      <object>*il</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>secretes</predicate>
+      <subject>*macrophage</subject>
+      <object>*csf</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    macrophage secretes il and CSF.
+  </slot>
+</rule>
+
+<concept id="ecosystem">
+  <slot name="partOf">
+  biosphere  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  population  
+  </slot>
+</concept>
+
+<concept id="herpesvirus">
+  <slot name="synonym">
+  herpes.virus  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="vjun">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene.product  
+  </slot>
+</concept>
+
+<concept id="memory.cell">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  b-cell  
+  </slot>
+</concept>
+
+<concept id="antiviral.antibody">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="made.by">
+  b-cell  
+  </slot>
+  <slot name="subOf">
+  antibody  
+  </slot>
+</concept>
+
+<concept id="genus	subOf		family">
+</concept>
+
+<concept id="cytotoxic.t-cell">
+  <slot name="synonym">
+  ctl  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="subOf">
+  cd8-t-cell  
+  </slot>
+</concept>
+
+<rule id="b-cell.ACTIVATION.1">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>act.h.t-cell</predicate>
+      <subject>*act.h.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotActors">
+    <tuple>
+      <predicate>activated.b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>antigenBinds</predicate>
+      <subject>*act.h.t-cell</subject>
+      <object>*b-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenActors">
+    <tuple>
+      <predicate>activated.b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    b-cell activated.
+  </slot>
+</rule>
+
+<rule id="activated.helper.t-cell.antigen.b-cell.BINDING.1">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>TRUE</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>act.h.t-cell</predicate>
+      <subject>*act.h.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>presents</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>*b-cell</subject>
+      <object>*act.h.t-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>antigenBinds</predicate>
+      <subject>*act.h.t-cell</subject>
+      <object>*b-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>antigenBinds</predicate>
+      <subject>*act.h.t-cell</subject>
+      <object>*b-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    Activated helper t-cell binds b-cell bound antigen.
+  </slot>
+</rule>
+
+<concept id="lipid">
+  <slot name="subOf">
+  compound  
+  </slot>
+</concept>
+
+<rule id="activated.helper.t-cell.b-cell.ABUT.1a">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>helper.t2-cell</predicate>
+      <subject>*helper.t2-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>*b-cell</subject>
+      <object>*helper.t2-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifStates">
+    <tuple>
+      <predicate>activated</predicate>
+      <subject>*helper.t2-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>abuts</predicate>
+      <subject>*b-cell</subject>
+      <object>*helper.t2-cell</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    b-cell abuts activated helper T2-cell.
+  </slot>
+</rule>
+
+<concept id="fungus">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  organism  
+  </slot>
+</concept>
+
+<concept id="nucleolus">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="map.kinase">
+  <slot name="synonym">
+  mapk  
+  </slot>
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  protein.kinase  
+  </slot>
+</concept>
+
+<concept id="inhales">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="granulocyte">
+  <slot name="synonym">
+  polymorphonuclear.leukocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="carbohydrate">
+  <slot name="hasSubs">
+  sugar  
+  </slot>
+  <slot name="subOf">
+  compound  
+  </slot>
+</concept>
+
+<concept id="human">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="synonym">
+  htlv  human.being  
+  </slot>
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="subOf">
+  virus  primate  
+  </slot>
+</concept>
+
+<concept id="tre">
+  <slot name="synonym">
+  tpa.response.element  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  promoter.site  
+  </slot>
+</concept>
+
+<concept id="rel.protein">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  group.ii.rel.protein  nf-kb  group.ii.rel.precursor  nuclear.factor-kB  group.i.rel.precursor  group.i.rel.protein  rel.protein.complex  
+  </slot>
+  <slot name="subOf">
+  transcription.factor  protein  
+  </slot>
+</concept>
+
+<concept id="herpes.virus">
+  <slot name="synonym">
+  herpesvirus  
+  </slot>
+</concept>
+
+<concept id="bio.cell">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="synonym">
+  biological.cell  
+  </slot>
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="hasSubs">
+  leukocyte  band.cell  mast.cell  erythrocyte  RBC  eukaryotic.cell  red.blood.cell  prokaryotic.cell  
+  </slot>
+  <slot name="subOf">
+  cell  
+  </slot>
+  <slot name="hasParts">
+  cytoskeleton  polyribosome  cytosol  lumen  organelle  ribosome  nucleolus  cell.membrane  endomembrane  
+  </slot>
+</concept>
+
+<concept id="bacteriophage">
+  <slot name="synonym">
+  phage  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="chloride">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id=":	plasma.cell">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="secretes">
+  antibody  
+  </slot>
+</concept>
+
+<concept id="binds">
+  <slot name="synonym">
+  attachedTo  
+  </slot>
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="inverseSlot">
+  binds  
+  </slot>
+  <slot name="inverseValue">
+  not.attachedTo  disconnected  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="c-jun">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene  
+  </slot>
+</concept>
+
+<concept id="activated.b-cell">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="synonym">
+  B.lymphocyte  
+  </slot>
+  <slot name="myCreator">
+  JWP  rbt  jp2  
+  </slot>
+  <slot name="instance.of">
+  b-cell  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  b-cell  
+  </slot>
+</concept>
+
+<concept id="kingdom">
+  <slot name="hasSubs">
+  phylum  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="lymph.node.vascular.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="idea">
+  <slot name="hasSubs">
+  phosphorylated  fever  formed  low  naive  hydrophylic.end  high  hydrophobic.end  moderate  degraded  activated  anaphylactic  produced  night.sweat  circulates  unbound  binding  cytotoxic  
+  </slot>
+  <slot name="subOf">
+  root  
+  </slot>
+</concept>
+
+<concept id="differentiates.to.iga.plasma-cell">
+  <slot name="sub.of">
+  relation  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+</concept>
+
+<concept id="srf">
+  <slot name="synonym">
+  serum.response.factor  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  peptide  regulatory.substance  
+  </slot>
+</concept>
+
+<concept id="integrin">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  adhesion.protein  
+  </slot>
+</concept>
+
+<concept id="glyxoxysome">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  microbody  thing  
+  </slot>
+</concept>
+
+<concept id="sodium.ion">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  ion  
+  </slot>
+</concept>
+
+<concept id="h2o2.concentration">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<rule id="antigen.INTErnaLIZATION.B">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    b-cell ingests bound antigen.
+  </slot>
+</rule>
+
+<concept id="cd8-t-cell">
+  <slot name="synonym">
+  ctl  suppressor.t-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  
+  </slot>
+  <slot name="hasSubs">
+  activated.ctl  cytotoxic.t-cell  activated.cytotoxic.t-cell  activated.suppressor.t-cell  cytolytic.T-lymphocyte  ctl  suppressor.t-cell  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="hasInstances">
+  activated.ctl  activated.cytotoxic.t-cell  activated.suppressor.t-cell  
+  </slot>
+  <slot name="subOf">
+  t-cell  
+  </slot>
+</concept>
+
+<concept id="antigen">
+  <slot name="myCreator">
+  jp2  rbt  
+  </slot>
+  <slot name="hasSubs">
+  bacterial.antigen  self-antigen  viral.antigen  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="coccus">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  pneumococcus  
+  </slot>
+  <slot name="subOf">
+  bacterium  
+  </slot>
+</concept>
+
+<concept id="eliminates">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="cytolytic.T-lymphocyte">
+  <slot name="synonym">
+  ctl  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  cd8-t-cell  
+  </slot>
+</concept>
+
+<concept id="order">
+  <slot name="hasSubs">
+  family  
+  </slot>
+  <slot name="subOf">
+  class  
+  </slot>
+</concept>
+
+<concept id="element">
+  <slot name="hasSubs">
+  carbon  sodium  nitrogen  potassium  chloride  oxygen  hydrogen  sulfur  
+  </slot>
+  <slot name="partOf">
+  compound  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="ige">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="synonym">
+  immunoglobulin.E  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  
+  </slot>
+  <slot name="hasSubs">
+  mast.cell.ige  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+  <slot name="differentiatesTo">
+  ige.plasma-cell  
+  </slot>
+  <slot name="subOf">
+  immunoglobulin  
+  </slot>
+</concept>
+
+<concept id="jun-jun">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  activator.protein-1  
+  </slot>
+</concept>
+
+<concept id="bound.ribosome">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="attachedTo">
+  endoplasmic.reticulum  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  ribosome  
+  </slot>
+</concept>
+
+<concept id="multicellular.organism">
+  <slot name="hasSubs">
+  vertebrate  
+  </slot>
+  <slot name="subOf">
+  organism  
+  </slot>
+  <slot name="hasParts">
+  digestive.system  organ  nervous.system  circulatory.system  respiratory.system  
+  </slot>
+</concept>
+
+<concept id="serum.response.element">
+  <slot name="synonym">
+  sre  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  c-fos.promoter.site  
+  </slot>
+</concept>
+
+<concept id="rel">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  group.ii.rel.protein  
+  </slot>
+</concept>
+
+<concept id="stimulates">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="inverseSlot">
+  stimulatedBy  
+  </slot>
+  <slot name="myRef">
+  ?  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="proliferating??">
+  <slot name="arguments">
+  *con  
+  </slot>
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="i.take">
+  symbol  
+  </slot>
+  <slot name="F">
+  )  
+  </slot>
+  <slot name="i.give">
+  flag  
+  </slot>
+  <slot name="algorithm">
+  (  or?  (  prolif.1?  *con  )  
+  </slot>
+  <slot name="subOf">
+  predicate  
+  </slot>
+</concept>
+
+<concept id="lyses">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="calcium.ion">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  ion  
+  </slot>
+</concept>
+
+<concept id="prolif.1?">
+  <slot name="arguments">
+  *con  
+  </slot>
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="i.take">
+  symbol  
+  </slot>
+  <slot name="i.give">
+  flag  
+  </slot>
+  <slot name="algorithm">
+  (  greater.than?  (  value.of  *con  cur.val  )  (  value.of  *con  prev.val  )  )  
+  </slot>
+  <slot name="subOf">
+  predicate  
+  </slot>
+</concept>
+
+<concept id="cell.compartment">
+  <slot name="partOf">
+  cell  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="oxygen">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id="enzyme">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  protein-tyrosine.kinase  protein.kinase  protein.kinase.C  
+  </slot>
+  <slot name="subOf">
+  peptide  
+  </slot>
+</concept>
+
+<concept id="unbound">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="virus">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  htlv  hiv  influenza  influenza.virus  rhinovirus  herpesvirus  human  bacteriophage  human.immunodeficiency.virus  
+  </slot>
+  <slot name="subOf">
+  organism  
+  </slot>
+</concept>
+
+<concept id="dfo.concentration">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="human.immunodeficiency.virus">
+  <slot name="synonym">
+  hiv  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  virus  
+  </slot>
+</concept>
+
+<concept id="hydrogen">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id="vascular.adressin">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  adressin  
+  </slot>
+</concept>
+
+<concept id="thymus">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="relb">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  group.ii.rel.protein  
+  </slot>
+</concept>
+
+<concept id="flowering.plant">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  plant  
+  </slot>
+</concept>
+
+<concept id="rel.heterodimer">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  p65-p105  p50-p65  
+  </slot>
+  <slot name="subOf">
+  rel.protein.complex  
+  </slot>
+</concept>
+
+<concept id="lymph.node.HEV">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  high.endothelial.venule  
+  </slot>
+</concept>
+
+<concept id="antigen.specific.receptor">
+  <slot name="sub.of">
+  protein  antibody  
+  </slot>
+  <slot name="part.of">
+  antigen.specific.b-cell  
+  </slot>
+</concept>
+
+<concept id="protooncogene.product">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  vfos  junb  cjun  fosb  vjun  cfos  
+  </slot>
+  <slot name="subOf">
+  protein  gene.regulator  
+  </slot>
+</concept>
+
+<rule id="antigen.BINDING">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>b-cell</predicate>
+      <subject>*b-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>helper.t-cell</predicate>
+      <subject>*helper.t-cell</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>macrophage</predicate>
+      <subject>*macrophage</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*helper.t-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*helper.t-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*b-cell</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    antigen bound to macrophage, b-cell, and helper t-cell.
+  </slot>
+</rule>
+
+<concept id="microfilament">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  cytoskeleton  
+  </slot>
+</concept>
+
+<concept id="rel.protein.complex">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  ikb-p50-p65  rel.homodimer  rel.heterodimer  
+  </slot>
+  <slot name="subOf">
+  rel.protein  
+  </slot>
+</concept>
+
+<concept id="model">
+  <slot name="hasInstances">
+  immune.e1  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="B.lymphocyte">
+  <slot name="synonym">
+  b-cell  activated.b-cell  
+  </slot>
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  lymphocyte  
+  </slot>
+</concept>
+
+<concept id="lymphocyte">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="hasSubs">
+  t-cell  T.lymphocyte  b-cell  natural.killer.cell  B.lymphocyte  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  mononuclear.cell  
+  </slot>
+</concept>
+
+<concept id="family">
+  <slot name="subOf">
+  order  
+  </slot>
+</concept>
+
+<concept id="polymorph">
+  <slot name="synonym">
+  polymorphonuclear.leukocyte  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  leukocyte  
+  </slot>
+</concept>
+
+<concept id="excretes">
+  <slot name="myCreator">
+  jp2  rbt  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="metabolizes">
+  <slot name="inverseSlot">
+  metabolizedBy  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="neutrophilic.leukocyte">
+  <slot name="synonym">
+  neutrophil  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  polymorphonuclear.leukocyte  
+  </slot>
+</concept>
+
+<concept id="ctl">
+  <slot name="synonym">
+  cd8-t-cell  cytotoxic.t-cell  cytolytic.T-lymphocyte  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="subOf">
+  cd8-t-cell  
+  </slot>
+</concept>
+
+<concept id="golgi.complex">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  endomembrane  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  organelle  
+  </slot>
+</concept>
+
+<concept id="stimulatedBy">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="inverseSlot">
+  stimulates  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="phosphorylates">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="suppressor.t-cell">
+  <slot name="synonym">
+  cd8-t-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="subOf">
+  cd8-t-cell  t-cell  
+  </slot>
+</concept>
+
+<concept id="glycoconjugate">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  proteoglycan  glycoprotein  
+  </slot>
+  <slot name="subOf">
+  protein  
+  </slot>
+</concept>
+
+<concept id="splenic.arterial.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="viral.antigen">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  antigen  
+  </slot>
+</concept>
+
+<concept id="dfo">
+  <slot name="synonym">
+  deferoxamine  
+  </slot>
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="subOf">
+  iron.chelation.agent  
+  </slot>
+</concept>
+
+<concept id="protein.kinase">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  mapk  map.kinase  
+  </slot>
+  <slot name="subOf">
+  enzyme  
+  </slot>
+</concept>
+
+<concept id="peptide">
+  <slot name="synonym">
+  polypeptide  
+  </slot>
+  <slot name="hasSubs">
+  terniary.complex.factor  protein  serum.response.factor  tcf  receptor  regulatory.peptide  srf  enzyme  srf.dimer  
+  </slot>
+  <slot name="subOf">
+  compound  
+  </slot>
+</concept>
+
+<concept id="bone.bond.marrow">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  organ  
+  </slot>
+</concept>
+
+<concept id="protein.kinase.C">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  enzyme  
+  </slot>
+</concept>
+
+<concept id=":	blast.cell">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+</concept>
+
+<concept id="cell.membrane">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="hasSubs">
+  plasma.membrane  endomembrane  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  phospholipid  
+  </slot>
+</concept>
+
+<concept id="partonomicSlot">
+  <slot name="hasInstances">
+  hasParts  partOf  
+  </slot>
+  <slot name="subOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="monocyte">
+  <slot name="myCreator">
+  rbt  jp2  
+  </slot>
+  <slot name="myRef">
+  4  
+  </slot>
+  <slot name="subOf">
+  mononuclear.cell  
+  </slot>
+</concept>
+
+<concept id="helper.t2-cell">
+  <slot name="synonym">
+  cd4-t-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="subOf">
+  helper.t-cell  cd4-t-cell  
+  </slot>
+</concept>
+
+<concept id="eukaryotic.cell">
+  <slot name="myCreator">
+  jp2  rbt  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="binding">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="respiratory.system">
+  <slot name="partOf">
+  multicellular.organism  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="plant">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  flowering.plant  
+  </slot>
+  <slot name="subOf">
+  organism  
+  </slot>
+  <slot name="hasParts">
+  pollen  
+  </slot>
+</concept>
+
+<rule id="antigen.INTErnaLIZATION.m.group">
+  <instanceOf>processRule</instanceOf>
+  <slot name="subOf"
+  phys.process 
+  </slot>
+  <slot name="ifActors">
+    <tuple>
+      <predicate>antigen</predicate>
+      <subject>*antigen</subject>
+      <truth>true</trutn>
+    </tuple>
+    <tuple>
+      <predicate>macrophage</predicate>
+      <subject>*macrophage</subject>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifRelations">
+    <tuple>
+      <predicate>binds</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="ifNotRelations">
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenRelations">
+    <tuple>
+      <predicate>contains</predicate>
+      <subject>*macrophage</subject>
+      <object>*antigen</object>
+      <truth>true</trutn>
+    </tuple>
+  </slot>
+  <slot name="thenSay">
+    macrophage ingests bound antigen.
+  </slot>
+</rule>
+
+<concept id="cell.aggregation">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  gland  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+  <slot name="hasParts">
+  cell  
+  </slot>
+</concept>
+
+<concept id=":	antibody">
+  <slot name="sub.of">
+  protein  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="reacts.with">
+  antigen  
+  </slot>
+</concept>
+
+<concept id="srf.dimer">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  peptide  regulatory.substance  
+  </slot>
+</concept>
+
+<concept id="red.blood.cell">
+  <slot name="synonym">
+  erythrocyte  RBC  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="plasma.membrane">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  cell.membrane  
+  </slot>
+</concept>
+
+<concept id="mature.b-cell">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+</concept>
+
+<concept id="igg2a">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="myCreator">
+  JAR  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+  <slot name="differentiatesTo">
+  igg2a.plasma-cell  
+  </slot>
+</concept>
+
+<concept id="igm">
+  <slot name="sub.of">
+  b-cell  
+  </slot>
+  <slot name="synonym">
+  immunoglobulin.m.group  
+  </slot>
+  <slot name="myCreator">
+  JAR  rbt  
+  </slot>
+  <slot name="secretes">
+  igm  
+  </slot>
+  <slot name="myRef">
+  Kuby2  
+  </slot>
+  <slot name="subOf">
+  immunoglobulin  
+  </slot>
+</concept>
+
+<concept id="cfos">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene.product  
+  </slot>
+</concept>
+
+<concept id="prokaryotic.cell">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="subOf">
+  bio.cell  
+  </slot>
+</concept>
+
+<concept id="cytotoxic">
+  <slot name="subOf">
+  idea  
+  </slot>
+</concept>
+
+<concept id="immunoglobulin.E">
+  <slot name="synonym">
+  ige  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="hasSubs">
+  mast.cell.ige  
+  </slot>
+  <slot name="subOf">
+  immunoglobulin  
+  </slot>
+</concept>
+
+<concept id="phylum">
+  <slot name="hasSubs">
+  class  
+  </slot>
+  <slot name="subOf">
+  kingdom  
+  </slot>
+</concept>
+
+<concept id="coronary.vascular.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="phage">
+  <slot name="synonym">
+  bacteriophage  
+  </slot>
+</concept>
+
+<concept id="c-fos">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  protooncogene  
+  </slot>
+</concept>
+
+<concept id="metabolizedBy">
+  <slot name="inverseSlot">
+  metabolizes  
+  </slot>
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="endomembrane">
+  <slot name="myCreator">
+  jp2  
+  </slot>
+  <slot name="partOf">
+  bio.cell  
+  </slot>
+  <slot name="myRef">
+  6  
+  </slot>
+  <slot name="comment">
+  "rbt:  i  think  this  is  a  pretty  useless  concept,  at  least  semantically  superfluous"  
+  </slot>
+  <slot name="subOf">
+  cell.membrane  
+  </slot>
+  <slot name="hasParts">
+  microbody  vacuole  nuclear.envelope  vesicle  endoplasmic.reticulum  golgi.complex  
+  </slot>
+</concept>
+
+<concept id="oxidizes">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="iron.chelation.agent">
+  <slot name="myCreator">
+  eai  
+  </slot>
+  <slot name="hasSubs">
+  deferoxamine  dfo  
+  </slot>
+  <slot name="subOf">
+  stuff  
+  </slot>
+</concept>
+
+<concept id="agendaTask">
+  <slot name="hasInstances">
+  TASK.I1  
+  </slot>
+  <slot name="subOf">
+  thing  
+  </slot>
+</concept>
+
+<concept id="p105">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  group.i.rel.precursor  
+  </slot>
+  <slot name="hasParts">
+  p50  
+  </slot>
+</concept>
+
+<concept id="secretes">
+  <slot name="subOf">
+  relation  
+  </slot>
+</concept>
+
+<concept id="cerebral.vascular.system">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  arterial.system  
+  </slot>
+</concept>
+
+<concept id="sulfur">
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  element  
+  </slot>
+</concept>
+
+<concept id="sugar">
+  <slot name="subOf">
+  carbohydrate  
+  </slot>
+</concept>
+
+<concept id="biological.cell">
+  <slot name="level">
+  basic  
+  </slot>
+  <slot name="synonym">
+  bio.cell  
+  </slot>
+  <slot name="myCreator">
+  rbt  
+  </slot>
+  <slot name="subOf">
+  cell  
+  </slot>
+</concept>
+
+<concept id="functionOf">
+  <slot name="inverseSlot">
+  hasFunction  
+  </slot>
+  <slot name="instanceOf">
+  slot  slot  
+  </slot>
+</concept>
+
+<concept id="activated.ctl">
+  <slot name="synonym">
+  activated.cd8-t-cell  activated.cytotoxic.t-cell  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="instanceOf">
+  cd8-t-cell  cd8-t-cell  
+  </slot>
+  <slot name="subOf">
+  cd8-t-cell  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="inverseSlot">
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="activated.helper.t-cell">
+  <slot name="myCreator">
+  rbt  jp2  jwp  
+  </slot>
+  <slot name="ca.color">
+  235  
+  </slot>
+  <slot name="ca.lifespan">
+  255  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="ca.symbol">
+  H  
+  </slot>
+  <slot name="instanceOf">
+  t-cell  t-cell  
+  </slot>
+  <slot name="subOf">
+  t-cell  activated.splenocyte  helper.t-cell  
+  </slot>
+</concept>
+
+<concept id="hasSubs">
+  <slot name="inverseSlot">
+  subOf  
+  </slot>
+  <slot name="instanceOf">
+  taxonomicSlot  taxonomicSlot  
+  </slot>
+</concept>
+
+<concept id="myRef">
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="activated.helper.t2-cell">
+  <slot name="synonym">
+  activated.cd4-t-cell  
+  </slot>
+  <slot name="myCreator">
+  JWP  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="instanceOf">
+  helper.t-cell  helper.t-cell  
+  </slot>
+  <slot name="subOf">
+  helper.t-cell  cd4-t-cell  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="attachedTo">
+  <slot name="synonym">
+  binds  
+  </slot>
+  <slot name="inverseSlot">
+  attachedTo  
+  </slot>
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="synonym">
+  <slot name="inverseSlot">
+  synonym  
+  </slot>
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="subOf">
+  <slot name="inverseSlot">
+  hasSubs  
+  </slot>
+  <slot name="instanceOf">
+  taxonomicSlot  taxonomicSlot  
+  </slot>
+</concept>
+
+<concept id="instanceOf">
+  <slot name="inverseSlot">
+  hasInstances  
+  </slot>
+  <slot name="instanceOf">
+  taxonomicSlot  taxonomicSlot  
+  </slot>
+</concept>
+
+<concept id="hasParts">
+  <slot name="inverseSlot">
+  partOf  
+  </slot>
+  <slot name="instanceOf">
+  partonomicSlot  partonomicSlot  
+  </slot>
+</concept>
+
+<concept id="myCreator">
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="viewOf">
+  <slot name="inverseSlot">
+  hasViews  
+  </slot>
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="hasViews">
+  <slot name="inverseSlot">
+  viewOf  
+  </slot>
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="activated.cd8-t-cell">
+  <slot name="synonym">
+  activated.ctl  activated.suppressor.t-cell  
+  </slot>
+  <slot name="myCreator">
+  JWP  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="instanceOf">
+  t-cell  
+  </slot>
+  <slot name="subOf">
+  t-cell  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="activated.cytotoxic.t-cell">
+  <slot name="synonym">
+  activated.ctl  
+  </slot>
+  <slot name="myCreator">
+  JWP  
+  </slot>
+  <slot name="possible.states">
+  antigen.primed  
+  </slot>
+  <slot name="instanceOf">
+  cd8-t-cell  cd8-t-cell  
+  </slot>
+  <slot name="subOf">
+  cd8-t-cell  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="partOf">
+  <slot name="inverseSlot">
+  hasParts  
+  </slot>
+  <slot name="instanceOf">
+  partonomicSlot  partonomicSlot  
+  </slot>
+</concept>
+
+<concept id="activated.inflammatory.t-cell">
+  <slot name="synonym">
+  activated.helper.t1-cell  
+  </slot>
+  <slot name="myCreator">
+  JWP  
+  </slot>
+  <slot name="instanceOf">
+  cd4-t-cell  
+  </slot>
+  <slot name="subOf">
+  cd4-t-cell  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="activated.suppressor.t-cell">
+  <slot name="synonym">
+  activated.cd8-t-cell  
+  </slot>
+  <slot name="myCreator">
+  JWP  
+  </slot>
+  <slot name="myRef">
+  2  
+  </slot>
+  <slot name="instanceOf">
+  cd8-t-cell  
+  </slot>
+  <slot name="subOf">
+  cd8-t-cell  activated.splenocyte  
+  </slot>
+</concept>
+
+<concept id="hasFunction">
+  <slot name="inverseSlot">
+  functionOf  
+  </slot>
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="disjointFrom">
+  <slot name="inverseSlot">
+  disjointFrom  
+  </slot>
+  <slot name="instanceOf">
+  slot  
+  </slot>
+</concept>
+
+<concept id="hasInstances">
+  <slot name="inverseSlot">
+  instanceOf  
+  </slot>
+  <slot name="instanceOf">
+  taxonomicSlot  taxonomicSlot  
+  </slot>
+</concept>
