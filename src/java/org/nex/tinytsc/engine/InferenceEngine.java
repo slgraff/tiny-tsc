@@ -41,16 +41,16 @@ public class InferenceEngine {
     if (instanceId.equals(classId)) return true;
     Concept inst = environment.getConcept(instanceId);
     Concept x;
-    List l;
+    List<Object> l;
     String id = null;
     boolean t = false;
     if (inst != null) {
-      l = (List)inst.getProperty("instanceOf");
+      l = (List<Object>)inst.getProperty("instanceOf");
       if (l != null)
         t = _checkIsAConcept(l,classId);
       if (t)
         return true;
-      l = (List) inst.getProperty("subOf");
+      l = (List<Object>) inst.getProperty("subOf");
       if (l != null)
           return _checkIsAConcept(l,classId);
     }
@@ -63,7 +63,7 @@ public class InferenceEngine {
     for (int i=0;i<len;i++) {
       id = (String)l.get(i);
       if (id != null) {
-        if (checkIsAConcept(id,classId)) // recurse
+        if (id.contentEquals(classId)) //bug fix
           return true;
       }
     }
