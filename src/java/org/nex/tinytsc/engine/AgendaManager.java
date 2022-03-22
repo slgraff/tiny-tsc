@@ -26,7 +26,7 @@ public class AgendaManager {
    * Each map value is a List of <code>Task</code>s<br>
    * <code>Task</code>s are sorted on priority, highest first
    */
-  private Map agenda = new HashMap();
+  private Map<String, List<Task>> agenda = new HashMap<String, List<Task>>();
 
   public AgendaManager() {
   }
@@ -37,8 +37,8 @@ public class AgendaManager {
       if (t.equals(Task.UNKNOWN))
         throw new BadTaskException("Task without a taskType");
       //TODO sort
-      List tasks = (List)agenda.get(type);
-      if (tasks==null) tasks = new ArrayList();
+      List<Task> tasks = agenda.get(type);
+      if (tasks==null) tasks = new ArrayList<Task>();
       tasks.add(t);
       agenda.put(type,tasks);
     }
@@ -46,9 +46,9 @@ public class AgendaManager {
 
   public Task getNextTask(String taskType) {
     synchronized(agenda) {
-      List tasks = (List)agenda.get(taskType);
+      List<Task> tasks = agenda.get(taskType);
       if (tasks==null) return null;
-      return (Task)tasks.remove(0);
+      return tasks.remove(0);
     }
   }
 
