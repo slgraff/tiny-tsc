@@ -25,12 +25,12 @@ public class Concept implements Serializable, Identifiable {
   private String id="";
   private String name="";
   private String comment="";
-  private List rules = null;
-  private List episodes=null;
+  private List<Rule> rules = null;
+  private List<Episode> episodes=null;
   /**
    * key = String, value = List
    */
-  private Map properties = new HashMap();
+  private Map<String, List<Object>> properties = new HashMap<String, List<Object>>();
 
   public Concept() {}
 
@@ -72,25 +72,25 @@ public class Concept implements Serializable, Identifiable {
   public void addProperty(String key, Object value) {
     System.out.println("Concept "+id+" putProp "+key+" "+value);
     synchronized(properties) {
-      List v = (List)properties.get(key);
+      List<Object> v = properties.get(key);
       if (v == null)
-        v = new ArrayList();
+        v = new ArrayList<Object>();
       if (!v.contains(value))
           v.add(value);
       properties.put(key, v);
     }
   }
 
-  public void putProperty(String key, List values) {
+  public void putProperty(String key, List<Object> values) {
   	synchronized(properties) {
   		//overwrite everything
   		properties.put(key,values);
   	}
   }
 
-  public List getProperty(String key) {
+  public List<Object> getProperty(String key) {
     synchronized(properties) {
-      return (List)properties.get(key);
+      return properties.get(key);
     }
   }
 
@@ -101,20 +101,20 @@ public class Concept implements Serializable, Identifiable {
   }
 
   public void addRule(Rule rule) {
-    if (rules==null) rules = new ArrayList();
+    if (rules==null) rules = new ArrayList<Rule>();
     rules.add(rule);
   }
 
-  public List getRules() {
+  public List<Rule> getRules() {
     return rules;
   }
 
   public void addEpisode(Episode ep) {
-    if (episodes==null) episodes = new ArrayList();
+    if (episodes==null) episodes = new ArrayList<Episode>();
     episodes.add(ep);
   }
 
-  public List getEpisodes() {
+  public List<Episode> getEpisodes() {
     return episodes;
   }
 
