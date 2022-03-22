@@ -71,4 +71,12 @@ public class AgendaManager {
       e.printStackTrace(); // should never happen
     }
   }
+  
+  /**
+   * MASSIVE TODO
+   * This code is not dynamic.
+   * It needs to properly sort task lists based on priority
+   * It needs to decay priority on any list when it is cycled (fetched)
+   * It need an API to allow tasks to modify priority on any task which will cause a re-sort event
+   */
 }
