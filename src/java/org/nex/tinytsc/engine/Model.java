@@ -71,8 +71,8 @@ public class Model extends Episode implements Identifiable {
     if (ep == null) return;
     numNodes++;
     String n;
-    Iterator itr = ep.listNextEpisodeIds();
+    Iterator<String> itr = ep.listNextEpisodeIds();
     while (itr.hasNext())
-      countNodes((Episode)environment.getEpisode((String)itr.next()));
+      countNodes(environment.getEpisode(itr.next()));
   }
 }
