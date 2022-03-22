@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2005  Jack Park,
+d *  Copyright (C) 2005  Jack Park,
  * 	mail : jackpark@gmail.com
  *
  *  Apache 2 License
@@ -26,21 +26,21 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
   private String name = "";
   private String comment = "";
   private String instanceOf = "";
-  private List actors = null;
-  private List relations = null;
-  private List states = null;
+  private List<Sentence> actors = null;
+  private List<Sentence> relations = null;
+  private List<Sentence> states = null;
   private Model root = null;
   private boolean isModel = false;
   /**
    * Key = ruleId that fired to make nextEpisode
    * Value = episodeId
    */
-  private Map nextEpisodes = new HashMap();
+  private Map<String, String> nextEpisodes = new HashMap<String, String>();
   /**
    * Key = ruleId that brought us here -- looping, etc, means many rules
    * Value = episodeId
    */
-  private Map previousEpisodes = new HashMap();
+  private Map<String, String> previousEpisodes = new HashMap<String, String>();
   /** <code>Rule</code> id that fired */
   private String mechanism= "";
 
@@ -91,16 +91,16 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
     return this.comment;
   }
 
-  public Map getPreviousEpisodes() {
+  public Map<String, String> getPreviousEpisodes() {
     return this.previousEpisodes;
   }
 
-  public Map getNextEpisodes() {
+  public Map<String, String> getNextEpisodes() {
     return this.nextEpisodes;
   }
 
   public String getPreviousEpisodeId(String ruleId) {
-    return (String)previousEpisodes.get(ruleId);
+    return previousEpisodes.get(ruleId);
   }
 
   public void setMechanism(String ruleId) {
@@ -110,16 +110,16 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
     return this.mechanism;
   }
   public void addActor(Sentence t) {
-    if (actors==null) actors = new ArrayList();
+    if (actors==null) actors = new ArrayList<Sentence>();
     actors.add(t);
   }
   public void removeActor(Sentence t) {
   	actors.remove(t);
   }
-  public List getActors() {
+  public List<Sentence> getActors() {
     return actors;
   }
-  public void setActors(List actors) {
+  public void setActors(List<Sentence> actors) {
     this.actors = actors;
   }
   public boolean ruleHasFired(String ruleId) {
@@ -128,28 +128,28 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
 
   public void addRelation(Sentence t) {
     if (t == null) return;
-    if (relations==null) relations = new ArrayList();
+    if (relations==null) relations = new ArrayList<Sentence>();
     relations.add(t);
     System.out.println("ADDRLNS: "+t);
   }
-  public void setRelations(List relns) {
+  public void setRelations(List<Sentence> relns) {
     this.relations = relns;
   }
   public void removeRelation(Sentence t) {
   	relations.remove(t);
   }
-  public void addRelations(List l) {
+  public void addRelations(List<Sentence> l) {
     if (relations == null)
       relations = l;
     else
       relations.addAll(l);
   }
-  public List getRelations() {
+  public List<Sentence> getRelations() {
     return relations;
   }
 
   public void addState(Sentence t) {
-    if (states==null) states = new ArrayList();
+    if (states==null) states = new ArrayList<Sentence>();
     states.add(t);
 //    System.out.println("ADDSTAS: "+t);
   }
@@ -174,7 +174,7 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
     this.nextEpisodes.put(ruleId,episodeId);
   }
 
-  public Iterator listNextEpisodeRuleIds() {
+  public Iterator<String> listNextEpisodeRuleIds() {
     return nextEpisodes.keySet().iterator();
   }
 
@@ -183,7 +183,7 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
    * firing.
    * @return
    */
-  public Iterator listNextEpisodeIds() {
+  public Iterator<String> listNextEpisodeIds() {
     return nextEpisodes.values().iterator();
   }
 
@@ -195,7 +195,7 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
     return previousEpisodes.keySet().iterator();
   }
 
-  public Iterator listPreviousEpisodeIds() {
+  public Iterator<String> listPreviousEpisodeIds() {
   	return previousEpisodes.values().iterator();
   }
 
@@ -288,10 +288,10 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
           buf.append( ( (Sentence) states.get(i)).toXML());
         buf.append("  </slot>\n");
       }
-      Iterator itr = nextEpisodes.keySet().iterator();
+      Iterator<String> itr = nextEpisodes.keySet().iterator();
       String n;
       while (itr.hasNext()) {
-        n = (String)itr.next();
+        n = itr.next();
         buf.append("  <nextEpisode>\n");
         buf.append("    <mechanism>"+n+"</mechanism>\n");
         buf.append("    <node>"+(String)nextEpisodes.get(n)+"</node>\n");
@@ -299,7 +299,7 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
       }
       itr = previousEpisodes.keySet().iterator();
       while (itr.hasNext()) {
-        n = (String)itr.next();
+        n = itr.next();
         buf.append("  <previousEpisode>\n");
         buf.append("    <mechanism>"+n+"</mechanism>\n");
         buf.append("    <node>"+(String)previousEpisodes.get(n)+"</node>\n");
