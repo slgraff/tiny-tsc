@@ -83,7 +83,7 @@ public class SimpleBindingEngine {
    * @param epSentences
    * @return
    */
-  public boolean bind(List ruleSentences, List epSentences) {
+  public boolean bind(List ruleSentences, List<Sentence> epSentences) {
 //    Binding rules: [[foo(*f1 | )], [bar(*b1 | )], [foo(*f2 | )]]
     System.out.println("Binding rules: "+ruleSentences);
 //    Binding eps: [[foo(foo1 | )], [foo(foo2 | )], [bar(bar1 | )]]
@@ -94,19 +94,19 @@ public class SimpleBindingEngine {
     // this means that fireRule can only build a new episode on that which is bound
     // meaning fireRule needs a boolean isBound() test
     if (ruleSentences.size() == epSentences.size()) {
-      Map r = collectPreds(ruleSentences);
+      Map<String, List<Sentence>> r = collectPreds(ruleSentences);
       int len = epSentences.size(), len2;
       Sentence t, t2;
-      List l;
+      List<Sentence> l;
       String svar, ovar, sbnd, obnd;
       for (int i = 0; i < len; i++) {
         // for each Sentence in the Episode actors
         // remember, there may be more than one
         // Sentence in both the Rule and in the Episode
         // for any given predicate -- multiple actors of the same class
-        t = (Sentence) epSentences.get(i);
+        t = epSentences.get(i);
         //
-        l = (List) r.get(t.predicate);
+        l = r.get(t.predicate);
         //NOTE: if we are going to relax the "equal length" requirement,
         //then this test will not return false;
         if (l == null)
@@ -114,7 +114,7 @@ public class SimpleBindingEngine {
         len2 = l.size();
         // for each Sentence associated with this predicate
         for (int j = 0; j < len2; j++) {
-          t2 = (Sentence) l.get(j);
+          t2 = l.get(j);
           svar = t2.subject;
           ovar = t2.object;
           if (curBinding.bindVar(svar, t.subject)) {
@@ -137,19 +137,19 @@ public class SimpleBindingEngine {
    * @param sentences (list of <code>Sentence</code>s)
    * @return Map
    */
-  Map collectPreds(List sentences) {
-    Map result = new HashMap();
+  Map<String, List<Sentence>> collectPreds(List<Sentence> sentences) {
+    Map<String, List<Sentence>> result = new HashMap<String, List<Sentence>>();
     int len = sentences.size();
     Sentence t;
     String pred;
-    List l;
+    List<Sentence> l;
     for (int i=0;i<len;i++) {
-      t = (Sentence)sentences.get(i);
+      t = sentences.get(i);
       System.out.println("CRP 1: "+t.toString());
       pred = t.predicate;
       System.out.println("CRP 2: "+pred);
       l = (List)result.get(pred);
-      if (l==null) l = new ArrayList();
+      if (l==null) l = new ArrayList<Sentence>();
       l.add(t);
       // fill up the map
       result.put(pred,l);
@@ -164,29 +164,30 @@ public class SimpleBindingEngine {
    * @param epSentences
    * @return
    */
-  public boolean match(List ruleSentences, List epSentences) {
+  public boolean match(List<Sentence> ruleSentences, List<Sentence> epSentences) {
 //    Matching rules: [[abuts(*f2 | *b1)]]
     System.out.println("Matching rules: " + ruleSentences);
 //    Matching eps: [[abuts(foo1 | foo2)], [abuts(foo2 | bar1)]]
     System.out.println("Matching eps: "+epSentences);
-    Map r = collectPreds(epSentences);
+    //key = predicate
+    Map<String, List<Sentence>> r = collectPreds(epSentences);
     int len = ruleSentences.size(), len2;
     Sentence t, t2;
-    List l;
+    List<Sentence> l;
     String svar, ovar, sbnd, obnd, xsbnd, xobnd ="", xvar,xsvar, xovar;
     for (int i = 0; i < len; i++) {
       // for each Sentence in the rule list
       // remember, there may be more than one
       // Sentence in both the Rule and in the Episode
       // for any given predicate -- multiple actors of the same class
-      t = (Sentence) ruleSentences.get(i);
+      t = ruleSentences.get(i);
       svar = t.subject; // variable
       ovar = t.object;  // variable
       xsbnd = curBinding.getBinding(svar);
       if (!ovar.equals(""))
         xobnd = curBinding.getBinding(ovar);
       //
-      l = (List) r.get(t.predicate);
+      l = r.get(t.predicate);
       System.out.println("Match 1: "+t.toString()+" | "+xsbnd+" | "+xobnd+" | "+l);
       if (l == null)
         return false; // don't have this predicate
@@ -194,7 +195,7 @@ public class SimpleBindingEngine {
       // for each Sentence associated with this predicate found in the Episode
       boolean temp = false;
       for (int j = 0; j < len2; j++) {
-        t2 = (Sentence) l.get(j);
+        t2 = l.get(j);
         System.out.println("Match 2: "+t2.toString());
         sbnd = t2.subject;
         obnd = t2.object;
@@ -226,7 +227,7 @@ public class SimpleBindingEngine {
      * value: some string value
      * e.g. *foo foo49 after binding
      */
-    private HashMap structures = new HashMap();
+    private Map<String, Object> structures = new HashMap<String, Object>();
 
     public BindingsClass() {}
 
