@@ -1,7 +1,0 @@
-c: digests
-  inverseSlot inverseSlot 
-  subOf relation 
-
-
-need to deal with slotnames which get all lowercased in c:
-

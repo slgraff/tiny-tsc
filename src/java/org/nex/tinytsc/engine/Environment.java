@@ -114,6 +114,7 @@ public class Environment {
   }
 
   public void importModel(Model c) throws DatastoreException {
+	  System.out.println("ImportModel "+c);
     database.putModel(c.getId(),c);
   }
   public void importTask(Task c) throws DatastoreException {

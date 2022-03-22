@@ -40,9 +40,9 @@ public class LegacyImporter {
   private Environment environment;
   private TextFileHandler handler = new TextFileHandler();
   /**
-   * These are the Con objects made here
+   * These are the Con ConObjects made here
    */
-  private HashMap object = new HashMap();
+  private Map<String, Con> ConObject = new HashMap<String, Con>();
 
 
   private File loader;
@@ -50,7 +50,7 @@ public class LegacyImporter {
   /** state variables */
   private Con workingCon = null;
   private Sentence workingSentence = null;
-  private List sentences;
+  private List<Object> sentences;
 
   public LegacyImporter(Environment e) {
     this.environment = e;
@@ -89,48 +89,50 @@ public class LegacyImporter {
    * fillin the inverseSlot
    */
   void storeAll() {
-    System.out.println("Total number of Con objects: "+object.size());
-    Iterator itr = object.keySet().iterator();
-    Con c= (Con)object.get("hasInstances");
-    // required slot -- this will blow if it's not there
-    resolveInverseSlots(c);
-    c = (Con)object.get("instanceOf");
-    System.out.println(c.toString());
+    System.out.println("Total number of Con objects: "+ConObject.size());
+    System.out.println("AllConcepts\n"+ConObject);
+    Iterator<String> itr = ConObject.keySet().iterator();
+    Con c; 
     String n;
     while (itr.hasNext()) {
-      n = (String)itr.next();
-      c = (Con)object.get(n);
-      resolveInverseSlots(c);
+      n = itr.next();
+      System.out.println("MessingWith "+n);
+      if (n != null) {
+    	  c = ConObject.get(n);
+    	  resolveInverseSlots(c);
+          convertCon(c);
+      }
     }
-    itr = object.keySet().iterator();
-    System.out.println("################################");
-    while (itr.hasNext()) {
-      n = (String)itr.next();
-      c = (Con)object.get(n);
-      System.out.println(c.toString());
-      convertCon(c);
-    }
+
     finishTasks();
     environment.finishImport();
   }
 
   void resolveInverseSlots(Con c) {
-    Iterator itr = c.listSlotNames();
+	  if (c == null) return;
+	  System.out.println("ResolvingInverseSlots "+c);
+    Iterator<String> itr = c.listSlotNames();
     Con slot, other;
-    String n;
-    List vals, invVals;
+    String n, x;
+    List<Object> vals, invVals;
     if (!c.instanceOf.equals("")) {
-      System.out.println("****IO : "+c.instanceOf);
-      other = (Con)object.get(c.instanceOf);
-      vals = new ArrayList();
-      vals. add(c.id);
-      other.addSlot("hasInstances",vals);
+    	x = c.instanceOf;
+      System.out.println("****IO : "+x);
+      if (x != null) {
+    	  other = new Con(x); //ConObject.get(c.instanceOf);
+    	  System.out.println("****Other : "+other);
+      
+    	  vals = new ArrayList<Object>();
+    	  vals. add(c.id);
+    	  System.out.println("****Vals : "+vals);
+    	  other.addSlot("hasInstances",vals);
+      }
     }
     while (itr.hasNext()) {
-      n = (String)itr.next();
+      n = itr.next();
       System.out.println("^^^^Getting "+n+" on "+c.id);
       // get the slot itself
-      slot = (Con)object.get(n);
+      slot = ConObject.get(n);
       if (slot != null) {
         invVals = slot.getSlotValue("inverseSlot");
         if (invVals != null) {
@@ -145,10 +147,10 @@ public class LegacyImporter {
             n = (String) invVals.get(i); // inverseSlotType
             System.out.println("     Got: "+n);
             for (int j = 0; j < len2; j++) {
-              other = (Con) object.get( (String) vals.get(j));
+              other = (Con) ConObject.get( (String) vals.get(j));
               if (other != null) {
                 System.out.println("       Got: "+other.id);
-                List l = new ArrayList();
+                List<Object> l = new ArrayList<Object>();
                 l.add(c.id);
                 other.addSlot(n, l);
               }
@@ -158,13 +160,14 @@ public class LegacyImporter {
       }
     }
   }
-  private List tasks = new ArrayList();
+  private List<Con> tasks = new ArrayList<Con>();
 
   void finishTasks() {
     try {
       int len = tasks.size();
+      System.out.println("FinishingTasks "+len);
       for (int i = 0; i < len; i++)
-        convertConcept( (Con) tasks.get(i));
+        convertConcept(tasks.get(i));
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -175,6 +178,7 @@ public class LegacyImporter {
    * @param c
    */
   void convertCon(Con c) {
+	  System.out.println("CC "+c);
     if (c.instanceOf.equals(""))
       convertConcept(c);
     else if (c.instanceOf.equals(TASK))
@@ -188,15 +192,16 @@ public class LegacyImporter {
   }
 
   void convertTask(Con c) {
+	  System.out.println("CT "+c);
     Task tsk = new Task(c.id);
     if (!c.instanceOf.equals("")) {
       tsk.setInstanceOf(c.instanceOf);
     }
-    Iterator itr = c.listSlotNames();
+    Iterator<String> itr = c.listSlotNames();
     String n, v;
     List l;
     while (itr.hasNext()) {
-      n = (String) itr.next();
+      n = itr.next();
       l = c.getSlotValue(n);
       int len = l.size();
       for (int i = 0; i < len; i++) {
@@ -210,9 +215,25 @@ public class LegacyImporter {
             tsk.setTaskType(Task.PUBLISH_EPISODE);
         } else if (n.equals("onConcept")) {
           String x = (String)l.get(i);
+          System.out.println("Getting model "+x);
+          /**
+           * NOTE: it's entirely possible that the model has been loaded but not processed yet
+           * That's because we are storing concepts in a Map which does not necessarily return them
+           * in the order they are loaded.
+           * If we don't get a model from the database, e.g. myExperiment
+           * we must go process it now
+           */
+          
           Model m = environment.getModel(x);
-          if (m == null)
-            throw new RuntimeException("Missing Model: "+x);
+          if (m == null) {
+        	Con mx = this.ConObject.get(x);
+        	if (mx == null)
+                throw new RuntimeException("Missing Model: "+x);
+        	System.out.println("GotModel "+mx);
+        	resolveInverseSlots(mx);
+            convertCon(mx);
+            m = environment.getModel(x);
+          }
           // concept MUST be compiled before task
           tsk.setObject(m);
           // we are importing and the model is the episode
@@ -229,16 +250,17 @@ public class LegacyImporter {
     System.out.println(tsk.toXML());
   }
   void convertRule(Con c) {
+	  System.out.println("CR "+c);
     Rule r = new Rule(c.id);
     if (!c.instanceOf.equals("")) {
       r.setInstanceOf(c.instanceOf);
     }
-    Iterator itr = c.listSlotNames();
+    Iterator<String> itr = c.listSlotNames();
     String n;
     List l;
     Sentence t;
     while (itr.hasNext()) {
-      n = (String)itr.next();
+      n = itr.next();
       l = c.getSlotValue(n);
       int len = l.size();
       for (int i=0;i<len;i++) {
@@ -295,17 +317,18 @@ public class LegacyImporter {
      System.out.println(r.toXML());
   }
   void convertModel(Con c) {
+	  System.out.println("CM "+c);
     Model m = new Model(c.id);
     if (!c.instanceOf.equals("")) {
       m.setInstanceOf(c.instanceOf);
     }
-    Iterator itr = c.listSlotNames();
+    Iterator<String> itr = c.listSlotNames();
     String n;
     List l;
     Sentence t;
     while (itr.hasNext()) {
       //for each slot name
-      n = (String)itr.next();
+      n = itr.next();
       l = c.getSlotValue(n);
       int len = l.size();
 //      System.out.println("## "+l+" "+n);
@@ -337,15 +360,16 @@ public class LegacyImporter {
      System.out.println(m.toXML());
   }
   void convertConcept(Con c) {
+	  System.out.println("CCC "+c);
     Concept con = new Concept(c.id);
     if (!c.instanceOf.equals("")) {
       con.addProperty("instanceOf",c.instanceOf);
     }
-    Iterator itr = c.listSlotNames();
+    Iterator<String> itr = c.listSlotNames();
     String n;
     List l;
     while (itr.hasNext()) {
-      n = (String)itr.next();
+      n = itr.next();
       l = c.getSlotValue(n);
       int len = l.size();
       for (int i=0;i<len;i++)
@@ -414,14 +438,14 @@ public class LegacyImporter {
         workingCon = new Con(name);
       else if (!workingCon.id.equals(name)) {
         // not the same, but already in the cache
-        workingCon = (Con)object.get(name);
+        workingCon = ConObject.get(name);
         // see if we already have this puppy
         if (workingCon==null)
           workingCon = new Con(name);
       }
       //make sure workingCon is already set in the map
       if (workingCon != null) {
-        this.object.put(workingCon.id, workingCon);
+        this.ConObject.put(workingCon.id, workingCon);
       }
     }
     else //otherwise, it's a slot
@@ -504,7 +528,7 @@ public class LegacyImporter {
           workingCon.instanceOf = v;
 //      }
     }
-    System.out.println(workingCon.toString()); // debug
+    System.out.println("ConInstance "+workingCon.toString()); // debug
   }
 
 
@@ -524,7 +548,7 @@ public class LegacyImporter {
     System.out.println("ParseCreate: " + line);
     StringTokenizer toks = new StringTokenizer(line);
     String v; // a binding name
-    List l = new ArrayList();
+    List<Object> l = new ArrayList<Object>();
     while (toks.hasMoreTokens()) {
       v = toks.nextToken();
       if (!v.equals("(") && !v.equals(")"))
@@ -535,7 +559,7 @@ public class LegacyImporter {
 
   void parseTerminate(String line) {
     System.out.println("ParseTerminate: "+line);
-    List l = new ArrayList();
+    List<Object> l = new ArrayList<Object>();
     l.add(line.trim()); // we don't care what it says
     workingCon.addSlot("thenTerminate",l);
   }
@@ -561,22 +585,22 @@ public class LegacyImporter {
       if (slotName.equals("inverseSlot")) {
         // an inverseSlotType
         v = toks.nextToken();
-        Con s = (Con)object.get(v);
+        Con s = ConObject.get(v);
         if (s==null)
           s = new Con(v);
         vals.add(workingCon.id);
         s.addSlot("inverseSlot",vals);
-        object.put(v,s);
+        ConObject.put(v,s);
         vals = new ArrayList();
         vals.add(v);
       } else if (slotName.equals("synonym")) {
           v = toks.nextToken();
-          Con s = (Con)object.get(v);
+          Con s = ConObject.get(v);
           if (s==null)
             s = new Con(v);
           vals.add(workingCon.id);
           s.addSlot("synonym",vals);
-          object.put(v,s);
+          ConObject.put(v,s);
           vals = new ArrayList();
           vals.add(v);
       } else {
@@ -616,7 +640,7 @@ public class LegacyImporter {
         // grab the starting paren
         token = sentenceTokenizer.nextToken();
         isSentence = true;
-        sentences = new ArrayList();
+        sentences = new ArrayList<Object>();
       }
     }
     workingSentence = new Sentence();
@@ -700,13 +724,14 @@ public class LegacyImporter {
   class Con {
     String id;
     String instanceOf = "";
-    Map slots = new HashMap();
+    //Some slots take strings, some take Sentence objects
+    Map <String, List<Object>> slots= new HashMap<String, List<Object>>();
 
     public Con(String name) {
       id = name;
     }
 
-    public void addSlot(String key, List values) {
+    public void addSlot(String key, List<Object> values) {
       List x = (List)slots.get(key);
       if (x == null)
         slots.put(key,values);
@@ -730,6 +755,7 @@ public class LegacyImporter {
       return false;
     }
     public Iterator listSlotNames() {
+    	System.out.println("listing slots from "+id);
       return slots.keySet().iterator();
     }
 
