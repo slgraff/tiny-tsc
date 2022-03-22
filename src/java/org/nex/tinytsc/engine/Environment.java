@@ -11,7 +11,7 @@ import java.util.*;
 import org.nex.tinytsc.database.JDBMDatabase;
 import org.nex.tinytsc.DatastoreException;
 import org.nex.tinytsc.MainFrame;
-
+import org.nex.tinytsc.TaxonomyManager;
 //import org.nex.tinytsc.agents.IAgent;
 import org.nex.tinytsc.agents.FillinNextEpisodeAgent;
 import org.nex.tinytsc.agents.PublishEpisodeAgent;
@@ -47,6 +47,7 @@ public class Environment {
   private Logger log = Logger.getLogger(Environment.class);
   private JDBMDatabase database;
   private MainFrame host;
+  private TaxonomyManager taxManager;
   private Timer timer;
   private Long curIdNum = new Long(System.currentTimeMillis());
 //  private AgendaManager agenda;
@@ -78,6 +79,7 @@ public class Environment {
     }
     database = new JDBMDatabase(databaseDirectory);
     database.open();
+    taxManager = new TaxonomyManager(this);
 //    agenda = new AgendaManager();
     fillinAgent.initialize(this);
     publishAgent.initialize(this);
@@ -102,6 +104,11 @@ public class Environment {
     say("Environment ready.");
   }
 
+  
+  public TaxonomyManager getTaxonomyManager() {
+	  return taxManager;
+  }
+  
   /////////////////////////////
   // importing support
   /////////////////////////////

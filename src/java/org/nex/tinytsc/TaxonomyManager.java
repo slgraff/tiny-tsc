@@ -6,6 +6,8 @@
  */
 package org.nex.tinytsc;
 
+import org.nex.tinytsc.database.JDBMDatabase;
+import org.nex.tinytsc.engine.Concept;
 import org.nex.tinytsc.engine.Environment;
 
 /**
@@ -14,15 +16,19 @@ import org.nex.tinytsc.engine.Environment;
  */
 public class TaxonomyManager {
 	private Environment environment;
+	private JDBMDatabase database;
+
 	/**
 	 * 
 	 */
 	public TaxonomyManager(Environment env) {
 		environment = env;
+		database = environment.getDatabase();
 	}
 	
 	
 	public void addSub(String parentId, String childId) throws Exception {
+		Concept p = database.getConcept(parentId);
 		
 	}
 
