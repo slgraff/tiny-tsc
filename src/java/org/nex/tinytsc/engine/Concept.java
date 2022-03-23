@@ -93,6 +93,9 @@ public class Concept implements Serializable, Identifiable {
   public void addSubOf(String so) {
     if (subOf == null) subOf = new ArrayList<String>();
     subOf.add(so);
+    if (transitiveClosure == null) transitiveClosure = new ArrayList<String>();
+    if (!transitiveClosure.contains(so))
+    	transitiveClosure.add(so);
   }
   public List<String> getSubOf() {
     return subOf;
