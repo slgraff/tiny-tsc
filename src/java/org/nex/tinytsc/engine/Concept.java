@@ -29,6 +29,8 @@ public class Concept implements Serializable, Identifiable {
   private List<Episode> episodes=null;
   private String instanceOf = "";
   private List<String> subOf = null;
+  private List<String> hasSubs = null;
+  private List<String> hasInstances = null;
   private List<String> transitiveClosure = null;
   /**
    * key = String, value = List
@@ -95,6 +97,28 @@ public class Concept implements Serializable, Identifiable {
   public List<String> getSubOf() {
     return subOf;
   }
+  public void addSubClass(String so) {
+	    if (hasSubs == null) hasSubs = new ArrayList<String>();
+	    hasSubs.add(so);
+  }
+  
+  /**
+   * @return can return {@code null}
+   */
+  public List<String> getInstance() {
+    return hasInstances;
+  }
+  public void addiInstance(String so) {
+    if (hasInstances == null) hasInstances = new ArrayList<String>();
+    hasSubs.add(so);
+  }
+  /**
+   * 
+   * @return can return {@code null}
+   */
+	public List<String> getInstances() {
+	  return hasInstances;
+	}
 
   /**
    * Adding a single value to a slot
