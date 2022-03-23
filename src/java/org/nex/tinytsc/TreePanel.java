@@ -128,7 +128,7 @@ public class TreePanel extends JPanel {
   public void setModel(Model m) throws Exception {
     isModel = true;
     this.initialModel = m;
-    createRootNode(m.getId());
+    createModelRootNode(m);
     expandRoot();
   }
 
@@ -143,21 +143,30 @@ public class TreePanel extends JPanel {
     System.out.println("TreePanel setting root "+c.getId());
     isModel = false;
     this.rootConcept = c;
-    createRootNode(c.getId());
+    createConceptRootNode(c);
     expandRoot();
   }
 
   ////////////////////////////////////////////
   // Support code
   ////////////////////////////////////////////
-  void createRootNode(String id) throws Exception { 
+  void createConceptRootNode(Concept con) throws Exception { 
     int type = IConstants.CONCEPT;
-    if (id.equals("model"))
-      type = IConstants.MODEL;
-    this.root = new ConceptTreeNode(id,type);
+    
+    this.root = new ConceptTreeNode(con.getId(),type);
+    taxManager.populateConceptTreeRoot(con, root);
     this.treeModel = new DefaultTreeModel(root);
     this.conceptTree.setModel(treeModel);
   }
+
+  void createModelRootNode(Model con) throws Exception { 
+	    int type = IConstants.MODEL;
+	    
+	    this.root = new ConceptTreeNode(con.getId(),type);
+	    taxManager.populateModelTreeRoot(con, root);
+	    this.treeModel = new DefaultTreeModel(root);
+	    this.conceptTree.setModel(treeModel);
+	  }
 
   ConceptTreeNode createNode(String id, int type) {
     return new ConceptTreeNode(id, type);
