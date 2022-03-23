@@ -38,6 +38,7 @@ public class TreePanel extends JPanel {
   private Environment environment;
   private Model initialModel;
   private Concept rootConcept;
+  private TaxonomyManager taxManager;
   /**
    * true when a Model, false when Ontology
    */
@@ -76,6 +77,7 @@ public class TreePanel extends JPanel {
   public void setListener(TreeListener l) {
     this.listener = l;
     this.environment = l.getEnvironment();
+	taxManager = environment.getTaxonomyManager();
   }
 
   public void setIsSlaveTree(boolean t) {
@@ -123,7 +125,7 @@ public class TreePanel extends JPanel {
    * Expand the <code>JTree<code> from that <code>Model</code>
    * @param model
    */
-  public void setModel(Model m) {
+  public void setModel(Model m) throws Exception {
     isModel = true;
     this.initialModel = m;
     createRootNode(m.getId());
@@ -137,7 +139,7 @@ public class TreePanel extends JPanel {
    * The root <code>Concept</code> is <code>Root</code>
    * @param c
    */
-  public void setRootConcept(Concept c) {
+  public void setRootConcept(Concept c) throws Exception {
     System.out.println("TreePanel setting root "+c.getId());
     isModel = false;
     this.rootConcept = c;
@@ -148,7 +150,7 @@ public class TreePanel extends JPanel {
   ////////////////////////////////////////////
   // Support code
   ////////////////////////////////////////////
-  void createRootNode(String id) {
+  void createRootNode(String id) throws Exception { 
     int type = IConstants.CONCEPT;
     if (id.equals("model"))
       type = IConstants.MODEL;
@@ -466,13 +468,17 @@ public class TreePanel extends JPanel {
 
   void refreshButton_actionPerformed(ActionEvent e) {
     System.out.println("Refreshing Tree");
-    if (!isModel) {
-      Concept c = environment.getConcept("root");
-      if (c != null)
-        this.setRootConcept(c);
-    } else {
-    	if (this.initialModel != null)
-    		setModel(environment.getModel(initialModel.getId()));
+    try {
+	    if (!isModel) {
+	      Concept c = environment.getConcept("root");
+	      if (c != null)
+	        this.setRootConcept(c);
+	    } else {
+	    	if (this.initialModel != null)
+	    		setModel(environment.getModel(initialModel.getId()));
+	    }
+    } catch (Exception ex) {
+    	environment.logError(ex.getMessage(), ex);
     }
   }
 

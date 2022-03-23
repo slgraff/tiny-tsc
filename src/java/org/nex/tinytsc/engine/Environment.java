@@ -640,4 +640,15 @@ public class Environment {
       return temp;
     }
   }
+  
+  /////////////////////////
+  // Logging support
+  /////////////////////////
+  public void logDebug(String message) {
+	  this.log.debug(message);
+  }
+  
+  public void logError(String message, Exception e) {
+	  this.log.error(message, e);
+  }
 }
