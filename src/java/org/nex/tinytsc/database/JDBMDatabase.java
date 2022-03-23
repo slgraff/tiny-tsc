@@ -130,6 +130,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
         String k = (String) tuple.getKey();
         if (k.equals(key)) {
           result = (Concept) tuple.getValue();
+          result.setDatabase(this);
         }
         else {
           break;

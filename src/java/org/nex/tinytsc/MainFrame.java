@@ -302,10 +302,14 @@ public class MainFrame extends JFrame
    * @param root
    */
   public void displayConceptRoot(Concept root, Model model) {
+	  try {
     this.ontologyTreeTab.setRootConcept(root);
     this.treeListener.setRootConcept(root);
     if (model != null)
     	this.modelTreeTab.setModel(model);
+	  } catch (Exception e) {
+		  environment.logError(e.getMessage(), e);
+	  }
   }
 
   public void updateStatistics() {

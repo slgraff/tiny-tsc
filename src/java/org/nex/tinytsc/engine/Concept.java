@@ -9,6 +9,7 @@ import java.util.*;
 
 import org.nex.tinytsc.api.IConstants;
 import org.nex.tinytsc.api.Identifiable;
+import org.nex.tinytsc.database.JDBMDatabase;
 
 import java.io.*;
 /**
@@ -32,12 +33,23 @@ public class Concept implements Serializable, Identifiable {
   private List<String> hasSubs = null;
   private List<String> hasInstances = null;
   private List<String> transitiveClosure = null;
+  //we need a database for some of the taxonomy code
+  private JDBMDatabase database;
+
   /**
    * key = String, value = List
    */
   private Map<String, List<Object>> properties = new HashMap<String, List<Object>>();
 
   public Concept() {}
+  
+  public Concept (JDBMDatabase db) {
+	  database = db;
+  }
+
+  public void setDatabase (JDBMDatabase db) {
+	  database = db;
+  }
 
   public Concept (String _id) {
     this.id = _id;
@@ -96,7 +108,18 @@ public class Concept implements Serializable, Identifiable {
     if (transitiveClosure == null) transitiveClosure = new ArrayList<String>();
     if (!transitiveClosure.contains(so))
     	transitiveClosure.add(so);
+    try {
+    	Concept parent = database.getConcept(so);
+    	parent.addSubClass(this.getId());
+    	database.putConcept(so, parent);
+    } catch (Exception e) {
+    	throw new RuntimeException(e);
+    }
   }
+  /**
+   * 
+   * @return can return {@code null}
+   */
   public List<String> getSubOf() {
     return subOf;
   }
@@ -106,14 +129,22 @@ public class Concept implements Serializable, Identifiable {
   }
   
   /**
+   * 
+   * @return can return {@code null}
+   */
+  public List<String> getSubClasses() {
+	  return hasSubs;
+  }
+  
+  /**
    * @return can return {@code null}
    */
   public List<String> getInstance() {
     return hasInstances;
   }
-  public void addiInstance(String so) {
+  public void addInstance(String so) {
     if (hasInstances == null) hasInstances = new ArrayList<String>();
-    hasSubs.add(so);
+    hasInstances.add(so);
   }
   /**
    * 

@@ -35,6 +35,7 @@ public class ConceptTreeCellRenderer extends DefaultTreeCellRenderer {
     episodeImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("model.PNG" /*"episode.PNG"*/));
     modelImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("model.PNG"));
     taskImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("task.PNG"));
+    System.out.println("NewConceptTreeCellRenderer");
   }
 
   /**
@@ -56,12 +57,13 @@ public class ConceptTreeCellRenderer extends DefaultTreeCellRenderer {
                       boolean leaf,
                       int row,
                       boolean hasFocus) {
-
-      super.getTreeCellRendererComponent(
+	  System.out.println("GETTCR "+value);
+      Component x = super.getTreeCellRendererComponent(
                       tree, value, sel,
                       expanded, leaf, row,
                       hasFocus);
-      ConceptTreeNode cell = (ConceptTreeNode)value;
+	  System.out.println("GETTCRX "+x);
+ /*     ConceptTreeNode cell = (ConceptTreeNode)value;
       switch (cell.getNodeType()) {
         case IConstants.CONCEPT: setIcon(conceptImage); break;
         case IConstants.RULE: setIcon(ruleImage); break;
@@ -69,8 +71,9 @@ public class ConceptTreeCellRenderer extends DefaultTreeCellRenderer {
         case IConstants.MODEL: setIcon(modelImage); break;
         case IConstants.TASK: setIcon(taskImage); break;
       }
+      */
 
-      return this;
+      return x;
   }
 
 

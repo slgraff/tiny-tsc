@@ -72,7 +72,12 @@ public class TaskEditorPanel extends JPanel {
   }
 
   public void setRootConcept(Concept c) {
+	  try {
     treePanel.setRootConcept(c);
+	  } catch (Exception e) {
+		  throw new RuntimeException(e);
+	  }
+
   }
 
   private void jbInit() throws Exception {

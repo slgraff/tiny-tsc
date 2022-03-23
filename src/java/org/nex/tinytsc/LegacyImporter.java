@@ -362,8 +362,10 @@ public class LegacyImporter {
   void convertConcept(Con c) {
 	  System.out.println("CCC "+c);
     Concept con = new Concept(c.id);
+    con.setDatabase(environment.getDatabase());
     if (!c.instanceOf.equals("")) {
-      con.addProperty("instanceOf",c.instanceOf);
+      //con.addProperty("instanceOf",c.instanceOf);
+      con.setInstanceOf(c.instanceOf);
     }
     Iterator<String> itr = c.listSlotNames();
     String n;
@@ -371,9 +373,13 @@ public class LegacyImporter {
     while (itr.hasNext()) {
       n = itr.next();
       l = c.getSlotValue(n);
+	  System.out.println("CCCXXX "+n +" "+l);
       int len = l.size();
-      for (int i=0;i<len;i++)
+      for (int i=0;i<len;i++) {
+    	  if (n.equals("subOf"))
+    		  con.addSubOf((String)l.get(i));
         con.addProperty(n,(String)l.get(i));
+      }
     }
     try {
       environment.importConcept(con);

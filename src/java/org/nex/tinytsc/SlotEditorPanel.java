@@ -66,7 +66,11 @@ public class SlotEditorPanel extends JPanel {
   }
 
   public void setRootConcept(Concept c) {
+	  try {
     treePanel1.setRootConcept(c);
+	  } catch (Exception e) {
+		  throw new RuntimeException(e);
+	  }
   }
   
   /**

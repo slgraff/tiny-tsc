@@ -57,8 +57,13 @@ public class ConceptEditorPanel extends JPanel {
   }
 
   public void setRootConcept(Concept c) {
+	  try {
     treePanel.setRootConcept(c);
     conceptEditor.setRootConcept(c);
+	  } catch (Exception e) {
+		  throw new RuntimeException(e);
+	  }
+
   }
 
   public void setConceptId(String id) {
