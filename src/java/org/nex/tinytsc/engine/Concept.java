@@ -27,6 +27,9 @@ public class Concept implements Serializable, Identifiable {
   private String comment="";
   private List<Rule> rules = null;
   private List<Episode> episodes=null;
+  private String instanceOf = "";
+  private List<String> subOf = null;
+  private List<String> transitiveClosure = null;
   /**
    * key = String, value = List
    */
@@ -58,6 +61,39 @@ public class Concept implements Serializable, Identifiable {
   }
   public String getComment() {
     return this.comment;
+  }
+
+  public void setTransitiveClosure(List<String> tc) {
+	  this.transitiveClosure = tc;
+  }
+  
+  /**
+   * 
+   * @return can return {@code null}
+   */
+  public List<String> getTransitiveClosure() {
+	  return this.transitiveClosure;
+  }
+  
+  public boolean isA(String id) {
+	  boolean result = false;
+	  if (this.transitiveClosure != null)
+		  result = transitiveClosure.contains(id);
+	  return result;
+  }
+  
+  public void setInstanceOf(String io) {
+	    instanceOf = io;
+  }
+  public String getInstanceOf() {
+    return instanceOf;
+  }
+  public void addSubOf(String so) {
+    if (subOf == null) subOf = new ArrayList<String>();
+    subOf.add(so);
+  }
+  public List<String> getSubOf() {
+    return subOf;
   }
 
   /**
