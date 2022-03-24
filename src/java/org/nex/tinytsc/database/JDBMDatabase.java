@@ -9,9 +9,11 @@ package org.nex.tinytsc.database;
 import java.io.*;
 
 import org.nex.tinytsc.engine.Concept;
+import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Rule;
 import org.nex.tinytsc.engine.Episode;
 import org.nex.tinytsc.engine.Task;
+import org.nex.tinytsc.xml.ConceptPullParser;
 import org.nex.tinytsc.engine.Model;
 //import org.nex.tinytsc.IDatastore;
 import org.nex.tinytsc.DatastoreException;
@@ -41,7 +43,9 @@ import org.apache.log4j.Logger;
  */
 
 public class JDBMDatabase /*implements IDatastore*/ {
-  private Logger log = Logger.getLogger(JDBMDatabase.class);
+  private Environment environment;
+  private ConceptPullParser parser;
+  //TODO add LRUCaches to speed things up
   private RecordManager conceptManager = null;
   private RecordManager ruleManager = null;
   private RecordManager episodeManager = null;
@@ -65,8 +69,11 @@ public class JDBMDatabase /*implements IDatastore*/ {
   /**
    * Basic constructor
    * @param baseDir -- where the tables go
+   * @param env
    */
-  public JDBMDatabase(String baseDir) {
+  public JDBMDatabase(String baseDir, Environment env) {
+	  this.environment = env;
+	  this.parser = new ConceptPullParser(environment);
     this.directory = baseDir;
   }
 
@@ -78,7 +85,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   public void putConcept(String key, Concept w) throws DatastoreException {
     try {
       System.out.println("JDBMDatabase.putConcept "+key);
-      conceptTree.insert(key, w, true);
+      conceptTree.insert(key, w.toXML(), true);
       conceptManager.commit();
     } catch (IOException e) {
       throw new DatastoreException(e);
@@ -87,7 +94,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   public void putRule(String key, Rule p) throws DatastoreException {
     try {
       System.out.println("JDBMDatabase.putRule "+key);
-      ruleTree.insert(key, p, true);
+      ruleTree.insert(key, p.toXML(), true);
       ruleManager.commit();
     } catch (IOException e) {
       throw new DatastoreException(e);
@@ -96,7 +103,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   public void putEpisode(String key, Episode t) throws DatastoreException {
     try {
       System.out.println("JDBMDatabase.putEpisode "+key);
-      episodeTree.insert(key, t, true);
+      episodeTree.insert(key, t.toXML(), true);
       episodeManager.commit();
     } catch (IOException e) {
       throw new DatastoreException(e);
@@ -105,7 +112,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   public void putTask(String key, Task t) throws DatastoreException {
     try {
       System.out.println("JDBMDatabase.putTask "+key);
-      taskTree.insert(key, t, true);
+      taskTree.insert(key, t.toXML(), true);
       taskManager.commit();
     } catch (IOException e) {
       throw new DatastoreException(e);
@@ -114,7 +121,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   public void putModel(String key, Model t) throws DatastoreException {
     try {
       System.out.println("JDBMDatabase.putModel "+key);
-      modelTree.insert(key, t, true);
+      modelTree.insert(key, t.toXML(), true);
       modelManager.commit();
     } catch (IOException e) {
       throw new DatastoreException(e);
@@ -126,10 +133,15 @@ public class JDBMDatabase /*implements IDatastore*/ {
       System.out.println("JDBMDatabase.getConcept "+key);
       browser = conceptTree.browse(key);
       Concept result = null;
+      String xml;
       while (browser.getNext(tuple)) {
         String k = (String) tuple.getKey();
+        System.out.println("JDBMDatabase.getConceptX "+key+" "+k);
         if (k.equals(key)) {
-          result = (Concept) tuple.getValue();
+        	xml = (String)tuple.getValue();
+            System.out.println("JDBMDatabase.getConceptY "+key+" "+xml);
+        	parser.parse(xml);
+          result = parser.getConcept();
           result.setDatabase(this);
         }
         else {
@@ -147,10 +159,13 @@ public class JDBMDatabase /*implements IDatastore*/ {
       System.out.println("JDBMDatabase.getRule "+key);
       browser = ruleTree.browse(key);
       Rule result = null;
+      String xml;
       while (browser.getNext(tuple)) {
         String k = (String) tuple.getKey();
         if (k.equals(key)) {
-          result = (Rule) tuple.getValue();
+        	xml = (String)tuple.getValue();
+        	parser.parse(xml);
+          result = parser.getRule();
         }
         else {
           break;
@@ -166,10 +181,13 @@ public class JDBMDatabase /*implements IDatastore*/ {
       System.out.println("JDBMDatabase.getEpisode "+key);
       browser = episodeTree.browse(key);
       Episode result = null;
+      String xml;
       while (browser.getNext(tuple)) {
         String k = (String) tuple.getKey();
         if (k.equals(key)) {
-          result = (Episode) tuple.getValue();
+        	xml = (String) tuple.getValue();
+        	parser.parse(xml);
+            result = parser.getEpisode();
         }
         else {
           break;
@@ -185,10 +203,13 @@ public class JDBMDatabase /*implements IDatastore*/ {
       System.out.println("JDBMDatabase.getTask "+key);
       browser = taskTree.browse(key);
       Task result = null;
+      String xml;
       while (browser.getNext(tuple)) {
         String k = (String) tuple.getKey();
         if (k.equals(key)) {
-          result = (Task) tuple.getValue();
+        	xml = (String)tuple.getValue();
+        	parser.parse(xml);
+            result = parser.getTask();
         }
         else {
           break;
@@ -204,10 +225,14 @@ public class JDBMDatabase /*implements IDatastore*/ {
       System.out.println("JDBMDatabase.getModel "+key);
       browser = modelTree.browse(key);
       Model result = null;
+      String xml;
       while (browser.getNext(tuple)) {
         String k = (String) tuple.getKey();
+        System.out.println("JDBMDatabase.getModelX "+key+" "+k);
         if (k.equals(key)) {
-          result = (Model) tuple.getValue();
+        	xml = (String)tuple.getValue();
+        	parser.parse(xml);
+            result = parser.getModel();
         }
         else {
           break;

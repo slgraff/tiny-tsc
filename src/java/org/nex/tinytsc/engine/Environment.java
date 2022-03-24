@@ -66,8 +66,8 @@ public class Environment {
 
   private Model currentModel = null;
 
-  public Environment(Hashtable properties, MainFrame h) throws DatastoreException {
-    host = h;
+  public Environment(Hashtable properties/*, MainFrame h*/) throws DatastoreException {
+    //host = h;
     String databaseDirectory=(String)properties.get("DatabasePath");
     //locate databaseDirectory in the root install directory
     //TODO: change to a different system that sends in absolute path
@@ -77,7 +77,7 @@ public class Environment {
     } catch (Exception x) {
       x.printStackTrace();
     }
-    database = new JDBMDatabase(databaseDirectory);
+    database = new JDBMDatabase(databaseDirectory, this);
     database.open();
     taxManager = new TaxonomyManager(this);
 //    agenda = new AgendaManager();
@@ -95,15 +95,21 @@ public class Environment {
 //      x.printStackTrace();
 //    }
     timer = new Timer();
-    // once every 2 seconds
-    long delay = 2*1000;
-    timer.scheduleAtFixedRate(new MyTask(), new java.util.Date(), delay );
     // seed concept
-    if (getConcept("root") == null)
-    	putConcept(new Concept("root"));
-    say("Environment ready.");
+    if (getConcept("root") == null) {
+    	Concept r = new Concept("root");
+        System.out.println("ROOT "+r.toXML());
+    	putConcept(r);
+    }
+    //debug
+    System.out.println("ROOTX "+getConcept("root"));
+    
   }
 
+  public void setHost(MainFrame h) {
+	  this.host = h;
+	  say("Environment ready.");
+  }
   
   public TaxonomyManager getTaxonomyManager() {
 	  return taxManager;
@@ -136,18 +142,18 @@ public class Environment {
    * Just setup some displays and statistics
    */
   public void finishImport() {
-  	Model m = null;
+  	/*Model m = null;
   	//just send in the first model
         Tuple t = new Tuple();
         try {
           database.startModelsIterator();
           if (database.getNextObject(t))
             m = database.getModel((String)t.getKey());
-          System.out.println("Finish Import " + m);
+          System.out.println("Finish Import " + t.getKey()+" "+m+" "+host);
           host.displayConceptRoot(database.getConcept("root"), m);
         } catch (DatastoreException x) {
           x.printStackTrace();
-        }
+        }*/
         host.updateStatistics();
   }
 
@@ -597,10 +603,16 @@ public class Environment {
       host.say(msg);
   }
 
+  public Timer getTimer() {
+	  return timer;
+  }
   ///////////////////////////////////////////
   // Timer for running the dashboard
   ///////////////////////////////////////////
 
+  public MyTask getMyTask() {
+	  return new MyTask();
+  }
   public class MyTask extends TimerTask {
         public MyTask() {}
         public void run() {

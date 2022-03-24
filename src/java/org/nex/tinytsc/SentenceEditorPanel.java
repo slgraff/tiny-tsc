@@ -14,6 +14,7 @@ import java.awt.event.*;
 import org.nex.tinytsc.api.IConstants;
 //import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Concept;
+import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Sentence;
 
 /**
@@ -31,7 +32,7 @@ public class SentenceEditorPanel extends JPanel {
   int sentenceType = 0;
   BorderLayout borderLayout1 = new BorderLayout();
   JSplitPane jSplitPane1 = new JSplitPane();
-  TreePanel treePanel = new TreePanel();
+  TreePanel treePanel;
   JPanel jPanel1 = new JPanel();
   BorderLayout borderLayout2 = new BorderLayout();
   JPanel jPanel2 = new JPanel();
@@ -85,8 +86,9 @@ public class SentenceEditorPanel extends JPanel {
   TitledBorder titledBorder8;
   JTextField runField = new JTextField();
 
-  public SentenceEditorPanel() {
+  public SentenceEditorPanel(Environment env) {
     try {
+    	treePanel = new TreePanel(env);
       jbInit();
       truthGroup.add(this.trueRadioButton);
       truthGroup.add(this.falseRadioButton);

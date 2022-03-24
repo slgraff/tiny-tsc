@@ -32,7 +32,7 @@ import java.awt.event.*;
 public class EpisodeEditorPanel extends JPanel implements ISentenceListener {
   EpisodeEditorDialog host;
   Environment environment;
-  SentenceEditorDialog sentenceEditor = new SentenceEditorDialog();
+  SentenceEditorDialog sentenceEditor;
   Episode myEpisode = null;
   boolean isDirty = false;
   /**
@@ -60,8 +60,10 @@ public class EpisodeEditorPanel extends JPanel implements ISentenceListener {
   JList previousEpisodeList = new JList();
   DefaultListModel previousEpisodeModel = new DefaultListModel();
 
-  public EpisodeEditorPanel() {
+  public EpisodeEditorPanel(Environment env) {
+	  environment = env;
     try {
+    	sentenceEditor = new SentenceEditorDialog(environment);
       jbInit();
       sentenceEditor.setHost(this, false);
       nextEpisodeList.setModel(nextEpisodeModel);
@@ -77,7 +79,6 @@ public class EpisodeEditorPanel extends JPanel implements ISentenceListener {
   }
   public void setListener(TreeListener e) {
     sentenceEditor.setListener(e);
-    environment = e.getEnvironment();
   }
 
   public void setRootConcept(Concept c) {

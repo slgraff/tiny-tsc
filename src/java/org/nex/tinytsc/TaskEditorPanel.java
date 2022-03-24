@@ -30,7 +30,7 @@ public class TaskEditorPanel extends JPanel {
   private boolean isDirty = false;
   BorderLayout borderLayout1 = new BorderLayout();
   JSplitPane jSplitPane1 = new JSplitPane();
-  TreePanel treePanel = new TreePanel();
+  TreePanel treePanel;
   JPanel jPanel1 = new JPanel();
   Border border1;
   TitledBorder titledBorder1;
@@ -56,8 +56,10 @@ public class TaskEditorPanel extends JPanel {
   JTextField idField = new JTextField();
   JButton selectButton = new JButton();
 
-  public TaskEditorPanel() {
+  public TaskEditorPanel(Environment env) {
+	  environment = env;
     try {
+    	treePanel = new TreePanel(environment);
       jbInit();
       initializeTasks();
     }
@@ -68,7 +70,6 @@ public class TaskEditorPanel extends JPanel {
 
   public void setListener(TreeListener e) {
     treePanel.setListener(e);
-    environment = e.getEnvironment();
   }
 
   public void setRootConcept(Concept c) {

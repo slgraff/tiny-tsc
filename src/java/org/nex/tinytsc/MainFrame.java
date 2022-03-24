@@ -15,6 +15,7 @@ import java.util.Hashtable;
 
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Model;
+import org.nex.tinytsc.engine.Environment.MyTask;
 import org.nex.tinytsc.api.IExporterListener;
 import org.nex.tinytsc.api.IPluggable;
 import org.nex.tinytsc.api.IPluggableHost;
@@ -38,7 +39,7 @@ import fr.dyade.koala.util.VerticalLayout;
 
 public class MainFrame extends JFrame
     implements IPluggableHost, IExporterListener {
-  private Environment environment;
+  private Environment environment = null;
   private TreeListener treeListener = new TreeListener();
   private ConsoleTab _consoleTab = new ConsoleTab();
   JPanel contentPane;
@@ -73,9 +74,9 @@ public class MainFrame extends JFrame
   JLabel jLabel3 = new JLabel();
   JTextField modelCountField = new JTextField();
   JTextField modelWorkField = new JTextField();
-  TreePanel modelTreeTab = new TreePanel();
+  TreePanel modelTreeTab;
   JMenuItem importLegacyItem = new JMenuItem();
-  TreePanel ontologyTreeTab = new TreePanel();
+  TreePanel ontologyTreeTab;
   TaskSelectorDialog taskDialog = new TaskSelectorDialog();
   JMenu tscMenu = new JMenu();
   JMenuItem runTaskItem = new JMenuItem();
@@ -134,11 +135,14 @@ public class MainFrame extends JFrame
   Border border20 = new TitledBorder(border19, "Dashboard");
 
   //Construct the frame
-  public MainFrame(Hashtable properties) {
+  public MainFrame(Environment env) {
+	  environment = env;
     enableEvents(AWTEvent.WINDOW_EVENT_MASK);
     try {
+    	System.out.println("MainFrameInit "+environment);
+    	modelTreeTab = new TreePanel(environment);
+    	ontologyTreeTab = new TreePanel(environment);
       jbInit();
-      environment = new Environment(properties, this);
       _consoleTab.setEnvironment(environment);
       treeListener.setEnvironment(environment);
       modelTreeTab.setListener(treeListener);
@@ -147,6 +151,10 @@ public class MainFrame extends JFrame
       taskDialog.setHost(this);
       envisionmentPanel.setEnvironment(environment);
       updateStatistics();
+      // once every 2 seconds
+      long delay = 2*1000;
+      environment.getTimer().scheduleAtFixedRate(environment.getMyTask(), new java.util.Date(), delay );
+
     }
     catch(Exception e) {
       e.printStackTrace();

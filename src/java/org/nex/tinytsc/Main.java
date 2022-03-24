@@ -11,7 +11,7 @@ import java.awt.*;
 import java.util.Hashtable;
 
 import org.nex.config.ConfigPullParser;
-
+import org.nex.tinytsc.engine.Environment;
 //log4j.jar
 import org.apache.log4j.PropertyConfigurator;
 
@@ -33,8 +33,14 @@ public class Main {
     PropertyConfigurator.configure("logger.properties");
     ConfigPullParser parser = new ConfigPullParser("tsc-props.xml");
     Hashtable properties = parser.getProperties();
-
-    MainFrame frame = new MainFrame(properties);
+    Environment environment = null;
+    try {
+    	environment = new Environment(properties);
+    } catch (Exception e) {
+    	throw new RuntimeException(e);
+    }
+    System.out.println("STARTING "+environment);
+    MainFrame frame = new MainFrame(environment);
     //Validate frames that have preset sizes
     //Pack frames that have useful preferred size info, e.g. from their layout
     if (packFrame) {
@@ -54,6 +60,7 @@ public class Main {
     }
     frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
     frame.setVisible(true);
+    environment.setHost(frame);
   }
   //Main method
   public static void main(String[] args) {

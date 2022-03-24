@@ -30,7 +30,7 @@ public class ConceptEditor extends JPanel {
   boolean isDirty = false;
   Environment environment;
   TreePanel treePanel;
-  SlotEditorDialog slotEditor = new SlotEditorDialog();
+  SlotEditorDialog slotEditor;
   GridLayout gridLayout1 = new GridLayout();
   JPanel jPanel1 = new JPanel();
   JPanel jPanel2 = new JPanel();
@@ -97,7 +97,9 @@ public class ConceptEditor extends JPanel {
   JList episodeList = new JList();
   DefaultListModel episodeModel = new DefaultListModel();
 
-  public ConceptEditor() {
+  public ConceptEditor(Environment env) {
+	  environment = env;
+	  slotEditor = new SlotEditorDialog(environment);
     try {
       jbInit();
       slotList.setModel(slotModel);
@@ -118,7 +120,6 @@ public class ConceptEditor extends JPanel {
 
   public void setListener(TreeListener e) {
     slotEditor.setListener(e);
-    environment = e.getEnvironment();
   }
 
   public void setRootConcept(Concept c) {

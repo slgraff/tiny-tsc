@@ -13,6 +13,7 @@ import java.awt.event.*;
 import org.nex.tinytsc.api.IConstants;
 import org.nex.tinytsc.api.ISentenceListener;
 import org.nex.tinytsc.engine.Concept;
+import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Sentence;
 
 /**
@@ -32,15 +33,16 @@ public class SentenceEditorDialog extends JDialog {
 	 */
   ISentenceListener host;
   BorderLayout borderLayout1 = new BorderLayout();
-  SentenceEditorPanel sentenceEditorPanel1 = new SentenceEditorPanel();
+  SentenceEditorPanel sentenceEditorPanel1 ;
   JPanel jPanel1 = new JPanel();
   FlowLayout flowLayout1 = new FlowLayout();
   JButton cancelButton = new JButton();
   JButton okButton = new JButton();
   int sentenceType = 0;
 
-  public SentenceEditorDialog() throws HeadlessException {
+  public SentenceEditorDialog(Environment env) throws HeadlessException {
     try {
+    	sentenceEditorPanel1 = new SentenceEditorPanel(env);
       jbInit();
     }
     catch(Exception e) {

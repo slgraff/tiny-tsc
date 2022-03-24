@@ -28,14 +28,16 @@ public class TaskEditorDialog extends JDialog {
   private Environment environment;
   private String isInstanceOf;
   BorderLayout borderLayout1 = new BorderLayout();
-  TaskEditorPanel taskEditorPanel1 = new TaskEditorPanel();
+  TaskEditorPanel taskEditorPanel1;
   JPanel jPanel1 = new JPanel();
   FlowLayout flowLayout1 = new FlowLayout();
   JButton cancelButton = new JButton();
   JButton okButton = new JButton();
 
-  public TaskEditorDialog() throws HeadlessException {
+  public TaskEditorDialog(Environment env) throws HeadlessException {
+	  environment = env;
     try {
+    	taskEditorPanel1 = new TaskEditorPanel(environment);
       jbInit();
     }
     catch(Exception e) {
@@ -44,7 +46,6 @@ public class TaskEditorDialog extends JDialog {
   }
   public void setListener(TreeListener e) {
     taskEditorPanel1.setListener(e);
-    environment = e.getEnvironment();
   }
 
   public void setRootConcept(Concept c) {

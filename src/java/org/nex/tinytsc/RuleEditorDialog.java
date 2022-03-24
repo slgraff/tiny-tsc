@@ -29,7 +29,7 @@ public class RuleEditorDialog extends JDialog {
 	boolean isEditable = false;
 	String instanceParentId;
   BorderLayout borderLayout1 = new BorderLayout();
-  RuleEditorPanel ruleEditorPanel1 = new RuleEditorPanel();
+  RuleEditorPanel ruleEditorPanel1;
   JPanel jPanel1 = new JPanel();
   FlowLayout flowLayout1 = new FlowLayout();
   JLabel jLabel1 = new JLabel();
@@ -39,8 +39,10 @@ public class RuleEditorDialog extends JDialog {
   JButton cancelButton = new JButton();
   JButton okButton = new JButton();
 
-  public RuleEditorDialog() throws HeadlessException {
+  public RuleEditorDialog(Environment env) throws HeadlessException {
+	  environment = env;
     try {
+    	ruleEditorPanel1 = new RuleEditorPanel(environment);
       jbInit();
       ruleEditorPanel1.setHost(this);
 
@@ -51,7 +53,6 @@ public class RuleEditorDialog extends JDialog {
   }
   public void setListener(TreeListener e) {
     ruleEditorPanel1.setListener(e);
-    environment = e.getEnvironment();
   }
 
   public void setRootConcept(Concept c) {

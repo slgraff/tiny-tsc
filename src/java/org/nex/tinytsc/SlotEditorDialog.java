@@ -12,6 +12,7 @@ import java.awt.event.*;
 
 //import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Concept;
+import org.nex.tinytsc.engine.Environment;
 
 /**
  * <p>Title: TinyTSC</p>
@@ -25,14 +26,15 @@ import org.nex.tinytsc.engine.Concept;
 public class SlotEditorDialog extends JDialog {
   ConceptEditor host;
   BorderLayout borderLayout1 = new BorderLayout();
-  SlotEditorPanel slotEditorPanel1 = new SlotEditorPanel();
+  SlotEditorPanel slotEditorPanel1;
   JPanel jPanel1 = new JPanel();
   FlowLayout flowLayout1 = new FlowLayout();
   JButton cancelButton = new JButton();
   JButton okButton = new JButton();
 
-  public SlotEditorDialog() throws HeadlessException {
+  public SlotEditorDialog(Environment env) throws HeadlessException {
     try {
+    	slotEditorPanel1 = new SlotEditorPanel(env);
       jbInit();
     }
     catch(Exception e) {

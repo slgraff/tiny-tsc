@@ -27,10 +27,10 @@ import org.nex.tinytsc.engine.Concept;
 public class TreeListener {
   
   private Environment environment;
-  private ConceptEditorDialog conceptEditor = new ConceptEditorDialog();
-  private RuleEditorDialog ruleEditor = new RuleEditorDialog();
-  private EpisodeEditorDialog episodeEditor = new EpisodeEditorDialog();
-  private TaskEditorDialog taskEditor = new TaskEditorDialog();
+  private ConceptEditorDialog conceptEditor;
+  private RuleEditorDialog ruleEditor;
+  private EpisodeEditorDialog episodeEditor;
+  private TaskEditorDialog taskEditor;
   private Concept root;
 
   public TreeListener() {
@@ -39,12 +39,16 @@ public class TreeListener {
 
   public void setEnvironment(Environment e) {
     environment = e;
+    conceptEditor = new ConceptEditorDialog(environment);
     conceptEditor.setListener(this);
     conceptEditor.setRootConcept(root);
+    ruleEditor = new RuleEditorDialog(environment);
     ruleEditor.setListener(this);
     ruleEditor.setRootConcept(root);
+    episodeEditor = new EpisodeEditorDialog(environment);
     episodeEditor.setListener(this);
     episodeEditor.setRootConcept(root);
+    taskEditor = new TaskEditorDialog(environment);
     taskEditor.setListener(this);
     taskEditor.setRootConcept(root);
   }

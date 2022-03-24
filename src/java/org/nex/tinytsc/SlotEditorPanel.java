@@ -14,6 +14,7 @@ import java.awt.event.*;
 
 //import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Concept;
+import org.nex.tinytsc.engine.Environment;
 /**
  * <p>Title: TinyTSC</p>
  * <p>Description: Small "The Scholar's Companion(r)"</p>
@@ -28,7 +29,7 @@ public class SlotEditorPanel extends JPanel {
 	final String newTipRule = "Create a new QP Sentence";
   BorderLayout borderLayout1 = new BorderLayout();
   JSplitPane jSplitPane1 = new JSplitPane();
-  TreePanel treePanel1 = new TreePanel();
+  TreePanel treePanel1;
   JPanel jPanel1 = new JPanel();
   BorderLayout borderLayout2 = new BorderLayout();
   JPanel jPanel2 = new JPanel();
@@ -49,8 +50,9 @@ public class SlotEditorPanel extends JPanel {
   JList valuesList = new JList();
   DefaultListModel valuesModel = new DefaultListModel();
 
-  public SlotEditorPanel() {
+  public SlotEditorPanel(Environment env) {
     try {
+    	treePanel1 = new TreePanel(env);
       jbInit();
       treePanel1.setIsSlaveTree(true);
       valuesList.setModel(valuesModel);

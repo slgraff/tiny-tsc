@@ -64,7 +64,8 @@ public class TreePanel extends JPanel {
   JMenuItem newModelItem = new JMenuItem();
   JMenuItem newTaskItem = new JMenuItem();
 
-  public TreePanel() {
+  public TreePanel(Environment env) {
+	  environment = env;
     try {
       jbInit();
       conceptTree.setCellRenderer(new ConceptTreeCellRenderer());
@@ -76,7 +77,6 @@ public class TreePanel extends JPanel {
 
   public void setListener(TreeListener l) {
     this.listener = l;
-    this.environment = l.getEnvironment();
 	taxManager = environment.getTaxonomyManager();
   }
 
@@ -85,6 +85,8 @@ public class TreePanel extends JPanel {
   }
 
   private void jbInit() throws Exception {
+	  System.out.println("TreePanelInit "+environment);
+	  taxManager = environment.getTaxonomyManager();
     this.setLayout(borderLayout1);
     conceptTree.addMouseListener(new TreePanel_conceptTree_mouseAdapter(this));
     jPanel1.setLayout(flowLayout1);

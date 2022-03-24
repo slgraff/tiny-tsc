@@ -27,7 +27,7 @@ public class EpisodeEditorDialog extends JDialog {
 	Environment environment;
 	boolean isEditable = false;
 	String instanceParentId;
-  EpisodeEditorPanel episodeEditorPanel1 = new EpisodeEditorPanel();
+  EpisodeEditorPanel episodeEditorPanel1;
   BorderLayout borderLayout1 = new BorderLayout();
   JPanel jPanel1 = new JPanel();
   FlowLayout flowLayout1 = new FlowLayout();
@@ -38,8 +38,10 @@ public class EpisodeEditorDialog extends JDialog {
   JButton cancelButton = new JButton();
   JButton okButton = new JButton();
 
-  public EpisodeEditorDialog() throws HeadlessException {
+  public EpisodeEditorDialog(Environment env) throws HeadlessException {
+	  environment = env;
     try {
+    	episodeEditorPanel1 = new EpisodeEditorPanel(environment);
       jbInit();
       episodeEditorPanel1.setHost(this);
     }
@@ -50,7 +52,6 @@ public class EpisodeEditorDialog extends JDialog {
 
   public void setListener(TreeListener e) {
     episodeEditorPanel1.setListener(e);
-    environment = e.getEnvironment();
   }
 
   public void setRootConcept(Concept c) {

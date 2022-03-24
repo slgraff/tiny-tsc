@@ -6,6 +6,7 @@
  */
 package org.nex.tinytsc.xml;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import org.nex.tinytsc.engine.Concept;
@@ -20,6 +21,8 @@ import org.nex.tinytsc.DatastoreException;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+
+
 //log4j.jar
 import org.apache.log4j.Logger;
 
@@ -32,7 +35,6 @@ import org.apache.log4j.Logger;
  * @version 1.0
  */
 public class ConceptPullParser {
-	private Logger log = Logger.getLogger(ConceptPullParser.class);
         private Environment environment;
         private Concept theConcept;
         private Model theModel;
@@ -41,6 +43,21 @@ public class ConceptPullParser {
         private Task theTask;
         private Sentence theSentence;
 
+    public Concept getConcept() {
+    	return theConcept;
+    }
+    public Model getModel() {
+    	return theModel;
+    }
+    public Episode getEpisode() {
+    	return theEpisode;
+    }
+    public Task getTask() {
+    	return theTask;
+    }
+    public Rule getRule() {
+    	return theRule;
+    }
 	/**
 	 *
 	 */
@@ -51,12 +68,33 @@ public class ConceptPullParser {
 
 	public  void parse(File inFile) {
 	    try {
-	      XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-	      factory.setNamespaceAware(false);
-	      XmlPullParser xpp = factory.newPullParser();
 
 	      FileInputStream is = new FileInputStream(inFile);
 	      BufferedReader in = new BufferedReader(new InputStreamReader(is));
+	      parse(in);
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    	environment.logError(e.getMessage(), e);
+	    }
+	}
+	
+	public void parse(String xml) {
+		//initialize
+		theConcept = null; theRule = null; theEpisode = null; theTask = null; theModel = null;
+		try {
+			ByteArrayInputStream bis = new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8));
+		    BufferedReader in = new BufferedReader(new InputStreamReader(bis));
+		    parse(in);
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    	environment.logError(e.getMessage(), e);
+	    }
+	}
+	
+	public void parse(Reader in) throws Exception {
+	      XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+	      factory.setNamespaceAware(false);
+	      XmlPullParser xpp = factory.newPullParser();
 	      xpp.setInput(in);
 	      String temp = null;
 	      String text = null;
@@ -201,49 +239,49 @@ public class ConceptPullParser {
 //	          System.out.println("End tag " + temp + " // " + text);
                   if (temp.equalsIgnoreCase("concept")) {
                     isConcept = false;
-                    try {
+                    /*try {
                       System.out.println(theConcept.toXML());
-                      environment.importConcept(theConcept);
+                      //environment.importConcept(theConcept); // that's for importing
                     } catch (DatastoreException x) {
                       throw new RuntimeException(x);
                     }
-                    theConcept = null;
+                    theConcept = null;*/
                   } else if (temp.equalsIgnoreCase("rule")) {
                     isRule = false;
-                    try {
+                    /*try {
                       System.out.println(theRule.toXML());
                       environment.importRule(theRule);
                     } catch (DatastoreException x) {
                       throw new RuntimeException(x);
                     }
-                    theRule = null;
+                    theRule = null;*/
                   } else if (temp.equalsIgnoreCase("episode")) {
                     isEpisode = false;
-                    try {
+                    /*try {
                       System.out.println(theEpisode.toXML());
                       environment.importEpisode(theEpisode);
                     } catch (DatastoreException x) {
                       throw new RuntimeException(x);
                     }
-                    theEpisode = null;
+                    theEpisode = null;*/
                   } else if (temp.equalsIgnoreCase("model")) {
                     isModel = false;
-                    try {
+                   /* try {
                       System.out.println(theModel.toXML());
                       environment.importModel(theModel);
                     } catch (DatastoreException x) {
                       throw new RuntimeException(x);
                     }
-                    theModel = null;
+                    theModel = null;*/
                   } else if (temp.equalsIgnoreCase("task")) {
                     isTask = false;
-                    try {
+                   /* try {
                       System.out.println(theTask.toXML());
                       environment.importTask(theTask);
                     } catch (DatastoreException x) {
                       throw new RuntimeException(x);
                     }
-                    theTask = null;
+                    theTask = null;*/
                   } else if (temp.equalsIgnoreCase("slot")) {
                     isSlot = false;
                     if (isOtherSlot) {
@@ -379,11 +417,7 @@ public class ConceptPullParser {
 	        }
 	        eventType = xpp.next();
 	      }
-	    } catch (XmlPullParserException e) {
-	      System.out.println("ConceptPullParser failed " + e.getMessage());
-	    } catch (IOException x) {
-	      System.out.println("ConceptPullParser io failure " + x.getMessage());
-	    }
+	    
 	  }
 
 	  /**

@@ -24,7 +24,7 @@ import org.nex.tinytsc.DatastoreException;
  */
 
 public class ConceptEditorDialog extends JDialog {
-  ConceptEditorPanel conceptEditorPanel = new ConceptEditorPanel();
+  ConceptEditorPanel conceptEditorPanel;
   Environment environment;
   BorderLayout borderLayout1 = new BorderLayout();
   JPanel jPanel1 = new JPanel();
@@ -32,8 +32,9 @@ public class ConceptEditorDialog extends JDialog {
   JButton cancelButton = new JButton();
   JButton okButton = new JButton();
 
-  public ConceptEditorDialog() throws HeadlessException {
+  public ConceptEditorDialog(Environment env) throws HeadlessException {
     try {
+    	conceptEditorPanel = new ConceptEditorPanel(env);
       jbInit();
     }
     catch(Exception e) {

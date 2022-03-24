@@ -103,18 +103,19 @@ public class Concept implements Serializable, Identifiable {
     return instanceOf;
   }
   public void addSubOf(String so) {
+	  System.out.println("CSubOf "+so);
     if (subOf == null) subOf = new ArrayList<String>();
     subOf.add(so);
     if (transitiveClosure == null) transitiveClosure = new ArrayList<String>();
     if (!transitiveClosure.contains(so))
     	transitiveClosure.add(so);
-    try {
+   /* try {
     	Concept parent = database.getConcept(so);
     	parent.addSubClass(this.getId());
     	database.putConcept(so, parent);
     } catch (Exception e) {
     	throw new RuntimeException(e);
-    }
+    }*/
   }
   /**
    * 

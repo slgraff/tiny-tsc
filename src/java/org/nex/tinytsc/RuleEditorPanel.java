@@ -31,7 +31,7 @@ import org.nex.tinytsc.engine.Sentence;
 public class RuleEditorPanel extends JPanel implements ISentenceListener {
 	RuleEditorDialog host;
   Environment environment;
-  SentenceEditorDialog sentenceEditor = new SentenceEditorDialog();
+  SentenceEditorDialog sentenceEditor;
   Rule myRule = null;
   boolean isDirty = false;
   GridLayout gridLayout1 = new GridLayout();
@@ -102,8 +102,10 @@ public class RuleEditorPanel extends JPanel implements ISentenceListener {
   Border border20;
   TitledBorder titledBorder20;
 
-  public RuleEditorPanel() {
+  public RuleEditorPanel(Environment env) {
+	  environment = env;
     try {
+    	sentenceEditor = new SentenceEditorDialog(environment);
       jbInit();
       this.ifRunSentence.setEnabled(false);
       this.ifNotRunSentence.setEnabled(false);
@@ -121,7 +123,6 @@ public class RuleEditorPanel extends JPanel implements ISentenceListener {
   }
   public void setListener(TreeListener e) {
     sentenceEditor.setListener(e);
-    environment = e.getEnvironment();
   }
 
   public void setRootConcept(Concept c) {

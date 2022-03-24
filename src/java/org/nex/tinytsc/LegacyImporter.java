@@ -44,6 +44,7 @@ public class LegacyImporter {
    */
   private Map<String, Con> ConObject = new HashMap<String, Con>();
 
+  private Map<String, Concept> MyConcepts = new HashMap<String, Concept>();
 
   private File loader;
   private String directory;
@@ -361,23 +362,39 @@ public class LegacyImporter {
   }
   void convertConcept(Con c) {
 	  System.out.println("CCC "+c);
-    Concept con = new Concept(c.id);
-    con.setDatabase(environment.getDatabase());
+    Concept con = MyConcepts.get(c.id);
+    if (con == null) {
+    	con = new Concept(c.id);
+    	con.setDatabase(environment.getDatabase());
+    	MyConcepts.put(c.id, con);
+    }
+    Concept parent;
     if (!c.instanceOf.equals("")) {
       //con.addProperty("instanceOf",c.instanceOf);
       con.setInstanceOf(c.instanceOf);
     }
     Iterator<String> itr = c.listSlotNames();
-    String n;
+    String n, pid;
     List l;
     while (itr.hasNext()) {
       n = itr.next();
       l = c.getSlotValue(n);
 	  System.out.println("CCCXXX "+n +" "+l);
       int len = l.size();
+      
       for (int i=0;i<len;i++) {
-    	  if (n.equals("subOf"))
-    		  con.addSubOf((String)l.get(i));
+    	  if (n.equals("subOf")) {
+    		  pid = (String)l.get(i);
+    		  con.addSubOf(pid);
+    		  parent = MyConcepts.get(pid);
+    		  if (parent == null) {
+    			  //not made yet, so make a shell
+    			  parent = new Concept(pid);
+    			  parent.setDatabase(environment.getDatabase());
+    		  }
+    		  parent.addSubClass(c.id);
+    	  }
+    	  //TODO need "else" here?
         con.addProperty(n,(String)l.get(i));
       }
     }
@@ -726,6 +743,7 @@ public class LegacyImporter {
 
   ////////////////////////////////////////
   // inner class to make Legacy TSC concepts
+  // built during parsing
   ////////////////////////////////////////
   class Con {
     String id;

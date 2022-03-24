@@ -15,6 +15,7 @@ import javax.swing.*;
 //import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Concept;
 //import org.nex.tinytsc.engine.Sentence;
+import org.nex.tinytsc.engine.Environment;
 
 /**
  * <p>Title: TinyTSC</p>
@@ -37,11 +38,13 @@ import org.nex.tinytsc.engine.Concept;
 public class ConceptEditorPanel extends JPanel {
   BorderLayout borderLayout1 = new BorderLayout();
   JSplitPane jSplitPane1 = new JSplitPane();
-  TreePanel treePanel = new TreePanel();
-  ConceptEditor conceptEditor = new ConceptEditor();
+  TreePanel treePanel; 
+  ConceptEditor conceptEditor;
 
-  public ConceptEditorPanel() {
+  public ConceptEditorPanel(Environment env) {
     try {
+    	treePanel = new TreePanel(env);
+    	conceptEditor = new ConceptEditor(env);
       jbInit();
       treePanel.setIsSlaveTree(true);
       conceptEditor.setTreePanel(treePanel);
