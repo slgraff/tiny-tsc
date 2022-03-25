@@ -9,6 +9,7 @@ import java.util.*;
 
 import org.nex.tinytsc.api.IActorCarrier;
 import org.nex.tinytsc.api.IAgent;
+import org.nex.tinytsc.api.IConstants;
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Task;
 import org.nex.tinytsc.engine.Episode;
@@ -77,7 +78,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
   public void initialize(Environment environment) {
     this.environment = environment;
     this.inferenceEngine = new InferenceEngine(environment);
-    environment.registerAgent(Task.FILLIN_NEXT_EPISODE,this);
+    environment.registerAgent(IConstants.FILLIN_NEXT_EPISODE,this);
     this.start();
   }
 
@@ -186,7 +187,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
   void publishTask(Episode e, Model m) {
     environment.say("FillinNextEpisode new publish task on "+e.getId());
     Task newTask = environment.newTask();
-    newTask.setTaskType(Task.PUBLISH_EPISODE);
+    newTask.setTaskType(IConstants.PUBLISH_EPISODE);
     newTask.setModel(m);
     newTask.setObject(e);
     environment.say("FillinNextEpisode newTask "+newTask.getId());

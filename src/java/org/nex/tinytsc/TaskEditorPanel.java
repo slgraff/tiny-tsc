@@ -13,6 +13,7 @@ import java.awt.event.*;
 
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Task;
+import org.nex.tinytsc.api.IConstants;
 import org.nex.tinytsc.api.Identifiable;
 import org.nex.tinytsc.engine.Concept;
 /**
@@ -139,8 +140,8 @@ public class TaskEditorPanel extends JPanel {
   }
 
   void initializeTasks() {
-    taskModel.addElement(Task.FILLIN_NEXT_EPISODE);
-    taskModel.addElement(Task.PUBLISH_EPISODE);
+    taskModel.addElement(IConstants.FILLIN_NEXT_EPISODE);
+    taskModel.addElement(IConstants.PUBLISH_EPISODE);
     this.taskComboBox.setModel(taskModel);
   }
 
@@ -149,10 +150,10 @@ public class TaskEditorPanel extends JPanel {
     idField.setText(id);
     myTask = environment.getTask(id);
     String tt = myTask.getTaskType();
-    if (tt.equals(Task.FILLIN_NEXT_EPISODE))
-        taskComboBox.setSelectedItem(Task.FILLIN_NEXT_EPISODE);
-    else if (tt.equals(Task.PUBLISH_EPISODE))
-      taskComboBox.setSelectedItem(Task.PUBLISH_EPISODE);
+    if (tt.equals(IConstants.FILLIN_NEXT_EPISODE))
+        taskComboBox.setSelectedItem(IConstants.FILLIN_NEXT_EPISODE);
+    else if (tt.equals(IConstants.PUBLISH_EPISODE))
+      taskComboBox.setSelectedItem(IConstants.PUBLISH_EPISODE);
     this.taskField.setText(tt);
     this.conceptField.setText(myTask.getObject().getId());
   }

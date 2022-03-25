@@ -13,6 +13,7 @@ import org.nex.persist.text.TextFileHandler;
 import org.nex.tinytsc.engine.Sentence;
 import org.nex.tinytsc.engine.Model;
 import org.nex.tinytsc.engine.Rule;
+import org.nex.tinytsc.api.IConstants;
 import org.nex.tinytsc.engine.Concept;
 import org.nex.tinytsc.engine.Task;
 /**
@@ -211,9 +212,9 @@ public class LegacyImporter {
         } else if (n.equals("doTask")) {
           v = (String)l.get(i);
           if (v.startsWith("fillin"))
-            tsk.setTaskType(Task.FILLIN_NEXT_EPISODE);
+            tsk.setTaskType(IConstants.FILLIN_NEXT_EPISODE);
           else if (v.startsWith("publish"))
-            tsk.setTaskType(Task.PUBLISH_EPISODE);
+            tsk.setTaskType(IConstants.PUBLISH_EPISODE);
         } else if (n.equals("onConcept")) {
           String x = (String)l.get(i);
           System.out.println("Getting model "+x);

@@ -14,6 +14,7 @@ import org.nex.tinytsc.engine.Model;
 import org.nex.tinytsc.engine.FindEpisodeUtility;
 import org.nex.tinytsc.DatastoreException;
 import org.nex.tinytsc.api.IAgent;
+import org.nex.tinytsc.api.IConstants;
 
 
 /**
@@ -47,7 +48,7 @@ public class PublishEpisodeAgent extends Thread implements IAgent {
   }
   public void initialize(Environment environment) {
     this.environment = environment;
-    environment.registerAgent(Task.PUBLISH_EPISODE,this);
+    environment.registerAgent(IConstants.PUBLISH_EPISODE,this);
     finder = new FindEpisodeUtility(environment);
     this.start();
   }
@@ -170,7 +171,7 @@ public class PublishEpisodeAgent extends Thread implements IAgent {
   void fillinTask(Episode newEp, Model m) {
     environment.say("PublishEpisode new fillin task on "+newEp.getId());
     Task newTask = environment.newTask();
-    newTask.setTaskType(Task.FILLIN_NEXT_EPISODE);
+    newTask.setTaskType(IConstants.FILLIN_NEXT_EPISODE);
     newTask.setModel(m);
     newTask.setObject(newEp);
     environment.say("PublishEpisode newTask "+newTask.getId());
