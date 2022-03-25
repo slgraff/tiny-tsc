@@ -104,8 +104,8 @@ public class ConceptPullParser {
               String id = null;
               String ruleId = null;
               String nodeId = null;
-	      HashMap attributes = null;
-	      ArrayList theList = null;
+	      Map attributes = null;
+	      List<Object> theList = null;
 	      boolean isList = false;
               boolean isSlot = false;
               boolean isModel = false;
@@ -204,209 +204,216 @@ public class ConceptPullParser {
 	          if (temp.equalsIgnoreCase("concept")) {
                     isConcept = true;
                     theConcept = new Concept(id);
-                  } else if (temp.equalsIgnoreCase("rule")) {
-                    theRule = new Rule(id);
-                    isRule = true;
-                  } else if (temp.equalsIgnoreCase("episode")) {
-                    theEpisode = new Episode(id);
-                    isEpisode = true;
-                  } else if (temp.equalsIgnoreCase("model")) {
-                    theModel = new Model(id);
-                    isModel = true;
-                  } else if (temp.equalsIgnoreCase("task")) {
-                    theTask = new Task(id);
-                    isTask = true;
-                  } else if (temp.equalsIgnoreCase("slot")) {
-                    isSlot = true;
-                    //we already have the slot name
-                  } else if (temp.equalsIgnoreCase("sentence")) {
-                    theSentence = new Sentence();
-                  } else if (temp.equalsIgnoreCase("predicate")) {
-                  } else if (temp.equalsIgnoreCase("subject")) {
-                  } else if (temp.equalsIgnoreCase("truth")) {
-                  } else if (temp.equalsIgnoreCase("nextEpisode")) {
-                    isNextEpisode = true;
-                  } else if (temp.equalsIgnoreCase("previousEpisode")) {
-                    isPreviousEpisode = true;
-                  } else if (temp.equalsIgnoreCase("mechanism")) {
-                  } else if (temp.equalsIgnoreCase("node")) {
-                  } else if (temp.equalsIgnoreCase("type")) {
-                  } else if (temp.equalsIgnoreCase("object")) {
-                  } else if (temp.equalsIgnoreCase("experiment")) {
-                  }
+              } else if (temp.equalsIgnoreCase("rule")) {
+                theRule = new Rule(id);
+                isRule = true;
+              } else if (temp.equalsIgnoreCase("episode")) {
+                theEpisode = new Episode(id);
+                isEpisode = true;
+              } else if (temp.equalsIgnoreCase("model")) {
+                theModel = new Model(id);
+                isModel = true;
+              } else if (temp.equalsIgnoreCase("task")) {
+                theTask = new Task(id);
+                isTask = true;
+              } else if (temp.equalsIgnoreCase("slot")) {
+                isSlot = true;
+                //we already have the slot name
+              } else if (temp.equalsIgnoreCase("sentence")) {
+                theSentence = new Sentence();
+              } else if (temp.equalsIgnoreCase("predicate")) {
+              } else if (temp.equalsIgnoreCase("subject")) {
+              } else if (temp.equalsIgnoreCase("truth")) {
+              } else if (temp.equalsIgnoreCase("nextEpisode")) {
+                isNextEpisode = true;
+              } else if (temp.equalsIgnoreCase("previousEpisode")) {
+                isPreviousEpisode = true;
+              } else if (temp.equalsIgnoreCase("mechanism")) {
+              } else if (temp.equalsIgnoreCase("node")) {
+              } else if (temp.equalsIgnoreCase("type")) {
+              } else if (temp.equalsIgnoreCase("object")) {
+              } else if (temp.equalsIgnoreCase("experiment")) {
+              } else if (temp.equalsIgnoreCase("priority")) {    	  
+              }
 	        }
 	        else if (eventType == XmlPullParser.END_TAG) {
 //	          System.out.println("End tag " + temp + " // " + text);
-                  if (temp.equalsIgnoreCase("concept")) {
-                    isConcept = false;
-                    /*try {
-                      System.out.println(theConcept.toXML());
-                      //environment.importConcept(theConcept); // that's for importing
-                    } catch (DatastoreException x) {
-                      throw new RuntimeException(x);
-                    }
-                    theConcept = null;*/
-                  } else if (temp.equalsIgnoreCase("rule")) {
-                    isRule = false;
-                    /*try {
-                      System.out.println(theRule.toXML());
-                      environment.importRule(theRule);
-                    } catch (DatastoreException x) {
-                      throw new RuntimeException(x);
-                    }
-                    theRule = null;*/
-                  } else if (temp.equalsIgnoreCase("episode")) {
-                    isEpisode = false;
-                    /*try {
-                      System.out.println(theEpisode.toXML());
-                      environment.importEpisode(theEpisode);
-                    } catch (DatastoreException x) {
-                      throw new RuntimeException(x);
-                    }
-                    theEpisode = null;*/
-                  } else if (temp.equalsIgnoreCase("model")) {
-                    isModel = false;
-                   /* try {
-                      System.out.println(theModel.toXML());
-                      environment.importModel(theModel);
-                    } catch (DatastoreException x) {
-                      throw new RuntimeException(x);
-                    }
-                    theModel = null;*/
-                  } else if (temp.equalsIgnoreCase("task")) {
-                    isTask = false;
-                   /* try {
-                      System.out.println(theTask.toXML());
-                      environment.importTask(theTask);
-                    } catch (DatastoreException x) {
-                      throw new RuntimeException(x);
-                    }
-                    theTask = null;*/
-                  } else if (temp.equalsIgnoreCase("slot")) {
-                    isSlot = false;
-                    if (isOtherSlot) {
-                      //these are not qp slots
-                      if (isConcept)
-                        theConcept.putProperty(otherSlotName,theList);
-                    } else if (isInstanceOf) {
-                      if (isConcept)
-                        theConcept.putProperty("instanceOf", theList);
-                      else if (isTask)
-                        theTask.setInstanceOf((String)theList.get(0));
-                      else if (isRule)
-                        theRule.setInstanceOf((String)theList.get(0));
-                      else if (isModel)
-                        theModel.setInstanceOf((String)theList.get(0));
-                      else if (isEpisode)
-                        theEpisode.setInstanceOf((String)theList.get(0));
-                    } //qp slots were dealt with in their sentences
-                  } else if (temp.equalsIgnoreCase("sentence")) {
-                    if (isModel) {
-                      if (isIfActors)
-                        theModel.addActor(theSentence);
-                      else if (isIfRelations)
-                        theModel.addRelation(theSentence);
-                      else if (isIfStates)
-                        theModel.addState(theSentence);
-                    } else if (isEpisode) {
-                      if (isIfActors)
-                        theEpisode.addActor(theSentence);
-                      else if (isIfRelations)
-                        theEpisode.addRelation(theSentence);
-                      else if (isIfStates)
-                        theEpisode.addState(theSentence);
-                    } else if (isRule) {
-                      if (isIfActors)
-                        theRule.addIfActor(theSentence);
-                      else if (isIfRelations)
-                        theRule.addIfRelation(theSentence);
-                      else if (isIfStates)
-                        theRule.addIfState(theSentence);
-                      else if (isIfNotActors)
-                        theRule.addIfNotActor(theSentence);
-                      else if (isIfNotRelations)
-                        theRule.addIfNotRelation(theSentence);
-                      else if (isIfNotStates)
-                        theRule.addIfNotState(theSentence);
-                      else if (isThenActors)
-                       theRule.addThenActor(theSentence);
-                     else if (isThenRelates)
-                       theRule.addThenRelation(theSentence);
-                     else if (isThenStates)
-                       theRule.addThenState(theSentence);
-                     else if (isThenConjecture)
-                       theRule.addThenConjecture(theSentence);
+              if (temp.equalsIgnoreCase("concept")) {
+                isConcept = false;
+                /*try {
+                  System.out.println(theConcept.toXML());
+                  //environment.importConcept(theConcept); // that's for importing
+                } catch (DatastoreException x) {
+                  throw new RuntimeException(x);
+                }
+                theConcept = null;*/
+              } else if (temp.equalsIgnoreCase("rule")) {
+                isRule = false;
+                /*try {
+                  System.out.println(theRule.toXML());
+                  environment.importRule(theRule);
+                } catch (DatastoreException x) {
+                  throw new RuntimeException(x);
+                }
+                theRule = null;*/
+              } else if (temp.equalsIgnoreCase("episode")) {
+                isEpisode = false;
+                /*try {
+                  System.out.println(theEpisode.toXML());
+                  environment.importEpisode(theEpisode);
+                } catch (DatastoreException x) {
+                  throw new RuntimeException(x);
+                }
+                theEpisode = null;*/
+              } else if (temp.equalsIgnoreCase("model")) {
+                isModel = false;
+               /* try {
+                  System.out.println(theModel.toXML());
+                  environment.importModel(theModel);
+                } catch (DatastoreException x) {
+                  throw new RuntimeException(x);
+                }
+                theModel = null;*/
+              } else if (temp.equalsIgnoreCase("task")) {
+                isTask = false;
+               /* try {
+                  System.out.println(theTask.toXML());
+                  environment.importTask(theTask);
+                } catch (DatastoreException x) {
+                  throw new RuntimeException(x);
+                }
+                theTask = null;*/
+              } else if (temp.equalsIgnoreCase("slot")) {
+                isSlot = false;
+                if (isOtherSlot) {
+                  //these are not qp slots
+                  if (isConcept)
+                    theConcept.putProperty(otherSlotName,theList);
+                } else if (isInstanceOf) { 
+                  if (isConcept)
+                    //theConcept.putProperty("instanceOf", theList);
+                	  theConcept.setInstanceOf(text);
+                  else if (isTask)
+                    theTask.setInstanceOf((String)theList.get(0));
+                  else if (isRule)
+                    theRule.setInstanceOf((String)theList.get(0));
+                  else if (isModel)
+                    theModel.setInstanceOf((String)theList.get(0));
+                  else if (isEpisode)
+                    theEpisode.setInstanceOf((String)theList.get(0));
+                } //qp slots were dealt with in their sentences
+              } else if (temp.equalsIgnoreCase("sentence")) {
+                if (isModel) {
+                  if (isIfActors)
+                    theModel.addActor(theSentence);
+                  else if (isIfRelations)
+                    theModel.addRelation(theSentence);
+                  else if (isIfStates)
+                    theModel.addState(theSentence);
+                } else if (isEpisode) {
+                  if (isIfActors)
+                    theEpisode.addActor(theSentence);
+                  else if (isIfRelations)
+                    theEpisode.addRelation(theSentence);
+                  else if (isIfStates)
+                    theEpisode.addState(theSentence);
+                } else if (isRule) {
+                  if (isIfActors)
+                    theRule.addIfActor(theSentence);
+                  else if (isIfRelations)
+                    theRule.addIfRelation(theSentence);
+                  else if (isIfStates)
+                    theRule.addIfState(theSentence);
+                  else if (isIfNotActors)
+                    theRule.addIfNotActor(theSentence);
+                  else if (isIfNotRelations)
+                    theRule.addIfNotRelation(theSentence);
+                  else if (isIfNotStates)
+                    theRule.addIfNotState(theSentence);
+                  else if (isThenActors)
+                   theRule.addThenActor(theSentence);
+                 else if (isThenRelates)
+                   theRule.addThenRelation(theSentence);
+                 else if (isThenStates)
+                   theRule.addThenState(theSentence);
+                 else if (isThenConjecture)
+                   theRule.addThenConjecture(theSentence);
 //                     else if (isThenSay)
 //                       theRule.addThenSay(theSentence);
-                    } else if (temp.equalsIgnoreCase("database")) {
-                      //we're done
-                      environment.finishImport();
-                    }
-                    theSentence = null;
-                  } else if (temp.equalsIgnoreCase("predicate")) {
-                    theSentence.predicate = text;
-                  } else if (temp.equalsIgnoreCase("subject")) {
-                    //might be more than one value
-                    StringTokenizer tok = new StringTokenizer(text);
-                    //opportunity for bugs here
-                    theSentence.object = tok.nextToken();
-                    if (tok.hasMoreTokens())
-                      theSentence.objectB = tok.nextToken();
-                  } else if (temp.equalsIgnoreCase("truth")) {
-                    boolean truth = text.equals("true");
-                    theSentence.truth = truth;
-                  } else if (temp.equalsIgnoreCase("nextEpisode")) {
-                    isNextEpisode = false;
-                    if (isModel)
-                      theModel.addNextEpisode(ruleId,nodeId);
-                    else if (isEpisode)
-                      theEpisode.addNextEpisode(ruleId,nodeId);
-                    ruleId = nodeId = null;
-                  } else if (temp.equalsIgnoreCase("previousEpisode")) {
-                    isPreviousEpisode = false;
-                   if (isEpisode)
-                      theEpisode.addPreviousEpisode(ruleId,nodeId);
-                    ruleId = nodeId = null;
-                  } else if (temp.equalsIgnoreCase("mechanism")) {
-                    ruleId = text;
-                  } else if (temp.equalsIgnoreCase("node")) {
-                    nodeId = text;
-                  } else if (temp.equalsIgnoreCase("type")) {
-                    theTask.setTaskType(text);
-                  } else if (temp.equalsIgnoreCase("object")) {
-                    //TODO
-                  } else if (temp.equalsIgnoreCase("experiment")) {
-                    Model m = environment.getModel(text);
-                    //could be null!!!!
-                    theTask.setModel(m);
-                  } else if (temp.equalsIgnoreCase("value")) {
+                } else if (temp.equalsIgnoreCase("database")) {
+                  //we're done
+                  environment.finishImport();
+                }
+                theSentence = null;
+              } else if (temp.equalsIgnoreCase("predicate")) {
+                theSentence.predicate = text;
+              } else if (temp.equalsIgnoreCase("subject")) {
+                //might be more than one value
+                StringTokenizer tok = new StringTokenizer(text);
+                //opportunity for bugs here
+                theSentence.object = tok.nextToken();
+                if (tok.hasMoreTokens())
+                  theSentence.objectB = tok.nextToken();
+              } else if (temp.equalsIgnoreCase("truth")) {
+                boolean truth = text.equals("true");
+                theSentence.truth = truth;
+              } else if (temp.equalsIgnoreCase("nextEpisode")) {
+                isNextEpisode = false;
+                if (isModel)
+                  theModel.addNextEpisode(ruleId,nodeId);
+                else if (isEpisode)
+                  theEpisode.addNextEpisode(ruleId,nodeId);
+                ruleId = nodeId = null;
+              } else if (temp.equalsIgnoreCase("previousEpisode")) {
+                isPreviousEpisode = false;
+               if (isEpisode)
+                  theEpisode.addPreviousEpisode(ruleId,nodeId);
+                ruleId = nodeId = null;
+              } else if (temp.equalsIgnoreCase("mechanism")) {
+                ruleId = text;
+              } else if (temp.equalsIgnoreCase("node")) {
+                nodeId = text;
+              } else if (temp.equalsIgnoreCase("type")) {
+                theTask.setTaskType(text);
+              } else if (temp.equalsIgnoreCase("object")) {
+                //TODO
+              } else if (temp.equalsIgnoreCase("experiment")) {
+                Model m = environment.getModel(text);
+                //could be null!!!!
+                theTask.setModel(m);
+              } else if (temp.equalsIgnoreCase("value")) {
 
-                    //value might have a list of space-delimited symbols
-                    StringTokenizer tok = new StringTokenizer(text);
-                    theList = new ArrayList();
-                    while (tok.hasMoreTokens())
-                      theList.add(tok.nextToken());
-                  } else if (temp.equalsIgnoreCase("myMechanism")) {
-                    theEpisode.setMechanism(text);
-                  } else if (temp.equalsIgnoreCase("name")) {
-                    if (isConcept)
-                      theConcept.setName(text);
-                    else if (isEpisode)
-                      theEpisode.setName(text);
-                    else if (isModel)
-                      theModel.setName(text);
-                    else if (isRule)
-                      theRule.setName(text);
-                  } else if (temp.equalsIgnoreCase("comment")) {
-                    if (isConcept)
-                      theConcept.setComment(text);
-                    else if (isEpisode)
-                      theEpisode.setComment(text);
-                    else if (isModel)
-                      theModel.setComment(text);
-                    else if (isRule)
-                      theRule.setComment(text);
-                  }
+                //value might have a list of space-delimited symbols
+                StringTokenizer tok = new StringTokenizer(text);
+                theList = new ArrayList<Object>();
+                while (tok.hasMoreTokens())
+                  theList.add(tok.nextToken());
+              } else if (temp.equalsIgnoreCase("myMechanism")) {
+                theEpisode.setMechanism(text);
+              } else if (temp.equalsIgnoreCase("name")) {
+                if (isConcept)
+                  theConcept.setName(text);
+                else if (isEpisode)
+                  theEpisode.setName(text);
+                else if (isModel)
+                  theModel.setName(text);
+                else if (isRule)
+                  theRule.setName(text);
+              } else if (temp.equalsIgnoreCase("comment")) {
+                if (isConcept)
+                  theConcept.setComment(text);
+                else if (isEpisode)
+                  theEpisode.setComment(text);
+                else if (isModel)
+                  theModel.setComment(text);
+                else if (isRule)
+                  theRule.setComment(text);
+              } else if (temp.equalsIgnoreCase("priority")) {
+            	  int prx = Integer.parseInt(text);
+            	  theTask.setPriority(prx);
+              }
+
+              
 	        }
 	        else if (eventType == XmlPullParser.TEXT) {
 //	                System.out.println("Text "+id+" // "+xpp.getText());

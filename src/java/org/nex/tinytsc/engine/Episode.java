@@ -269,21 +269,21 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
       int len;
       if (actors != null) {
         len = actors.size();
-        buf.append("  <slot name=\"actors\">\n");
+        buf.append("  <slot name=\"\"+IConstants._ACTORS+\"\">\n");
         for (int i = 0; i < len; i++)
           buf.append( ( (Sentence) actors.get(i)).toXML());
         buf.append("  </slot>\n");
       }
       if (relations != null) {
         len = relations.size();
-        buf.append("  <slot name=\"relations\">\n");
+        buf.append("  <slot name=\"\"+IConstants._RELATIONS+\"\">\n");
         for (int i = 0; i < len; i++)
           buf.append( ( (Sentence) relations.get(i)).toXML());
         buf.append("  </slot>\n");
       }
       if (states != null) {
         len = states.size();
-        buf.append("  <slot name=\"states\">\n");
+        buf.append("  <slot name=\""+IConstants._STATES+"\">\n");
         for (int i = 0; i < len; i++)
           buf.append( ( (Sentence) states.get(i)).toXML());
         buf.append("  </slot>\n");

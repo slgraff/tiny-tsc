@@ -312,87 +312,87 @@ public class Rule implements Serializable, IActorCarrier, Identifiable {
     }
     if (ifActors != null) {
       len = ifActors.size();
-      buf.append("  <slot name=\"ifActors\">\n");
+      buf.append("  <slot name=\""+IConstants._IF_ACTORS+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(ifActors.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (ifNotActors != null) {
       len = ifNotActors.size();
-      buf.append("  <slot name=\"ifNotActors\">\n");
+      buf.append("  <slot name=\""+IConstants._IF_NOT_ACTORS+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(ifNotActors.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (ifRelations != null) {
       len = ifRelations.size();
-      buf.append("  <slot name=\"ifRelations\">\n");
+      buf.append("  <slot name=\""+IConstants._IF_RELATIONS+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(ifRelations.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (ifNotRelations != null) {
       len = ifNotRelations.size();
-      buf.append("  <slot name=\"ifNotRelations\">\n");
+      buf.append("  <slot name=\""+IConstants._IF_NOT_RELATIONS+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(ifNotRelations.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (ifStates != null) {
       len = ifStates.size();
-      buf.append("  <slot name=\"ifStates\">\n");
+      buf.append("  <slot name=\""+IConstants._IF_STATES+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(ifStates.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (ifNotStates != null) {
       len = ifNotStates.size();
-      buf.append("  <slot name=\"ifNotStates\">\n");
+      buf.append("  <slot name=\""+IConstants._IF_NOT_STATES+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(ifNotStates.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (thenCreates != null) {
       len = thenCreates.size();
-      buf.append("  <slot name=\"thenCreate\">\n");
+      buf.append("  <slot name=\""+IConstants._THEN_CREATE+"\">\n");
       for (int i=0;i<len;i++)
         buf.append("    "+thenCreates.get(i).object+" ");
       buf.append("\n  </slot>\n");
     }
     if (thenActors != null) {
       len = thenActors.size();
-      buf.append("  <slot name=\"thenActors\">\n");
+      buf.append("  <slot name=\""+IConstants._THEN_ACTORS+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(thenActors.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (thenRelations != null) {
       len = thenRelations.size();
-      buf.append("  <slot name=\"thenRelations\">\n");
+      buf.append("  <slot name=\""+IConstants._THEN_RELATIONS+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(thenRelations.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (thenStates != null) {
       len = thenStates.size();
-      buf.append("  <slot name=\"thenStates\">\n");
+      buf.append("  <slot name=\""+IConstants._THEN_STATES+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(thenStates.get(i).toXML());
       buf.append("  </slot>\n");
     }
     if (thenSay != null) {
-      buf.append("  <slot name=\"thenSay\"><value>\n");
+      buf.append("  <slot name=\""+IConstants._THEN_SAY+"\"><value>\n");
       buf.append("    "+thenSay.get(0)+"\n");
       buf.append("  </value></slot>\n");
     }
     if (thenConjectures != null) {
       len = thenConjectures.size();
-      buf.append("  <slot name=\"thenConjectures\">\n");
+      buf.append("  <slot name=\""+IConstants._THEN_CONJECTURE+"\">\n");
       for (int i=0;i<len;i++)
         buf.append(thenConjectures.get(i).toXML());
       buf.append("  </slot>\n");
     }
-    if (isTerminate)
+    if (isTerminate)			//TODO pull parser doesn't know about this yet
       buf.append("  <isTerminate/>\n");
     buf.append("</rule>\n");
     return buf.toString();

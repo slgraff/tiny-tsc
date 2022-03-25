@@ -189,7 +189,7 @@ public class Concept implements Serializable, Identifiable {
     }
   }
 
-  public Iterator listPropertyNames() {
+  public Iterator<String> listPropertyNames() {
     synchronized(properties) {
       return properties.keySet().iterator();
     }
@@ -219,12 +219,12 @@ public class Concept implements Serializable, Identifiable {
       buf.append("  <name>"+name+"</name>\n");
     if (!comment.equals(""))
       buf.append("  <comment>"+comment+"</comment>\n");
-    Iterator itr = listPropertyNames();
+    Iterator<String> itr = listPropertyNames();
     String n;
-    List l;
+    List<Object> l;
     int len;
     while (itr.hasNext()) {
-      n = (String)itr.next();
+      n = itr.next();
       l = getProperty(n);
       System.out.println("CONCEPT "+id+" "+l);
       len = l.size();
@@ -232,6 +232,51 @@ public class Concept implements Serializable, Identifiable {
       for (int i=0;i<len;i++)
         buf.append((String)l.get(i)+"  ");
       buf.append("\n  </value></slot>\n");
+    }
+    if (this.instanceOf != null && !this.instanceOf.equals("")) {
+    	buf.append("<instanceOf>"+instanceOf+"</instanceOf>");
+    }
+    if (this.hasInstances != null && !hasInstances.isEmpty()) {
+    	len = hasInstances.size();
+        buf.append("  <slot name=\""+IConstants.HAS_INSTANCES+"\"><value>\n  ");
+        for (int i=0;i<len;i++)
+          buf.append(hasInstances.get(i)+"  ");
+        buf.append("\n  </value></slot>\n");
+    }
+    if (this.hasSubs != null && !hasSubs.isEmpty()) {
+    	len = hasSubs.size();
+        buf.append("  <slot name=\""+IConstants.HAS_SUBS+"\"><value>\n  ");
+        for (int i=0;i<len;i++)
+          buf.append(hasSubs.get(i)+"  ");
+        buf.append("\n  </value></slot>\n");
+    }
+    if (this.subOf != null && !subOf.isEmpty()) {
+    	len = subOf.size();
+        buf.append("  <slot name=\""+IConstants.SUB_OF+"\"><value>\n  ");
+        for (int i=0;i<len;i++)
+          buf.append(subOf.get(i)+"  ");
+        buf.append("\n  </value></slot>\n");
+    }
+    if (this.transitiveClosure != null && !transitiveClosure.isEmpty()) {
+    	len = transitiveClosure.size();
+        buf.append("  <slot name=\""+IConstants.TRANSITIVE_CLOSURE+"\"><value>\n  ");
+        for (int i=0;i<len;i++)
+          buf.append(transitiveClosure.get(i)+"  ");
+        buf.append("\n  </value></slot>\n");
+    }
+    if (this.rules != null && !rules.isEmpty()) {
+    	len = rules.size();
+        buf.append("  <slot name=\""+IConstants.RULES+"\"><value>\n  ");
+        for (int i=0;i<len;i++)
+          buf.append(rules.get(i).toXML()+"  ");
+        buf.append("\n  </value></slot>\n");
+    }
+    if (this.episodes != null && !episodes.isEmpty()) {
+    	len = episodes.size();
+        buf.append("  <slot name=\""+IConstants.EPISODES+"\"><value>\n  ");
+        for (int i=0;i<len;i++)
+          buf.append(episodes.get(i).toXML()+"  ");
+        buf.append("\n  </value></slot>\n");
     }
     buf.append("</concept>\n");
     return buf.toString();

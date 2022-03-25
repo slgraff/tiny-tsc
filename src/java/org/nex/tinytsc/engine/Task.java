@@ -21,9 +21,6 @@ import org.nex.tinytsc.api.Identifiable;
 public class Task implements Serializable, Identifiable {
   private final int type = IConstants.TASK;
   public static final String UNKNOWN = "UNK";
-  public static final String FILLIN_NEXT_EPISODE = "fillinNextEp";
-  public static final String PUBLISH_EPISODE = "publishEp";
-  public static final String FIND_EPISODE = "findEp";
   private String id="";
   private String instanceOf="";
   /**
@@ -104,12 +101,13 @@ public class Task implements Serializable, Identifiable {
   public String toXML() {
     StringBuffer buf = new StringBuffer("<task id=\"" + id + "\">\n");
     if (!instanceOf.equals(""))
-      buf.append("  <slot name=\"instanceOf\"><value>" + instanceOf + "</value></slot>\n");
+      buf.append("  <slot name=\""+IConstants.INSTANCE_OF+"\"><value>" + instanceOf + "</value></slot>\n");
     buf.append("  <type>"+taskType+"</type>\n");
     if (object != null)
       buf.append("  <object>"+object.getId()+"</object>\n");
     if (model != null)
     	buf.append("  <experiment>"+model.getId()+"</experiment>\n");
+    buf.append("<priority>"+priority+"</priority>");
     buf.append("</task>\n");
     return buf.toString();
   }

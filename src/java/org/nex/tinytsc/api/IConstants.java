@@ -23,11 +23,11 @@ public interface IConstants {
   public static final int IF_ACTORS = 1;
   public static final int IF_NOT_ACTORS = 2;
   public static final int THEN_ACTORS = 3;
-  public static final int RELATIONS = 4;
+  public static final int RELATIONS = 4; // ???? TODO
   public static final int IF_RELATIONS = 5;
   public static final int IF_NOT_RELATIONS = 6;
   public static final int THEN_RELATIONS = 7;
-  public static final int STATES = 8;
+  public static final int STATES = 8;		//???? TODO
   public static final int IF_STATES = 9;
   public static final int IF_NOT_STATES  = 10;
   public static final int THEN_STATES = 11;
@@ -48,5 +48,44 @@ public interface IConstants {
   public static final int TASK = 4;
   public static final int UNUSED = 5;
   
+  /**
+   * Known slot types
+   */
+  public static final String
+  	INSTANCE_OF			= "instanceOf",
+  	SUB_OF				= "subOf",
+  	HAS_SUBS			= "hasSubs",
+  	HAS_INSTANCES		= "hasInstances",
+  	TRANSITIVE_CLOSURE	= "transitiveClosure",
+  	RULES				= "rules",
+  	EPISODES			= "episodes",
+  	_STATES				= "states",
+  	_RELATIONS			= "relations",
+  	_ACTORS				= "actors",
+  	_IF_ACTORS			= "ifActors",
+  	_IF_NOT_ACTORS		= "ifNotActors",
+  	_THEN_ACTORS		= "thenActors",
+  	_IF_RELATIONS		= "ifRelations",
+  	_IF_NOT_RELATIONS	= "ifNotRelations",
+  	_THEN_RELATIONS		= "thenRelations",
+  	_IF_STATES			= "ifStates",
+  	_IF_NOT_STATES		= "ifNotStates",
+  	_THEN_STATES		= "thenStates",
+  	_THEN_CREATE		= "thenCreate",
+  	_THEN_CONJECTURE	= "thenConjectures",
+  	_THEN_SAY			= "thenSay",
+  	//TODO the following are not in Rule yet
+  	_IF_RUN				= "ifRun",
+  	_IF_NOT_RUN			= "ifNotRun",
+  	_THEN_RUN			= "thenRun";
+
+  /**
+   * QP Task types
+   * There can be many more task types for discovery, etc
+   */
+  public static final String 
+  	FILLIN_NEXT_EPISODE 	= "fillinNextEp",
+  	PUBLISH_EPISODE 		= "publishEp",
+  	FIND_EPISODE 			= "findEp";
 
 }

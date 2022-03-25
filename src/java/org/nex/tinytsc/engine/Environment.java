@@ -235,9 +235,9 @@ public class Environment {
 //    synchronized(agents) {
       say("Adding task "+newTask.getId()+" "+newTask.getTaskType());
       String tt = newTask.getTaskType();
-      if (tt.equals(Task.FILLIN_NEXT_EPISODE))
+      if (tt.equals(IConstants.FILLIN_NEXT_EPISODE))
         this.fillinAgent.addTask(newTask);
-      else if (tt.equals(Task.PUBLISH_EPISODE))
+      else if (tt.equals(IConstants.PUBLISH_EPISODE))
         this.publishAgent.addTask(newTask);
       else
         say("Environment doesn't know how to handle taskType: "+tt);
