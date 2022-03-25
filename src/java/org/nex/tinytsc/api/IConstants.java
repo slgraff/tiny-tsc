@@ -77,8 +77,36 @@ public interface IConstants {
   	//TODO the following are not in Rule yet
   	_IF_RUN				= "ifRun",
   	_IF_NOT_RUN			= "ifNotRun",
-  	_THEN_RUN			= "thenRun";
+  	_THEN_RUN			= "thenRun",
+  	_NEXT_EPIODE		= "nextEpisode",
+  	_PREVIOUS_EPISODE	= "previousEpisode";
 
+  /**
+   * Classes and objects
+   */
+  public static final String
+  	_CONCEPT			= "concept",
+  	_TASK				= "task",
+  	_RULE				= "rule",
+  	_MODEL				= "model",
+  	_EPISODE			= "episode",
+  	_SENTENCE			= "sentence",
+  	_SLOT				= "slot",
+  	_PREDICATE			= "predicate",
+  	_SUBJECT			= "subject",
+  	_MECHANISM			= "mechanism",
+  	_NODE				= "node",
+  	_TYPE				= "type",
+  	_OBJECT				= "object",
+  	_EXPERIMENT			= "experiment",
+  	_VALUE				= "value",
+  	_PRIORITY			= "priority",
+  	_COMMENT			= "comment",
+  	_NAME				= "name",
+  	_TRUTH				= "truth",
+  	_MY_MECHANISM		= "myMechanism",
+  	_DATABASE			= "database";
+  
   /**
    * QP Task types
    * There can be many more task types for discovery, etc

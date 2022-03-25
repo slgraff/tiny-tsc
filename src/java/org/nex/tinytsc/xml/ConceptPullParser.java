@@ -17,6 +17,7 @@ import org.nex.tinytsc.engine.Model;
 import org.nex.tinytsc.engine.Sentence;
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.DatastoreException;
+import org.nex.tinytsc.api.IConstants;
 //xpp.jar
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -99,95 +100,105 @@ public class ConceptPullParser {
 	      String temp = null;
 	      String text = null;
 	      String name = null;
-              String otherSlotName = null;
+          String otherSlotName = null;
 	      String value = null;
-              String id = null;
-              String ruleId = null;
-              String nodeId = null;
-	      Map attributes = null;
+          String id = null;
+          String ruleId = null;
+          String nodeId = null;
+	      Map<String, Object> attributes = null;
 	      List<Object> theList = null;
 	      boolean isList = false;
-              boolean isSlot = false;
-              boolean isModel = false;
-              boolean isRule = false;
-              boolean isEpisode = false;
-              boolean isNextEpisode = false;
-              boolean isPreviousEpisode = false;
-              boolean isTask = false;
-              boolean isConcept = false;
- //             boolean isThenSay = false;
-              boolean isIfActors = false;
-              boolean isIfNotActors = false;
-              boolean isIfRelations = false;
-              boolean isIfNotRelations = false;
-              boolean isIfStates = false;
-              boolean isIfNotStates = false;
-              boolean isThenActors = false;
-              boolean isThenRelates = false;
-              boolean isThenStates = false;
-              boolean isThenCreate = false;
-              boolean isThenConjecture = false;
-              boolean isInstanceOf = false; // priviledged slot
-              //isOther means just put the slot name/List value pair into the concept
-              boolean isOtherSlot = false;
+          boolean isSlot = false;
+          boolean isModel = false;
+          boolean isRule = false;
+          boolean isEpisode = false;
+          boolean isNextEpisode = false;
+          boolean isPreviousEpisode = false;
+          boolean isTask = false;
+          boolean isConcept = false;
+          boolean isThenSay = false;
+          boolean isIfActors = false;
+          boolean isIfNotActors = false;
+          boolean isIfRelations = false;
+          boolean isIfNotRelations = false;
+          boolean isIfStates = false;
+          boolean isIfNotStates = false;
+          boolean isThenActors = false;
+          boolean isThenRelates = false;
+          boolean isThenStates = false;
+          boolean isThenCreate = false;
+          boolean isThenConjecture = false;
+          boolean isInstanceOf = false; // priviledged slot
+          boolean isTransitiveClosure = false;
+          boolean isRules = false;
+          boolean isEpisodes = false;
+          //isOther means just put the slot name/List value pair into the concept
+          // as a property key/value pair
+          boolean isOtherSlot = false;
 	      int eventType = xpp.getEventType();
 	      boolean isStop = false;
 	      while (! (isStop || eventType == XmlPullParser.END_DOCUMENT)) {
 	        temp = xpp.getName();
 	        attributes = getAttributes(xpp);
 	        if (attributes != null) {
-	          name = (String) attributes.get("name");
-	          value = (String) attributes.get("value");
-                  id = (String) attributes.get("id");
-                  if (name != null) {
-                    //clear variables
-  //                  isThenSay = false;
-                    isIfActors = false;
-                    isIfNotActors = false;
-                    isIfRelations = false;
-                    isIfNotRelations = false;
-                    isIfStates = false;
-                    isIfNotStates = false;
-                    isThenActors = false;
-                    isThenRelates = false;
-                    isThenStates = false;
-                    isThenCreate = false;
-                    isThenConjecture = false;
-                    isInstanceOf = false;
-                    isOtherSlot = false;
-                    //set variables if possible
-                    if (name.equals("ifActors") || name.equals("actors"))
-                      isIfActors = true;
-                    else if (name.equals("ifNotActors"))
-                      isIfNotActors = true;
-                    else if (name.equals("ifRelations") ||
-                             name.equals("relations"))
-                      isIfRelations = true;
-                    else if (name.equals("ifNotRelations"))
-                      isIfNotRelations = true;
-                    else if (name.equals("ifStates") || name.equals("states"))
-                      isIfStates = true;
-                    else if (name.equals("ifNotStates"))
-                      isIfNotStates = true;
-                    else if (name.equals("thenCreates"))
-                      isThenCreate = true;
-                    else if (name.equals("thenActors"))
-                      isThenActors = true;
-                    else if (name.equals("thenRelations"))
-                      isThenRelates = true;
-                    else if (name.equals("thenStates"))
-                      isThenStates = true;
-  //                  else if (name.equals("thenSay"))
-  //                    isThenSay = true;
-                    else if (name.equals("thenConjectures"))
-                      isThenConjecture = true;
-                    else if (name.equals("instanceOf"))
-                      isInstanceOf = true;
-                    else {
-                      isOtherSlot = true;
-                      otherSlotName = name;
-                    }
-                  }
+	          name = (String) attributes.get(IConstants._NAME);
+	          value = (String) attributes.get(IConstants._VALUE);
+              id = (String) attributes.get("id");
+              if (name != null) {
+                //clear variables
+                isThenSay = false;
+                isIfActors = false;
+                isIfNotActors = false;
+                isIfRelations = false;
+                isIfNotRelations = false;
+                isIfStates = false;
+                isIfNotStates = false;
+                isThenActors = false;
+                isThenRelates = false;
+                isThenStates = false;
+                isThenCreate = false;
+                isThenConjecture = false;
+                isInstanceOf = false;
+                isOtherSlot = false;
+                //set variables if possible
+                if (name.equals(IConstants._IF_ACTORS) || name.equals(IConstants._ACTORS))
+                  isIfActors = true;
+                else if (name.equals(IConstants._IF_NOT_ACTORS))
+                  isIfNotActors = true;
+                else if (name.equals(IConstants._IF_RELATIONS) ||
+                         name.equals(IConstants._RELATIONS))
+                  isIfRelations = true;
+                else if (name.equals(IConstants._IF_NOT_RELATIONS))
+                  isIfNotRelations = true;
+                else if (name.equals(IConstants._IF_STATES) || name.equals(IConstants._STATES))
+                  isIfStates = true;
+                else if (name.equals(IConstants._IF_NOT_STATES))
+                  isIfNotStates = true;
+                else if (name.equals(IConstants._THEN_CREATE))
+                  isThenCreate = true;
+                else if (name.equals(IConstants._THEN_ACTORS))
+                  isThenActors = true;
+                else if (name.equals(IConstants._THEN_RELATIONS))
+                  isThenRelates = true;
+                else if (name.equals(IConstants._THEN_STATES))
+                  isThenStates = true;
+                else if (name.equals(IConstants._THEN_SAY))
+                  isThenSay = true;
+                else if (name.equals(IConstants._THEN_CONJECTURE))
+                  isThenConjecture = true;
+                else if (name.equals(IConstants.INSTANCE_OF))
+                  isInstanceOf = true;
+                else if (name.equals(IConstants.TRANSITIVE_CLOSURE))
+                	isTransitiveClosure = true;
+                else if (name.equals(IConstants.RULES))
+                	isRules = true;
+                else if (name.equals(IConstants.EPISODES))
+                	isEpisodes = true;
+                else {
+                  isOtherSlot = true;
+                  otherSlotName = name;
+                }
+              }
 	        }
 	        else {
 	          name = null;
@@ -201,44 +212,44 @@ public class ConceptPullParser {
 	        }
 	        else if (eventType == XmlPullParser.START_TAG) {
 //	          System.out.println("Start tag " + temp);
-	          if (temp.equalsIgnoreCase("concept")) {
+	          if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                     isConcept = true;
                     theConcept = new Concept(id);
-              } else if (temp.equalsIgnoreCase("rule")) {
+              } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
                 theRule = new Rule(id);
                 isRule = true;
-              } else if (temp.equalsIgnoreCase("episode")) {
+              } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
                 theEpisode = new Episode(id);
                 isEpisode = true;
-              } else if (temp.equalsIgnoreCase("model")) {
+              } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
                 theModel = new Model(id);
                 isModel = true;
-              } else if (temp.equalsIgnoreCase("task")) {
+              } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
                 theTask = new Task(id);
                 isTask = true;
-              } else if (temp.equalsIgnoreCase("slot")) {
+              } else if (temp.equalsIgnoreCase(IConstants._SLOT)) {
                 isSlot = true;
                 //we already have the slot name
-              } else if (temp.equalsIgnoreCase("sentence")) {
+              } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
                 theSentence = new Sentence();
-              } else if (temp.equalsIgnoreCase("predicate")) {
-              } else if (temp.equalsIgnoreCase("subject")) {
-              } else if (temp.equalsIgnoreCase("truth")) {
-              } else if (temp.equalsIgnoreCase("nextEpisode")) {
+              } else if (temp.equalsIgnoreCase(IConstants._PREDICATE)) {
+              } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
+              } else if (temp.equalsIgnoreCase(IConstants._TRUTH)) {
+              } else if (temp.equalsIgnoreCase(IConstants._NEXT_EPIODE)) {
                 isNextEpisode = true;
-              } else if (temp.equalsIgnoreCase("previousEpisode")) {
+              } else if (temp.equalsIgnoreCase(IConstants._PREVIOUS_EPISODE)) {
                 isPreviousEpisode = true;
-              } else if (temp.equalsIgnoreCase("mechanism")) {
-              } else if (temp.equalsIgnoreCase("node")) {
-              } else if (temp.equalsIgnoreCase("type")) {
-              } else if (temp.equalsIgnoreCase("object")) {
-              } else if (temp.equalsIgnoreCase("experiment")) {
-              } else if (temp.equalsIgnoreCase("priority")) {    	  
+              } else if (temp.equalsIgnoreCase(IConstants._MECHANISM)) {
+              } else if (temp.equalsIgnoreCase(IConstants._NODE)) {
+              } else if (temp.equalsIgnoreCase(IConstants._TYPE)) {
+              } else if (temp.equalsIgnoreCase(IConstants._OBJECT)) {
+              } else if (temp.equalsIgnoreCase(IConstants._EXPERIMENT)) {
+              } else if (temp.equalsIgnoreCase(IConstants._PRIORITY)) {    	  
               }
 	        }
 	        else if (eventType == XmlPullParser.END_TAG) {
 //	          System.out.println("End tag " + temp + " // " + text);
-              if (temp.equalsIgnoreCase("concept")) {
+              if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                 isConcept = false;
                 /*try {
                   System.out.println(theConcept.toXML());
@@ -247,7 +258,7 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theConcept = null;*/
-              } else if (temp.equalsIgnoreCase("rule")) {
+              } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
                 isRule = false;
                 /*try {
                   System.out.println(theRule.toXML());
@@ -256,7 +267,7 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theRule = null;*/
-              } else if (temp.equalsIgnoreCase("episode")) {
+              } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
                 isEpisode = false;
                 /*try {
                   System.out.println(theEpisode.toXML());
@@ -265,7 +276,7 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theEpisode = null;*/
-              } else if (temp.equalsIgnoreCase("model")) {
+              } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
                 isModel = false;
                /* try {
                   System.out.println(theModel.toXML());
@@ -274,7 +285,7 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theModel = null;*/
-              } else if (temp.equalsIgnoreCase("task")) {
+              } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
                 isTask = false;
                /* try {
                   System.out.println(theTask.toXML());
@@ -283,7 +294,7 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theTask = null;*/
-              } else if (temp.equalsIgnoreCase("slot")) {
+              } else if (temp.equalsIgnoreCase(IConstants._SLOT)) {
                 isSlot = false;
                 if (isOtherSlot) {
                   //these are not qp slots
@@ -302,7 +313,7 @@ public class ConceptPullParser {
                   else if (isEpisode)
                     theEpisode.setInstanceOf((String)theList.get(0));
                 } //qp slots were dealt with in their sentences
-              } else if (temp.equalsIgnoreCase("sentence")) {
+              } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
                 if (isModel) {
                   if (isIfActors)
                     theModel.addActor(theSentence);
@@ -338,59 +349,61 @@ public class ConceptPullParser {
                    theRule.addThenState(theSentence);
                  else if (isThenConjecture)
                    theRule.addThenConjecture(theSentence);
-//                     else if (isThenSay)
-//                       theRule.addThenSay(theSentence);
-                } else if (temp.equalsIgnoreCase("database")) {
+                 else if (isThenSay) {
+                   theRule.addThenSay(text);
+                   isThenSay = false;
+                 }
+                } else if (temp.equalsIgnoreCase(IConstants._DATABASE)) {
                   //we're done
                   environment.finishImport();
                 }
                 theSentence = null;
-              } else if (temp.equalsIgnoreCase("predicate")) {
+              } else if (temp.equalsIgnoreCase(IConstants._PREDICATE)) {
                 theSentence.predicate = text;
-              } else if (temp.equalsIgnoreCase("subject")) {
+              } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
                 //might be more than one value
                 StringTokenizer tok = new StringTokenizer(text);
                 //opportunity for bugs here
                 theSentence.object = tok.nextToken();
                 if (tok.hasMoreTokens())
                   theSentence.objectB = tok.nextToken();
-              } else if (temp.equalsIgnoreCase("truth")) {
+              } else if (temp.equalsIgnoreCase(IConstants._TRUTH)) {
                 boolean truth = text.equals("true");
                 theSentence.truth = truth;
-              } else if (temp.equalsIgnoreCase("nextEpisode")) {
+              } else if (temp.equalsIgnoreCase(IConstants._NEXT_EPIODE)) {
                 isNextEpisode = false;
                 if (isModel)
                   theModel.addNextEpisode(ruleId,nodeId);
                 else if (isEpisode)
                   theEpisode.addNextEpisode(ruleId,nodeId);
                 ruleId = nodeId = null;
-              } else if (temp.equalsIgnoreCase("previousEpisode")) {
+              } else if (temp.equalsIgnoreCase(IConstants._PREVIOUS_EPISODE)) {
                 isPreviousEpisode = false;
                if (isEpisode)
                   theEpisode.addPreviousEpisode(ruleId,nodeId);
                 ruleId = nodeId = null;
-              } else if (temp.equalsIgnoreCase("mechanism")) {
+              } else if (temp.equalsIgnoreCase(IConstants._MECHANISM)) {
                 ruleId = text;
-              } else if (temp.equalsIgnoreCase("node")) {
+              } else if (temp.equalsIgnoreCase(IConstants._NODE)) {
                 nodeId = text;
-              } else if (temp.equalsIgnoreCase("type")) {
+              } else if (temp.equalsIgnoreCase(IConstants._TYPE)) {
                 theTask.setTaskType(text);
-              } else if (temp.equalsIgnoreCase("object")) {
+              } else if (temp.equalsIgnoreCase(IConstants._OBJECT)) {
                 //TODO
-              } else if (temp.equalsIgnoreCase("experiment")) {
+              } else if (temp.equalsIgnoreCase(IConstants._EXPERIMENT)) {
                 Model m = environment.getModel(text);
                 //could be null!!!!
                 theTask.setModel(m);
-              } else if (temp.equalsIgnoreCase("value")) {
+              } else if (temp.equalsIgnoreCase(IConstants._VALUE)) {
 
                 //value might have a list of space-delimited symbols
                 StringTokenizer tok = new StringTokenizer(text);
                 theList = new ArrayList<Object>();
                 while (tok.hasMoreTokens())
                   theList.add(tok.nextToken());
-              } else if (temp.equalsIgnoreCase("myMechanism")) {
+              } else if (temp.equalsIgnoreCase(IConstants._MY_MECHANISM)) {
                 theEpisode.setMechanism(text);
-              } else if (temp.equalsIgnoreCase("name")) {
+              } else if (temp.equalsIgnoreCase(IConstants._NAME)) {
                 if (isConcept)
                   theConcept.setName(text);
                 else if (isEpisode)
@@ -399,7 +412,7 @@ public class ConceptPullParser {
                   theModel.setName(text);
                 else if (isRule)
                   theRule.setName(text);
-              } else if (temp.equalsIgnoreCase("comment")) {
+              } else if (temp.equalsIgnoreCase(IConstants._COMMENT)) {
                 if (isConcept)
                   theConcept.setComment(text);
                 else if (isEpisode)
@@ -408,7 +421,7 @@ public class ConceptPullParser {
                   theModel.setComment(text);
                 else if (isRule)
                   theRule.setComment(text);
-              } else if (temp.equalsIgnoreCase("priority")) {
+              } else if (temp.equalsIgnoreCase(IConstants._PRIORITY)) {
             	  int prx = Integer.parseInt(text);
             	  theTask.setPriority(prx);
               }
@@ -430,11 +443,11 @@ public class ConceptPullParser {
 	  /**
 	   * Return null if no attributes
 	   */
-	  HashMap getAttributes(XmlPullParser p) {
-	    HashMap result = null;
+	  Map<String, Object> getAttributes(XmlPullParser p) {
+	    HashMap<String, Object> result = null;
 	    int count = p.getAttributeCount();
 	    if (count > 0) {
-	      result = new HashMap();
+	      result = new HashMap<String, Object>();
 	      String name = null;
 	      for (int i = 0; i < count; i++) {
 	        name = p.getAttributeName(i);

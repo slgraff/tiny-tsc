@@ -252,9 +252,9 @@ public class Rule implements Serializable, IActorCarrier, Identifiable {
     if (thenSay==null) thenSay = new ArrayList<String>();
     thenSay.add(t);
   }
-  public void setThenSay(List<String> l) {
-  	thenSay = l;
-  }
+  //public void setThenSay(List<String> l) {
+  //	thenSay = l;
+  //}
 
   public void removeThenSay(String t) {
   	thenSay.remove(t);
