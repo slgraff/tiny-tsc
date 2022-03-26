@@ -80,6 +80,7 @@ public class ConceptPullParser {
 	}
 	
 	public void parse(String xml) {
+		environment.logDebug("Parsing\n"+xml);
 		//initialize
 		theConcept = null; theRule = null; theEpisode = null; theTask = null; theModel = null;
 		try {
@@ -211,7 +212,8 @@ public class ConceptPullParser {
 	          System.out.println("End document");
 	        }
 	        else if (eventType == XmlPullParser.START_TAG) {
-//	          System.out.println("Start tag " + temp);
+	          System.out.println("Start tag " + temp);
+	          environment.logDebug("Start tag " + temp);
 	          if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                     isConcept = true;
                     theConcept = new Concept(id);
@@ -248,7 +250,7 @@ public class ConceptPullParser {
               }
 	        }
 	        else if (eventType == XmlPullParser.END_TAG) {
-//	          System.out.println("End tag " + temp + " // " + text);
+	          System.out.println("End tag " + temp + " // " + text);
               if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                 isConcept = false;
                 /*try {
