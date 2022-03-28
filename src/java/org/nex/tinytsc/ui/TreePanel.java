@@ -4,7 +4,7 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 import java.util.*;
 import java.awt.*;
 import javax.swing.*;
@@ -18,6 +18,7 @@ import javax.swing.tree.TreePath;
 import org.nex.tinytsc.engine.Model;
 import org.nex.tinytsc.engine.Episode;
 import org.nex.tinytsc.engine.Environment;
+import org.nex.tinytsc.LinkManager;
 import org.nex.tinytsc.api.IConstants;
 import org.nex.tinytsc.api.Identifiable;
 import org.nex.tinytsc.engine.Concept;

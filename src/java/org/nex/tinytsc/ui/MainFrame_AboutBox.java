@@ -4,7 +4,7 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -53,7 +53,7 @@ public class MainFrame_AboutBox extends JDialog implements ActionListener {
   }
   //Component initialization
   private void jbInit() throws Exception  {
-    image1 = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("about.png"));
+    image1 = new ImageIcon(org.nex.tinytsc.ui.MainFrame.class.getResource("about.png"));
     imageLabel.setIcon(image1);
     this.setTitle("About");
     panel1.setLayout(borderLayout1);

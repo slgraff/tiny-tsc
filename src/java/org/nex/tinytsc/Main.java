@@ -12,6 +12,7 @@ import java.util.Hashtable;
 
 import org.nex.config.ConfigPullParser;
 import org.nex.tinytsc.engine.Environment;
+import org.nex.tinytsc.ui.MainFrame;
 //log4j.jar
 import org.apache.log4j.PropertyConfigurator;
 

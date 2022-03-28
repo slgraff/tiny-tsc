@@ -4,7 +4,7 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -12,6 +12,8 @@ import java.awt.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.Border;
 import fr.dyade.koala.util.VerticalLayout;
+
+import org.nex.tinytsc.DatastoreException;
 import org.nex.tinytsc.engine.Environment;
 import javax.swing.border.BevelBorder;
 

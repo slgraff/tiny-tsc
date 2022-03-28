@@ -4,9 +4,10 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 import javax.swing.*;
+
 import java.awt.BorderLayout;
 import java.awt.*;
 import java.awt.event.ActionEvent;

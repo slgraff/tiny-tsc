@@ -4,12 +4,13 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+import org.nex.tinytsc.DatastoreException;
 import org.nex.tinytsc.engine.Concept;
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Episode;

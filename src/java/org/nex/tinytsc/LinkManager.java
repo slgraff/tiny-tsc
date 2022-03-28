@@ -13,6 +13,7 @@ import org.nex.tinytsc.database.JDBMDatabase;
 import org.nex.tinytsc.engine.Concept;
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Model;
+import org.nex.tinytsc.ui.ConceptTreeNode;
 
 /**
  * @author jackpark

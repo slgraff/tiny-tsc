@@ -9,8 +9,8 @@ import java.io.IOException;
 import java.util.*;
 
 import org.nex.tinytsc.database.JDBMDatabase;
+import org.nex.tinytsc.ui.MainFrame;
 import org.nex.tinytsc.DatastoreException;
-import org.nex.tinytsc.MainFrame;
 import org.nex.tinytsc.LinkManager;
 //import org.nex.tinytsc.agents.IAgent;
 import org.nex.tinytsc.agents.FillinNextEpisodeAgent;

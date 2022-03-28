@@ -4,7 +4,7 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 //import org.nex.tinytsc.engine.Model;
 //import org.nex.tinytsc.engine.Episode;

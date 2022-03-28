@@ -4,7 +4,7 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 import java.awt.*;
 import java.io.*;
@@ -16,6 +16,7 @@ import java.util.Hashtable;
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Model;
 import org.nex.tinytsc.engine.Environment.MyTask;
+import org.nex.tinytsc.LegacyImporter;
 import org.nex.tinytsc.api.IExporterListener;
 import org.nex.tinytsc.api.IPluggable;
 import org.nex.tinytsc.api.IPluggableHost;

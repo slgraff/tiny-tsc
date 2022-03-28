@@ -4,7 +4,7 @@
  *
  *  Apache 2 LicenseA
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 import java.awt.*;
 import javax.swing.*;

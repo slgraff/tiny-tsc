@@ -4,7 +4,7 @@
  *
  *  Apache 2 License
  */
-package org.nex.tinytsc;
+package org.nex.tinytsc.ui;
 
 import javax.swing.tree.DefaultTreeCellRenderer;
 
@@ -30,11 +30,11 @@ public class ConceptTreeCellRenderer extends DefaultTreeCellRenderer {
   private ImageIcon taskImage;
 
   public ConceptTreeCellRenderer() {
-    conceptImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("concept.PNG"));
-    ruleImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("rule.PNG"));
-    episodeImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("model.PNG" /*"episode.PNG"*/));
-    modelImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("model.PNG"));
-    taskImage = new ImageIcon(org.nex.tinytsc.MainFrame.class.getResource("task.PNG"));
+    conceptImage = new ImageIcon(org.nex.tinytsc.ui.MainFrame.class.getResource("concept.PNG"));
+    ruleImage = new ImageIcon(org.nex.tinytsc.ui.MainFrame.class.getResource("rule.PNG"));
+    episodeImage = new ImageIcon(org.nex.tinytsc.ui.MainFrame.class.getResource("model.PNG" /*"episode.PNG"*/));
+    modelImage = new ImageIcon(org.nex.tinytsc.ui.MainFrame.class.getResource("model.PNG"));
+    taskImage = new ImageIcon(org.nex.tinytsc.ui.MainFrame.class.getResource("task.PNG"));
     System.out.println("NewConceptTreeCellRenderer");
   }
 
