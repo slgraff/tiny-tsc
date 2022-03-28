@@ -29,7 +29,7 @@ public class Task implements Serializable, Identifiable {
    * <li>PUBLISH_EPISODE</LI>
    */
   private String taskType = Task.UNKNOWN;
-  private int priority = 100;
+  private int priority = 0; // default
   /**
    * <code>object</code> could be one of:
    * <li>Task</li>
@@ -107,7 +107,7 @@ public class Task implements Serializable, Identifiable {
       buf.append("  <object>"+object.getId()+"</object>\n");
     if (model != null)
     	buf.append("  <experiment>"+model.getId()+"</experiment>\n");
-    buf.append("<priority>"+priority+"</priority>\n");
+    buf.append("  <priority>"+priority+"</priority>\n");
     buf.append("</task>\n");
     return buf.toString();
   }

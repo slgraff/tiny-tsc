@@ -60,3 +60,4 @@ c: task-1
 	instanceOf	agendatask
 	doTask		fillin
 	onConcept	myExperiment
+	priority	100

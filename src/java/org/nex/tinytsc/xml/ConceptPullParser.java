@@ -265,7 +265,7 @@ public class ConceptPullParser {
               }
 	        }
 	        else if (eventType == XmlPullParser.END_TAG) {
-	          System.out.println("End tag " + temp + " // " + text);
+	          environment.logDebug("End tag " + temp + " // " + text);
               if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                 isConcept = false;
                 //This marks the end of a parse of an object
@@ -479,8 +479,11 @@ public class ConceptPullParser {
                 else if (isRule)
                   theRule.setComment(text);
               } else if (temp.equalsIgnoreCase(IConstants._PRIORITY)) {
-            	  int prx = Integer.parseInt(text);
-            	  theTask.setPriority(prx);
+            	  environment.logDebug("Priority "+text);
+            	  if (!text.equals("")) {
+            		  int prx = Integer.parseInt(text);
+            		  theTask.setPriority(prx);
+            	  }
               }
 
               
@@ -502,7 +505,7 @@ public class ConceptPullParser {
 	   * Return null if no attributes
 	   */
 	  Map<String, Object> getAttributes(XmlPullParser p) {
-	    HashMap<String, Object> result = null;
+	    Map<String, Object> result = null;
 	    int count = p.getAttributeCount();
 	    if (count > 0) {
 	      result = new HashMap<String, Object>();

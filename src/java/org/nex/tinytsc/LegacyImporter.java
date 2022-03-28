@@ -199,6 +199,8 @@ public class LegacyImporter {
     if (!c.instanceOf.equals("")) {
       tsk.setInstanceOf(c.instanceOf);
     }
+    if (c.getPriority() != null)
+    	tsk.setPriority(Integer.parseInt(c.getPriority()));
     Iterator<String> itr = c.listSlotNames();
     String n, v;
     List l;
@@ -279,7 +281,14 @@ public class LegacyImporter {
             x.object = (String)l.get(i);
         	r.addThenCreates(x);
         } else if (n.equals("thenSay")) {
-            r.addThenSay((String)l.get(i));
+        	String sx = (String)l.get(i);
+        	sx = sx.trim();
+        	//remove leading and trailing quotes, if any
+        	if (sx.startsWith("\""))
+        		sx = sx.substring(1).trim();
+        	if (sx.endsWith("\""))
+        		sx = sx.substring(0, (sx.length()-1)).trim();
+        	r.addThenSay(sx);
         } else if (n.equals("thenTerminate"))
           r.setIsTerminate(true);
         else {
@@ -627,6 +636,9 @@ public class LegacyImporter {
           ConObject.put(v,s);
           vals = new ArrayList();
           vals.add(v);
+      } else if (slotName.equals("priority")) {
+    	  v = toks.nextToken();
+    	  workingCon.setPriority(v);
       } else {
         while(toks.hasMoreTokens())
           vals.add(toks.nextToken());
@@ -749,6 +761,7 @@ public class LegacyImporter {
   class Con {
     String id;
     String instanceOf = "";
+    String priority = null;
     //Some slots take strings, some take Sentence objects
     Map <String, List<Object>> slots= new HashMap<String, List<Object>>();
 
@@ -756,6 +769,17 @@ public class LegacyImporter {
       id = name;
     }
 
+    public void setPriority(String p) {
+    	priority = p;
+    }
+    
+    /**
+     * 
+     * @return can return {@code null}
+     */
+    public String getPriority() {
+    	return priority;
+    }
     public void addSlot(String key, List<Object> values) {
       List x = (List)slots.get(key);
       if (x == null)
