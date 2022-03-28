@@ -42,7 +42,7 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
    */
   private Map<String, String> previousEpisodes = new HashMap<String, String>();
   /** <code>Rule</code> id that fired */
-  private String mechanism= "";
+  private String mechanism= ""; //TODO to be removed - it was the ruleId
 
   public Episode() {}
 
@@ -262,30 +262,30 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
         buf.append("  <name>" + name + "</name>\n");
       if (!comment.equals(""))
         buf.append("  <comment>" + comment + "</comment>\n");
-      if (!instanceOf.equals(""))
-        buf.append("  <slot name=\"instanceOf\"><value>" + instanceOf + "</value></slot>\n");
-      if (!isModel)
-        buf.append("  <myMechanism>" + mechanism + "</myMechanism>\n");
+      if (this.instanceOf != null && !this.instanceOf.equals(""))
+      	buf.append("  <instanceOf>"+instanceOf+"</instanceOf>\n");
+      if (!isModel && mechanism != null && !mechanism.equals(""))
+        buf.append("  <myMechanism>" + mechanism + "</myMechanism>\n"); //TODO to be removed
       int len;
       if (actors != null) {
         len = actors.size();
         buf.append("  <slot name=\""+IConstants._ACTORS+"\">\n");
         for (int i = 0; i < len; i++)
-          buf.append( ( (Sentence) actors.get(i)).toXML());
+          buf.append( (actors.get(i)).toXML());
         buf.append("  </slot>\n");
       }
       if (relations != null) {
         len = relations.size();
         buf.append("  <slot name=\""+IConstants._RELATIONS+"\">\n");
         for (int i = 0; i < len; i++)
-          buf.append( ( (Sentence) relations.get(i)).toXML());
+          buf.append( (relations.get(i)).toXML());
         buf.append("  </slot>\n");
       }
       if (states != null) {
         len = states.size();
         buf.append("  <slot name=\""+IConstants._STATES+"\">\n");
         for (int i = 0; i < len; i++)
-          buf.append( ( (Sentence) states.get(i)).toXML());
+          buf.append( (states.get(i)).toXML());
         buf.append("  </slot>\n");
       }
       Iterator<String> itr = nextEpisodes.keySet().iterator();

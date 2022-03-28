@@ -85,6 +85,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   public void putConcept(String key, Concept w) throws DatastoreException {
     try {
       System.out.println("JDBMDatabase.putConcept "+key);
+      environment.logDebug("PutConcept\n"+w.toXML());
       conceptTree.insert(key, w.toXML(), true);
       conceptManager.commit();
     } catch (IOException e) {
@@ -93,6 +94,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   }
   public void putRule(String key, Rule p) throws DatastoreException {
     try {
+        environment.logDebug("PutRule\n"+p.toXML());
       System.out.println("JDBMDatabase.putRule "+key);
       ruleTree.insert(key, p.toXML(), true);
       ruleManager.commit();
@@ -102,6 +104,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   }
   public void putEpisode(String key, Episode t) throws DatastoreException {
     try {
+        environment.logDebug("PutEpisode\n"+t.toXML());
       System.out.println("JDBMDatabase.putEpisode "+key);
       episodeTree.insert(key, t.toXML(), true);
       episodeManager.commit();
@@ -111,6 +114,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   }
   public void putTask(String key, Task t) throws DatastoreException {
     try {
+        environment.logDebug("PutTask\n"+t.toXML());
       System.out.println("JDBMDatabase.putTask "+key);
       taskTree.insert(key, t.toXML(), true);
       taskManager.commit();
@@ -120,6 +124,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
   }
   public void putModel(String key, Model t) throws DatastoreException {
     try {
+        environment.logDebug("PutModel\n"+t.toXML());
       System.out.println("JDBMDatabase.putModel "+key);
       modelTree.insert(key, t.toXML(), true);
       modelManager.commit();
@@ -139,6 +144,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
         System.out.println("JDBMDatabase.getConceptX "+key+" "+k);
         if (k.equals(key)) {
         	xml = (String)tuple.getValue();
+            environment.logDebug("GetConcept "+key+"\n"+xml);
             System.out.println("JDBMDatabase.getConceptY "+key+" "+xml);
         	parser.parse(xml);
           result = parser.getConcept();
@@ -164,6 +170,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
         String k = (String) tuple.getKey();
         if (k.equals(key)) {
         	xml = (String)tuple.getValue();
+            environment.logDebug("GetRule "+key+"\n"+xml);
         	parser.parse(xml);
           result = parser.getRule();
         }
@@ -186,6 +193,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
         String k = (String) tuple.getKey();
         if (k.equals(key)) {
         	xml = (String) tuple.getValue();
+            environment.logDebug("GetEpisode "+key+"\n"+xml);
         	parser.parse(xml);
             result = parser.getEpisode();
         }
@@ -208,6 +216,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
         String k = (String) tuple.getKey();
         if (k.equals(key)) {
         	xml = (String)tuple.getValue();
+            environment.logDebug("GetTask "+key+"\n"+xml);
         	parser.parse(xml);
             result = parser.getTask();
         }
@@ -231,6 +240,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
         System.out.println("JDBMDatabase.getModelX "+key+" "+k);
         if (k.equals(key)) {
         	xml = (String)tuple.getValue();
+            environment.logDebug("GetModel "+key+"\n"+xml);
         	parser.parse(xml);
             result = parser.getModel();
         }

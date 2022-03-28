@@ -117,6 +117,16 @@ public class Concept implements Serializable, Identifiable {
     	throw new RuntimeException(e);
     }*/
   }
+  
+  /**
+   * For parsing xml
+   * @param id
+   */
+  public void addTransitiveClosure(String id) {
+	    if (transitiveClosure == null) transitiveClosure = new ArrayList<String>();
+	    if (!transitiveClosure.contains(id))
+	    	transitiveClosure.add(id);	  
+  }
   /**
    * 
    * @return can return {@code null}
@@ -226,43 +236,47 @@ public class Concept implements Serializable, Identifiable {
     while (itr.hasNext()) {
       n = itr.next();
       l = getProperty(n);
-      System.out.println("CONCEPT "+id+" "+l);
-      len = l.size();
-      buf.append("  <slot name=\""+n+"\"><value>\n  ");
-      for (int i=0;i<len;i++)
-        buf.append((String)l.get(i)+"  ");
-      buf.append("\n  </value></slot>\n");
+      System.out.println("CONCEPT "+id+" "+n+" "+l);
+      //SOMEHOW, a subOf slot is created here;
+      //that's a bug probably in LegacyImporter
+      if (!n.equals("subOf")) {
+		  len = l.size();
+		  buf.append("  <slot name=\""+n+"\"><value>\n  ");
+		  for (int i=0;i<len;i++)
+		    buf.append((String)l.get(i)+"  ");
+		  buf.append("\n  </value></slot>\n");
+      }
     }
     if (this.instanceOf != null && !this.instanceOf.equals("")) {
-    	buf.append("<instanceOf>"+instanceOf+"</instanceOf>");
+    	buf.append("  <instanceOf>"+instanceOf+"</instanceOf>\n");
     }
     if (this.hasInstances != null && !hasInstances.isEmpty()) {
     	len = hasInstances.size();
-        buf.append("  <slot name=\""+IConstants.HAS_INSTANCES+"\"><value>\n  ");
+        buf.append("  <hasInstances>\n ");
         for (int i=0;i<len;i++)
           buf.append(hasInstances.get(i)+"  ");
-        buf.append("\n  </value></slot>\n");
+        buf.append("\n  <hasInstances>\n");
     }
     if (this.hasSubs != null && !hasSubs.isEmpty()) {
     	len = hasSubs.size();
-        buf.append("  <slot name=\""+IConstants.HAS_SUBS+"\"><value>\n  ");
+        buf.append("  <hasSubs>\n  ");
         for (int i=0;i<len;i++)
           buf.append(hasSubs.get(i)+"  ");
-        buf.append("\n  </value></slot>\n");
+        buf.append("\n  </hasSubs>\n");
     }
     if (this.subOf != null && !subOf.isEmpty()) {
     	len = subOf.size();
-        buf.append("  <slot name=\""+IConstants.SUB_OF+"\"><value>\n  ");
+        buf.append("  <subOf>\n  ");
         for (int i=0;i<len;i++)
           buf.append(subOf.get(i)+"  ");
-        buf.append("\n  </value></slot>\n");
+        buf.append("\n  </subOf>\n");
     }
     if (this.transitiveClosure != null && !transitiveClosure.isEmpty()) {
     	len = transitiveClosure.size();
-        buf.append("  <slot name=\""+IConstants.TRANSITIVE_CLOSURE+"\"><value>\n  ");
+        buf.append("  <transitiveClosure>\n  ");
         for (int i=0;i<len;i++)
           buf.append(transitiveClosure.get(i)+"  ");
-        buf.append("\n  </value></slot>\n");
+        buf.append("\n  <transitiveClosure>\n");
     }
     if (this.rules != null && !rules.isEmpty()) {
     	len = rules.size();
@@ -279,6 +293,7 @@ public class Concept implements Serializable, Identifiable {
         buf.append("\n  </value></slot>\n");
     }
     buf.append("</concept>\n");
+    System.out.println("MADE "+buf.toString());
     return buf.toString();
   }
 }

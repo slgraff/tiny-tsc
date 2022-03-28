@@ -100,14 +100,14 @@ public class Task implements Serializable, Identifiable {
 
   public String toXML() {
     StringBuffer buf = new StringBuffer("<task id=\"" + id + "\">\n");
-    if (!instanceOf.equals(""))
-      buf.append("  <slot name=\""+IConstants.INSTANCE_OF+"\"><value>" + instanceOf + "</value></slot>\n");
+    if (this.instanceOf != null && !this.instanceOf.equals(""))
+    	buf.append("  <instanceOf>"+instanceOf+"</instanceOf>\n");
     buf.append("  <type>"+taskType+"</type>\n");
     if (object != null)
       buf.append("  <object>"+object.getId()+"</object>\n");
     if (model != null)
     	buf.append("  <experiment>"+model.getId()+"</experiment>\n");
-    buf.append("<priority>"+priority+"</priority>");
+    buf.append("<priority>"+priority+"</priority>\n");
     buf.append("</task>\n");
     return buf.toString();
   }

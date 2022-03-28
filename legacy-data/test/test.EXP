@@ -1,3 +1,5 @@
+c: idea
+
 c: foo
 	instanceOf	idea
 
@@ -15,7 +17,7 @@ c: sad
 	subOf	idea
 	
 c: myExperiment
-	instanceOf episode
+	instanceOf model
 	actors		( ( foo ( foo1 ) true ) 
 			  ( foo ( foo2 ) true ) 
 			  ( bar ( bar1 ) true ) )

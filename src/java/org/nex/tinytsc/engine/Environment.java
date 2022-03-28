@@ -502,10 +502,10 @@ public class Environment {
           result = (Episode)identifiableObject;
           break;
         case IConstants.MODEL:
-          result = (Task)identifiableObject;
+          result = (Model)identifiableObject;
           break;
         case IConstants.TASK:
-          result = (Concept)identifiableObject;
+          result = (Task)identifiableObject;
           break;
       }
     }

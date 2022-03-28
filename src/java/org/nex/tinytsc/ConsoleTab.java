@@ -223,6 +223,7 @@ public class ConsoleTab
   }
 
   public void say(String msg) {
+	  environment.logDebug("Say\n"+msg);
     consoleArea.append(msg);
   }
   BorderLayout borderLayout1 = new BorderLayout();

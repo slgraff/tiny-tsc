@@ -300,8 +300,8 @@ public class Rule implements Serializable, IActorCarrier, Identifiable {
       buf.append("  <name>"+name+"</name>\n");
     if (!comment.equals(""))
       buf.append("  <comment>"+comment+"</comment>\n");
-    if (!instanceOf.equals(""))
-      buf.append("  <slot name=\"instanceOf\"><value>"+instanceOf+"</value></slot>\n");
+    if (this.instanceOf != null && !this.instanceOf.equals(""))
+    	buf.append("  <instanceOf>"+instanceOf+"</instanceOf>\n");
     int len;
     if (subOf != null) {
       len = subOf.size();

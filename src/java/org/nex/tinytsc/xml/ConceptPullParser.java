@@ -82,7 +82,7 @@ public class ConceptPullParser {
 	public void parse(String xml) {
 		environment.logDebug("Parsing\n"+xml);
 		//initialize
-		theConcept = null; theRule = null; theEpisode = null; theTask = null; theModel = null;
+		//theConcept = null; theRule = null; theEpisode = null; theTask = null; theModel = null;
 		try {
 			ByteArrayInputStream bis = new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8));
 		    BufferedReader in = new BufferedReader(new InputStreamReader(bis));
@@ -136,6 +136,7 @@ public class ConceptPullParser {
           //isOther means just put the slot name/List value pair into the concept
           // as a property key/value pair
           boolean isOtherSlot = false;
+          StringTokenizer tok = null;
 	      int eventType = xpp.getEventType();
 	      boolean isStop = false;
 	      while (! (isStop || eventType == XmlPullParser.END_DOCUMENT)) {
@@ -162,7 +163,62 @@ public class ConceptPullParser {
                 isInstanceOf = false;
                 isOtherSlot = false;
                 //set variables if possible
-                if (name.equals(IConstants._IF_ACTORS) || name.equals(IConstants._ACTORS))
+	        } else {
+	          name = null;
+	          value = null;
+	        }
+	        if (eventType == XmlPullParser.START_DOCUMENT) {
+	          System.out.println("Start document");
+	        }
+	        else if (eventType == XmlPullParser.END_DOCUMENT) {
+	          System.out.println("End document");
+	        }
+	        else if (eventType == XmlPullParser.START_TAG) {
+	          System.out.println("Start tag " + temp);
+	          environment.logDebug("Start tag " + temp+" | "+name);
+	          if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
+                    isConcept = true;
+                    // make a new Concept
+                    theConcept = new Concept(id);
+              } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
+            	  // make a new Rule
+                theRule = new Rule(id);
+                isRule = true;
+              } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
+            	  // make a new Episode
+                theEpisode = new Episode(id);
+                isEpisode = true;
+              } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
+            	  // make a new Model
+                theModel = new Model(id);
+                isModel = true;
+              } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
+            	  // make a new Slot
+                theTask = new Task(id);
+                isTask = true;
+                environment.logDebug("NewTask "+theTask);
+              } else if (temp.equalsIgnoreCase(IConstants._SLOT)) {
+                isSlot = true;
+                //we already have the slot name
+                environment.logDebug("GotSlot "+name);
+              } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
+            	  // make a new Sentence
+                theSentence = new Sentence();
+                environment.logDebug("NewSentence");
+              } else if (temp.equalsIgnoreCase(IConstants._PREDICATE)) {
+              } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
+              } else if (temp.equalsIgnoreCase(IConstants._TRUTH)) {
+              } else if (temp.equalsIgnoreCase(IConstants._NEXT_EPIODE)) {
+                isNextEpisode = true;
+              } else if (temp.equalsIgnoreCase(IConstants._PREVIOUS_EPISODE)) {
+                isPreviousEpisode = true;
+              } else if (temp.equalsIgnoreCase(IConstants._MECHANISM)) { //TODO to be removed
+              } else if (temp.equalsIgnoreCase(IConstants._NODE)) {
+              } else if (temp.equalsIgnoreCase(IConstants._TYPE)) {
+              } else if (temp.equalsIgnoreCase(IConstants._OBJECT)) {
+              } else if (temp.equalsIgnoreCase(IConstants._EXPERIMENT)) {
+              } else if (temp.equalsIgnoreCase(IConstants._PRIORITY)) {    	  
+              } else if (name.equals(IConstants._IF_ACTORS) || name.equals(IConstants._ACTORS))
                   isIfActors = true;
                 else if (name.equals(IConstants._IF_NOT_ACTORS))
                   isIfNotActors = true;
@@ -201,58 +257,11 @@ public class ConceptPullParser {
                 }
               }
 	        }
-	        else {
-	          name = null;
-	          value = null;
-	        }
-	        if (eventType == XmlPullParser.START_DOCUMENT) {
-	          System.out.println("Start document");
-	        }
-	        else if (eventType == XmlPullParser.END_DOCUMENT) {
-	          System.out.println("End document");
-	        }
-	        else if (eventType == XmlPullParser.START_TAG) {
-	          System.out.println("Start tag " + temp);
-	          environment.logDebug("Start tag " + temp);
-	          if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
-                    isConcept = true;
-                    theConcept = new Concept(id);
-              } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
-                theRule = new Rule(id);
-                isRule = true;
-              } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
-                theEpisode = new Episode(id);
-                isEpisode = true;
-              } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
-                theModel = new Model(id);
-                isModel = true;
-              } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
-                theTask = new Task(id);
-                isTask = true;
-              } else if (temp.equalsIgnoreCase(IConstants._SLOT)) {
-                isSlot = true;
-                //we already have the slot name
-              } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
-                theSentence = new Sentence();
-              } else if (temp.equalsIgnoreCase(IConstants._PREDICATE)) {
-              } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
-              } else if (temp.equalsIgnoreCase(IConstants._TRUTH)) {
-              } else if (temp.equalsIgnoreCase(IConstants._NEXT_EPIODE)) {
-                isNextEpisode = true;
-              } else if (temp.equalsIgnoreCase(IConstants._PREVIOUS_EPISODE)) {
-                isPreviousEpisode = true;
-              } else if (temp.equalsIgnoreCase(IConstants._MECHANISM)) {
-              } else if (temp.equalsIgnoreCase(IConstants._NODE)) {
-              } else if (temp.equalsIgnoreCase(IConstants._TYPE)) {
-              } else if (temp.equalsIgnoreCase(IConstants._OBJECT)) {
-              } else if (temp.equalsIgnoreCase(IConstants._EXPERIMENT)) {
-              } else if (temp.equalsIgnoreCase(IConstants._PRIORITY)) {    	  
-              }
-	        }
 	        else if (eventType == XmlPullParser.END_TAG) {
 	          System.out.println("End tag " + temp + " // " + text);
               if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                 isConcept = false;
+                //This marks the end of a parse of an object
                 /*try {
                   System.out.println(theConcept.toXML());
                   //environment.importConcept(theConcept); // that's for importing
@@ -262,6 +271,7 @@ public class ConceptPullParser {
                 theConcept = null;*/
               } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
                 isRule = false;
+                //This marks the end of a parse of an object
                 /*try {
                   System.out.println(theRule.toXML());
                   environment.importRule(theRule);
@@ -271,6 +281,7 @@ public class ConceptPullParser {
                 theRule = null;*/
               } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
                 isEpisode = false;
+                //This marks the end of a parse of an object
                 /*try {
                   System.out.println(theEpisode.toXML());
                   environment.importEpisode(theEpisode);
@@ -280,6 +291,8 @@ public class ConceptPullParser {
                 theEpisode = null;*/
               } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
                 isModel = false;
+                //This marks the end of a parse of an object
+
                /* try {
                   System.out.println(theModel.toXML());
                   environment.importModel(theModel);
@@ -289,6 +302,8 @@ public class ConceptPullParser {
                 theModel = null;*/
               } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
                 isTask = false;
+                //This marks the end of a parse of an object
+
                /* try {
                   System.out.println(theTask.toXML());
                   environment.importTask(theTask);
@@ -296,25 +311,50 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theTask = null;*/
+              } else if (temp.equals(IConstants.INSTANCE_OF)) {
+            	  if (isConcept)
+            		  theConcept.setInstanceOf(text);
+            	  else if (isTask)
+            		  theTask.setInstanceOf(text);
+            	  else if (isEpisode)
+            		  theEpisode.setInstanceOf(text);
+            	  else if (isModel)
+            		  theModel.setInstanceOf(text);
+            	  else if (isRule)
+            		  theRule.setInstanceOf(text);
+            	  
+              } else if (name.equals(IConstants.TRANSITIVE_CLOSURE)) {
+                  	isTransitiveClosure = false;
+                    tok = new StringTokenizer(text);
+                    while (tok.hasMoreTokens())
+                    	theConcept.addTransitiveClosure(tok.nextToken());
+              } else if (name.equals(IConstants.RULES))
+                  	isRules = true;
+              else if (name.equals(IConstants.EPISODES))
+                  	isEpisodes = true;
+              } else if (name.equals(IConstants.SUB_OF)) {
+                  tok = new StringTokenizer(text);
+                  while (tok.hasMoreTokens())
+                  	theConcept.addSubOf(tok.nextToken());
+
+              } else if (name.equals(IConstants.HAS_SUBS)) {
+                  tok = new StringTokenizer(text);
+                  while (tok.hasMoreTokens())
+                  	theConcept.addSubClass(tok.nextToken());
+
+              } else if (name.equals(IConstants.HAS_INSTANCES)) {
+                  tok = new StringTokenizer(text);
+                  while (tok.hasMoreTokens())
+                  	theConcept.addInstance(tok.nextToken());
+
               } else if (temp.equalsIgnoreCase(IConstants._SLOT)) {
                 isSlot = false;
+                // now deal with the slot
                 if (isOtherSlot) {
                   //these are not qp slots
                   if (isConcept)
                     theConcept.putProperty(otherSlotName,theList);
-                } else if (isInstanceOf) { 
-                  if (isConcept)
-                    //theConcept.putProperty("instanceOf", theList);
-                	  theConcept.setInstanceOf(text);
-                  else if (isTask)
-                    theTask.setInstanceOf((String)theList.get(0));
-                  else if (isRule)
-                    theRule.setInstanceOf((String)theList.get(0));
-                  else if (isModel)
-                    theModel.setInstanceOf((String)theList.get(0));
-                  else if (isEpisode)
-                    theEpisode.setInstanceOf((String)theList.get(0));
-                } //qp slots were dealt with in their sentences
+                }  //qp slots were dealt with in their sentences
               } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
                 if (isModel) {
                   if (isIfActors)
@@ -361,10 +401,14 @@ public class ConceptPullParser {
                 }
                 theSentence = null;
               } else if (temp.equalsIgnoreCase(IConstants._PREDICATE)) {
+            	  // this is bad news
+            	  // for some reason, the <sentence> tag is not firing
+            	  if (theSentence == null)
+            		  theSentence = new Sentence();
                 theSentence.predicate = text;
               } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
                 //might be more than one value
-                StringTokenizer tok = new StringTokenizer(text);
+                 tok = new StringTokenizer(text);
                 //opportunity for bugs here
                 theSentence.object = tok.nextToken();
                 if (tok.hasMoreTokens())
@@ -395,11 +439,13 @@ public class ConceptPullParser {
               } else if (temp.equalsIgnoreCase(IConstants._EXPERIMENT)) {
                 Model m = environment.getModel(text);
                 //could be null!!!!
-                theTask.setModel(m);
+                environment.logDebug("ProcessingTask "+m+" | "+theTask);
+                if (theTask != null)
+                	theTask.setModel(m);
               } else if (temp.equalsIgnoreCase(IConstants._VALUE)) {
 
                 //value might have a list of space-delimited symbols
-                StringTokenizer tok = new StringTokenizer(text);
+                tok = new StringTokenizer(text);
                 theList = new ArrayList<Object>();
                 while (tok.hasMoreTokens())
                   theList.add(tok.nextToken());
@@ -429,7 +475,7 @@ public class ConceptPullParser {
               }
 
               
-	        }
+	        //}
 	        else if (eventType == XmlPullParser.TEXT) {
 //	                System.out.println("Text "+id+" // "+xpp.getText());
 	          text = xpp.getText().trim();
