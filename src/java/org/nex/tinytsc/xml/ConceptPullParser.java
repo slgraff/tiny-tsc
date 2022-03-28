@@ -138,35 +138,10 @@ public class ConceptPullParser {
           boolean isOtherSlot = false;
           StringTokenizer tok = null;
 	      int eventType = xpp.getEventType();
+	      environment.logDebug("EVENT "+eventType);      
 	      boolean isStop = false;
 	      while (! (isStop || eventType == XmlPullParser.END_DOCUMENT)) {
-	        temp = xpp.getName();
-	        attributes = getAttributes(xpp);
-	        if (attributes != null) {
-	          name = (String) attributes.get(IConstants._NAME);
-	          value = (String) attributes.get(IConstants._VALUE);
-              id = (String) attributes.get("id");
-              if (name != null) {
-                //clear variables
-                isThenSay = false;
-                isIfActors = false;
-                isIfNotActors = false;
-                isIfRelations = false;
-                isIfNotRelations = false;
-                isIfStates = false;
-                isIfNotStates = false;
-                isThenActors = false;
-                isThenRelates = false;
-                isThenStates = false;
-                isThenCreate = false;
-                isThenConjecture = false;
-                isInstanceOf = false;
-                isOtherSlot = false;
-                //set variables if possible
-	        } else {
-	          name = null;
-	          value = null;
-	        }
+
 	        if (eventType == XmlPullParser.START_DOCUMENT) {
 	          System.out.println("Start document");
 	        }
@@ -174,7 +149,39 @@ public class ConceptPullParser {
 	          System.out.println("End document");
 	        }
 	        else if (eventType == XmlPullParser.START_TAG) {
-	          System.out.println("Start tag " + temp);
+		        temp = xpp.getName();
+		        environment.logDebug("XXX "+temp);
+		        //Rare event where temp == null
+		        if (temp == null) {
+		        	throw new RuntimeException("Null");
+		        }
+		        attributes = getAttributes(xpp);
+		        if (attributes != null) {
+		          name = (String) attributes.get(IConstants._NAME);
+		          value = (String) attributes.get(IConstants._VALUE);
+	              id = (String) attributes.get("id");
+	              if (name != null) {
+	                //clear variables
+	                isThenSay = false;
+	                isIfActors = false;
+	                isIfNotActors = false;
+	                isIfRelations = false;
+	                isIfNotRelations = false;
+	                isIfStates = false;
+	                isIfNotStates = false;
+	                isThenActors = false;
+	                isThenRelates = false;
+	                isThenStates = false;
+	                isThenCreate = false;
+	                isThenConjecture = false;
+	                isInstanceOf = false;
+	                isOtherSlot = false;
+	                //set variables if possible
+		        } else {
+		          name = null;
+		          value = null;
+		        }
+	        	System.out.println("Start tag " + temp);
 	          environment.logDebug("Start tag " + temp+" | "+name);
 	          if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                     isConcept = true;
@@ -323,26 +330,27 @@ public class ConceptPullParser {
             	  else if (isRule)
             		  theRule.setInstanceOf(text);
             	  
-              } else if (name.equals(IConstants.TRANSITIVE_CLOSURE)) {
+              } else if (temp.equals(IConstants.TRANSITIVE_CLOSURE)) {
                   	isTransitiveClosure = false;
                     tok = new StringTokenizer(text);
                     while (tok.hasMoreTokens())
                     	theConcept.addTransitiveClosure(tok.nextToken());
-              } else if (name.equals(IConstants.RULES))
+              } else if (temp.equals(IConstants.RULES))
                   	isRules = true;
-              else if (name.equals(IConstants.EPISODES))
+              else if (temp.equals(IConstants.EPISODES)) {
                   	isEpisodes = true;
-              } else if (name.equals(IConstants.SUB_OF)) {
+              } else if (temp.equals(IConstants.SUB_OF)) {
                   tok = new StringTokenizer(text);
                   while (tok.hasMoreTokens())
                   	theConcept.addSubOf(tok.nextToken());
 
-              } else if (name.equals(IConstants.HAS_SUBS)) {
+              } else if (temp.equals(IConstants.HAS_SUBS)) {
                   tok = new StringTokenizer(text);
                   while (tok.hasMoreTokens())
                   	theConcept.addSubClass(tok.nextToken());
 
-              } else if (name.equals(IConstants.HAS_INSTANCES)) {
+              } else if (temp
+            		  .equals(IConstants.HAS_INSTANCES)) {
                   tok = new StringTokenizer(text);
                   while (tok.hasMoreTokens())
                   	theConcept.addInstance(tok.nextToken());
@@ -408,7 +416,8 @@ public class ConceptPullParser {
                 theSentence.predicate = text;
               } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
                 //might be more than one value
-                 tok = new StringTokenizer(text);
+            	  environment.logDebug("ToK "+text);
+            	  tok = new StringTokenizer(text);
                 //opportunity for bugs here
                 theSentence.object = tok.nextToken();
                 if (tok.hasMoreTokens())
@@ -475,16 +484,17 @@ public class ConceptPullParser {
               }
 
               
-	        //}
+	        }
 	        else if (eventType == XmlPullParser.TEXT) {
-//	                System.out.println("Text "+id+" // "+xpp.getText());
+	                environment.logDebug("Text "+id+" // "+xpp.getText());
 	          text = xpp.getText().trim();
 	        }
 	        else if (eventType == XmlPullParser.CDSECT) {
 	          text = xpp.getText().trim();
 	        }
 	        eventType = xpp.next();
-	      }
+	        environment.logDebug("EVENT1 "+eventType); 
+	      } //end while
 	    
 	  }
 

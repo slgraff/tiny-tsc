@@ -61,6 +61,7 @@ public class Main {
     }
     frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
     frame.setVisible(true);
+    environment.logDebug("Booting "+frame);
     environment.setHost(frame);
   }
   //Main method

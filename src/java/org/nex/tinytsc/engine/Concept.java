@@ -276,7 +276,7 @@ public class Concept implements Serializable, Identifiable {
         buf.append("  <transitiveClosure>\n  ");
         for (int i=0;i<len;i++)
           buf.append(transitiveClosure.get(i)+"  ");
-        buf.append("\n  <transitiveClosure>\n");
+        buf.append("\n  </transitiveClosure>\n");
     }
     if (this.rules != null && !rules.isEmpty()) {
     	len = rules.size();
