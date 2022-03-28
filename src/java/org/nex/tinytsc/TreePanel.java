@@ -38,7 +38,7 @@ public class TreePanel extends JPanel {
   private Environment environment;
   private Model initialModel;
   private Concept rootConcept;
-  private TaxonomyManager taxManager;
+  private LinkManager taxManager;
   /**
    * true when a Model, false when Ontology
    */

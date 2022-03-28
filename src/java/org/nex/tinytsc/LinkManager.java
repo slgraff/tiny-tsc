@@ -18,14 +18,14 @@ import org.nex.tinytsc.engine.Model;
  * @author jackpark
  * A class which manages transitive closure
  */
-public class TaxonomyManager {
+public class LinkManager {
 	private Environment environment;
 	private JDBMDatabase database;
 
 	/**
 	 * 
 	 */
-	public TaxonomyManager(Environment env) {
+	public LinkManager(Environment env) {
 		environment = env;
 		database = environment.getDatabase();
 	}
