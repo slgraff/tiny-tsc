@@ -17,6 +17,7 @@ import java.util.*;
  */
 
 public class SimpleBindingEngine {
+	  private Environment environment;
   /**
    * Effectively, a <code>Map</code> of bindings, e.g.
    * variable:  *foo
@@ -26,8 +27,11 @@ public class SimpleBindingEngine {
 
   /**
    * Constructed in <code>FillinNextEpisodeAgent</code>
+   * @param env
    */
-  public SimpleBindingEngine() {}
+  public SimpleBindingEngine(Environment env) {
+	  environment = env;
+  }
 
   /**
    * Clear out the bindings
@@ -50,6 +54,7 @@ public class SimpleBindingEngine {
    */
   public void addBinding(String name, String value) {
     curBinding.bindVar(name,value);
+    environment.logDebug("BINDING-1 "+curBinding);
   }
 
   /**
@@ -85,9 +90,9 @@ public class SimpleBindingEngine {
    */
   public boolean bind(List ruleSentences, List<Sentence> epSentences) {
 //    Binding rules: [[foo(*f1 | )], [bar(*b1 | )], [foo(*f2 | )]]
-    System.out.println("Binding rules: "+ruleSentences);
+	  environment.logDebug("Binding rules: "+ruleSentences);
 //    Binding eps: [[foo(foo1 | )], [foo(foo2 | )], [bar(bar1 | )]]
-    System.out.println("Binding eps: "+epSentences);
+	  environment.logDebug("Binding eps: "+epSentences);
     //TODO
     // generalize such that ruleSentences.size() can be <= epSentences.size()
     // then only bind up what you can.
@@ -166,9 +171,9 @@ public class SimpleBindingEngine {
    */
   public boolean match(List<Sentence> ruleSentences, List<Sentence> epSentences) {
 //    Matching rules: [[abuts(*f2 | *b1)]]
-    System.out.println("Matching rules: " + ruleSentences);
+    environment.logDebug("Matching rules: " + ruleSentences);
 //    Matching eps: [[abuts(foo1 | foo2)], [abuts(foo2 | bar1)]]
-    System.out.println("Matching eps: "+epSentences);
+    environment.logDebug("Matching eps: "+epSentences);
     //key = predicate
     Map<String, List<Sentence>> r = collectPreds(epSentences);
     int len = ruleSentences.size(), len2;
@@ -264,7 +269,12 @@ public class SimpleBindingEngine {
       structures.put(var,val);
       return true;
     }
+    @Override
+    public String toString() {
+  	  return ((HashMap)structures).toString();
+    }
   }
+  
   /////////////////////////////////
   // Utilities
   /////////////////////////////////

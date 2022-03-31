@@ -59,7 +59,7 @@ import org.nex.tinytsc.engine.InferenceEngine;
 
 public class FillinNextEpisodeAgent extends Thread implements IAgent {
   private Environment environment;
-  private SimpleBindingEngine bindings = new SimpleBindingEngine();
+  private SimpleBindingEngine bindings;
   private InferenceEngine inferenceEngine;
 
   private boolean isRunning = true;
@@ -78,6 +78,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
   public void initialize(Environment environment) {
     this.environment = environment;
     this.inferenceEngine = new InferenceEngine(environment);
+    bindings = new SimpleBindingEngine(environment);
     environment.registerAgent(IConstants.FILLIN_NEXT_EPISODE,this);
     this.start();
   }
@@ -109,6 +110,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
    * go back to work
    */
   public void go() {
+	  environment.logDebug("FillinNextEpisode Go");
     isWaiting = false;
   }
 
@@ -141,7 +143,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
         System.out.println("FNE 3D");
         theTask = (Task)tasks.remove(0);
         if (theTask != null) {
-          System.out.println("FNE 3E: " + theTask.getId());
+          environment.logDebug("FNE 3E: " + theTask.getId());
           doTask(theTask);
           System.out.println("FNE 3F");
           theTask = null;
@@ -168,6 +170,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     environment.say("FillinNextEpisode testing "+len+" rules");
     for (int i=0;i<len;i++) {
       environment.say("FillinNextEpisode pushing bindings");
+      environment.logDebug("FillinNextEpisode pushing bindings");
       // fresh binding for each rule
       bindings.freshBindings();
       rul = (Rule) rules.get(i);
