@@ -151,121 +151,93 @@ public class ConceptPullParser {
 	        else if (eventType == XmlPullParser.START_TAG) {
 		        temp = xpp.getName();
 		        environment.logDebug("XXX "+temp);
-		        //Rare event where temp == null
-		        if (temp == null) {
-		        	throw new RuntimeException("Null");
-		        }
 		        attributes = getAttributes(xpp);
 		        if (attributes != null) {
 		          name = (String) attributes.get(IConstants._NAME);
 		          value = (String) attributes.get(IConstants._VALUE);
 	              id = (String) attributes.get("id");
-	              if (name != null) {
-	                //clear variables
-	                isThenSay = false;
-	                isIfActors = false;
-	                isIfNotActors = false;
-	                isIfRelations = false;
-	                isIfNotRelations = false;
-	                isIfStates = false;
-	                isIfNotStates = false;
-	                isThenActors = false;
-	                isThenRelates = false;
-	                isThenStates = false;
-	                isThenCreate = false;
-	                isThenConjecture = false;
-	                isInstanceOf = false;
-	                isOtherSlot = false;
-	                //set variables if possible
 		        } else {
 		          name = null;
 		          value = null;
 		        }
 	        	System.out.println("Start tag " + temp);
-	          environment.logDebug("Start tag " + temp+" | "+name);
-	          if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
-                    isConcept = true;
-                    // make a new Concept
-                    theConcept = new Concept(id);
-              } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
-            	  // make a new Rule
-                theRule = new Rule(id);
-                isRule = true;
-              } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
-            	  // make a new Episode
-                theEpisode = new Episode(id);
-                isEpisode = true;
-              } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
-            	  // make a new Model
-                theModel = new Model(id);
-                isModel = true;
-              } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
-            	  // make a new Slot
-                theTask = new Task(id);
-                isTask = true;
-                environment.logDebug("NewTask "+theTask);
-              } else if (temp.equalsIgnoreCase(IConstants._SLOT)) {
-                isSlot = true;
-                //we already have the slot name
-                environment.logDebug("GotSlot "+name);
-              } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
-            	  // make a new Sentence
-                theSentence = new Sentence();
-                environment.logDebug("NewSentence");
-              } else if (temp.equalsIgnoreCase(IConstants._PREDICATE)) {
-              } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
-              } else if (temp.equalsIgnoreCase(IConstants._TRUTH)) {
-              } else if (temp.equalsIgnoreCase(IConstants._NEXT_EPIODE)) {
-                isNextEpisode = true;
-              } else if (temp.equalsIgnoreCase(IConstants._PREVIOUS_EPISODE)) {
-                isPreviousEpisode = true;
-              } else if (temp.equalsIgnoreCase(IConstants._MECHANISM)) { //TODO to be removed
-              } else if (temp.equalsIgnoreCase(IConstants._NODE)) {
-              } else if (temp.equalsIgnoreCase(IConstants._TYPE)) {
-              } else if (temp.equalsIgnoreCase(IConstants._OBJECT)) {
-              } else if (temp.equalsIgnoreCase(IConstants._EXPERIMENT)) {
-              } else if (temp.equalsIgnoreCase(IConstants._PRIORITY)) {    	  
-              } else if (name.equals(IConstants._IF_ACTORS) || name.equals(IConstants._ACTORS))
-                  isIfActors = true;
-                else if (name.equals(IConstants._IF_NOT_ACTORS))
-                  isIfNotActors = true;
-                else if (name.equals(IConstants._IF_RELATIONS) ||
-                         name.equals(IConstants._RELATIONS))
-                  isIfRelations = true;
-                else if (name.equals(IConstants._IF_NOT_RELATIONS))
-                  isIfNotRelations = true;
-                else if (name.equals(IConstants._IF_STATES) || name.equals(IConstants._STATES))
-                  isIfStates = true;
-                else if (name.equals(IConstants._IF_NOT_STATES))
-                  isIfNotStates = true;
-                else if (name.equals(IConstants._THEN_CREATE))
-                  isThenCreate = true;
-                else if (name.equals(IConstants._THEN_ACTORS))
-                  isThenActors = true;
-                else if (name.equals(IConstants._THEN_RELATIONS))
-                  isThenRelates = true;
-                else if (name.equals(IConstants._THEN_STATES))
-                  isThenStates = true;
-                else if (name.equals(IConstants._THEN_SAY))
-                  isThenSay = true;
-                else if (name.equals(IConstants._THEN_CONJECTURE))
-                  isThenConjecture = true;
-                else if (name.equals(IConstants.INSTANCE_OF))
-                  isInstanceOf = true;
-                else if (name.equals(IConstants.TRANSITIVE_CLOSURE))
-                	isTransitiveClosure = true;
-                else if (name.equals(IConstants.RULES))
-                	isRules = true;
-                else if (name.equals(IConstants.EPISODES))
-                	isEpisodes = true;
-                else {
-                  isOtherSlot = true;
-                  otherSlotName = name;
-                }
-              }
+		        environment.logDebug("Start tag " + temp+" | "+name);
+		        if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
+	                    isConcept = true;
+	                    // make a new Concept
+	                    theConcept = new Concept(id);
+	            } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
+	            	  // make a new Rule
+	                theRule = new Rule(id);
+	                isRule = true;
+	            } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
+	            	  // make a new Episode
+	                theEpisode = new Episode(id);
+	                isEpisode = true;
+	            } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
+	            	  // make a new Model
+	                theModel = new Model(id);
+	                isModel = true;
+	            } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
+	            	  // make a new Task
+	                theTask = new Task(id);
+	                isTask = true;
+	                environment.logDebug("NewTask "+theTask);
+	            } else if (temp.equalsIgnoreCase(IConstants._SLOT)) {
+	                isSlot = true;
+	                //we already have the slot name
+	                //There is an issue here:
+	                // if it's one of the non-slot slots, e.g. hasInstances, sentence, etc,
+	                // we don't make a new slot.
+	                // otherwise we do, but we do that JustInTime
+	                environment.logDebug("GotSlot "+name);
+	                if (name != null && name.equals(IConstants._IF_ACTORS) || name != null && name.equals(IConstants._ACTORS))
+		                  isIfActors = true;
+		            else if (name != null && name.equals(IConstants._IF_NOT_ACTORS))
+		                  isIfNotActors = true;
+		            else if (name != null && name.equals(IConstants._IF_RELATIONS) ||
+		            		name != null && name.equals(IConstants._RELATIONS))
+		                  isIfRelations = true;
+		            else if (name != null && name.equals(IConstants._IF_NOT_RELATIONS))
+		                  isIfNotRelations = true;
+		            else if (name != null && name.equals(IConstants._IF_STATES) || name != null && name.equals(IConstants._STATES))
+		                  isIfStates = true;
+		            else if (name != null && name.equals(IConstants._IF_NOT_STATES))
+		                  isIfNotStates = true;
+		            else if (name != null && name.equals(IConstants._THEN_CREATE))
+		                  isThenCreate = true;
+		            else if (name != null && name.equals(IConstants._THEN_ACTORS))
+		                  isThenActors = true;
+		            else if (name != null && name.equals(IConstants._THEN_RELATIONS))
+		                  isThenRelates = true;
+		            else if (name != null && name.equals(IConstants._THEN_STATES))
+		                  isThenStates = true;
+		            else if (name != null && name.equals(IConstants._THEN_SAY))
+		                  isThenSay = true;
+		            else if (name != null && name.equals(IConstants._THEN_CONJECTURE))
+		                  isThenConjecture = true;
+		            else if (name != null && name.equals(IConstants.INSTANCE_OF))
+		                  isInstanceOf = true;
+		            else if (name != null && name.equals(IConstants.TRANSITIVE_CLOSURE))
+		                	isTransitiveClosure = true;
+		            else if (name != null && name.equals(IConstants.RULES))
+		                	isRules = true;
+		            else if (name != null && name.equals(IConstants.EPISODES))
+		                	isEpisodes = true;
+		            else if (name != null) {
+		                  isOtherSlot = true;
+		                  otherSlotName = name;
+		            }
+	            } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
+	            	  // make a new Sentence
+	                theSentence = new Sentence();
+	                environment.logDebug("NewSentence");
+	            }
 	        }
 	        else if (eventType == XmlPullParser.END_TAG) {
-	          environment.logDebug("End tag " + temp + " // " + text);
+		        temp = xpp.getName();
+	          environment.logDebug("End tag " + temp + " // " + text+
+        			  isIfActors+" "+isIfRelations+" "+isIfStates);
               if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                 isConcept = false;
                 //This marks the end of a parse of an object
@@ -286,6 +258,21 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theRule = null;*/
+                //clear variables
+                isThenSay = false;
+                isIfActors = false;
+                isIfNotActors = false;
+                isIfRelations = false;
+                isIfNotRelations = false;
+                isIfStates = false;
+                isIfNotStates = false;
+                isThenActors = false;
+                isThenRelates = false;
+                isThenStates = false;
+                isThenCreate = false;
+                isThenConjecture = false;
+                isInstanceOf = false;
+                isOtherSlot = false;
               } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
                 isEpisode = false;
                 //This marks the end of a parse of an object
@@ -296,6 +283,21 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theEpisode = null;*/
+                //clear variables
+                isThenSay = false;
+                isIfActors = false;
+                isIfNotActors = false;
+                isIfRelations = false;
+                isIfNotRelations = false;
+                isIfStates = false;
+                isIfNotStates = false;
+                isThenActors = false;
+                isThenRelates = false;
+                isThenStates = false;
+                isThenCreate = false;
+                isThenConjecture = false;
+                isInstanceOf = false;
+                isOtherSlot = false;
               } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
                 isModel = false;
                 //This marks the end of a parse of an object
@@ -307,6 +309,21 @@ public class ConceptPullParser {
                   throw new RuntimeException(x);
                 }
                 theModel = null;*/
+                //clear variables
+                isThenSay = false;
+                isIfActors = false;
+                isIfNotActors = false;
+                isIfRelations = false;
+                isIfNotRelations = false;
+                isIfStates = false;
+                isIfNotStates = false;
+                isThenActors = false;
+                isThenRelates = false;
+                isThenStates = false;
+                isThenCreate = false;
+                isThenConjecture = false;
+                isInstanceOf = false;
+                isOtherSlot = false;
               } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
                 isTask = false;
                 //This marks the end of a parse of an object
@@ -364,6 +381,8 @@ public class ConceptPullParser {
                     theConcept.putProperty(otherSlotName,theList);
                 }  //qp slots were dealt with in their sentences
               } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
+            	  environment.logDebug("SENT+ "+theSentence.toXML()+
+            			  isIfActors+" "+isIfRelations+" "+isIfStates);
                 if (isModel) {
                   if (isIfActors)
                     theModel.addActor(theSentence);
@@ -371,6 +390,10 @@ public class ConceptPullParser {
                     theModel.addRelation(theSentence);
                   else if (isIfStates)
                     theModel.addState(theSentence);
+            	  environment.logDebug("SENT++ "+theModel.toXML());
+            	  environment.logDebug("MODEL++ "+theModel.getActors()+" | "+
+            			  theModel.getRelations()+" | "+
+            			  theModel.getStates());
                 } else if (isEpisode) {
                   if (isIfActors)
                     theEpisode.addActor(theSentence);
@@ -378,7 +401,8 @@ public class ConceptPullParser {
                     theEpisode.addRelation(theSentence);
                   else if (isIfStates)
                     theEpisode.addState(theSentence);
-                } else if (isRule) {
+            	  environment.logDebug("SENT++ "+theEpisode.toXML());
+               } else if (isRule) {
                   if (isIfActors)
                     theRule.addIfActor(theSentence);
                   else if (isIfRelations)
@@ -403,11 +427,13 @@ public class ConceptPullParser {
                    theRule.addThenSay(text);
                    isThenSay = false;
                  }
+            	 theSentence = null;
                 } else if (temp.equalsIgnoreCase(IConstants._DATABASE)) {
                   //we're done
                   environment.finishImport();
                 }
-                theSentence = null;
+                
+
               } else if (temp.equalsIgnoreCase(IConstants._PREDICATE)) {
             	  // this is bad news
             	  // for some reason, the <sentence> tag is not firing
@@ -416,12 +442,9 @@ public class ConceptPullParser {
                 theSentence.predicate = text;
               } else if (temp.equalsIgnoreCase(IConstants._SUBJECT)) {
                 //might be more than one value
-            	  environment.logDebug("ToK "+text);
-            	  tok = new StringTokenizer(text);
-                //opportunity for bugs here
-                theSentence.object = tok.nextToken();
-                if (tok.hasMoreTokens())
-                  theSentence.objectB = tok.nextToken();
+            	  environment.logDebug("SUBJECT! "+text+" "+theSentence);
+                theSentence.subject = text;
+                
               } else if (temp.equalsIgnoreCase(IConstants._TRUTH)) {
                 boolean truth = text.equals("true");
                 theSentence.truth = truth;
@@ -444,7 +467,11 @@ public class ConceptPullParser {
               } else if (temp.equalsIgnoreCase(IConstants._TYPE)) {
                 theTask.setTaskType(text);
               } else if (temp.equalsIgnoreCase(IConstants._OBJECT)) {
-                //TODO
+            	  theSentence.object = text;
+            	  environment.logDebug("OBJECT! "+text+" "+theSentence);
+              } else if (temp.equalsIgnoreCase(IConstants._OBJECT_B)) {
+            	  environment.logDebug("ObjectB! "+text);
+            	  theSentence.objectB = text;
               } else if (temp.equalsIgnoreCase(IConstants._EXPERIMENT)) {
                 Model m = environment.getModel(text);
                 //could be null!!!!

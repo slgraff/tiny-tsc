@@ -166,7 +166,7 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
     this.states = stas;
   }
 
-  public List getStates() {
+  public List<Sentence> getStates() {
     return states;
   }
 

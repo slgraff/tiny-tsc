@@ -98,6 +98,7 @@ public interface IConstants {
   	_NODE				= "node",
   	_TYPE				= "type",
   	_OBJECT				= "object",
+  	_OBJECT_B			= "objectB",
   	_EXPERIMENT			= "experiment",
   	_VALUE				= "value",
   	_PRIORITY			= "priority",
