@@ -9,6 +9,7 @@ import java.util.*;
 import java.io.*;
 
 import org.nex.tinytsc.engine.Environment;
+import org.nex.tinytsc.engine.Episode;
 import org.nex.persist.text.TextFileHandler;
 import org.nex.tinytsc.engine.Sentence;
 import org.nex.tinytsc.engine.Model;
@@ -46,6 +47,10 @@ public class LegacyImporter {
   private Map<String, Con> ConObject = new HashMap<String, Con>();
 
   private Map<String, Concept> MyConcepts = new HashMap<String, Concept>();
+  private Map<String, Task> MyTasks = new HashMap<String, Task>();
+ // private Map<String, Episode> MyEpisodes = new HashMap<String, Episode>();
+  private Map<String, Model> MyModels = new HashMap<String, Model>();
+  private Map<String, Rule> MyRules = new HashMap<String, Rule>();
 
   private File loader;
   private String directory;
@@ -80,7 +85,7 @@ public class LegacyImporter {
         // parsing will fill the objects HashMap
         // when done, dump everything into the database
         storeAll();
-      } catch (IOException e) {
+      } catch (Exception e) {
         e.printStackTrace();
       }
     }
@@ -90,7 +95,7 @@ public class LegacyImporter {
    * Convert all the Con objects into TSC objects and store them
    * fillin the inverseSlot
    */
-  void storeAll() {
+  void storeAll() throws Exception {
     System.out.println("Total number of Con objects: "+ConObject.size());
     environment.logDebug("AllConcepts\n"+ConObject);
     Iterator<String> itr = ConObject.keySet().iterator();
@@ -103,10 +108,42 @@ public class LegacyImporter {
     	  c = ConObject.get(n);
     	  resolveInverseSlots(c);
           convertCon(c);
+          
       }
     }
 
     finishTasks();
+    itr = MyConcepts.keySet().iterator();
+    Concept cx;
+    while (itr.hasNext()) {
+    	n = itr.next();
+    	cx = this.MyConcepts.get(n);
+        //if (cx.getInstanceOf().equals(""))
+        environment.getDatabase().putConcept(n, cx);
+    }
+    itr = MyTasks.keySet().iterator();
+    Task tx;
+    while (itr.hasNext()) {
+    	n = itr.next();
+    	tx = this.MyTasks.get(n);
+        environment.getDatabase().putTask(n, tx);
+    }
+    itr = MyModels.keySet().iterator();
+    Model mx;
+    while (itr.hasNext()) {
+    	n = itr.next();
+    	mx = this.MyModels.get(n);
+        environment.getDatabase().putModel(n, mx);
+    }
+    itr = MyRules.keySet().iterator();
+    Rule rx;
+    while (itr.hasNext()) {
+    	n = itr.next();
+    	rx = this.MyRules.get(n);
+        environment.getDatabase().putRule(n, rx);
+    }
+
+
     environment.finishImport();
   }
 
@@ -180,7 +217,7 @@ public class LegacyImporter {
    * @param c
    */
   void convertCon(Con c) {
-	  System.out.println("CC "+c);
+	  environment.logDebug("ConvertCon "+c);
     if (c.instanceOf.equals(""))
       convertConcept(c);
     else if (c.instanceOf.equals(TASK))
@@ -199,6 +236,14 @@ public class LegacyImporter {
     if (!c.instanceOf.equals("")) {
       tsk.setInstanceOf(c.instanceOf);
     }
+    MyTasks.put(c.id, tsk);
+    Concept pr = MyConcepts.get(TASK);
+    if (pr == null) {
+    	pr = new Concept(TASK);
+    	pr.setDatabase(environment.getDatabase());
+    	MyConcepts.put(TASK, pr);
+    }
+    pr.addInstance(c.id);
     if (c.getPriority() != null)
     	tsk.setPriority(Integer.parseInt(c.getPriority()));
     Iterator<String> itr = c.listSlotNames();
@@ -259,6 +304,14 @@ public class LegacyImporter {
     if (!c.instanceOf.equals("")) {
       r.setInstanceOf(c.instanceOf);
     }
+    MyRules.put(c.id, r);
+    Concept pr = MyConcepts.get(RULE);
+    if (pr == null) {
+    	pr = new Concept(RULE);
+    	pr.setDatabase(environment.getDatabase());
+    	MyConcepts.put(RULE, pr);
+    }
+    pr.addInstance(c.id);
     Iterator<String> itr = c.listSlotNames();
     String n;
     List l;
@@ -333,7 +386,14 @@ public class LegacyImporter {
     if (!c.instanceOf.equals("")) {
       m.setInstanceOf(c.instanceOf);
     }
-    Iterator<String> itr = c.listSlotNames();
+    MyModels.put(c.id, m);
+    Concept pr = MyConcepts.get(MODEL);
+    if (pr == null) {
+    	pr = new Concept(MODEL);
+    	pr.setDatabase(environment.getDatabase());
+    	MyConcepts.put(MODEL, pr);
+    }
+    pr.addInstance(c.id);    Iterator<String> itr = c.listSlotNames();
     String n;
     List l;
     Sentence t;
@@ -371,7 +431,7 @@ public class LegacyImporter {
      System.out.println(m.toXML());
   }
   void convertConcept(Con c) {
-	  System.out.println("CCC "+c);
+	  environment.logDebug("ConvertConcept "+c);
     Concept con = MyConcepts.get(c.id);
     if (con == null) {
     	con = new Concept(c.id);
@@ -380,6 +440,7 @@ public class LegacyImporter {
     }
     Concept parent;
     String io = c.instanceOf;
+	  environment.logDebug("ConvertConcept-1 "+io);
     if (!io.equals("")) {
       //con.addProperty("instanceOf",c.instanceOf);
       con.setInstanceOf(io);
@@ -390,6 +451,7 @@ public class LegacyImporter {
     	  MyConcepts.put(io, parent);
       }
       parent.addInstance(c.id);
+	  environment.logDebug("ConvertConcept-2 "+parent.toXML());
     }
     Iterator<String> itr = c.listSlotNames();
     String n, pid;
@@ -551,7 +613,9 @@ public class LegacyImporter {
    * @param line
    */
   void parseSlot(String line) {
-    if (workingCon == null) return; // somebody killed it
+	  if (line.equals("")) return;
+	  environment.logDebug("ParseSlot "+line); 
+	if (workingCon == null) return; // somebody killed it
     if (line.startsWith("instanceOf"))
       parseInstanceOf(line.substring("instanceOf".length()));
     else if (line.startsWith("thenTerminate"))
@@ -587,7 +651,7 @@ public class LegacyImporter {
    * @param line
    */
   void parseInstanceOf(String line) {
-    System.out.println("Parse instanceOf: "+workingCon.id+" | "+line);
+    environment.logDebug("Parse instanceOf: "+workingCon.id+" | "+line);
     StringTokenizer toks = new StringTokenizer(line);
     String v;
     if (toks.hasMoreTokens()) {

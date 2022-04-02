@@ -105,17 +105,12 @@ public class Concept implements Serializable, Identifiable {
   public void addSubOf(String so) {
 	  System.out.println("CSubOf "+so);
     if (subOf == null) subOf = new ArrayList<String>();
-    subOf.add(so);
-    if (transitiveClosure == null) transitiveClosure = new ArrayList<String>();
-    if (!transitiveClosure.contains(so))
-    	transitiveClosure.add(so);
-   /* try {
-    	Concept parent = database.getConcept(so);
-    	parent.addSubClass(this.getId());
-    	database.putConcept(so, parent);
-    } catch (Exception e) {
-    	throw new RuntimeException(e);
-    }*/
+    if (!subOf.contains(so)) {
+	    subOf.add(so);
+	    if (transitiveClosure == null) transitiveClosure = new ArrayList<String>();
+	    if (!transitiveClosure.contains(so))
+	    	transitiveClosure.add(so);
+    }
   }
   
   /**
@@ -136,7 +131,8 @@ public class Concept implements Serializable, Identifiable {
   }
   public void addSubClass(String so) {
 	    if (hasSubs == null) hasSubs = new ArrayList<String>();
-	    hasSubs.add(so);
+	    if (!hasSubs.contains(so))
+	    	hasSubs.add(so);
   }
   
   /**
@@ -155,7 +151,8 @@ public class Concept implements Serializable, Identifiable {
   }
   public void addInstance(String so) {
     if (hasInstances == null) hasInstances = new ArrayList<String>();
-    hasInstances.add(so);
+    if (!hasInstances.contains(so))
+    	hasInstances.add(so);
   }
   /**
    * 
@@ -207,7 +204,8 @@ public class Concept implements Serializable, Identifiable {
 
   public void addRule(Rule rule) {
     if (rules==null) rules = new ArrayList<Rule>();
-    rules.add(rule);
+    if (!rules.contains(rule))
+    	rules.add(rule);
   }
 
   public List<Rule> getRules() {
@@ -216,7 +214,8 @@ public class Concept implements Serializable, Identifiable {
 
   public void addEpisode(Episode ep) {
     if (episodes==null) episodes = new ArrayList<Episode>();
-    episodes.add(ep);
+    if (!episodes.contains(ep))
+    	episodes.add(ep);
   }
 
   public List<Episode> getEpisodes() {
@@ -255,7 +254,7 @@ public class Concept implements Serializable, Identifiable {
         buf.append("  <hasInstances>\n ");
         for (int i=0;i<len;i++)
           buf.append(hasInstances.get(i)+"  ");
-        buf.append("\n  <hasInstances>\n");
+        buf.append("\n  </hasInstances>\n");
     }
     if (this.hasSubs != null && !hasSubs.isEmpty()) {
     	len = hasSubs.size();
