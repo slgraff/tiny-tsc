@@ -357,6 +357,7 @@ public class ConceptPullParser {
               else if (temp.equals(IConstants.EPISODES)) {
                   	isEpisodes = true;
               } else if (temp.equals(IConstants.SUB_OF)) {
+            	  environment.logDebug("SUBOF "+text);
                   tok = new StringTokenizer(text);
                   while (tok.hasMoreTokens())
                   	theConcept.addSubOf(tok.nextToken());

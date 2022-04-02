@@ -92,13 +92,13 @@ public class LegacyImporter {
    */
   void storeAll() {
     System.out.println("Total number of Con objects: "+ConObject.size());
-    System.out.println("AllConcepts\n"+ConObject);
+    environment.logDebug("AllConcepts\n"+ConObject);
     Iterator<String> itr = ConObject.keySet().iterator();
     Con c; 
     String n;
     while (itr.hasNext()) {
       n = itr.next();
-      System.out.println("MessingWith "+n);
+      environment.logDebug("MessingWith "+n);
       if (n != null) {
     	  c = ConObject.get(n);
     	  resolveInverseSlots(c);
@@ -379,9 +379,17 @@ public class LegacyImporter {
     	MyConcepts.put(c.id, con);
     }
     Concept parent;
-    if (!c.instanceOf.equals("")) {
+    String io = c.instanceOf;
+    if (!io.equals("")) {
       //con.addProperty("instanceOf",c.instanceOf);
-      con.setInstanceOf(c.instanceOf);
+      con.setInstanceOf(io);
+      parent = MyConcepts.get(io);
+      if (parent == null) {
+    	  parent = new Concept(io);
+    	  parent.setDatabase(environment.getDatabase());
+    	  MyConcepts.put(io, parent);
+      }
+      parent.addInstance(c.id);
     }
     Iterator<String> itr = c.listSlotNames();
     String n, pid;
@@ -394,6 +402,7 @@ public class LegacyImporter {
       
       for (int i=0;i<len;i++) {
     	  if (n.equals("subOf")) {
+    		  environment.logDebug("IMPORT "+c.id+" "+n);
     		  pid = (String)l.get(i);
     		  con.addSubOf(pid);
     		  parent = MyConcepts.get(pid);
@@ -401,9 +410,26 @@ public class LegacyImporter {
     			  //not made yet, so make a shell
     			  parent = new Concept(pid);
     			  parent.setDatabase(environment.getDatabase());
+    			  MyConcepts.put(pid, parent);
     		  }
     		  parent.addSubClass(c.id);
+    		  environment.logDebug("IMPORT+ "+parent.toXML());
     	  }
+    	  else if (n.equals("subOf")) {
+    		  environment.logDebug("IMPORT "+c.id+" "+n);
+    		  pid = (String)l.get(i);
+    		  con.setInstanceOf(pid);
+    		  parent = MyConcepts.get(pid);
+    		  if (parent == null) {
+    			  //not made yet, so make a shell
+    			  parent = new Concept(pid);
+    			  parent.setDatabase(environment.getDatabase());
+    			  MyConcepts.put(pid, parent);
+    		  }
+    		  parent.addInstance(c.id);
+    		  environment.logDebug("IMPORT+ "+parent.toXML());
+    	  }
+    	  else 
     	  //TODO need "else" here?
         con.addProperty(n,(String)l.get(i));
       }
@@ -415,6 +441,10 @@ public class LegacyImporter {
     }
      System.out.println(con.toXML());
   }
+  
+  /**
+   * Read a file, line by line
+   */
   void parseLoader() {
     TextFileHandler loadHandler = new TextFileHandler();
     String line = loadHandler.readFirstLine(this.loader).trim();
@@ -424,6 +454,12 @@ public class LegacyImporter {
       line = loadHandler.readNextLine();
     }
   }
+  
+  /**
+   * Deal with any line which doesn't start with a comment
+   * If the line starts with "xload", then load that file
+   * @param line
+   */
   void parseLoaderLine(String line) {
     String str = line.trim();
     if (line.startsWith("\\")) return;
@@ -438,8 +474,18 @@ public class LegacyImporter {
    */
   private boolean isLeftCurlyBracket = false;
   private boolean isSentence = false;
+  
+  String fixConceptLine(String line) {
+	  String result = "";
+	  if (line.startsWith("c:"))
+		  result = cleanLine(line.substring("c:".length()).trim());
+	  else if (line.startsWith("+c:"))
+		  result = cleanLine(line.substring("+c:".length()).trim());
+	  return result;
+  }
   /**
-   * Workhorse for parsing KB data
+   * <p>Workhorse for parsing KB data<p>
+   * <p>In a legacy KB, everything is either a concept or a slot of some kind</p>
    * @param line
    */
   void parseLine(String line) {
@@ -465,7 +511,7 @@ public class LegacyImporter {
     //start a concept
     else if (str.startsWith("c:") ||
              str.startsWith("+c:")) {
-      name = cleanLine(str.substring("c:".length()).trim());
+      name = fixConceptLine(str);
       System.out.println("Got Concept: "+name+ " | "+workingCon);
       if (workingCon == null)
         workingCon = new Con(name);
@@ -598,13 +644,15 @@ public class LegacyImporter {
   }
 
   /**
+   * Other slots are any slots which are not sentence types
    * Watch for
    *   disjointFrom
    *   inverseRelation
    * @param line
    */
   void parseOtherSlot(String line) {
-    System.out.println("ParseOtherSlot: "+line);
+	  if (line.equals("")) return;
+    environment.logDebug("ParseOtherSlot: "+line);
     StringTokenizer toks = new StringTokenizer(line);
     String slotName, inverseSlotName;
     String v;
@@ -639,7 +687,14 @@ public class LegacyImporter {
       } else if (slotName.equals("priority")) {
     	  v = toks.nextToken();
     	  workingCon.setPriority(v);
+      } else if (slotName.equals("subOf")) {
+    	  while (toks.hasMoreTokens())
+    	  	workingCon.addSlotValue("subOf", toks.nextToken());
+      } else if (slotName.equals("instanceOf")) {
+    	  while (toks.hasMoreTokens())
+    		  workingCon.addSlotValue("subOf", toks.nextToken());
       } else {
+    	  //TODO this is an odd slot, e.g. "abuts"
         while(toks.hasMoreTokens())
           vals.add(toks.nextToken());
       }
@@ -791,6 +846,14 @@ public class LegacyImporter {
             x.add(values.get(i));
         slots.put(key,x);
       }
+    }
+    
+    public void addSlotValue(String key, String val) {
+        List x = (List)slots.get(key);
+        if (x == null) x = new ArrayList();
+        if (!x.contains(val))
+        	x.add(val);
+        slots.put(key,x);
     }
 
     public List getSlotValue(String key) {
