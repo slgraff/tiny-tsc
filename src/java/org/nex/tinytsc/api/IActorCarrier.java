@@ -6,6 +6,8 @@
  */
 package org.nex.tinytsc.api;
 import java.util.List;
+
+import org.nex.tinytsc.engine.Sentence;
 /**
  * <p>Title: TinyTSC</p>
  * <p>Description: Small "The Scholar's Companion(r)"</p>
@@ -17,5 +19,5 @@ import java.util.List;
 
 public interface IActorCarrier {
 
-  List getActors();
+  List<Sentence> getActors();
 }

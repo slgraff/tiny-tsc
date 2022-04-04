@@ -398,5 +398,8 @@ public class Rule implements Serializable, IActorCarrier, Identifiable {
     return buf.toString();
   }
 
-
+  @Override
+  public String toString() {
+	  return this.id;
+  }
 }

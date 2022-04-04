@@ -393,7 +393,9 @@ public class LegacyImporter {
     	pr.setDatabase(environment.getDatabase());
     	MyConcepts.put(MODEL, pr);
     }
-    pr.addInstance(c.id);    Iterator<String> itr = c.listSlotNames();
+    pr.addInstance(c.id);    
+    Iterator<String> itr = c.listSlotNames();
+    environment.logDebug("IMPORT MODEL slot names "+c.getSlotNames());
     String n;
     List l;
     Sentence t;
@@ -414,6 +416,7 @@ public class LegacyImporter {
         } else {
           System.out.println("#M "+n);
           t = (Sentence) l.get(i);
+          environment.logDebug("IMPORT MODEL slots "+n+" "+t);
           if (n.equals("actors"))
             m.addActor(t);
           else if (n.equals("relations"))
@@ -930,9 +933,13 @@ public class LegacyImporter {
         return v.contains(val);
       return false;
     }
-    public Iterator listSlotNames() {
+    public Iterator<String> listSlotNames() {
     	System.out.println("listing slots from "+id);
       return slots.keySet().iterator();
+    }
+    
+    public Set<String> getSlotNames() {
+    	return slots.keySet();
     }
 
     //debugging

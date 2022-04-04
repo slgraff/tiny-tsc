@@ -278,26 +278,26 @@ public class Environment {
    * Return a list of <em>id</em> values for each {@link Task}
    * @return  List
    */
-  public List listTasks() {
-    List result = new ArrayList();
+  public List<String> listTasks() {
+    List<String> result = new ArrayList<String>();
     try {
       database.startTasksIterator();
       Tuple t = new Tuple();
       while (database.getNextObject(t))
-        result.add(t.getKey());
+        result.add((String)t.getKey());
     } catch (DatastoreException x) {
       x.printStackTrace();
     }
     return result;
   }
 
-  public List listModelIds() {
-    List result = new ArrayList();
+  public List<String> listModelIds() {
+    List<String> result = new ArrayList<String>();
     try {
       database.startModelsIterator();
       Tuple t = new Tuple();
       while (database.getNextObject(t))
-        result.add(t.getKey());
+        result.add((String)t.getKey());
     } catch (DatastoreException x) {
       x.printStackTrace();
     }
@@ -343,9 +343,9 @@ public class Environment {
    * Returns every {@link Rule} in the database
    * @return List
    */
-  public List getAllRules() {
+  public List<Rule> getAllRules() {
     synchronized(database) {
-      List result = new ArrayList();
+      List<Rule> result = new ArrayList();
       try {
         database.startRulesIterator();
         Tuple t = new Tuple();

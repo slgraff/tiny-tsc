@@ -206,6 +206,7 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
    * @return -1 if no compare, 0 if same, 1 if other is superset
    */
   public int compareEpisode(Episode other) {
+	  System.out.println("CompareEpisodes "+other);
     int result = -1; // default no comparison
     if ((actors != null) && (actors.size() <= other.getActors().size())) {
       if (other.getActors().containsAll(actors)) {

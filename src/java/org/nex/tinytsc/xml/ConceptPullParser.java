@@ -240,90 +240,18 @@ public class ConceptPullParser {
         			  isIfActors+" "+isIfRelations+" "+isIfStates);
               if (temp.equalsIgnoreCase(IConstants._CONCEPT)) {
                 isConcept = false;
-                //This marks the end of a parse of an object
-                /*try {
-                  System.out.println(theConcept.toXML());
-                  //environment.importConcept(theConcept); // that's for importing
-                } catch (DatastoreException x) {
-                  throw new RuntimeException(x);
-                }
-                theConcept = null;*/
+  
               } else if (temp.equalsIgnoreCase(IConstants._RULE)) {
                 isRule = false;
-                //This marks the end of a parse of an object
-                /*try {
-                  System.out.println(theRule.toXML());
-                  environment.importRule(theRule);
-                } catch (DatastoreException x) {
-                  throw new RuntimeException(x);
-                }
-                theRule = null;*/
-                //clear variables
-                isThenSay = false;
-                isIfActors = false;
-                isIfNotActors = false;
-                isIfRelations = false;
-                isIfNotRelations = false;
-                isIfStates = false;
-                isIfNotStates = false;
-                isThenActors = false;
-                isThenRelates = false;
-                isThenStates = false;
-                isThenCreate = false;
-                isThenConjecture = false;
+                
                 isInstanceOf = false;
                 isOtherSlot = false;
               } else if (temp.equalsIgnoreCase(IConstants._EPISODE)) {
                 isEpisode = false;
-                //This marks the end of a parse of an object
-                /*try {
-                  System.out.println(theEpisode.toXML());
-                  environment.importEpisode(theEpisode);
-                } catch (DatastoreException x) {
-                  throw new RuntimeException(x);
-                }
-                theEpisode = null;*/
-                //clear variables
-                isThenSay = false;
-                isIfActors = false;
-                isIfNotActors = false;
-                isIfRelations = false;
-                isIfNotRelations = false;
-                isIfStates = false;
-                isIfNotStates = false;
-                isThenActors = false;
-                isThenRelates = false;
-                isThenStates = false;
-                isThenCreate = false;
-                isThenConjecture = false;
+              
                 isInstanceOf = false;
-                isOtherSlot = false;
               } else if (temp.equalsIgnoreCase(IConstants._MODEL)) {
-                isModel = false;
-                //This marks the end of a parse of an object
-
-               /* try {
-                  System.out.println(theModel.toXML());
-                  environment.importModel(theModel);
-                } catch (DatastoreException x) {
-                  throw new RuntimeException(x);
-                }
-                theModel = null;*/
-                //clear variables
-                isThenSay = false;
-                isIfActors = false;
-                isIfNotActors = false;
-                isIfRelations = false;
-                isIfNotRelations = false;
-                isIfStates = false;
-                isIfNotStates = false;
-                isThenActors = false;
-                isThenRelates = false;
-                isThenStates = false;
-                isThenCreate = false;
-                isThenConjecture = false;
-                isInstanceOf = false;
-                isOtherSlot = false;
+            	  isModel = false;              
               } else if (temp.equalsIgnoreCase(IConstants._TASK)) {
                 isTask = false;
                 //This marks the end of a parse of an object
@@ -381,6 +309,19 @@ public class ConceptPullParser {
                   if (isConcept)
                     theConcept.putProperty(otherSlotName,theList);
                 }  //qp slots were dealt with in their sentences
+                isIfActors = false;
+                isIfNotActors = false;
+                isIfRelations = false;
+	            isIfNotRelations = false;
+	            isIfStates = false;
+	            isIfNotStates = false;
+	            isThenCreate = false;
+	            isThenActors = false;
+	            isThenRelates = false;
+	            isThenStates = false;
+	            isThenSay = false;
+	            isThenConjecture = false;
+	            isOtherSlot = false;
               } else if (temp.equalsIgnoreCase(IConstants._SENTENCE)) {
             	  environment.logDebug("SENT+ "+theSentence.toXML()+
             			  isIfActors+" "+isIfRelations+" "+isIfStates);
@@ -428,6 +369,8 @@ public class ConceptPullParser {
                    theRule.addThenSay(text);
                    isThenSay = false;
                  }
+                  
+
             	 theSentence = null;
                 } else if (temp.equalsIgnoreCase(IConstants._DATABASE)) {
                   //we're done

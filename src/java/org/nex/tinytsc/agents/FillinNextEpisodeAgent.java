@@ -162,9 +162,10 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     System.out.println("DT 3");
     environment.say("FillinNextEpisode on: "+currentEpId);
     System.out.println("DT 4");
-    List rules = collectRules(e);
+    List<Rule> rules = collectRules(e);
     System.out.println("DT 5: "+rules.size());
     int len = rules.size();
+    environment.say("FillinNextEpisode got rule count "+len);
     Rule rul;
     Episode ep;
     environment.say("FillinNextEpisode testing "+len+" rules");
@@ -173,8 +174,8 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
       environment.logDebug("FillinNextEpisode pushing bindings");
       // fresh binding for each rule
       bindings.freshBindings();
-      rul = (Rule) rules.get(i);
-      System.out.println("DT 2: "+rul.getId());
+      rul = rules.get(i);
+      System.out.println("DT 6: "+rul.getId());
       environment.say("FillinNextEpisode testing rule "+rul.getId());
       if (testRule(e, rul)) {
         ep = fireRule(e, rul);
@@ -388,18 +389,20 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     return result;
   }
 
-  List collectRules(Episode e) {
-    List result = new ArrayList();
+  List<Rule> collectRules(Episode e) {
+    List<Rule> result = new ArrayList();
     System.out.println("CollectRules 1");
-    Set preds = getPredicates(e);
+    environment.say("FillinNextEpisode getting actor preds on\n"+e.toXML());
+
+    Set<String> preds = getPredicates(e);
     System.out.println("CollectRules 2");
-    environment.say("FillinNextEpisode got "+preds.size()+" predicates.");
-    List rules = environment.getAllRules();
+    environment.say("FillinNextEpisode got "+preds.size()+" predicates\n"+preds);
+    List<Rule> rules = environment.getAllRules();
     System.out.println("CollectRules 3");
     environment.say("FillinNextEpisode got "+rules.size()+" rules.");
     result = filterRules(rules, preds);
     System.out.println("CollectRules 4");
-    environment.say("FillinNextEpisode filtered "+rules.size()+" rules.");
+    environment.say("FillinNextEpisode filtered "+result.size()+" rules\n"+result);
     return result;
   }
 
@@ -410,18 +413,18 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
    * @param predicates
    * @return
    */
-  List filterRules(List allRules, Set predicates) {
+  List<Rule> filterRules(List<Rule> allRules, Set<String> predicates) {
     System.out.println("FilterRules "+allRules.size()+" "+predicates.size());
-    List result = new ArrayList();
-    Set rulePreds;
+    List<Rule> result = new ArrayList();
+    Set<String> rulePreds;
     int len = allRules.size();
     Rule rul;
     environment.say("FillinNextEpisode filtering on predicates: "+predicates);
     for (int i=0;i<len;i++) {
-      rul = (Rule)allRules.get(i);
+      rul = allRules.get(i);
       System.out.println("FilterRules 2: "+rul.getId());
       rulePreds = getPredicates(rul);
-      environment.say("FillinNextEpisode checking rule preds: "+rulePreds);
+      environment.say("FillinNextEpisode checking rule preds: "+rul+"\n  "+rulePreds+"\n  "+predicates);
       if (predicates.containsAll(rulePreds))
         result.add(rul);
     }
@@ -435,13 +438,13 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
    * @param e
    * @return
    */
-  Set getPredicates(IActorCarrier e) {
-    Set result = new HashSet();
-    List actors = e.getActors();
+  Set<String> getPredicates(IActorCarrier e) {
+    Set<String> result = new HashSet<String>();
+    List<Sentence> actors = e.getActors();
     int len = actors.size();
     Sentence t;
     for (int i=0;i<len;i++) {
-      t = (Sentence)actors.get(i);
+      t = actors.get(i);
       result.add(t.predicate);
     }
     return result;
