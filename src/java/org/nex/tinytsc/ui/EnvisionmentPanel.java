@@ -97,7 +97,7 @@ public class EnvisionmentPanel extends JPanel {
     while (itr.hasNext()) {
       n = (String)itr.next();
       next = environment.getEpisode(n);
-      if (n == null)
+      if (next == null)
         throw new RuntimeException("Missing Episode: "+n);
       this.textArea.append(next.toXML()+"\n");
       showNextEpisodes(next);

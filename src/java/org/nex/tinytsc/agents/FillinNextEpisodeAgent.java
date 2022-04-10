@@ -386,6 +386,12 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     //TODO
     //  thenConjectures
     //  thenTerminate
+      try {
+    	  environment.putEpisode(result);
+      } catch (Exception e) {
+    	  environment.logError(e.getMessage(), e);
+    	  e.printStackTrace();
+      }
     return result;
   }
 
