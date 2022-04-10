@@ -208,16 +208,24 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
   boolean testRule(Episode e, Rule r) {
     environment.say("FillinNextEpisode testing rule "+r.getId()+" on episode "+e.getId());
     System.out.println("TR 1: "+e.ruleHasFired(r.getId()));
+    // if rule has already fired, just exit false
     if (e.ruleHasFired(r.getId())) return false;
     boolean result = true;
     // Lists of Sentences
-    List eActors = e.getActors();
-    List rActors = r.getActors();
+    List<Sentence> eActors = e.getActors();
+    List<Sentence> rActors = r.getActors();
     System.out.println("TR 2: "+eActors);
     System.out.println("TR 3: "+rActors);
 //    TR 2: [[stem.cell(stem.cell1 | )], [helper.t-cell(helper.t-cell1 | )], [macrophage(Macrophage1 | )], [b-cell(B-cell1 | )], [activated.b-cell(activated.b-cell1 | )], [act.h.t-cell(act.h.t-cell1 | )], [gm-csf(csf1 | )], [il(il1 | )], [il-2(il2 | )], [virus(virus1 | )], [antigen(antigen1 | )], [cytokine.receptor(cytokine.receptor1 | )], [plasma.cell(plasma.cell1 | )], [memory.cell(memory.cell1 | )], [blast.cell(blast.cell1 | )], [antibody(antibody1 | )]]
 //    TR 3: [[antigen(*antigen | )], [macrophage(*macrophage | )]]
     // quick check for predicates matching
+    ///////////////////////////
+    // We have a situation:
+    // It's possible for a rule to have a sentence for which there is nothing related in the episode
+    // e.g. this shows up when we have an IF-NOT something in a Rule
+    // If the test is an IF, then a missing correspondent is a false
+    // If the test is an IF-NOT, then a missing correspondent is a true
+    ///////////////////////////
     boolean tru = false;
     if (rActors.size() == eActors.size()) {
       int len = rActors.size(), len2 = eActors.size();
@@ -225,27 +233,40 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
       tru = false;
       for (int i=0;i<len;i++) {
         p = ((Sentence)rActors.get(i)).predicate;
+        // This seems to be trying to find mismatches in sentence predicates
+        // but doesn't take into account isA
+        // Actually, I have no idea what this is doing.
+        // It seems to exit on the first predicate match it finds,
+        // which suggests it's a simple test to ask if it's possible to bind at all
+        // BUT, we are doing it inside the constraints that rule and episode
+        // cardinality are the same, which they may not be, particularly in the IF-NOT situation
         for (int j=0;j<len2;j++)
           if ((tru = ((Sentence)eActors.get(j)).samePredicate(p)))
             break;
       }
     }
+    // false seems to mean we found nothing in terms of actors to bind against
     if (!tru) return false; // move along
     // might want to check for null values
-    if (bindings.bind(rActors,eActors)) {
+    // So, now we bind the rule and episode actors
+    // That that's a start into knowing if this rule can fire at all
+    if (bindings.bind(rActors, eActors)) {
       System.out.println("TR 4:");
-      List eVals = e.getRelations();
-      List rVals = null;
+      List<Sentence> eVals = e.getRelations();
+      List<Sentence> rVals = null;
       if (eVals != null) {
         // relations are a bit more tricky than actors.
         // an Episode can have relations that Rules don't care about
         // but if a Rule cares and the Episode doesn't have any, this binding is hosed
+    	// EXCEPT in the case of an IF-NOT-RELATIONS rule
         eVals = cloneSentence(eVals);
+        //IF-NOT
         rVals = r.getIfNotRelations();
         //match variables on NOT relations
         if (rVals != null)
           result = !bindings.match(rVals,eVals);
         if (!result) return false;
+        //IF
         rVals = r.getIfRelations();
         //match variables on relations
         if (rVals != null)

@@ -14,6 +14,8 @@ import java.util.*;
  * <p>Company: NexistGroup</p>
  * @author Jack Park
  * @version 1.0
+ * <p>In an inference engine, there are <em>Rules</em> and <em>Facts</em>.
+ * In TSC an {@link Episode} provides <em>Facts</em></p>
  */
 
 public class SimpleBindingEngine {
@@ -53,7 +55,7 @@ public class SimpleBindingEngine {
    * @param value
    */
   public void addBinding(String name, String value) {
-    curBinding.bindVar(name,value);
+    curBinding.bindVar(name,value, true);
     environment.logDebug("BINDING-1 "+curBinding);
   }
 
@@ -122,9 +124,9 @@ public class SimpleBindingEngine {
           t2 = l.get(j);
           svar = t2.subject;
           ovar = t2.object;
-          if (curBinding.bindVar(svar, t.subject)) {
+          if (curBinding.bindVar(svar, t.subject, true)) {
             if (!ovar.equals(""))
-              curBinding.bindVar(ovar, t2.object);
+              curBinding.bindVar(ovar, t2.object, true);
             break; // bound for this epSentence
           }
         }
@@ -175,11 +177,23 @@ public class SimpleBindingEngine {
 //    Matching eps: [[abuts(foo1 | foo2)], [abuts(foo2 | bar1)]]
     environment.logDebug("Matching eps: "+epSentences);
     //key = predicate
-    Map<String, List<Sentence>> r = collectPreds(epSentences);
+    ////////////////////////
+    // First, collect of all the Episode's sentences organized by the predicates
+    ////////////////////////
+    Map<String, List<Sentence>> epPredSentences = collectPreds(epSentences);
     int len = ruleSentences.size(), len2;
     Sentence t, t2;
-    List<Sentence> l;
+    List<Sentence> workingSentences;
     String svar, ovar, sbnd, obnd, xsbnd, xobnd ="", xvar,xsvar, xovar;
+    boolean xstruth = false, xbtruth = false;
+    ///////////////////////
+    // Keep in mind that there may be more rule predicates than there are episode predicates
+    // which then plays into notions whether the rule is an IF, or an IF-NOT
+    //
+    // Also keep in mind that a rule's predicate may be a more abstract class than an Episode
+    // which calls for isA tests: is this abstract rule predicate in the transitive closure of this
+    // episode's predicate?
+    ///////////////////////
     for (int i = 0; i < len; i++) {
       // for each Sentence in the rule list
       // remember, there may be more than one
@@ -188,19 +202,29 @@ public class SimpleBindingEngine {
       t = ruleSentences.get(i);
       svar = t.subject; // variable
       ovar = t.object;  // variable
+      boolean sentenceTruth = false; // default
       xsbnd = curBinding.getBinding(svar);
-      if (!ovar.equals(""))
+      xstruth = curBinding.getTruth(svar);
+      // Do we have this variable bound already?
+      if (!ovar.equals("")) {
         xobnd = curBinding.getBinding(ovar);
+        xbtruth = curBinding.getTruth(ovar);
+      }
       //
-      l = r.get(t.predicate);
-      System.out.println("Match 1: "+t.toString()+" | "+xsbnd+" | "+xobnd+" | "+l);
-      if (l == null)
+      workingSentences = epPredSentences.get(t.predicate);
+      System.out.println("Match 1: "+t.toString()+" | "+xsbnd+" | "+xobnd+" | "+workingSentences);
+      if (workingSentences == null) {
+    	  //THIS is where we care about truth
         return false; // don't have this predicate
-      len2 = l.size();
+        // TODO maybe returning false is ok???
+      }
+      
+      len2 = workingSentences.size();
       // for each Sentence associated with this predicate found in the Episode
       boolean temp = false;
       for (int j = 0; j < len2; j++) {
-        t2 = l.get(j);
+        t2 = workingSentences.get(j);
+        sentenceTruth = t2.truth;
         System.out.println("Match 2: "+t2.toString());
         sbnd = t2.subject;
         obnd = t2.object;
@@ -225,6 +249,15 @@ public class SimpleBindingEngine {
 
   /////////////////////////////////
   // Bindings Class
+  // Right now, this class fails to understand <em>sentence truth</em>
+  //	An actor, e.g. (foo (xyz) false) is a legitimate statement that 
+  //	there is no such actor, but we do not pay attention to that
+  // THAT is
+  //	We can declare a statement for any actor, relation, or state, to be true or false
+  //	But if we do not declare any such sentence, then any IF-NOT test which looks for that
+  //	undeclared sentence should return true.
+  // THUSLY
+  //	BindingsClass must also bind truth
   /////////////////////////////////
   class BindingsClass {
     /**
@@ -236,12 +269,30 @@ public class SimpleBindingEngine {
 
     public BindingsClass() {}
 
-    public void addVariable(String var, Object nullBinding) {
-      structures.put(var, nullBinding);
+    /**
+     * 
+     * @param var
+     * @param nullBinding generally taken to be a {@code String}
+     * @param truth
+     */
+    public void addVariable(String var, Object nullBinding, boolean truth) {
+    	List<Object> x = new ArrayList<Object>();
+    	x.add(nullBinding);
+    	x.add(new Boolean(truth));
+    	structures.put(var, x);
     }
 
     public void freshBindings() {
       structures.clear();
+    }
+    
+    /**
+     * Can return {@code null}
+     * @param var
+     * @return
+     */
+    List<Object> _getBinding(String var) {
+    	return (List<Object>)structures.get(var);
     }
     /**
      * Return the binding for var
@@ -250,25 +301,38 @@ public class SimpleBindingEngine {
      */
     public String getBinding(String var) {
       System.out.println("GetBinding on: "+var);
-      Object o = structures.get(var);
+      List<Object> o = _getBinding(var);
       if (o == null) return null;
-      return (String)o;
+      return (String)o.get(0);
+    }
+    
+    /**
+     * Defaults to {@code false} if no binding for {@code var}
+     * @param var
+     * @return
+     */
+    public boolean getTruth(String var) {
+    	List<Object> o = _getBinding(var);
+        if (o == null) return false;
+        return ((Boolean)o.get(1)).booleanValue();
     }
 
     /**
      * Return <code>false</code> if this var is already bound.
      * @param var
      * @param val
+     * @param truth TODO
      * @return
      */
-    public boolean bindVar(String var, String val) {
+    public boolean bindVar(String var, String val, boolean truth) {
       System.out.println("Binding 1: "+var+" "+val);
-      Object o = structures.get(var);
+      List<Object> o = _getBinding(var);
       if (o != null) return false;
       System.out.println("Binding: 2: "+var+" "+val);
-      structures.put(var,val);
+      addVariable(var, val, truth);
       return true;
     }
+    
     @Override
     public String toString() {
   	  return ((HashMap)structures).toString();

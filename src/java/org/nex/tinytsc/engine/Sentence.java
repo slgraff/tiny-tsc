@@ -108,6 +108,13 @@ public class Sentence implements Serializable {
     return false;
   }
 
+  /**
+   * Simple string equality
+   * TODO : maybe we need to make room for case insensitivity?
+   * TODO : maybe we should be checking isA - that's pretty hairy here
+   * @param pred
+   * @return
+   */
   public boolean samePredicate(String pred) {
     return pred.equals(predicate);
   }

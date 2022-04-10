@@ -122,6 +122,16 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
   public void setActors(List<Sentence> actors) {
     this.actors = actors;
   }
+  
+  /**
+   * <p>We ask if a {@code Rule} has already fired on this episode,
+   * in which case, we do not want it to fire again. Return {@code false}
+   * if there is no record of it firing already.</p>
+   * <p>We look only at {@code nextEpisodes} because those are created
+   * by specific rule firings</p>
+   * @param ruleId
+   * @return
+   */
   public boolean ruleHasFired(String ruleId) {
     return nextEpisodes.containsKey(ruleId);
   }
