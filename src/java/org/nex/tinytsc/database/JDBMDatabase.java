@@ -240,7 +240,7 @@ public class JDBMDatabase /*implements IDatastore*/ {
         System.out.println("JDBMDatabase.getModelX "+key+" "+k);
         if (k.equals(key)) {
         	xml = (String)tuple.getValue();
-            environment.logDebug("GetModel "+key+"\n"+xml);
+            environment.logDebug("DB-GetModel "+key+"\n"+xml);
         	parser.parse(xml);
             result = parser.getModel();
         }

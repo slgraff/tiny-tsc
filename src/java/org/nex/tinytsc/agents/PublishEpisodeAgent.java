@@ -138,27 +138,33 @@ public class PublishEpisodeAgent extends Thread implements IAgent {
     environment.say("PublishEpisode previous: "+prevEpId);
     Episode prev = null;
     // slight chance previous just happens to be the Model itself
-    if (prevEpId.equals(task.getModel().getId()))
+    // which is just fine - that happens every time a rule fires on it
+    if (prevEpId.equals(task.getModel().getId())) {
         prev = task.getModel();
-    else
-      prev = environment.getEpisode(prevEpId);
-    prevEpId = prev.getId();
-    System.out.println("PEd 6: "+prev);
-    if (found != null) {
-      // we have a loop -- we don't need this Episode
-      prev.addNextEpisode(ruleId, found.getId());
-      found.addPreviousEpisode(ruleId,prevEpId);
-      // update database
-      putEpisode(found);
+        prev.addNextEpisode(ruleId, e.getId());
+        putModel((Model)prev);
+        environment.logDebug("PublishTask prev episode "+prevEpId);   
     } else {
-      // no loop
-      prev.addNextEpisode(ruleId, currentEpId);
-      // update database
-      putEpisode(e);
-      fillinTask(e, task.getModel());
+      prev = environment.getEpisode(prevEpId);
+	    prevEpId = prev.getId();
+	    environment.logDebug("PublishTask prev episode-1 "+prevEpId);   
+	    System.out.println("PEd 6: "+prev);
+	    if (found != null) {
+	      // we have a loop -- we don't need this Episode
+	      prev.addNextEpisode(ruleId, found.getId());
+	      found.addPreviousEpisode(ruleId,prevEpId);
+	      // update database
+	      putEpisode(found);
+	    } else {
+	      // no loop
+	      prev.addNextEpisode(ruleId, currentEpId);
+	      // update database
+	      putEpisode(e);
+	      fillinTask(e, task.getModel());
+	    }
+	    System.out.println("PEd 8:");
+	    putEpisode(prev);
     }
-    System.out.println("PEd 8:");
-    putEpisode(prev);
   }
 
   void putEpisode(Episode c) {
@@ -168,6 +174,13 @@ public class PublishEpisodeAgent extends Thread implements IAgent {
       e.printStackTrace();
     }
   }
+  void putModel(Model c) {
+	    try {
+	      environment.putModel(c);
+	    } catch (DatastoreException e) {
+	      e.printStackTrace();
+	    }
+	  }
   void fillinTask(Episode newEp, Model m) {
     environment.say("PublishEpisode new fillin task on "+newEp.getId());
     Task newTask = environment.newTask();

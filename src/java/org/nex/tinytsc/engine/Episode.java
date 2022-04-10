@@ -202,20 +202,24 @@ public class Episode implements Serializable, IActorCarrier, Identifiable {
   /**
    * <p>Compare other to this. A <code>superset</code> is
    * found if other is the same as this, but with more stuff</p>
+   * <p>NOTE: this does not compare ID. It should. FIXED.</p>
    * @param other
-   * @return -1 if no compare, 0 if same, 1 if other is superset
+   * @return -1 if no compare, 0 if absolute same, 1 if other might be superset
    */
   public int compareEpisode(Episode other) {
 	  System.out.println("CompareEpisodes "+other);
     int result = -1; // default no comparison
+    if (this.id.equals(other.getId()))
+    	return 0; //THEY ARE ONE AND THE SAME EPISODE
     if ((actors != null) && (actors.size() <= other.getActors().size())) {
       if (other.getActors().containsAll(actors)) {
         if ((relations != null) && (other.getRelations() != null) &&
              other.getRelations().containsAll(relations)) {
             if ((states != null) && (other.getStates() != null) &&
                 other.getStates().containsAll(states))
-              result = 0;
-              //TODO deal with +1 later
+              result = 1;
+              // same but possibly a superset where other contains all of me,
+            
         }
       }
     }

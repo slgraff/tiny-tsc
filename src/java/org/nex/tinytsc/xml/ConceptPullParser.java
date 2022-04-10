@@ -394,9 +394,14 @@ public class ConceptPullParser {
                 theSentence.truth = truth;
               } else if (temp.equalsIgnoreCase(IConstants._NEXT_EPIODE)) {
                 isNextEpisode = false;
-                if (isModel)
+                environment.logDebug("ParseNextEpisode "+theModel+" | "+theEpisode+"\n"+
+                		isModel+" "+ruleId+" "+nodeId);
+                ;
+                if (isModel) {
+                	environment.logDebug("PRE "+theModel.toXML());
                   theModel.addNextEpisode(ruleId,nodeId);
-                else if (isEpisode)
+              	environment.logDebug("POST "+theModel.toXML());
+                } else if (isEpisode)
                   theEpisode.addNextEpisode(ruleId,nodeId);
                 ruleId = nodeId = null;
               } else if (temp.equalsIgnoreCase(IConstants._PREVIOUS_EPISODE)) {

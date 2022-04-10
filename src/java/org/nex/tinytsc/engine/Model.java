@@ -70,9 +70,14 @@ public class Model extends Episode implements Identifiable {
   void countNodes(Episode ep) {
     if (ep == null) return;
     numNodes++;
-    String n;
     Iterator<String> itr = ep.listNextEpisodeIds();
     while (itr.hasNext())
       countNodes(environment.getEpisode(itr.next()));
+  }
+  
+  @Override
+  public String toString() {
+	  String foo = "Model: "+ getId();
+	  return foo;
   }
 }

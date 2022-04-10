@@ -62,7 +62,13 @@ public class FindEpisodeUtility {
 		  Episode findEpisode(Episode newEp, Episode prevEp) {
 		    Episode result = null;
 		    Episode temp = prevEp;
-		    if (newEp.compareEpisode(prevEp) > -1)
+		    //NOTE: -1 == no comparison, 0 == same identity, 1 == same contents, possibly superset
+		    //So finding an episode could mean you found yourself
+		    // That can have repercussions
+		    // That's because we usually use this to find loops which means
+		    //  same general episode is found, but not ME.
+		    // SO, we can only return if compare returns 1
+		    if (newEp.compareEpisode(prevEp) == 1) //> -1)
 		        result = prevEp; // found it!
 		    else {
 		      // here we go
