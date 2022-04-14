@@ -112,6 +112,10 @@ public class Sentence implements Serializable {
    * Simple string equality
    * TODO : maybe we need to make room for case insensitivity?
    * TODO : maybe we should be checking isA - that's pretty hairy here
+   * <p>Let's get real here: this should read pred.isA(pred)
+   * 	which means we are forced to do a database query here.
+   * 	Which really means, we should never call this method but,
+   * 	instead, use an external call,e.g. in the inference engine for isA</p>
    * @param pred
    * @return
    */

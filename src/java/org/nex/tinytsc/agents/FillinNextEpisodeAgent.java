@@ -47,6 +47,16 @@ import org.nex.tinytsc.engine.InferenceEngine;
  * and collect it's <code>rules</code> list.<br>
  * That approach relies on an import agent or compiler to
  * aggressively add a ruleId to each predict <code>Concept</code></p>
+ * <p> To fire a rule against an Episode, there is a sequence:<br/>
+ * <ol> 
+ * 	<li> Match Rule actors with Episode actors and bind them; if that fails, 
+ * 		that rule is disqualified</li>
+ * 	<li> Given a set of bindings, match Rule Relations with Episode relations. Failure
+ * 		to do so disqualified the rule</li>
+ * 	<li> Given a set of bindings, match thee Rule States with Episode states. Failure
+ * 		to do so disqualified the rule</li>
+ * 	<li> If you make it here, fire the rule which will create a new Episode</li>
+ * </ol></p>
  *
  * TODO:
  *   ifNotActors
@@ -227,7 +237,15 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     // If the test is an IF-NOT, then a missing correspondent is a true
     ///////////////////////////
     boolean tru = false;
+    /////////////////////
+    // THIS is messy:
+    //	if the cardinalities of actors in the rule and the episode are not the same
+    //	the chances of a rule firing are likely very low.
+    //	right now, the code ignores such edge cases.
+    //	NOTE: this only applies to actors because that's where you form bindings
+    /////////////////////
     if (rActors.size() == eActors.size()) {
+    	// THIS works when actor cardinalities are the same
       int len = rActors.size(), len2 = eActors.size();
       String p;
       tru = false;
@@ -243,13 +261,22 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
         for (int j=0;j<len2;j++)
           if ((tru = ((Sentence)eActors.get(j)).samePredicate(p)))
             break;
+        //TODO this should not call Sentence.samePredicate, but, instead, should call
+        // the InferenceEngine.isA
       }
+    } else {
+    	// Actor cardinalities are not the same.
+    	// If the episode is a superset of the rule,
+    	//		then you risk not binding all the variables necessary
+    	// If the rule is a superset of the episode
+    	//		then there's no chance it can fire
+    	//	TODO: is there an edge case where you still might bind all the variables?
     }
     // false seems to mean we found nothing in terms of actors to bind against
     if (!tru) return false; // move along
     // might want to check for null values
     // So, now we bind the rule and episode actors
-    // That that's a start into knowing if this rule can fire at all
+    // That's a start into knowing if this rule can fire at all
     if (bindings.bind(rActors, eActors)) {
       System.out.println("TR 4:");
       List<Sentence> eVals = e.getRelations();

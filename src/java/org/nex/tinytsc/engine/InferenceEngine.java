@@ -40,33 +40,7 @@ public class InferenceEngine {
   public boolean checkIsAConcept(String instanceId, String classId) {
     if (instanceId.equals(classId)) return true;
     Concept inst = environment.getConcept(instanceId);
-    Concept x;
-    List<Object> l;
-    String id = null;
-    boolean t = false;
-    if (inst != null) {
-      l = (List<Object>)inst.getProperty("instanceOf");
-      if (l != null)
-        t = _checkIsAConcept(l,classId);
-      if (t)
-        return true;
-      l = (List<Object>) inst.getProperty("subOf");
-      if (l != null)
-          return _checkIsAConcept(l,classId);
-    }
-    return false;
+    return inst.isA(classId);
   }
 
-  boolean _checkIsAConcept(List l, String classId) {
-    int len = l.size();
-    String id;
-    for (int i=0;i<len;i++) {
-      id = (String)l.get(i);
-      if (id != null) {
-        if (id.contentEquals(classId)) //bug fix
-          return true;
-      }
-    }
-    return false;
-  }
 }

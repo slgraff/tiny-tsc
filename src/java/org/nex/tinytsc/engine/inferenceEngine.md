@@ -12,6 +12,14 @@ Both Rules and Episodes convey their information in *Sentences* which take this 
 
 In general, in TSC, if some sentence is not `true` we just set its truth field to `false` rather than deleting it.
 
+## Binding
+Binding is the process of first, matching the *predicates* in each sentence in a Rule with those in the Episode.
+
+But, Rules and Episodes are different creatures:<br/>
+An Episode contains *facts*, things which are measured and defined predicates which may be more specific than those in a Rule. A Rule's predicates, in order to be useful, may define rather *general* predicates. That's discussed next.
+
+What is crucial, however, is that predicates are defined as Concepts just like everything else.  That is, TSC operates in a fixed vocabulary (ontology), which means that you cannot just write a knowledge base for it with arbitrary predicates. That's because, internally, when the binding agent is trying to match two predicates, it will perform an operation which asks *is this episode predicate an instance of that rule predicate* using an internal `isA` test. For that test to work, the predicates must have been defined within the structure of topics, which we call a *taxonomy*.
+
 ## Predicates
 Predicates are *Classes* of objects, such as, e.g. *Human*, *Animal*, or *Automobile* for Actors,  *Abuts*, or *Contains* for Relations, or *Hot* or *Cold* for States.
 
