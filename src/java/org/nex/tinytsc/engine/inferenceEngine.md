@@ -42,5 +42,23 @@ Consider the Predicates found in an Episode's Actors. Only Rules which *can matc
 
 ### Complexity #1: Sentence Truth
 Sentences in both Rules and Episodes can be either `true` or `false` which makes an enormous difference in how the inference engine processes them.
-### Complexity #2: Rule Polarity
-Rules can be either positive, e.g. *IF*, or they can be negative, e.g. *IF-NOT*
+### Complexity #2: Rule Clause Polarity
+Rules clause can be either positive, e.g. *IF*, or they can be negative, e.g. *IF-NOT*
+
+## Clauses
+### Positive antecedent clauses
+#### IF-ACTORS
+#### IF-RELATIIONS
+#### IF-STATES
+
+### Negative antecedent clauses
+#### IF-NOT-ACTORS
+#### IF-NOT-RELATIONS
+#### IF-NOT-STATES
+
+### Consequent clauses
+#### THEN-ACTORS
+#### THEN-RELATIONS
+#### THEN-STATES
+#### THEN-CONJECTURE
+#### THEN-SAY
