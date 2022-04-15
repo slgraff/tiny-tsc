@@ -224,6 +224,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     // Lists of Sentences
     List<Sentence> eActors = e.getActors();
     List<Sentence> rActors = r.getActors();
+    environment.logDebug("CHECKING ACTORS\n"+eActors+"\n"+rActors);
     System.out.println("TR 2: "+eActors);
     System.out.println("TR 3: "+rActors);
 //    TR 2: [[stem.cell(stem.cell1 | )], [helper.t-cell(helper.t-cell1 | )], [macrophage(Macrophage1 | )], [b-cell(B-cell1 | )], [activated.b-cell(activated.b-cell1 | )], [act.h.t-cell(act.h.t-cell1 | )], [gm-csf(csf1 | )], [il(il1 | )], [il-2(il2 | )], [virus(virus1 | )], [antigen(antigen1 | )], [cytokine.receptor(cytokine.receptor1 | )], [plasma.cell(plasma.cell1 | )], [memory.cell(memory.cell1 | )], [blast.cell(blast.cell1 | )], [antibody(antibody1 | )]]
@@ -247,10 +248,13 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     if (rActors.size() == eActors.size()) {
     	// THIS works when actor cardinalities are the same
       int len = rActors.size(), len2 = eActors.size();
-      String p;
-      tru = false;
+      String rulePred, epPred;
+      //tru = false;
+      List<Integer> matchedPreds = new ArrayList<Integer>();
       for (int i=0;i<len;i++) {
-        p = ((Sentence)rActors.get(i)).predicate;
+    	  //for each rule predicate
+        rulePred = ((Sentence)rActors.get(i)).predicate;
+        environment.logDebug("TheRulePred "+rulePred);
         // This seems to be trying to find mismatches in sentence predicates
         // but doesn't take into account isA
         // Actually, I have no idea what this is doing.
@@ -258,11 +262,26 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
         // which suggests it's a simple test to ask if it's possible to bind at all
         // BUT, we are doing it inside the constraints that rule and episode
         // cardinality are the same, which they may not be, particularly in the IF-NOT situation
-        for (int j=0;j<len2;j++)
-          if ((tru = ((Sentence)eActors.get(j)).samePredicate(p)))
-            break;
-        //TODO this should not call Sentence.samePredicate, but, instead, should call
-        // the InferenceEngine.isA
+        tru = false;
+        Integer jjj;
+        for (int j=0;j<len2;j++) {
+        	jjj = new Integer(j);
+        	// for each episode predicate except those we already saw
+        	epPred = ((Sentence)eActors.get(j)).predicate;
+        	environment.logDebug("TheEpPred "+epPred+" "+rulePred);
+        	if (!matchedPreds.contains(jjj)) {
+        		environment.logDebug("GONZO "+rulePred+" "+epPred);
+	        	tru = inferenceEngine.checkIsAConcept(epPred, rulePred);
+	           	environment.logDebug("CheckISA "+tru+" "+epPred + " "+ rulePred);
+	           	if (tru) {
+	           		// don't test this again for this rule
+	           		matchedPreds.add(new Integer(j));
+	           	}
+        	}
+        	if (tru) // we found an epPred, now test next rulePred
+        		break;
+        }
+        environment.logDebug("CHECKING ACTORS+ "+tru+" "+rulePred);;
       }
     } else {
     	// Actor cardinalities are not the same.
@@ -277,7 +296,9 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     // might want to check for null values
     // So, now we bind the rule and episode actors
     // That's a start into knowing if this rule can fire at all
+    // Now, we go ahead and bind the actor variables to those of the rule
     if (bindings.bind(rActors, eActors)) {
+    	
       System.out.println("TR 4:");
       List<Sentence> eVals = e.getRelations();
       List<Sentence> rVals = null;

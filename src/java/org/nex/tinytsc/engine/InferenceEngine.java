@@ -38,6 +38,7 @@ public class InferenceEngine {
    * @return
    */
   public boolean checkIsAConcept(String instanceId, String classId) {
+	  environment.logDebug("CheckingIsA "+instanceId+" "+classId);
     if (instanceId.equals(classId)) return true;
     Concept inst = environment.getConcept(instanceId);
     return inst.isA(classId);

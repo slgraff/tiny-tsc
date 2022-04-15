@@ -90,7 +90,7 @@ public class SimpleBindingEngine {
    * @param epSentences
    * @return
    */
-  public boolean bind(List ruleSentences, List<Sentence> epSentences) {
+  public boolean bind(List<Sentence> ruleSentences, List<Sentence> epSentences) {
 //    Binding rules: [[foo(*f1 | )], [bar(*b1 | )], [foo(*f2 | )]]
 	  environment.logDebug("Binding rules: "+ruleSentences);
 //    Binding eps: [[foo(foo1 | )], [foo(foo2 | )], [bar(bar1 | )]]
