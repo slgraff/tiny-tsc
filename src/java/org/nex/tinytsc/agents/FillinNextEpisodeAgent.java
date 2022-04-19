@@ -10,6 +10,7 @@ import java.util.*;
 import org.nex.tinytsc.api.IActorCarrier;
 import org.nex.tinytsc.api.IAgent;
 import org.nex.tinytsc.api.IConstants;
+import org.nex.tinytsc.engine.Concept;
 import org.nex.tinytsc.engine.Environment;
 import org.nex.tinytsc.engine.Task;
 import org.nex.tinytsc.engine.Episode;
@@ -313,6 +314,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
         //match variables on NOT relations
         if (rVals != null)
           result = !bindings.match(rVals,eVals);
+        environment.logDebug("IFNOTRelations "+result);
         if (!result) return false;
         //IF
         rVals = r.getIfRelations();
@@ -332,6 +334,8 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
           System.out.println("NOT STATES "+rVals);
           if (rVals != null)
             result = !bindings.match(rVals,eVals);
+          environment.logDebug("IFNOTStates "+result);
+
           if (!result) return false;
           rVals = r.getIfRelations();
           rVals = r.getIfStates();
@@ -342,7 +346,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
         }
       }
     }
-    System.out.println("TR 8: "+result);
+    //System.out.println("TR 8: "+result);
     environment.say("FillinNextEpisode tested rule "+r.getId()+" on episode "+e.getId()+" : "+result);
     return result;
   }
@@ -363,26 +367,28 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     Sentence temp = null;
     int len = 0;
     // deal with thenCreates for new actors
-    List rThenVals = r.getThenCreates();
-    List eThenVals;
+    List<Sentence> rThenVals = r.getThenCreates();
+    List<Sentence> eThenVals;
     if (rThenVals != null) {
       len = rThenVals.size();
       String n;
+      Sentence se;
       for (int i=0;i<len;i++) {
-        n = (String)rThenVals.get(i);
+    	  se = rThenVals.get(i);;
+        n = (String)se.predicate;
         bindings.addBinding(n, environment.newExistentialId());
       }
     }
     // deal with actors
     rThenVals = r.getThenActors();
-    List eVals = cloneSentence(parent.getActors());
+    List<Sentence> eVals = cloneSentence(parent.getActors());
     if (rThenVals == null)
       result.setActors(eVals);
     else {
       // might be a new actor, might be a "false" actor -- got killed
       len = rThenVals.size();
       for (int i=0;i<len;i++) {
-        temp = (Sentence)rThenVals.get(i);
+        temp = rThenVals.get(i);
         // this binding required the existential bindings from thenCreate
         temp = bindings.bindSentence(temp);
         if (temp != null && temp.truth) {
@@ -409,7 +415,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
       // we have relations!
       len = rThenVals.size();
       for (int i=0;i<len;i++) {
-        temp = (Sentence)rThenVals.get(i);
+        temp = rThenVals.get(i);
         if (temp.truth)
           result.addRelation(bindings.bindSentence(temp));
         else {
@@ -434,7 +440,7 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
       // we have states!
       len = rThenVals.size();
       for (int i=0;i<len;i++) {
-        temp = (Sentence)rThenVals.get(i);
+        temp = rThenVals.get(i);
         if (temp.truth)
           result.addState(bindings.bindSentence(temp));
         else {
@@ -445,9 +451,9 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
         }
       }
     }
-    rThenVals = r.getThenSays();
-    if (rThenVals != null)
-      environment.say((String)rThenVals.get(0));
+    List<String> srThenVals = r.getThenSays();
+    if (srThenVals != null && !srThenVals.isEmpty())
+      environment.say(srThenVals.get(0));
       //move the rest of the states
       if (eThenVals != null && eThenVals.size() > 0) {
         result.addStates(eThenVals);
@@ -464,8 +470,13 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     return result;
   }
 
+  /**
+   * Collect rules against the given episode
+   * @param e
+   * @return
+   */
   List<Rule> collectRules(Episode e) {
-    List<Rule> result = new ArrayList();
+    List<Rule> result = new ArrayList<Rule>();
     System.out.println("CollectRules 1");
     environment.say("FillinNextEpisode getting actor preds on\n"+e.toXML());
 
@@ -481,6 +492,11 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
     return result;
   }
 
+  ////////////////////////////////////
+  //	We try to match a rule's predicate with an episode predicate.
+  //	NOTE: a rule predicate may be more abstract than the epsode's
+  //		SO, we have to compare predicates by way of isA
+  ////////////////////////////////////
   /**
    * Return just those <code>Rule</code>s which contain,
    * <em>at least</em> the given <code>predicates</code>
@@ -490,21 +506,73 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
    */
   List<Rule> filterRules(List<Rule> allRules, Set<String> predicates) {
     System.out.println("FilterRules "+allRules.size()+" "+predicates.size());
-    List<Rule> result = new ArrayList();
+    List<Rule> result = new ArrayList<Rule>();
     Set<String> rulePreds;
     int len = allRules.size();
     Rule rul;
+    Iterator<String>itr = null;
     environment.say("FillinNextEpisode filtering on predicates: "+predicates);
+    boolean testTruth = true;
     for (int i=0;i<len;i++) {
       rul = allRules.get(i);
       System.out.println("FilterRules 2: "+rul.getId());
       rulePreds = getPredicates(rul);
       environment.say("FillinNextEpisode checking rule preds: "+rul+"\n  "+rulePreds+"\n  "+predicates);
-      if (predicates.containsAll(rulePreds))
-        result.add(rul);
+      /////////////////////
+      // We have two collections of predicates: from the rules, and from the episode
+      // We are forced to test each rule predicate against those of the episodes.
+      // IF no match, then we must use the rule's transitive closure to see if any of those can match
+      //	IF not, fail the rule
+      //	OTHERWISE, continue testing
+      //if (predicates.containsAll(rulePreds))
+      //  result.add(rul);
+      itr = rulePreds.iterator();
+      while (itr.hasNext()) {
+    	  testTruth &= testAPredicate(itr.next(), predicates);
+    	  if (!testTruth)
+    		  break;
+      }
+      if (testTruth)
+    	  result.add(rul);
     }
     System.out.println("FilterRules 3: "+result.size());
     return result;
+  }
+  
+  /**
+   * Given a {@code rulePred} see if it can match to any of the {@code epPreds}
+   * @param rulePred
+   * @param epPreds
+   * @return
+   */
+  boolean testAPredicate(String rulePred, Set<String> epPreds) {
+	  environment.logDebug("TestingAPred "+rulePred+" "+epPreds);
+	  List<String> transitivs = null;
+	  //first test
+	  if (epPreds.contains(rulePred))
+		  return true;
+	  //now we must grind 
+	  // a rulePred might be more abstract than any epPred, so we must grab the
+	  // transitive closure of each ep pred.
+	  Iterator<String> itr = epPreds.iterator();
+	  String ep;
+	  while (itr.hasNext()) {
+		  ep = itr.next();
+		  transitivs = getTransitiveClosure(ep);
+		  if (transitivs == null)
+			  return false;
+		  return transitivs.contains(rulePred);
+	  }
+	  
+	  return false;
+  }
+  
+  List<String> getTransitiveClosure(String pred) {
+	  List<String> result = null;
+	  Concept c = environment.getConcept(pred);
+	  if (c != null)
+		  result = c.getTransitiveClosure();
+	  return result;
   }
 
   /**
@@ -530,12 +598,12 @@ public class FillinNextEpisodeAgent extends Thread implements IAgent {
    * @param l
    * @return
    */
-  List cloneSentence(List l) {
+  List<Sentence> cloneSentence(List<Sentence> l) {
     if (l == null) return null;
-    List result = new ArrayList();
+    List<Sentence> result = new ArrayList<Sentence>();
     int len = l.size();
     for (int i=0;i<len;i++)
-      result.add(((Sentence)l.get(i)).copy());
+      result.add(l.get(i).copy());
     return result;
   }
 }
